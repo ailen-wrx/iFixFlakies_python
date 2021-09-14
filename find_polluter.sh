@@ -1,4 +1,3 @@
-
 victim=$1
 test_list=$2
 module=$3
