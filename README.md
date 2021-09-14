@@ -3,12 +3,13 @@ A shell script running `pytest` to detect polluters of victims in the dataset fr
 
 ## Directory Structure
 .
+├── batch.sh
 ├── clone.sh
 ├── find_polluter.sh
 ├── install.sh
-├── output
+├── output         /* where the results are saved */
 ├── README.md
-├── Repo
+├── Repo           /* where the cloned repos are located */
 │   └── abagen
 │       ├── # project code #
 │       ├── requirements.txt
