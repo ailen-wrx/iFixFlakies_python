@@ -1,20 +1,20 @@
 # iFixFlakies_bash
-A shell script running `pytest` to detect polluters of victims in the dataset from Gruber et al.
+A shell script running `pytest` to detect polluters of victims in the dataset from Gruber et al.  
 
 ## Directory Structure
-.
-├── batch.sh
-├── clone.sh
-├── find_polluter.sh
-├── install.sh
-├── output         /* where the results are saved */
-├── README.md
-├── Repo           /* where the cloned repos are located */
-│   └── abagen
-│       ├── # project code #
-│       ├── requirements.txt
-│       └── tests.csv
-└── victims_brittles.csv
+.  
+├── batch.sh  
+├── clone.sh  
+├── find_polluter.sh  
+├── install.sh  
+├── output         /\* where the results are saved \*/  
+├── README.md  
+├── Repo           /\* where the cloned repos are located \*/  
+│   └── abagen  
+│       ├── # project code #  
+│       ├── requirements.txt  
+│       └── tests.csv  
+└── victims_brittles.csv  
 
 ## How to Run
 
@@ -33,10 +33,10 @@ curl
 `$ bash clone.sh victims_brittles.csv Repo`
 
 ### Detecting polluters
-on single project
+on single project  
 `$ bash install.sh Repo $project_name$ victims_brittles.csv tests.csv output`
 
-on a batch of projects
+on a batch of projects  
 `$ bash batch.sh $(pwd)/victims_brittles.csv Repo $(pwd)/output`
 
 
