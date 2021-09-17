@@ -3,7 +3,7 @@ A shell script running `pytest` to detect polluters of victims in the dataset fr
 
 ## Directory Structure
 ```
-.  
+iFixFlakies_python    
 ├── batch.sh  
 ├── clone.sh  
 ├── find_polluter.sh  
@@ -43,7 +43,7 @@ All 608 projects will be cloned under direcroty `Repo`.
 
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:
 ```
-.
+iFixFlakies_python / output
 ├── stat.csv
 ├── $project1
 │   ├── c68022abd1d6ebb2f9ec183d506799b7
