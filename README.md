@@ -34,7 +34,7 @@ curl
 `$ curl -o victims_brittles.csv https://zenodo.org/record/4450435/files/victims_brittles.csv?download=1`
 
 ### Cloning projects
-`$ bash clone.sh victims_brittles.csv $(pwd)/Repo`
+`$ bash clone.sh victims_brittles.csv $(pwd)/Repo`  
 All 608 projects will be cloned under direcroty `Repo`.  
 
 ### Detecting polluters
