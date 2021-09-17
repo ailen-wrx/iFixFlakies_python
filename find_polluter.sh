@@ -1,4 +1,4 @@
-victim=$1
+func_name=$1
 test_list=$2
 module=$3
 project_dir=$4
@@ -6,7 +6,8 @@ output_dir=$5
 
 mkdir -p $output_dir
 cd $project_dir
-for i in $(grep ,$module, $test_list | cut -d, -f1); do
+victim=$(grep $module:: $test_list | grep ::$func_name | head -1)
+for i in $(grep $module:: $test_list); do
     if [[ "$i" == "$victim" ]]; then
 	continue
     fi
