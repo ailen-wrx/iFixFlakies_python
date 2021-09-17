@@ -1,4 +1,4 @@
-# iFixFlakies_bash
+# iFixFlakies_python
 A shell script running `pytest` to detect polluters of victims in the dataset from Gruber et al.  
 
 ## Directory Structure
