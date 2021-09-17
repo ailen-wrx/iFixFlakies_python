@@ -2,7 +2,7 @@
 A shell script running `pytest` to detect polluters of victims in the dataset from Gruber et al.  
 
 ## Directory Structure
-```bash
+```
 .  
 ├── batch.sh  
 ├── clone.sh  
@@ -42,7 +42,7 @@ All 608 projects will be cloned under direcroty `Repo`.
 `$ bash install.sh $(pwd)/Repo $project_name victims_brittles.csv $test_list $(pwd)/output`
 
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:
-```bash
+```
 .
 ├── stat.csv
 ├── $project1
