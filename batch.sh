@@ -7,6 +7,7 @@ echo script version: $(git rev-parse HEAD)
 
 parent_dir=$(pwd)
 cd $global_repo_dir
+rm $global_output_dir/stat.csv
 for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
     if [[ ! -d "$i" ]]; then
 	echo $i,fail_to_clone >> $global_output_dir/stat.csv

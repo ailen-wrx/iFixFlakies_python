@@ -16,7 +16,7 @@ pytest --collect-only -q > $test_list
 cd -
 mkdir -p $output_dir/$project
 for i in $(grep $project, $dataset); do
-    echo processing $project starttime: $(date) > log_install
+    echo processing $project starttime: $(date) >> log_install
     Test_filename=$(echo $i | cut -d, -f4)
     Test_classname=$(echo $i | cut -d, -f5)
     Test_funcname=$(echo $i | cut -d, -f6)
