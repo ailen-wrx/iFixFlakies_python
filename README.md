@@ -1,9 +1,9 @@
-# iFixFlakies_bash
+# iFixFlakies_python
 A shell script running `pytest` to detect polluters of victims in the dataset from Gruber et al.  
 
 ## Directory Structure
-```bash
-.  
+```
+iFixFlakies_python    
 ├── batch.sh  
 ├── clone.sh  
 ├── find_polluter.sh  
@@ -34,7 +34,7 @@ curl
 `$ curl -o victims_brittles.csv https://zenodo.org/record/4450435/files/victims_brittles.csv?download=1`
 
 ### Cloning projects
-`$ bash clone.sh victims_brittles.csv $(pwd)/Repo`
+`$ bash clone.sh victims_brittles.csv $(pwd)/Repo`  
 All 608 projects will be cloned under direcroty `Repo`.  
 
 ### Detecting polluters
@@ -42,8 +42,8 @@ All 608 projects will be cloned under direcroty `Repo`.
 `$ bash install.sh $(pwd)/Repo $project_name victims_brittles.csv $test_list $(pwd)/output`
 
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:
-```bash
-.
+```
+iFixFlakies_python / output
 ├── stat.csv
 ├── $project1
 │   ├── c68022abd1d6ebb2f9ec183d506799b7
@@ -66,9 +66,9 @@ For each victim test detected in dataset from Gruber et al, one directory will b
 If a project does not exist, or the script fails run `pytest` on the project, such information wil be recorded in `stat.csv`.
 
 Inside `stat.csv`, there are 3 states for each project:
- - fail\_to\_clone: fail to find the repository on GitHub, or the project is renamed.
- - requirements\_not\_found: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
- - install: successfully install the requirements and run `pytest` on specified tests, with several unexpected situations still included.
+ - `fail_to_clone`: fail to find the repository on GitHub, or the project is renamed.
+ - `requirements_not_found`: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
+ - `install`: successfully install the requirements and run `pytest` on specified tests, with several unexpected situations still included.
  
  
 
