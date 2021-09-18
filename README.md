@@ -67,7 +67,7 @@ If a project does not exist, or the script fails run `pytest` on the project, su
 
 Inside `stat.csv`, there are 3 states for each project:
  - `fail_to_clone`: fail to find the repository on GitHub, or the project is renamed.
- - `requirements\_not\_found`: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
+ - `requirements_not_found`: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
  - `install`: successfully install the requirements and run `pytest` on specified tests, with several unexpected situations still included.
  
  
