@@ -5,6 +5,11 @@ test_list=$4
 output_dir=$5
 
 cd $repo_dir/$project
+sha=$(grep $project, $dataset | cut -d, -f3 | head -1)
+git remote set-branches origin $sha
+git fetch --depth 1 origin $sha
+git checkout $sha
+
 python3 -m venv venv
 source venv/bin/activate
 for i in $(find -name "*requirement*"); do

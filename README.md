@@ -39,7 +39,7 @@ All 608 projects will be cloned under direcroty `Repo`.
 
 ### Detecting polluters
 **on a single project**  
-`$ bash install.sh $(pwd)/Repo $project_name victims_brittles.csv $test_list $(pwd)/output`
+`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/victims_brittles.csv $test_list $(pwd)/output`
 
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:
 ```
