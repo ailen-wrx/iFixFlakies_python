@@ -20,7 +20,7 @@ for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
         continue
     fi
     cd $parent_dir
-    bash install.sh $global_repo_dir $i victims_brittles.csv $test_list $global_output_dir
+    bash install.sh $global_repo_dir $i $dataset $test_list $global_output_dir
     echo $i,install>> $global_output_dir/stat.csv
     cd $global_repo_dir
 done
