@@ -3,3 +3,9 @@
 log_install
 *~
 #*
+/.git/
+/parser/.idea/
+/parser/venv/
+/parser/__pycache__/
+/parsing_result/
+
