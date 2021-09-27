@@ -7,4 +7,4 @@ log_install
 /parser/.idea/
 /parser/venv/
 /parser/__pycache__/
-
+/output_conflict/

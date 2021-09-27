@@ -1,0 +1,8 @@
+repo_dir=$1
+project=$2
+conflict=$3
+output_dir=$5
+
+for i in $(cat conflict | head -1); do
+    echo i
+do

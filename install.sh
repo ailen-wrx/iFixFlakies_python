@@ -6,11 +6,11 @@ output_dir=$5
 
 cd $repo_dir/$project
 echo Installing $project...
-sha=$(grep $project, $dataset | cut -d, -f3 | head -1)
-echo Switching to $sha...
-git remote set-branches origin $sha
-git fetch --depth 1 origin $sha
-git checkout $sha
+#sha=$(grep $project, $dataset | cut -d, -f3 | head -1)
+#echo Switching to $sha...
+#git remote set-branches origin $sha
+#git fetch --depth 1 origin $sha
+#Git checkout $sha
 
 python3 -m venv venv
 source venv/bin/activate
@@ -21,6 +21,7 @@ pip install pytest
 pip install pytest-csv
 pytest --collect-only -q > $test_list
 cd -
+rm -rf $output_dir/$project
 mkdir -p $output_dir/$project
 for i in $(grep $project, $dataset); do
     echo processing $project starttime: $(date) >> log_install

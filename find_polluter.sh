@@ -4,7 +4,6 @@ module=$3
 project_dir=$4
 output_dir=$5
 
-rm -rf $output_dir
 mkdir -p $output_dir
 cd $project_dir
 victim=$(grep $module:: $test_list | grep ::$func_name | head -1)
