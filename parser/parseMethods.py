@@ -61,7 +61,6 @@ def parse_output_dir(Gruber_Dataset):
                 if Test_md5 == 'test_mapping.csv' or Test_md5 == '.DS_Store':
                     continue
 
-                Isolated_Test = ''
                 # matching and classifying isolated tests
                 if Test_md5 == Isolation_Hash + '.csv':
                     Isolated_Test = pd.read_csv(os.path.join(output_dir, project, Victim_md5, Test_md5))
