@@ -67,14 +67,14 @@ def parse_output_dir(Gruber_Dataset):
                             and Gruber_Metadata['Isolation'] != 'NotAnalysed':
                         Conflict = 1
                     if Conflict:
-                        update_isolated_tests(os.path.join(result_dir, 'Conflict_Verdict_Isolated.csv'),
+                        update_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Conflict.csv'),
                                               Gruber_Metadata, Isolated_Test)
                     else:
                         if Isolated_Test['status'][0] == 'passed':
-                            update_isolated_tests(os.path.join(result_dir, 'Victim_Verdict_Isolated.csv'),
+                            update_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Victim.csv'),
                                                   Gruber_Metadata, Isolated_Test)
                         else:
-                            update_isolated_tests(os.path.join(result_dir, 'Brittle_Verdict_Isolated.csv'),
+                            update_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Brittle.csv'),
                                                   Gruber_Metadata, Isolated_Test)
 
                 else:

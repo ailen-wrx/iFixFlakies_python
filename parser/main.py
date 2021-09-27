@@ -32,9 +32,9 @@ def log_init():
     file = open(os.path.join(result_dir, 'Error.log'), 'w')
     file.close()
 
-    init_csv_for_isolated_tests(os.path.join(result_dir, 'Conflict_Verdict_Isolated.csv'))
-    init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim_Verdict_Isolated.csv'))
-    init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle_Verdict_Isolated.csv'))
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Conflict.csv'))
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Victim.csv'))
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Brittle.csv'))
 
     init_csv_for_paired_tests(os.path.join(result_dir, 'Pass-Fail.csv'))
     init_csv_for_paired_tests(os.path.join(result_dir, 'Pass-Pass.csv'))
