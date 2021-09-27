@@ -28,6 +28,7 @@ def parse_output_dir(Gruber_Dataset):
         if project == '.DS_Store':
             continue
 
+        # mapping victims
         Victim_Hash = {}
         with open(os.path.join(output_dir, project, 'victim_mapping.csv'), 'rt') as f:
             r = csv.reader(f)
@@ -38,6 +39,7 @@ def parse_output_dir(Gruber_Dataset):
             if Victim_md5 == 'victim_mapping.csv' or Victim_md5 == '.DS_Store':
                 continue
 
+            # loading isolated test info
             Isolation_Hash = ''
             try:
                 with open(os.path.join(output_dir, project, Victim_md5, 'test_mapping.csv'), 'rt') as f:
@@ -60,6 +62,7 @@ def parse_output_dir(Gruber_Dataset):
                     continue
 
                 Isolated_Test = ''
+                # matching and classifying isolated tests
                 if Test_md5 == Isolation_Hash + '.csv':
                     Isolated_Test = pd.read_csv(os.path.join(output_dir, project, Victim_md5, Test_md5))
                     Conflict = 0
@@ -77,6 +80,7 @@ def parse_output_dir(Gruber_Dataset):
                             update_isolated_tests(os.path.join(result_dir, 'Verdict_Isolated_Brittle.csv'),
                                                   Gruber_Metadata, Isolated_Test)
 
+                # classifying paired tests
                 else:
                     try:
                         Paired_Test = pd.read_csv(os.path.join(output_dir, project, Victim_md5, Test_md5))
