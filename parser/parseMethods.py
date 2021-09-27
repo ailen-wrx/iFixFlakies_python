@@ -7,6 +7,13 @@ dataset_dir = "../victims_brittles.csv"
 result_dir = "../parsing_result"
 
 
+def update_isolated_tests(filename, Gruber, Isolated):
+    with open(filename, 'a') as f:
+        csv.writer(f).writerow([Gruber['Project_Name'], Gruber['Project_URL'],
+                                Gruber['Project_Hash'], Isolated['id'][0],
+                                Isolated['status'][0], Gruber['Isolation']])
+
+
 def update_paired_tests(filename, Gruber, csvdata, Isolated):
     with open(filename, 'a') as f:
         csv.writer(f).writerow([Gruber['Project_Name'], Gruber['Project_URL'],
@@ -52,12 +59,23 @@ def parse_output_dir(Gruber_Dataset):
                 if Test_md5 == 'test_mapping.csv' or Test_md5 == '.DS_Store':
                     continue
 
+                Isolated_Test = ''
                 if Test_md5 == Isolation_Hash + '.csv':
                     Isolated_Test = pd.read_csv(os.path.join(output_dir, project, Victim_md5, Test_md5))
-                    with open(os.path.join(result_dir, 'Verdict_Isolated.csv'), 'a') as f:
-                        csv.writer(f).writerow([Gruber_Metadata['Project_Name'], Gruber_Metadata['Project_URL'],
-                                                Gruber_Metadata['Project_Hash'], Isolated_Test['id'][0],
-                                                Isolated_Test['status'][0], Gruber_Metadata['Isolation']])
+                    Conflict = 0
+                    if str(Gruber_Metadata['Isolation']).lower() != str(Isolated_Test['status'][0]).lower() \
+                            and Gruber_Metadata['Isolation'] != 'NotAnalysed':
+                        Conflict = 1
+                    if Conflict:
+                        update_isolated_tests(os.path.join(result_dir, 'Conflict_Verdict_Isolated.csv'),
+                                              Gruber_Metadata, Isolated_Test)
+                    else:
+                        if Isolated_Test['status'][0] == 'passed':
+                            update_isolated_tests(os.path.join(result_dir, 'Victim_Verdict_Isolated.csv'),
+                                                  Gruber_Metadata, Isolated_Test)
+                        else:
+                            update_isolated_tests(os.path.join(result_dir, 'Brittle_Verdict_Isolated.csv'),
+                                                  Gruber_Metadata, Isolated_Test)
 
                 else:
                     try:

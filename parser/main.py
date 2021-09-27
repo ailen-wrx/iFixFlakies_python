@@ -14,7 +14,13 @@ def Gruber_init():
     return Gruber
 
 
-def init_csv(fileName):
+def init_csv_for_isolated_tests(fileName):
+    with open(fileName, 'w') as f:
+        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test_id',
+                                'Script', 'Gruber'])
+
+
+def init_csv_for_paired_tests(fileName):
     with open(fileName, 'w') as f:
         csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test1', 'Message1',
                                 'Test2', 'Message2', 'Script', 'Gruber'])
@@ -25,13 +31,15 @@ def log_init():
         os.makedirs(result_dir)
     file = open(os.path.join(result_dir, 'Error.log'), 'w')
     file.close()
-    with open(os.path.join(result_dir, 'Verdict_Isolated.csv'), 'w') as f:
-        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test_id',
-                                'Script', 'Gruber'])
-    init_csv(os.path.join(result_dir, 'Pass-Fail.csv'))
-    init_csv(os.path.join(result_dir, 'Pass-Pass.csv'))
-    init_csv(os.path.join(result_dir, 'Fail-Pass.csv'))
-    init_csv(os.path.join(result_dir, 'Fail-Fail.csv'))
+
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Conflict_Verdict_Isolated.csv'))
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim_Verdict_Isolated.csv'))
+    init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle_Verdict_Isolated.csv'))
+
+    init_csv_for_paired_tests(os.path.join(result_dir, 'Pass-Fail.csv'))
+    init_csv_for_paired_tests(os.path.join(result_dir, 'Pass-Pass.csv'))
+    init_csv_for_paired_tests(os.path.join(result_dir, 'Fail-Pass.csv'))
+    init_csv_for_paired_tests(os.path.join(result_dir, 'Fail-Fail.csv'))
 
 
 log_init()
