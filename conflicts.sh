@@ -23,4 +23,5 @@ for i in $(cat $conflict | sed '1d'); do
         timeout 1000s pytest $testname --csv $output_dir/$md5/$k.csv
     done
     echo $md5,$i >> $output_dir/conflict_mapping.csv
+    deactivate
 done
