@@ -13,7 +13,7 @@ for i in $(cat $conflict | sed '1d'); do
     python3 -m venv venv
     source venv/bin/activate
     for j in $(find -name "*requirement*"); do
-	pip install -r $j
+        pip install -r $j
     done
     pip install pytest
     pip install pytest-csv

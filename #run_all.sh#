@@ -1,0 +1,5 @@
+bash clone.sh victims_brittles.csv $(pwd)/Repo
+
+bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output test_list
+
+python parser/main.py

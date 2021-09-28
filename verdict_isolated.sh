@@ -7,17 +7,12 @@ output_dir=$5
 mkdir -p $output_dir
 cd $project_dir
 victim=$(grep $module:: $test_list | grep ::$func_name | head -1)
-for i in $(grep $module:: $test_list); do
-    if [[ "$i" == "$victim" ]]; then
-        continue
-    fi
-    md5=$(echo $i,$victim | md5sum | cut -d' ' -f1)
-    timeout 1000s pytest $i $victim --csv $output_dir/$md5.csv
+for i in {1..10}; do
+    timeout 400s pytest $victim --csv $output_dir/$k.csv
     exit_status=${PIPESTATUS[0]}
     if [[ ${exit_status} -eq 124 ]] || [[ ${exit_status} -eq 137 ]]; then
-        echo $i,$victim >> $output_dir/timed_out.csv
+        echo $i >> $output_dir/timed_out.csv
         continue
     fi
 done
 cd -
-
