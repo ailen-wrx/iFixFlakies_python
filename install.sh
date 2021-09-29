@@ -6,14 +6,14 @@ output_dir=$5
 task_type=$6
 
 cd $repo_dir/$project
-
+rm -rf venv
 python3 -m venv venv
 source venv/bin/activate
 for i in $(find -maxdepth 1 -name "*requirement*"); do
-    pip install -r $i
+    pip3 install -r $i
 done
-pip install pytest
-pip install pytest-csv
+pip3 install pytest
+pip3 install pytest-csv
 
 pytest --collect-only -q > $test_list
 cd -
