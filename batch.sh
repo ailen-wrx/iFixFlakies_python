@@ -2,8 +2,9 @@ dataset=$1
 global_repo_dir=$2
 global_output_dir=$3
 test_list=$4
-zip_dest=$5
-task_type=$6
+task_type=$5
+zip_valid=$6
+zip_dest=$7
 
 echo script version: $(git rev-parse HEAD)
 
@@ -26,9 +27,11 @@ for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
     bash install.sh $global_repo_dir $i $dataset $test_list $global_output_dir $task_type
     echo $i,install>> $global_output_dir/stat.csv
 
-# when running on Azure Machine:
-    zip -rq $i.zip $global_output_dir/$i
-    sudo mv $i.zip $zip_dest/
+    # when running on Azure Machine:
+    if [[ zip_valid == 1 ]]; then
+        zip -rq $i.zip $global_output_dir/$i
+        sudo mv $i.zip $zip_dest/
+    fi
 
     cd $global_repo_dir
 done

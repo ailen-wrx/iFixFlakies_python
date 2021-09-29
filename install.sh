@@ -29,15 +29,15 @@ for i in $(grep $project, $dataset); do
     echo $Test_filename,$Test_funcname,$(date) >> $output_dir/$project/log_pytest.csv
     echo  $Test_filename,$Test_funcname,$md5 >> $output_dir/$project/victim_mapping.csv
 
-    if [ $task_type == 1 ]; then
+    if [[ $task_type == 1 ]]; then
         bash verdict_isolated.sh $Test_funcname $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
-    if [ $task_type == 2 ]; then
+    if [[ $task_type == 2 ]]; then
         bash find_polluter.sh $Test_funcname $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
-    if [ $task_type == 3 ]; then
+    if [[ $task_type == 3 ]]; then
         continue
     fi
     

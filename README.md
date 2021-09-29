@@ -39,12 +39,15 @@ curl
 
 ### Running pytest suites
 **on a single project**  
-`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/victims_brittles.csv $test_list $(pwd)/output/$task $task_type`
-`task`: isolated or polluter or cleaner  
-`task_type`  
- - 1: To run each victim in isolation to decide it is a victim or brittle;  
- - 2: To run paired tests and find polluters for each victim;  
- - 3: To run triple tests and find cleaners for each polluter-victim pair.  
+`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/victims_brittles.csv $test_list $(pwd)/output/$task $task_type`  
+  
+| task     | task_type |                                                              |
+| -------- | --------- | ------------------------------------------------------------ |
+| isolated | 1         | To run each victim in isolation to decide it is a victim or brittle; |
+| polluter | 2         | To run paired tests and find polluters for each victim;      |
+| cleaner  | 3         | To run triple tests and find cleaners for each polluter-victim pair. |
+
+
 
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:  
 ```
@@ -66,10 +69,10 @@ iFixFlakies_python / output / polluter(or isolated or cleaner)
 For each victim test detected in dataset from Gruber et al, one directory will be generated to store the test result of `pytest $test_i $victim`, where `$test_i` calls for every test function in the same test class with `victim`. If `$test_i` passes while `$victim` fails, the `$test_i` is regarded as a polluter.  
 
 **on a batch of projects**  
-`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output test_list`
-
-If a project does not exist, or the script fails run `pytest` on the project, such information wil be recorded in `stat.csv`.  
-
+`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
+`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task test_list $task_type 0 $(pwd)`
+  
+If a project does not exist, or the script fails to run `pytest` on the project, such information wil be recorded in `stat.csv`.  
 Inside `stat.csv`, there are 3 states for each project:
  - `fail_to_clone_or_project_renamed`: fail to clone the repository from GitHub, or the project is renamed.
  - `requirements_not_found`: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
