@@ -40,6 +40,7 @@ curl
 ### Running pytest suites
 **on a single project**  
 `$ bash install.sh $(pwd)/Repo $project_name $(pwd)/victims_brittles.csv $test_list $(pwd)/output/$task $task_type`  
+example: `$ bash install.sh $(pwd)/Repo abagen $(pwd)/victims_brittles.csv test_list $(pwd)/output/isolated 1`  
   
 | task     | task_type |                                                              |
 | -------- | --------- | ------------------------------------------------------------ |
@@ -69,8 +70,13 @@ iFixFlakies_python / output / polluter(or isolated or cleaner)
 For each victim test detected in dataset from Gruber et al, one directory will be generated to store the test result of `pytest $test_i $victim`, where `$test_i` calls for every test function in the same test class with `victim`. If `$test_i` passes while `$victim` fails, the `$test_i` is regarded as a polluter.  
 
 **on a batch of projects**  
-`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
-`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task test_list $task_type 0 $(pwd)`
+On our Azure server:  
+`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
+example: `$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 1 ~/compiled-projects-w-deps/pod-results/isolated`  
+
+To run locally:  
+`$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 0 $(pwd)`  
+example: `$ bash batch.sh $(pwd)/victims_brittles.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)`
   
 If a project does not exist, or the script fails to run `pytest` on the project, such information wil be recorded in `stat.csv`.  
 Inside `stat.csv`, there are 3 states for each project:
