@@ -6,65 +6,72 @@ error_log = os.path.join(result_dir, 'Error.csv')
 
 
 Gruber = Gruber_init()
+print(len(Gruber), "tests from Gruber dataset.")
 init(result_dir, error_log)
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle.csv'))
 
-for project in os.listdir(output_dir):
-    if project == 'stat.csv':
-        continue
+numrow = 0
+for key in Gruber:
+    row = Gruber[key]
+    Project = [row[0], row[1], row[2]]
+    Test_filename = row[3]
+    Test_classname = row[4]
+    Test_funcname = row[5]
+    Test_para = row[6]
+    Gruber_Isolated = row[8]
 
-    # mapping victims
+    if str(Test_filename).split('/')[-1] != (str(Test_classname).split('.')[-1] + '.py'):
+        Test_id = Test_filename + "::" + str(Test_classname).split('.')[-1] + "::" + Test_funcname + Test_para
+    else:
+        Test_id = Test_filename + "::"  + Test_funcname + Test_para
+
     Victim_Hash = {}
-    Victim_List = []
-    if not os.path.exists(os.path.join(output_dir, project, 'victim_mapping.csv')):
+    if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
         continue
-    with open(os.path.join(output_dir, project, 'victim_mapping.csv'), 'rt') as f:
-        r = csv.reader(f)
-        for row in r:
-            Victim_Info = project + '-' + row[0] + '::' + row[1]
-            if Victim_Info not in Victim_List:
-                Victim_List.append(Victim_Info)
-                Victim_Hash[row[2]] = Victim_Info
+    with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f:
+        for row in f:
+            Victim_Hash[row[:-34]] = row[-33:-1]
+    
+    try:
+        Victim_md5 = Victim_Hash[Test_id]
+    except:
+        with open(error_log, 'a') as f:
+            csv.writer(f).writerow(['NotFound', Project[0], Project[1], Project[2], Test_id])
+        continue
 
-    for Victim_md5 in os.listdir(os.path.join(output_dir, project)):
-        if Victim_md5 == 'victim_mapping.csv' or Victim_md5 == 'log_pytest.csv':
-            continue
 
-        try:
-            Gruber_Metadata = Gruber.get(Victim_Hash[Victim_md5])
-            if Gruber_Metadata == None:
-                continue
-        except:
-            continue
+    Conflict = 'False'
+    Consist = ''
+    if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
+        with open(error_log, 'a') as f:
+            csv.writer(f).writerow(['NotRun', Project[0], Project[1], Project[2], Test_id])
+        continue
 
-        Conflict = 'False'
-        Consist = ''
-        if len(os.listdir(os.path.join(output_dir, project, Victim_md5))) == 0:
+    for Test_index in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
+        if Test_index == 'timed_out.csv':
             with open(error_log, 'a') as f:
-                f.write("NotRun," + Victim_Hash[Victim_md5] + '\n')
-            continue
+                csv.writer(f).writerow(['TimedOut', Project[0], Project[1], Project[2], Test_id])
+            break
 
-        # Classifying isolated tests
-        for Test_index in os.listdir(os.path.join(output_dir, project, Victim_md5)):
-            if Test_index == 'timed_out.csv':
-                with open(error_log, 'a') as f:
-                    f.write("TimeOut," + Victim_Hash[Victim_md5] + '\n')
-                break
+        Isolated_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_index))
+        if str(Gruber_Isolated).lower() != str(Isolated_Test['status'][0]).lower() and Gruber_Isolated != 'NotAnalysed':
+            Conflict = 'True'
+        if Consist == '':
+            Consist = Isolated_Test['status'][0]
+        elif Consist != Isolated_Test['status'][0]:
+            update_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'), Project, Isolated_Test, [Consist, Isolated_Test['status'][0]])
+            break
 
-            Isolated_Test = pd.read_csv(os.path.join(output_dir, project, Victim_md5, Test_index))
-            if str(Gruber_Metadata['Isolation']).lower() != str(Isolated_Test['status'][0]).lower() \
-                    and Gruber_Metadata['Isolation'] != 'NotAnalysed':
-                Conflict = 'True'
-            if Consist == '':
-                Consist = Isolated_Test['status'][0]
-            elif Consist != Isolated_Test['status'][0]:
-                update_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'), Gruber_Metadata, Isolated_Test, [Consist, Isolated_Test['status'][0]])
-                break
+    if Isolated_Test['status'][0] == 'passed':
+        update_isolated_tests(os.path.join(result_dir, 'Victim.csv'), Project, Isolated_Test, [Consist, Conflict])
+    else:
+        update_isolated_tests(os.path.join(result_dir, 'Brittle.csv'), Project, Isolated_Test, [Consist, Conflict])
 
-        if Isolated_Test['status'][0] == 'passed':
-            update_isolated_tests(os.path.join(result_dir, 'Victim.csv'), Gruber_Metadata, Isolated_Test, [Consist, Conflict])
-        else:
-            update_isolated_tests(os.path.join(result_dir, 'Brittle.csv'), Gruber_Metadata, Isolated_Test, [Consist, Conflict])
+    numrow = numrow + 1
+    print("\rValidating tests from Gruber dataset: %.2f %%" % (numrow * 100 / len(Gruber)), end="")
+print("\rValidating tests from Gruber dataset: %.2f %%" % (100))
+
+
 
