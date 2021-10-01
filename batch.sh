@@ -28,8 +28,10 @@ for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
     echo $i,install>> $global_output_dir/stat.csv
 
     # when running on Azure Machine:
-    if [[ zip_valid == 1 ]]; then
+    if [[ $zip_valid == 1 ]]; then
         zip -rq $i.zip $global_output_dir/$i
+        sudo mkdir -p $zip_dest
+        sudo rm $zip_dest/$i.zip
         sudo mv $i.zip $zip_dest/
     fi
 

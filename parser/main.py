@@ -16,14 +16,12 @@ def Gruber_init():
 
 def init_csv_for_isolated_tests(fileName):
     with open(fileName, 'w') as f:
-        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test_id',
-                                'Script', 'Gruber'])
+        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test_id', 'Script', 'Gruber'])
 
 
 def init_csv_for_paired_tests(fileName):
     with open(fileName, 'w') as f:
-        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test1', 'Message1',
-                                'Test2', 'Message2', 'Script', 'Gruber'])
+        csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test1', 'Message1', 'Test2', 'Message2', 'Script', 'Gruber'])
 
 
 def log_init():
