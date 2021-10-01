@@ -25,16 +25,27 @@ for i in $(grep $project, $dataset); do
     Test_classname=$(echo $i | cut -d, -f5)
     Test_funcname=$(echo $i | cut -d, -f6)
     Test_parametrization=$(echo $i | cut -d, -f7)
+
+    if [[ $Test_parametrization == '' ]]; then
+        victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | sort | head -1)
+    else
+        victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | grep $Test_parametrization | sort | head -1)
+    fi
+
+    if [[ -z "$victim" ]]; then
+        continue
+    fi
+
     md5=$(echo $i | md5sum | cut -d' ' -f1)
-    echo $Test_filename,$Test_funcname,$(date) >> $output_dir/$project/log_pytest.csv
-    echo  $Test_filename,$Test_funcname,$md5 >> $output_dir/$project/victim_mapping.csv
+    echo $victim,$(date) >> $output_dir/$project/log_pytest.csv
+    echo $victim,$md5 >> $output_dir/$project/victim_mapping.csv
 
     if [[ $task_type == 1 ]]; then
-        bash verdict_isolated.sh $Test_funcname $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
+        bash verdict_isolated.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
     if [[ $task_type == 2 ]]; then
-        bash find_polluter.sh $Test_funcname $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
+        bash find_polluter.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
     if [[ $task_type == 3 ]]; then
