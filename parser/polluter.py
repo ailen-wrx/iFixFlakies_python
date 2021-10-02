@@ -35,14 +35,15 @@ def update(victim_or_brittle):
                 Victim_md5 = Victim_Hash[Test_id]
             except:
                 with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotFound', Project[0], Project[1], Project[2], Test_id])
+                    csv.writer(f).writerow(['NotFound', Project[0], Test_id])
                 continue
 
             count = 0
             if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
                 with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotRun', Project[0], Project[1], Project[2], Test_id])
+                    csv.writer(f).writerow(['NotRun', Project[0], Test_id])
                 continue
+                
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
                 try:
                     Paired_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_md5))
@@ -54,11 +55,11 @@ def update(victim_or_brittle):
                         update_paired_tests(result_csv, Project, Paired_Test, Conflict)
                 except:
                     with open(error_log, 'a') as f:
-                        csv.writer(f).writerow(['ERROR', Project[0], Project[1], Project[2], Test_id])
+                        csv.writer(f).writerow(['ERROR', Project[0], Test_id])
                     continue
             update_stat_for_paired_tests(stat_csv, Project, Test_id, count, Conflict)
-        print("\r%s %.2f %%" % (Info, numrow * 100 / total), end="")
-    print("\r%s %.2f %%" % (Info, 100))
+        print("\r%s %d / %d" % (Info, numrow, total), end="")
+    print("\r%s %d / %d" % (Info, numrow, total))
 
 update("Brittle")
 update("Victim")

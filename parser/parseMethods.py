@@ -4,13 +4,14 @@ import pandas as pd
 import os
 
 dataset_dir = "../victims_brittles.csv"
+dataset_amended = "../victims_brittles_amended.csv"
 
 
 def init(resultDir, ErrorLog):
     if not os.path.exists(resultDir):
         os.makedirs(resultDir)
     with open(ErrorLog, 'w') as f:
-        csv.writer(f).writerow(['ERROR', 'Project_Name', 'Project_URL', 'Project_Hash', 'Test_id',])
+        csv.writer(f).writerow(['ErrorType','Project_Name','Test_id'])
 
 def init_csv_for_isolated_tests(fileName):
     with open(fileName, 'w') as f:
@@ -55,7 +56,7 @@ def update_triple_tests():
 
 def Gruber_init():
     Gruber = dict()
-    with open(dataset_dir, 'rt') as f:
+    with open(dataset_amended, 'rt') as f:
         r = csv.reader(f)
         for row in r:
             project = row[0]
@@ -64,8 +65,8 @@ def Gruber_init():
             Test_funcname = row[5]
             Test_para = row[6]
 
-            if str(Test_filename).split('/')[-1] != (str(Test_classname).split('.')[-1] + '.py'):
-                Test_id = Test_filename + "::" + str(Test_classname).split('.')[-1] + "::" + Test_funcname + Test_para
+            if Test_classname != '':
+                Test_id = Test_filename + "::" + Test_classname + "::" + Test_funcname + Test_para
             else:
                 Test_id = Test_filename + "::"  + Test_funcname + Test_para
             
