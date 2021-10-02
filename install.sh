@@ -26,10 +26,18 @@ for i in $(grep $project, $dataset); do
     Test_funcname=$(echo $i | cut -d, -f6)
     Test_parametrization=$(echo $i | cut -d, -f7)
 
-    if [[ $Test_parametrization == '' ]]; then
-        victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | sort | head -1)
+    if [[ $Test_classname == '' ]]; then 
+        if [[ $Test_parametrization == '' ]]; then
+            victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | sort | head -1)
+        else
+            victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | grep -F $Test_parametrization | sort | head -1)
+        fi
     else
-        victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_funcname | grep $Test_parametrization | sort | head -1)
+        if [[ $Test_parametrization == '' ]]; then
+            victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_classname | grep ::$Test_funcname | sort | head -1)
+        else
+            victim=$(grep $Test_filename:: $repo_dir/$project/$test_list | grep ::$Test_classname | grep ::$Test_funcname | grep -F $Test_parametrization | sort | head -1)
+        fi
     fi
 
     if [[ -z "$victim" ]]; then
