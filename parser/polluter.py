@@ -19,10 +19,10 @@ def update(victim_or_brittle):
     init_stat_csv_for_paired_tests(stat_csv)
     total = sum(1 for line in open(test_list))
     with open(test_list, 'rt') as f:
-        numrow = 0
+        num_row, num_not_none = 0, 0
         r = csv.reader(f)
         for row in r:
-            numrow = numrow + 1
+            num_row += 1
             Project, Test_id, Conflict = [row[0], row[1], row[2]], row[3], row[5]
             Victim_Hash = {}
             if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
@@ -43,14 +43,14 @@ def update(victim_or_brittle):
                 with open(error_log, 'a') as f:
                     csv.writer(f).writerow(['NotRun', Project[0], Test_id])
                 continue
-                
+
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
                 try:
                     Paired_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_md5))
                     if victim_or_brittle == "Brittle" and Paired_Test['status'][0] == 'passed' and Paired_Test['status'][1] == 'passed':
                         count = count + 1
                         update_paired_tests(result_csv, Project, Paired_Test, Conflict)
-                    if victim_or_brittle == "Victim" and Paired_Test['status'][0] == 'passed' and Paired_Test['status'][1] != 'passed':
+                    if victim_or_brittle == "Victim" and Paired_Test['status'][1] != 'passed':
                         count = count + 1
                         update_paired_tests(result_csv, Project, Paired_Test, Conflict)
                 except:
@@ -58,8 +58,16 @@ def update(victim_or_brittle):
                         csv.writer(f).writerow(['ERROR', Project[0], Test_id])
                     continue
             update_stat_for_paired_tests(stat_csv, Project, Test_id, count, Conflict)
-        print("\r%s %d / %d" % (Info, numrow, total), end="")
-    print("\r%s %d / %d" % (Info, numrow, total))
+            if count != 0:
+                num_not_none += 1
+            print("\r%s %d / %d" % (Info, num_row, total-1), end="")
+        print("\r%s %d / %d" % (Info, num_row-1, total-1))
+
+    print("---------------------------------   Summary   ---------------------------------")
+    print("%d OD tests are suspected-%s" % (total-1, "brittles" if victim_or_brittle == "Brittle" else "victims"))
+    print("    %d are not %s (have no %s)" % (total-1-num_not_none, "brittles" if victim_or_brittle == "Brittle" else "victims", \
+                                              "state-setter" if victim_or_brittle == "Brittle" else "polluter"))
+    print("    %d have at least 1 %s (see datailed stat in %s)" % (num_not_none, "state-setters" if victim_or_brittle == "Brittle" else "polluters", stat_csv))
 
 update("Brittle")
 update("Victim")

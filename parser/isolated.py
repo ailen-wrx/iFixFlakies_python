@@ -3,7 +3,7 @@ from parseMethods import *
 output_dir = "../output/isolated"
 result_dir = "../parsing_result/isolated"
 error_log = os.path.join(result_dir, 'Error.csv')
-
+project_not_found = "../victims_brittles_tbd.csv"
 
 Gruber = Gruber_init()
 init(result_dir, error_log)
@@ -11,7 +11,10 @@ init_csv_for_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle.csv'))
 
-num_row = 0
+with open(project_not_found, 'w') as f:
+    csv.writer(f).writerow(['Project_Name','Project_URL','Project_Hash','Test_filename','Test_classname','Test_funcname','Test_parametrization','Order-dependent','Verdict_Isolated','Verdict_OriginalOrder'])
+
+num_row, num_found = 0, 0
 num_inconsistency, num_match, num_unmatch = 0, 0, 0
 for key in Gruber:
     num_row += 1
@@ -31,22 +34,24 @@ for key in Gruber:
 
     Victim_Hash = {}
     if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
+        with open(project_not_found, 'a') as f:
+            csv.writer(f).writerow(row)
         continue
     with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f:
         for row1 in f:
             Victim_Hash[row1[:-34]] = row1[-33:-1]
-    
+    num_found += 1
     try:
         Victim_md5 = Victim_Hash[Test_id]
     except:
         with open(error_log, 'a') as f:
-            csv.writer(f).writerow(['NotFound', Project[0], Test_id])
+            csv.writer(f).writerow(['TestNotFound', Project[0], Test_id])
         continue
 
 
     Conflict = 'False'
     Consist = ''
-    if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
+    if not os.path.exists(os.path.join(output_dir, Project[0], Victim_md5)) or len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
         with open(error_log, 'a') as f:
             csv.writer(f).writerow(['NotRun', Project[0], Test_id])
         continue
@@ -57,7 +62,11 @@ for key in Gruber:
                 csv.writer(f).writerow(['TimedOut', Project[0], Test_id])
             break
 
-        Isolated_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_index))
+        try: 
+            Isolated_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_index))
+        except:
+            print("\n"+Test_id)
+            continue
         if str(Gruber_Isolated).lower() != str(Isolated_Test['status'][0]).lower() and Gruber_Isolated != 'NotAnalysed':
             Conflict = 'True'
         if Consist == '':
@@ -82,7 +91,9 @@ print("\rValidating tests from Gruber dataset: %d / %d" % (num_row, len(Gruber))
 
 print("---------------------------------   Summary   ---------------------------------")
 print("%d OD tests in Gruber et al.'s dataset" % (len(Gruber)))
-print("%d OD tests did not compile" % (len(Gruber) - num_inconsistency - num_match - num_unmatch))
+print("%d OD tests are not successfully cloned and run: check ../victims_brittles_tbd.csv" % (len(Gruber) - num_found))
+print("%d OD tests are successfully cloned and run" % (num_found))
+print("    %d OD tests did not compile" % (num_found - num_inconsistency - num_match - num_unmatch))
 print("    %d OD tests compiled" % (num_inconsistency + num_match + num_unmatch))
 print("        %d OD tests do not get the same result when run 10 times in isolation" % (num_inconsistency))
 print("        %d OD tests always get the same result when run 10 times" % (num_match + num_unmatch))
