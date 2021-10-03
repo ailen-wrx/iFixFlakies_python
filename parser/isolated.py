@@ -12,7 +12,8 @@ init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle.csv'))
 
 with open(project_not_found, 'w') as f:
-    csv.writer(f).writerow(['Project_Name','Project_URL','Project_Hash','Test_filename','Test_classname','Test_funcname','Test_parametrization','Order-dependent','Verdict_Isolated','Verdict_OriginalOrder'])
+    csv.writer(f).writerow(['Project_Name','Project_URL','Project_Hash','Test_filename','Test_classname','Test_funcname',
+                            'Test_parametrization','Order-dependent','Verdict_Isolated','Verdict_OriginalOrder'])
 
 num_row, num_found = 0, 0
 num_inconsistency, num_match, num_unmatch = 0, 0, 0
@@ -20,7 +21,7 @@ for key in Gruber:
     num_row += 1
 
     row = Gruber[key]
-    Project = [row[0], row[1], row[2]]
+    Project = [row[0], row[1], row[2], row[3]]
     Test_filename = row[3]
     Test_classname = row[4]
     Test_funcname = row[5]
@@ -45,7 +46,7 @@ for key in Gruber:
         Victim_md5 = Victim_Hash[Test_id]
     except:
         with open(error_log, 'a') as f:
-            csv.writer(f).writerow(['TestNotFound', Project[0], Test_id])
+            csv.writer(f).writerow(['TestNotFound', Project[0], Project[3], Test_id])
         continue
 
 
@@ -53,13 +54,13 @@ for key in Gruber:
     Consist = ''
     if not os.path.exists(os.path.join(output_dir, Project[0], Victim_md5)) or len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
         with open(error_log, 'a') as f:
-            csv.writer(f).writerow(['NotRun', Project[0], Test_id])
+            csv.writer(f).writerow(['NotRun', Project[0], Project[3], Test_id])
         continue
 
     for Test_index in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
         if Test_index == 'timed_out.csv':
             with open(error_log, 'a') as f:
-                csv.writer(f).writerow(['TimedOut', Project[0], Test_id])
+                csv.writer(f).writerow(['TimedOut', Project[0], Project[3], Test_id])
             break
 
         try: 

@@ -23,7 +23,7 @@ def update(victim_or_brittle):
         r = csv.reader(f)
         for row in r:
             num_row += 1
-            Project, Test_id, Conflict = [row[0], row[1], row[2]], row[3], row[5]
+            Project, Test_id, Conflict = [row[0], row[1], row[2], row[3]], row[4], row[6]
             Victim_Hash = {}
             if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
                 continue
@@ -35,13 +35,13 @@ def update(victim_or_brittle):
                 Victim_md5 = Victim_Hash[Test_id]
             except:
                 with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotFound', Project[0], Test_id])
+                    csv.writer(f).writerow(['NotFound', Project[0], Project[3], Test_id])
                 continue
 
             count = 0
             if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
                 with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotRun', Project[0], Test_id])
+                    csv.writer(f).writerow(['NotRun', Project[0], Project[3], Test_id])
                 continue
 
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
@@ -55,7 +55,7 @@ def update(victim_or_brittle):
                         update_paired_tests(result_csv, Project, Paired_Test, Conflict)
                 except:
                     with open(error_log, 'a') as f:
-                        csv.writer(f).writerow(['ERROR', Project[0], Test_id])
+                        csv.writer(f).writerow(['ERROR', Project[0], Project[3], Test_id])
                     continue
             update_stat_for_paired_tests(stat_csv, Project, Test_id, count, Conflict)
             if count != 0:
@@ -67,7 +67,8 @@ def update(victim_or_brittle):
     print("%d OD tests are suspected-%s" % (total-1, "brittles" if victim_or_brittle == "Brittle" else "victims"))
     print("    %d are not %s (have no %s)" % (total-1-num_not_none, "brittles" if victim_or_brittle == "Brittle" else "victims", \
                                               "state-setter" if victim_or_brittle == "Brittle" else "polluter"))
-    print("    %d have at least 1 %s (see datailed stat in %s)" % (num_not_none, "state-setters" if victim_or_brittle == "Brittle" else "polluters", stat_csv))
+    print("    %d have at least 1 %s" % (num_not_none, "state-setters" if victim_or_brittle == "Brittle" else "polluters"))
+    print("    Check datailed stat in %s" % (stat_csv))
 
 update("Brittle")
 update("Victim")
