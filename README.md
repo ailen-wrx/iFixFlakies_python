@@ -45,11 +45,11 @@ The dataset from Gruber et al. has various flaws, for which we introduced a proc
 ```
 python3 parser/dataset_patch.py
 ```
-It is recommended to use `victims_brittles_amended.csv` instead in the following operations.
+It is recommended to use `dataset_amended.csv` instead in the following operations.
 
 ### Cloning projects
 ```
-$ bash clone.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo
+$ bash clone.sh $(pwd)/dataset_amended.csv $(pwd)/Repo
 ```  
 608 projects will be cloned under direcroty `Repo`, as well as switching to current SHA.  
 
@@ -62,12 +62,11 @@ $ bash clone.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo
 
 
 **on a single project**  
-`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/victims_brittles_amended.csv $test_list $(pwd)/output/$task $task_type`  
+`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/dataset_amended.csv $test_list $(pwd)/output/$task $task_type`  
 example:   
 ```
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/victims_brittles_amended.csv test_list $(pwd)/output/isolated 1
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/victims_brittles_amended.csv test_list $(pwd)/output/polluter 2
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/victims_brittles_amended.csv test_list $(pwd)/output/cleaner  3
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/isolated 1
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/polluter 2
 ```  
   
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:  
@@ -121,19 +120,20 @@ Inside each MD5sum-named directory, the raw data varies depending on different t
 
 **on a batch of projects**  
 On our Azure server:  
-`$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
+`$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
 example:   
 ```
-$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 1 ~/compiled-projects-w-deps/pod-results/isolated
-$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 1 ~/compiled-projects-w-deps/pod-results/polluter
-$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/cleaner  test_list 3 1 ~/compiled-projects-w-deps/pod-results/cleaner
+$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 1 ~/compiled-projects-w-deps/pod-results/isolated
+$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 1 ~/compiled-projects-w-deps/pod-results/polluter
+$ bash find_cleaner.sh $(pwd)/parsing_result/polluter/polluter-potential.csv $(pwd)/Repo $(pwd)/output/cleaner/ 1 ~/compiled-projects-w-deps/pod-results/cleaner
 ```  
 
 To run locally:  
-`$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 0 $(pwd)`  
+`$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 0 $(pwd)`  
 example: 
 ```
-$ bash batch.sh $(pwd)/victims_brittles_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)`
+$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)
+$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0 $(pwd)
 ```
   
 If a project does not exist, or the script fails to run `pytest` on the project, such information wil be recorded in `stat.csv`.  

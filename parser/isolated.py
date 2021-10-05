@@ -1,9 +1,11 @@
 from parseMethods import *
 
-output_dir = "../output/isolated"
+output_dir = "../output_archived/isolated"
 result_dir = "../parsing_result/isolated"
 error_log = os.path.join(result_dir, 'Error.csv')
-project_not_found = "../victims_brittles_tbd.csv"
+
+projects_not_tun = os.path.join(result_dir, 'projects_not_tun.csv')
+tests_not_tun = os.path.join(result_dir, 'tests_not_run.csv')
 
 Gruber = Gruber_init()
 init(result_dir, error_log)
@@ -11,12 +13,15 @@ init_csv_for_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle.csv'))
 
-with open(project_not_found, 'w') as f:
-    csv.writer(f).writerow(['Project_Name','Project_URL','Project_Hash','Test_filename','Test_classname','Test_funcname',
-                            'Test_parametrization','Order-dependent','Verdict_Isolated','Verdict_OriginalOrder'])
+f = open(projects_not_tun, 'w')
+f.close()
+f = open(tests_not_tun, 'w')
+f.close()
 
-num_row, num_found = 0, 0
+
+num_row, num_found, num_project_not_run, num_test_not_run = 0, 0, 0, 0
 num_inconsistency, num_match, num_unmatch = 0, 0, 0
+
 for key in Gruber:
     num_row += 1
 
@@ -34,8 +39,11 @@ for key in Gruber:
         Test_id = Test_filename + "::"  + Test_funcname + Test_para
 
     Victim_Hash = {}
+    if not os.path.exists(os.path.join(output_dir, Project[0])):
+        continue
     if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
-        with open(project_not_found, 'a') as f:
+        num_project_not_run += 1
+        with open(projects_not_tun, 'a') as f:
             csv.writer(f).writerow(row)
         continue
     with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f:
@@ -45,8 +53,9 @@ for key in Gruber:
     try:
         Victim_md5 = Victim_Hash[Test_id]
     except:
-        with open(error_log, 'a') as f:
-            csv.writer(f).writerow(['TestNotFound', Project[0], Project[3], Test_id])
+        num_test_not_run += 1
+        with open(tests_not_tun, 'a') as f:
+            csv.writer(f).writerow(row)
         continue
 
 
@@ -73,7 +82,7 @@ for key in Gruber:
         if Consist == '':
             Consist = Isolated_Test['status'][0]
         elif Consist != Isolated_Test['status'][0]:
-            update_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'), Project, Isolated_Test, [Consist, Isolated_Test['status'][0]])
+            update_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'), Project, Test_id, [Consist, Isolated_Test['status'][0]])
             num_inconsistency += 1
             break
 
@@ -83,18 +92,20 @@ for key in Gruber:
         num_match += 1
 
     if Isolated_Test['status'][0] == 'passed':
-        update_isolated_tests(os.path.join(result_dir, 'Victim.csv'), Project, Isolated_Test, [Consist, Conflict])
+        update_isolated_tests(os.path.join(result_dir, 'Victim.csv'), Project, Test_id, [Consist, Conflict])
     else:
-        update_isolated_tests(os.path.join(result_dir, 'Brittle.csv'), Project, Isolated_Test, [Consist, Conflict])
+        update_isolated_tests(os.path.join(result_dir, 'Brittle.csv'), Project, Test_id, [Consist, Conflict])
 
     print("\rValidating tests from Gruber dataset: %d / %d" % (num_row, len(Gruber)), end="")
 print("\rValidating tests from Gruber dataset: %d / %d" % (num_row, len(Gruber)))
 
 print("---------------------------------   Summary   ---------------------------------")
 print("%d OD tests in Gruber et al.'s dataset" % (len(Gruber)))
-print("%d OD tests are not successfully cloned and run: check ../victims_brittles_tbd.csv" % (len(Gruber) - num_found))
+print("%d OD tests are not successfully cloned and run" % (num_project_not_run + num_test_not_run))
+print("    %d OD tests in projects not associated: check %s" % (num_project_not_run, projects_not_tun))
+print("    %d OD tests failed to fetch with pytest: check %s" % (num_test_not_run, tests_not_tun))
 print("%d OD tests are successfully cloned and run" % (num_found))
-print("    %d OD tests did not compile" % (num_found - num_inconsistency - num_match - num_unmatch))
+print("    %d OD tests did not compile: check %s" % (num_found - num_inconsistency - num_match - num_unmatch, error_log))
 print("    %d OD tests compiled" % (num_inconsistency + num_match + num_unmatch))
 print("        %d OD tests do not get the same result when run 10 times in isolation" % (num_inconsistency))
 print("        %d OD tests always get the same result when run 10 times" % (num_match + num_unmatch))

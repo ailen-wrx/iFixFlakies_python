@@ -1,5 +1,8 @@
 /Repo/
+/Repo_archived/
 /output/
+/output_archived/
+log_clone
 log_install
 *~
 #*

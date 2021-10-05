@@ -17,8 +17,8 @@ pip3 install pytest-csv
 
 pytest --collect-only -q > $test_list
 cd -
-rm -rf $output_dir/$project
-mkdir -p $output_dir/$project
+#rm -rf $output_dir/$project
+#mkdir -p $output_dir/$project
 
 for i in $(grep $project, $dataset); do
     Test_filename=$(echo $i | cut -d, -f4)
@@ -56,10 +56,9 @@ for i in $(grep $project, $dataset); do
         bash find_polluter.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
-    if [[ $task_type == 3 ]]; then
-        continue
-    fi
-    
 done
 deactivate
 rm -rf $repo_dir/$project/venv
+
+rm -rf ~/.cache/pip/http
+rm -rf ~/.danlp/

@@ -1,14 +1,18 @@
 from parseMethods import *
 import sys
 
-output_dir = "../output/polluter"
+output_dir = "../output_archived/polluter"
 victim_brittle="../parsing_result/isolated"
 result_dir = "../parsing_result/polluter"
 error_log = os.path.join(result_dir, 'Error.csv')
 
+polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')
 
 Gruber = Gruber_init()
 init(result_dir, error_log)
+
+f = open(polluter_to_detect, 'w')
+f.close()
 
 def update(victim_or_brittle):
     test_list = os.path.join(victim_brittle, 'Brittle.csv') if victim_or_brittle == "Brittle" else os.path.join(victim_brittle, 'Victim.csv')
@@ -17,15 +21,24 @@ def update(victim_or_brittle):
     Info = "Detecting state-setters for brittles: " if victim_or_brittle == "Brittle" else "Detecting polluters for victims: "
     init_csv_for_paired_tests(result_csv)
     init_stat_csv_for_paired_tests(stat_csv)
-    total = sum(1 for line in open(test_list))
+    total = sum(1 for line in open(test_list)) - 1
     with open(test_list, 'rt') as f:
-        num_row, num_not_none = 0, 0
+        num_row, num_valid, num_not_none = 0, 0, 0
         r = csv.reader(f)
         for row in r:
-            num_row += 1
             Project, Test_id, Conflict = [row[0], row[1], row[2], row[3]], row[4], row[6]
+
+            if Project[0] == "Project_Name":
+                continue
+
+            Gruber_key = Project[0]+'$'+Test_id
+            Gruber_row = Gruber[Gruber_key]
+
+            num_row += 1
             Victim_Hash = {}
             if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
+                with open(polluter_to_detect, 'a') as f:
+                    csv.writer(f).writerow(Gruber_row)
                 continue
             with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f1:
                 for row1 in f1:
@@ -34,14 +47,15 @@ def update(victim_or_brittle):
             try:
                 Victim_md5 = Victim_Hash[Test_id]
             except:
-                with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotFound', Project[0], Project[3], Test_id])
+                with open(polluter_to_detect, 'a') as f:
+                    csv.writer(f).writerow(Gruber_row)
                 continue
 
+            num_valid += 1
             count = 0
             if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
                 with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['NotRun', Project[0], Project[3], Test_id])
+                    csv.writer(f).writerow(['TestNotRun', Project[0], Project[3], Test_id])
                 continue
 
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
@@ -60,12 +74,14 @@ def update(victim_or_brittle):
             update_stat_for_paired_tests(stat_csv, Project, Test_id, count, Conflict)
             if count != 0:
                 num_not_none += 1
-            print("\r%s %d / %d" % (Info, num_row, total-1), end="")
-        print("\r%s %d / %d" % (Info, num_row-1, total-1))
+            print("\r%s %d / %d" % (Info, num_row, total), end="")
+        print("\r%s %d / %d" % (Info, num_row, total))
 
     print("---------------------------------   Summary   ---------------------------------")
-    print("%d OD tests are suspected-%s" % (total-1, "brittles" if victim_or_brittle == "Brittle" else "victims"))
-    print("    %d are not %s (have no %s)" % (total-1-num_not_none, "brittles" if victim_or_brittle == "Brittle" else "victims", \
+    print("%d OD tests are suspected-%s" % (total, "brittles" if victim_or_brittle == "Brittle" else "victims"))
+    print("%d OD tests are not run by the script: check %s" % (total - num_valid, polluter_to_detect))
+    print("%d OD tests are successfully run by the script" % (num_valid))
+    print("    %d are not %s (have no %s)" % (num_valid-num_not_none, "brittles" if victim_or_brittle == "Brittle" else "victims", \
                                               "state-setter" if victim_or_brittle == "Brittle" else "polluter"))
     print("    %d have at least 1 %s" % (num_not_none, "state-setters" if victim_or_brittle == "Brittle" else "polluters"))
     print("    Check datailed stat in %s" % (stat_csv))

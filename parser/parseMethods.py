@@ -4,7 +4,7 @@ import pandas as pd
 import os
 
 dataset_dir = "../victims_brittles.csv"
-dataset_amended = "../victims_brittles_amended.csv"
+dataset_amended = "../dataset_amended.csv"
 
 
 def init(resultDir, ErrorLog):
@@ -34,10 +34,10 @@ def init_csv_for_triple_tests(fileName):
         csv.writer(f).writerow(['Project_Name', 'Project_URL', 'Project_Hash', 'Test_filename',
                                 'Test1', 'Test2', 'Test3'])
 
-def update_isolated_tests(filename, Project, Isolated, TestType):
+def update_isolated_tests(filename, Project, Test_id, TestType):
     with open(filename, 'a') as f:
         csv.writer(f).writerow([Project[0], Project[1], Project[2],
-                                Project[3], Isolated['id'][0],
+                                Project[3], Test_id,
                                 TestType[0], TestType[1]])
 
 def update_paired_tests(filename, Project, csvdata, TestType):

@@ -11,7 +11,7 @@ echo script version: $(git rev-parse HEAD)
 base_dir=$(pwd)
 mkdir -p $global_output_dir
 cd $global_repo_dir
-rm $global_output_dir/stat.csv
+#rm $global_output_dir/stat.csv
 for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
     if [[ ! -d "$i" ]]; then
         echo $i,fail_to_clone_or_project_renamed >> $global_output_dir/stat.csv
