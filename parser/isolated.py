@@ -1,11 +1,12 @@
 from parseMethods import *
 
-output_dir = "../output_archived/isolated"
+output_dir = "../output/isolated"
 result_dir = "../parsing_result/isolated"
 error_log = os.path.join(result_dir, 'Error.csv')
 
-projects_not_tun = os.path.join(result_dir, 'projects_not_tun.csv')
-tests_not_tun = os.path.join(result_dir, 'tests_not_run.csv')
+projects_not_run = os.path.join(result_dir, 'projects_not_run.csv')
+projects_not_found = os.path.join(result_dir, 'projects_not_found.csv')
+tests_not_run = os.path.join(result_dir, 'tests_not_run.csv')
 
 Gruber = Gruber_init()
 init(result_dir, error_log)
@@ -13,13 +14,15 @@ init_csv_for_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Brittle.csv'))
 
-f = open(projects_not_tun, 'w')
+f = open(projects_not_run, 'w')
 f.close()
-f = open(tests_not_tun, 'w')
+f = open(projects_not_found, 'w')
+f.close()
+f = open(tests_not_run, 'w')
 f.close()
 
 
-num_row, num_found, num_project_not_run, num_test_not_run = 0, 0, 0, 0
+num_row, num_found, num_project_not_run, num_test_not_run, num_project_not_found = 0, 0, 0, 0, 0
 num_inconsistency, num_match, num_unmatch = 0, 0, 0
 
 for key in Gruber:
@@ -40,24 +43,28 @@ for key in Gruber:
 
     Victim_Hash = {}
     if not os.path.exists(os.path.join(output_dir, Project[0])):
+        num_project_not_found += 1
+        with open(projects_not_found, 'a') as f:
+            csv.writer(f).writerow(row)
         continue
     if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
         num_project_not_run += 1
-        with open(projects_not_tun, 'a') as f:
+        with open(projects_not_run, 'a') as f:
             csv.writer(f).writerow(row)
         continue
     with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f:
         for row1 in f:
             Victim_Hash[row1[:-34]] = row1[-33:-1]
-    num_found += 1
+
     try:
         Victim_md5 = Victim_Hash[Test_id]
     except:
         num_test_not_run += 1
-        with open(tests_not_tun, 'a') as f:
+        with open(tests_not_run, 'a') as f:
             csv.writer(f).writerow(row)
         continue
 
+    num_found += 1
 
     Conflict = 'False'
     Consist = ''
@@ -101,9 +108,10 @@ print("\rValidating tests from Gruber dataset: %d / %d" % (num_row, len(Gruber))
 
 print("---------------------------------   Summary   ---------------------------------")
 print("%d OD tests in Gruber et al.'s dataset" % (len(Gruber)))
-print("%d OD tests are not successfully cloned and run" % (num_project_not_run + num_test_not_run))
-print("    %d OD tests in projects not associated: check %s" % (num_project_not_run, projects_not_tun))
-print("    %d OD tests failed to fetch with pytest: check %s" % (num_test_not_run, tests_not_tun))
+print("%d OD tests are not successfully cloned and run" % (num_project_not_run + num_test_not_run + num_project_not_found))
+print("    %d OD tests in projects without 'requirements.txt': check %s" % (num_project_not_found, projects_not_found))
+print("    %d OD tests in projects failed to collect tests: check %s" % (num_project_not_run, projects_not_run))
+print("    %d OD tests failed to fetch with pytest: check %s" % (num_test_not_run, tests_not_run))
 print("%d OD tests are successfully cloned and run" % (num_found))
 print("    %d OD tests did not compile: check %s" % (num_found - num_inconsistency - num_match - num_unmatch, error_log))
 print("    %d OD tests compiled" % (num_inconsistency + num_match + num_unmatch))
