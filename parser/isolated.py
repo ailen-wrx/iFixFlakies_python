@@ -1,6 +1,6 @@
 from parseMethods import *
 
-output_dir = "../output/isolated"
+output_dir = "../output_archived/isolated"
 result_dir = "../parsing_result/isolated"
 error_log = os.path.join(result_dir, 'Error.csv')
 

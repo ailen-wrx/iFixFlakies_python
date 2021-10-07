@@ -14,13 +14,7 @@ cd $global_repo_dir
 #rm $global_output_dir/stat.csv
 for i in $(cut -d, -f1 $dataset | uniq | sed '1d'); do
     if [[ ! -d "$i" ]]; then
-        echo $i,fail_to_clone_or_project_renamed >> $global_output_dir/stat.csv
-        continue
-    fi
-    cd $global_repo_dir/$i
-    if [[ ! -n "$(find -maxdepth 1 -name "*requirement*")" ]]; then
-        echo $i,requirements_not_found >> $global_output_dir/stat.csv
-        cd $global_repo_dir
+        echo $i,fail_to_clone >> $global_output_dir/stat.csv
         continue
     fi
     cd $base_dir
