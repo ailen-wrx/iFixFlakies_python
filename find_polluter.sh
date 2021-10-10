@@ -11,7 +11,7 @@ for i in $(grep $module:: $test_list); do
         continue
     fi
     md5=$(echo $i,$victim | md5sum | cut -d' ' -f1)
-    timeout 1000s pytest $i $victim --csv $output_dir/$md5.csv
+    timeout 1000s python -m pytest $i $victim --csv $output_dir/$md5.csv
     exit_status=${PIPESTATUS[0]}
     if [[ ${exit_status} -eq 124 ]] || [[ ${exit_status} -eq 137 ]]; then
         echo $i,$victim >> $output_dir/timed_out.csv

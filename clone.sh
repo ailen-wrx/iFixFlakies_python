@@ -13,12 +13,7 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     echo cloning $project starttime: $(date) >> log_clone
 
     cd $repo_dir
-    echo "" > new-t
     git clone $url --depth=1
-    latest_name=$(find . -mindepth 1 -maxdepth 1 -newer new-t | rev | cut -d'/' -f1 | rev)
-    
-    echo $latest_name
-    echo $project,$latest_name >> $base_url/latest_repo_dirs.csv
 
     cd $repo_dir/$project
     sha=$(grep $project, $dataset | cut -d, -f3 | head -1)
@@ -26,6 +21,28 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     git remote set-branches origin $sha
     git fetch --depth 1 origin $sha
     git checkout $sha
+
+    pip freeze > requirements_freeze.txt
+    cat requirements_freeze.txt
+
+    rm -rf venv
+    python3 -m venv venv
+
+    source venv/bin/activate
+
+    pip3 install --upgrade pip
+
+    for i in $(find -maxdepth 1 -name "*requirement*"); do
+        pip3 install -r $i
+    done
+    pip3 install -r requirements_freeze.txt
+
+    pip3 install pytest
+    pip3 install pytest-csv
+
+    python -m pytest --collect-only -q > test_list
+
+    deactivate
     
     cd $base_url
 done

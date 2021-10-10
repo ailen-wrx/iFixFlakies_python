@@ -7,22 +7,25 @@ task_type=$6
 
 cd $repo_dir/$project
 
-rm -rf requirements/
-mkdir -p requirements/
-pip freeze > requirements/requirements.txt
-cat requirements/requirements.txt
+rm -rf reqtxt/
+mkdir -p reqtxt/
+pip freeze > reqtxt/requirements.txt
+cat reqtxt/requirements.txt
 
 rm -rf venv
 python3 -m venv venv
 source venv/bin/activate
 
-pip3 install -r requirements/requirements.txt
+for i in $(find -maxdepth 1 -name "*requirement*"); do
+    pip3 install -r $i
+done
+pip3 install -r reqtxt/requirements.txt
 
 
 pip3 install pytest
 pip3 install pytest-csv
 
-pytest --collect-only -q > $test_list
+python -m pytest --collect-only -q > $test_list
 cd -
 rm -rf $output_dir/$project
 mkdir -p $output_dir/$project
