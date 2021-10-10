@@ -15,6 +15,10 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     cd $repo_dir
     git clone $url --depth=1
 
+    if [ ! -x "$project"]; then
+        continue
+    fi
+
     cd $repo_dir/$project
     sha=$(grep $project, $dataset | cut -d, -f3 | head -1)
     echo Switching to $sha...
