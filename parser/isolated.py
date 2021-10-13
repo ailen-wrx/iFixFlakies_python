@@ -73,6 +73,7 @@ for key in Gruber:
             csv.writer(f).writerow(['NotRun', Project[0], Project[3], Test_id])
         continue
 
+    Is_Inconsistency = 0
     for Test_index in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
         if Test_index == 'timed_out.csv':
             with open(error_log, 'a') as f:
@@ -90,8 +91,12 @@ for key in Gruber:
             Consist = Isolated_Test['status'][0]
         elif Consist != Isolated_Test['status'][0]:
             update_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'), Project, Test_id, [Consist, Isolated_Test['status'][0]])
-            num_inconsistency += 1
+            Is_Inconsistency = 1
             break
+
+    if Is_Inconsistency:
+        num_inconsistency += 1
+        continue
 
     if Conflict == 'True': 
         num_unmatch += 1
@@ -121,3 +126,22 @@ print("            %d OD tests match what Gruber et al. found in isolation" % (n
 print("            %d OD tests do not match what Gruber et al. found in isolation" % (num_unmatch))
 
 
+"""
+Result from the latest run:
+
+Validating tests from Gruber dataset: 4180 / 4180
+---------------------------------   Summary   ---------------------------------
+4180 OD tests in Gruber et al.'s dataset
+1158 OD tests are not successfully cloned and run
+    31 OD tests in projects without 'requirements.txt': check ../parsing_result/isolated/projects_not_found.csv
+    1070 OD tests in projects failed to collect tests: check ../parsing_result/isolated/projects_not_run.csv
+    57 OD tests failed to fetch with pytest: check ../parsing_result/isolated/tests_not_run.csv
+3022 OD tests are successfully cloned and run
+    20 OD tests did not compile: check ../parsing_result/isolated/Error.csv
+    3002 OD tests compiled
+        22 OD tests do not get the same result when run 10 times in isolation
+        2980 OD tests always get the same result when run 10 times
+            2713 OD tests match what Gruber et al. found in isolation
+            267 OD tests do not match what Gruber et al. found in isolation
+
+"""

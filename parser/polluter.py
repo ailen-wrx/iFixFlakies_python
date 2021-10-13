@@ -1,7 +1,7 @@
 from parseMethods import *
 import sys
 
-output_dir = "../output_archived/polluter"
+output_dir = "../output/polluter"
 victim_brittle="../parsing_result/isolated"
 result_dir = "../parsing_result/polluter"
 error_log = os.path.join(result_dir, 'Error.csv')
