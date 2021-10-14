@@ -114,7 +114,7 @@ print("\rValidating tests from Gruber dataset: %d / %d" % (num_row, len(Gruber))
 print("---------------------------------   Summary   ---------------------------------")
 print("%d OD tests in Gruber et al.'s dataset" % (len(Gruber)))
 print("%d OD tests are not successfully cloned and run" % (num_project_not_run + num_test_not_run + num_project_not_found))
-print("    %d OD tests in projects without 'requirements.txt': check %s" % (num_project_not_found, projects_not_found))
+print("    %d OD tests in projects not found: check %s" % (num_project_not_found, projects_not_found))
 print("    %d OD tests in projects failed to collect tests: check %s" % (num_project_not_run, projects_not_run))
 print("    %d OD tests failed to fetch with pytest: check %s" % (num_test_not_run, tests_not_run))
 print("%d OD tests are successfully cloned and run" % (num_found))
@@ -133,7 +133,7 @@ Validating tests from Gruber dataset: 4180 / 4180
 ---------------------------------   Summary   ---------------------------------
 4180 OD tests in Gruber et al.'s dataset
 1158 OD tests are not successfully cloned and run
-    31 OD tests in projects without 'requirements.txt': check ../parsing_result/isolated/projects_not_found.csv
+    31 OD tests in projects not found: check ../parsing_result/isolated/projects_not_found.csv
     1070 OD tests in projects failed to collect tests: check ../parsing_result/isolated/projects_not_run.csv
     57 OD tests failed to fetch with pytest: check ../parsing_result/isolated/tests_not_run.csv
 3022 OD tests are successfully cloned and run

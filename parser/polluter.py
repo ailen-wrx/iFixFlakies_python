@@ -89,3 +89,25 @@ def update(victim_or_brittle):
 update("Brittle")
 update("Victim")
 
+
+"""
+Result from the latest run:
+
+Detecting state-setters for brittles:  744 / 744
+---------------------------------   Summary   ---------------------------------
+744 OD tests are suspected-brittles
+0 OD tests are not run by the script: check ../parsing_result/polluter/polluter_to_detect.csv
+744 OD tests are successfully run by the script
+    354 are not brittles (have no state-setter)
+    390 have at least 1 state-setters
+    Check datailed stat in ../parsing_result/polluter/state-setter-stat-potential.csv
+Detecting polluters for victims:  2236 / 2236
+---------------------------------   Summary   ---------------------------------
+2236 OD tests are suspected-victims
+13 OD tests are not run by the script: check ../parsing_result/polluter/polluter_to_detect.csv
+2223 OD tests are successfully run by the script
+    1518 are not victims (have no polluter)
+    705 have at least 1 polluters
+    Check datailed stat in ../parsing_result/polluter/polluter-stat-potential.csv
+
+"""
