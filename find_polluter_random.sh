@@ -1,9 +1,11 @@
-#bash find_polluter_tsm.sh tests/test_merger.py::test_core_commands test_list $(pwd)/Repo/Breathe $(pwd)/output/polluter_tsm/Breathe
+#bash find_polluter_random.sh tests/test_merger.py::test_core_commands test_list $(pwd)/Repo/Breathe $(pwd)/output/polluter_tsm/Breathe
 
 victim=$1
 test_list=$2
 project_dir=$3
 output_dir=$4
+
+echo script version: $(git rev-parse HEAD)
 
 mkdir -p $output_dir
 cd $project_dir

@@ -5,6 +5,8 @@ test_list=$2
 project_dir=$3
 output_dir=$4
 
+echo script version: $(git rev-parse HEAD)
+
 mkdir -p $output_dir
 cd $project_dir
 for i in $(grep :: $test_list); do

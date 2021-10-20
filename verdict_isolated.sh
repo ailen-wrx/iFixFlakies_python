@@ -4,6 +4,8 @@ module=$3
 project_dir=$4
 output_dir=$5
 
+echo script version: $(git rev-parse HEAD)
+
 mkdir -p $output_dir
 cd $project_dir
 for i in {1..10}; do

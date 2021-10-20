@@ -1,3 +1,7 @@
+# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)
+# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0 $(pwd)
+# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3 0 $(pwd)
+
 dataset=$1
 global_repo_dir=$2
 global_output_dir=$3

@@ -3,6 +3,8 @@
 dataset=$1
 repo_dir=$2
 
+echo script version: $(git rev-parse HEAD)
+
 base_url=$(pwd)
 mkdir -p $repo_dir/$project
 rm $base_url/latest_repo_dirs.csv
