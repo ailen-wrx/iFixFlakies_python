@@ -1,9 +1,9 @@
 from parseMethods import *
 import sys
 
-output_dir = "../output/polluter"
+output_dir = "../output/polluter_tsm"
 victim_brittle="../parsing_result/isolated"
-result_dir = "../parsing_result/polluter"
+result_dir = "../parsing_result/polluter_tsm"
 error_log = os.path.join(result_dir, 'Error.csv')
 
 polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')

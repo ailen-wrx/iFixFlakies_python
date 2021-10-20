@@ -8,14 +8,14 @@ mkdir -p $output_dir
 cd $project_dir
 for i in $(grep $module:: $test_list); do
     if [[ "$i" == "$victim" ]]; then
-        continue
+	continue
     fi
     md5=$(echo $i,$victim | md5sum | cut -d' ' -f1)
     timeout 1000s python -m pytest $i $victim --csv $output_dir/$md5.csv
     exit_status=${PIPESTATUS[0]}
     if [[ ${exit_status} -eq 124 ]] || [[ ${exit_status} -eq 137 ]]; then
-        echo $i,$victim >> $output_dir/timed_out.csv
-        continue
+	echo $i,$victim >> $output_dir/timed_out.csv
+	continue
     fi
 done
 cd -

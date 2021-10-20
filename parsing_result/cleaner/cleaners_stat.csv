@@ -1,0 +1,17 @@
+Project,Polluter,Victim,#Cleaners
+Breathe,tests/test_merger.py::test_core_commands,tests/test_loading.py::test_loading_failure,4
+Breathe,tests/test_merger.py::test_kaldi_weight_passthrough,tests/test_loading.py::test_loading_failure,4
+Breathe,tests/test_top_level.py::test_top_level_command,tests/test_loading.py::test_loading_failure,4
+Breathe,tests/test_command_context.py::test_manual_context,tests/test_merger.py::test_core_commands,5
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_no_implementation_deleter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_no_implementation_getter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_no_implementation_instance_method,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_no_implementation_setter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_no_implementation_static_method,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_not_cls_convention,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_not_self_convention,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_not_self_convention_in_deleter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_not_self_convention_in_getter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_implements_not_self_convention_in_setter,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_not_implements_private_access,27
+accessify,tests/disabling/test_disable.py::test_disabling_accessify,tests/interfaces/test_implements.py::test_not_implements_protected_access,27
