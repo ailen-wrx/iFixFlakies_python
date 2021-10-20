@@ -56,9 +56,10 @@ $ bash clone.sh $(pwd)/dataset_amended.csv $(pwd)/Repo
 ### Running pytest suites
 | task     | task_type | task description |
 | -------- | --------- | ------------------------------------------------------------ |
-| isolated | 1         | To run each victim in isolation to decide it is a victim or brittle; |
-| polluter | 2         | To run paired tests and find polluters for each victim;      |
-| cleaner  | 3         | To run triple tests and find cleaners for each polluter-victim pair. |
+| isolated                  | 1         | To run each victim in isolation to decide it is a victim or brittle; |
+| polluter(Test Class Mode) | 2         | To run tests under the same test class with the victim before it to find polluters for each victim;      |
+| polluter(Test Suit Mode)  | 3         | To run all tests in the project before the victim to find polluters for each victim;      |
+| polluter(Random Mode)     | 4         | To run all tests randomly to find polluters for each victim;      |
 
 
 **on a single project**  
@@ -67,6 +68,7 @@ example:
 ```
 $ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/isolated 1
 $ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/polluter 2
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/polluter_tsm 3
 ```  
   
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:  
@@ -101,7 +103,7 @@ Inside each MD5sum-named directory, the raw data varies depending on different t
  ```
  For each test detected in dataset from Gruber et al, run `pytest $test` individually for 10 times, exporting the test results to `csv` files. `timed_out.csv` records the tests which are run for over 1000 seconds without pass or fail. The test is grouped by the overall appearance of these 10 tests. If they all pass, the test is regarded as a victim, otherwise a brittle.  
 
- 2. polluter 
+ 2. polluter(_tsm, _random) 
  ```
  iFixFlakies_python / output / polluter
  ├── stat.csv
@@ -115,20 +117,9 @@ Inside each MD5sum-named directory, the raw data varies depending on different t
  │   
  ```
  For each test, run `pytest $i $test`, where `$i` calls for all other test functions under the same test class with `$test`, exporting the test results to `csv` files. If `$i` passes while `$test(as a victim)` fails, the `$i` is regarded as a polluter. If `$i` passes while `$test(as a brittle)` passes, the `$i` is regarded as a state-setter.  
+ 
 
- 3. cleaner
-
-**on a batch of projects**  
-On our Azure server:  
-`$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 1 ~/compiled-projects-w-deps/pod-results/$task`  
-example:   
-```
-$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 1 ~/compiled-projects-w-deps/pod-results/isolated
-$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 1 ~/compiled-projects-w-deps/pod-results/polluter
-$ bash find_cleaner.sh $(pwd)/parsing_result/polluter/polluter-potential.csv $(pwd)/Repo $(pwd)/output/cleaner/ 1 ~/compiled-projects-w-deps/pod-results/cleaner
-```  
-
-To run locally:  
+**on a batch of projects**   
 `$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 0 $(pwd)`  
 example: 
 ```
@@ -141,7 +132,17 @@ Inside `stat.csv`, there are 3 states for each project:
  - `fail_to_clone_or_project_renamed`: fail to clone the repository from GitHub, or the project is renamed(then the script fails to locate the project with the outdated project name provided by Gruber dataset).
  - `requirements_not_found`: fail to detect something like `requirements.txt` to install neccesary dependencies for running `pytest` on the project.
  - `install`: successfully install the requirements and run `pytest` on specified tests, with several unexpected situations still to be handled by the python scripts in `parser/`.
- 
+
+
+### Finding cleaners for polluter-victim pairs
+
+`$ bash find_cleaner.sh parsing_result/$polluter_mode/polluter-potential.csv $(pwd)/Repo test_list $(pwd)/output/cleaner`
+
+example:
+```
+$ bash find_cleaner.sh parsing_result/polluter_tsm/polluter-potential.csv $(pwd)/Repo test_list $(pwd)/output/cleaner
+```
+
  
 ### Summarizing raw data with python scripts
 ```
