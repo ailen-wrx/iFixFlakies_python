@@ -28,7 +28,7 @@ with open(dataset_amended, 'rt') as f:
             csv.writer(f1).writerow(row)
         Project_Info[Project_Name] = row
         if Project_Name not in OD_count:
-            OD_count[Project_Name] = 0
+            OD_count[Project_Name] = 1
         else:
             OD_count[Project_Name] += 1
 
