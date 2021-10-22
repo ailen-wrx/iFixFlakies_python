@@ -61,6 +61,12 @@ for i in $(grep $project, $dataset); do
         echo polluter_tsm
 	bash find_polluter_tsm.sh $victim $test_list $repo_dir/$project $output_dir/$project/$md5
     fi
+
+    if [[ $task_type == 4 ]]; then
+	echo polluter_random
+	bash find_polluter_random.sh $victim $test_list "$Test_classname" $repo_dir/$project $output_dir/$project/$md5
+    fi
+	
   	
 done
 
