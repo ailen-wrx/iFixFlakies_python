@@ -1,4 +1,4 @@
-"Usage: python3 copy_test.py cleaner_path victim_path combination_path"
+"Usage: python3 copy_test.py cleaner_fullpath victim_fullpath combination_path"
 
 import ast
 import sys
@@ -18,12 +18,18 @@ class get_origin_astInfo(ast.NodeVisitor):
         return self.import_num
 
 
-def fix_victim(cleaner_path, victim_path, combination_path):
+def fix_victim(cleaner_fullpath, victim_fullpath, combination_path):
+
+    victim_path=victim_fullpath.split('::')[0]
+    victim_testfunc=victim_fullpath.split('::')[1]
+
+    cleaner_path=cleaner_fullpath.split('::')[0]
+    cleaner_testfunc = cleaner_fullpath.split('::')[1]
 
     with open(victim_path, "r") as victim:
         tree_victim = ast.parse(victim.read())
-        victim_info = get_origin_astInfo(tree_victim)
-        victim_import_num = victim_info.get_import_num()
+        #victim_info = get_origin_astInfo(tree_victim)
+        #victim_import_num = victim_info.get_import_num()
 
     with open(cleaner_path, "r") as cleaner:
         tree_cleaner = ast.parse(cleaner.read())
@@ -33,12 +39,16 @@ def fix_victim(cleaner_path, victim_path, combination_path):
     # copy Import and ImportFrom modules
     tree_victim.body.insert(0, tree_cleaner.body[0:cleaner_import_num])
 
-    # copy classDef modules in 2 cases(if __name__ == "__main__")
-    if type(tree_cleaner.body[-1]) == (ast.If): 
-        tree_victim.body.insert(cleaner_import_num+victim_import_num-1, tree_cleaner.body[cleaner_import_num:-1])
-    else:
-        tree_victim.body.insert(cleaner_import_num+victim_import_num-1, tree_cleaner.body[cleaner_import_num:])
-
+    # copy test body
+    for cleaner_obj in [func for func in ast.walk(tree_cleaner) if isinstance(func, ast.FunctionDef)]:
+        if cleaner_obj.name == cleaner_testfunc:
+            insert_node=cleaner_obj.body
+            break
+    for victim_obj in [func for func in ast.walk(tree_victim) if isinstance(func, ast.FunctionDef)]:
+        if victim_obj.name == victim_testfunc:
+            victim_obj.body.insert(0,insert_node)
+            break
+    
     ast.fix_missing_locations(tree_victim)
     buf = StringIO()
     Unparser(tree_victim, buf)
@@ -49,6 +59,5 @@ def fix_victim(cleaner_path, victim_path, combination_path):
 
 if __name__ == "__main__":
     
-    cleaner_path, victim_path, combination_path = sys.argv[1:4]
-    fix_victim(cleaner_path, victim_path, combination_path)
-    
+    cleaner_fullpath, victim_fullpath, combination_path = sys.argv[1:4]
+    fix_victim(cleaner_fullpath, victim_fullpath, combination_path)
