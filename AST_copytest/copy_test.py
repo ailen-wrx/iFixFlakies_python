@@ -8,13 +8,13 @@ from io import StringIO
 
 class get_origin_astInfo(ast.NodeVisitor):
     def __init__(self,node):
-        self.import_num=0
-        self.body=node.body
+        self.import_num = 0
+        self.body = node.body
 
     def get_import_num(self):
         for object in self.body:
-            if type(object)==(ast.Import or ast.ImportFrom):
-                self.import_num+=1
+            if type(object) == ast.Import or type(object) == ast.ImportFrom:
+                self.import_num += 1
         return self.import_num
 
 
@@ -22,19 +22,19 @@ def fix_victim(cleaner_path,victim_path,combination_path):
 
     with open(victim_path, "r") as victim:
         tree_victim = ast.parse(victim.read())
-        victim_info=get_origin_astInfo(tree_victim)
-        victim_import_num=victim_info.get_import_num()
+        victim_info = get_origin_astInfo(tree_victim)
+        victim_import_num = victim_info.get_import_num()
 
     with open(cleaner_path, "r") as cleaner:
         tree_cleaner = ast.parse(cleaner.read())
-        cleaner_info=get_origin_astInfo(tree_cleaner)
-        cleaner_import_num=cleaner_info.get_import_num()
+        cleaner_info = get_origin_astInfo(tree_cleaner)
+        cleaner_import_num = cleaner_info.get_import_num()
 
     # copy Import and ImportFrom modules
     tree_victim.body.insert(0,tree_cleaner.body[0:cleaner_import_num])
 
     # copy classDef modules in 2 cases(if __name__ == "__main__")
-    if type(tree_cleaner.body[-1])==(ast.If): 
+    if type(tree_cleaner.body[-1]) == (ast.If): 
         tree_victim.body.insert(cleaner_import_num+victim_import_num,tree_cleaner.body[cleaner_import_num:-1])
     else:
         tree_victim.body.insert(cleaner_import_num+victim_import_num,tree_cleaner.body[cleaner_import_num:])
