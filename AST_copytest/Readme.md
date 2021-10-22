@@ -8,7 +8,7 @@ A project with 2 demo tests:
 - `test_twoassertions.py`
 
 ## copy_test.py
-A script to copy one test into another.
+A script to copy one test(cleaner) into another(victim).
 - Usage: 
 ```
 python3 coy_test.py cleaner_path victim_path combination_path
