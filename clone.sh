@@ -58,3 +58,5 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     
     cd $base_url
 done
+
+rm -rf ~/.cache/pip/http
