@@ -18,7 +18,7 @@ class get_origin_astInfo(ast.NodeVisitor):
         return self.import_num
 
 
-def fix_victim(cleaner_path,victim_path,combination_path):
+def fix_victim(cleaner_path, victim_path, combination_path):
 
     with open(victim_path, "r") as victim:
         tree_victim = ast.parse(victim.read())
@@ -31,13 +31,13 @@ def fix_victim(cleaner_path,victim_path,combination_path):
         cleaner_import_num = cleaner_info.get_import_num()
 
     # copy Import and ImportFrom modules
-    tree_victim.body.insert(0,tree_cleaner.body[0:cleaner_import_num])
+    tree_victim.body.insert(0, tree_cleaner.body[0:cleaner_import_num])
 
     # copy classDef modules in 2 cases(if __name__ == "__main__")
     if type(tree_cleaner.body[-1]) == (ast.If): 
-        tree_victim.body.insert(cleaner_import_num+victim_import_num,tree_cleaner.body[cleaner_import_num:-1])
+        tree_victim.body.insert(cleaner_import_num+victim_import_num-1, tree_cleaner.body[cleaner_import_num:-1])
     else:
-        tree_victim.body.insert(cleaner_import_num+victim_import_num,tree_cleaner.body[cleaner_import_num:])
+        tree_victim.body.insert(cleaner_import_num+victim_import_num-1, tree_cleaner.body[cleaner_import_num:])
 
     ast.fix_missing_locations(tree_victim)
     buf = StringIO()
@@ -49,6 +49,6 @@ def fix_victim(cleaner_path,victim_path,combination_path):
 
 if __name__ == "__main__":
     
-    cleaner_path,victim_path,combination_path = sys.argv[1:4]
-    fix_victim(cleaner_path,victim_path,combination_path)
+    cleaner_path, victim_path, combination_path = sys.argv[1:4]
+    fix_victim(cleaner_path, victim_path, combination_path)
     
