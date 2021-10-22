@@ -17,7 +17,7 @@ if [[ ! -z "$class" ]]; then
     mkdir -p $output_dir/tcm
     for j in {1..50}; do
 	
-	echo "[$j] pytest -k $class --random-order-bucket=global"
+	echo "[$j] pytest -k $class --random-order-bucket=class"
 	timeout 1000s pytest -k $class --random-order-bucket=global --csv pytest_random.csv > terminal_output
 	exit_status=${PIPESTATUS[0]}
 	if [[ ${exit_status} -eq 124 ]] || [[ ${exit_status} -eq 137 ]]; then
