@@ -22,7 +22,7 @@ for i in $(cut -d, -f1 $dataset | uniq); do
     fi
     cd $base_dir
 
-    if [[ $task_type == 3 ]]; then
+    if [[ $task_type == 4 ]]; then
         bash find_polluter_random.sh $global_repo_dir/$i $global_output_dir/$i
         continue
     fi
