@@ -11,11 +11,15 @@ echo script version: $(git rev-parse HEAD)
 base_dir=$(pwd)
 rm -rf $global_output_dir
 mkdir -p $global_output_dir
-for i in $(cat $polluter_list | sed '1d'); do
+for i in $(cat $polluter_list); do
     project=$(echo $i | cut -d, -f1)
     polluter=$(echo $i | cut -d, -f5)
     victim=$(echo $i | cut -d, -f7)
 
+    if [[ "$project" == "Project_Name" ]]; then
+	continue
+    fi
+    
     echo in $project
     echo [polluter] $polluter
     echo [victim]: $victim

@@ -26,6 +26,7 @@ if [[ ! -z "$class" ]]; then
 	fi
 	seed=$(grep random-order-seed= terminal_output | sed 's/Using --random-order-seed=//g' )
 	mv pytest_random.csv $output_dir/tcm/$seed.csv
+	mv terminal_output $output_dir/tcm/$seed.log
 	echo "[$j] random-order-seed=$seed"
     done
 fi 
@@ -42,6 +43,7 @@ for j in {1..50}; do
     fi
     seed=$(grep random-order-seed= terminal_output | sed 's/Using --random-order-seed=//g' )
     mv pytest_random.csv $output_dir/tsm/$seed.csv
+    mv terminal_output $output_dir/tcm/$seed.log
     echo "[$j] random-order-seed=$seed"
 done
 

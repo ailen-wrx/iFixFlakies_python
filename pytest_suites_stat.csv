@@ -9,7 +9,7 @@ ColonyScanalyser,https://github.com/Erik-White/ColonyScanalyser,38034b7d62a7c4f7
 DotDot,https://github.com/Gsllchb/DotDot,89a6f7a86866de9c348f7e91da57c359c94568db,4,3,0.1014857515692709,4
 EZconfig,https://github.com/shalev67/EZconfig,2cedba67fbfe0ca448ccf7134b51e4e9329a6d16,18,0,0.0385625958442678,2
 firebase-live-data,https://github.com/heston/firebase-live-data,dd73615ccfae11e95830f49df8d3a90546d671f5,119,82,0.04355788230895399,2
-flask_googletrans,https://github.com/mrf345/flask_googletrans,e7ec3057bdbe57bb30928edc41fdeb0d19a0984d,10,3,1.0218046754598615,13
+flask_googletrans,https://github.com/mrf345/flask_googletrans/,e7ec3057bdbe57bb30928edc41fdeb0d19a0984d,10,3,1.0218046754598615,13
 Flask-JWT-Router,https://github.com/joegasewicz/Flask-JWT-Router,0fb1e256c81409be6f08d8be12f07e5f58b4f914,23,0,0.10744167864322558,13
 flask-multi-redis,https://github.com/max-k/flask-multi-redis,fa781d3598448a6429309a686de9a8adb53f9f34,33,2,0.0429609492421133,26
 Flaskerizer,https://github.com/brettvanderwerff/Flaskerizer,5a9724804f4e479fc3289e8644dc788adfeff06d,6,5,0.013846807181835,1
@@ -214,7 +214,7 @@ icloud_photos_downloader,https://github.com/ndbroadbent/icloud_photos_downloader
 identixone-python,https://github.com/identixone/identixone-python,232e5dfcf98ebe91a3ed433a265be161ee965a5e,65,0,0.4311333745717974,4
 iexfinance,https://github.com/addisonlynch/iexfinance,e502c671643a10121dd423c5665adc56b982199b,280,234,1826.4075869247317,13
 impedance.py,https://github.com/ECSHackWeek/impedance.py,d1019c161be9e967ae227117b72acae4351e198f,28,0,15.086301177740097,2
-importmagic,https://github.com/paradoxxxzero/importmagic,9d0f55ce5b552062b7971de70c4fc587564502d2,74,0,0.5339616313576667,2
+importmagic,https://github.com/alecthomas/importmagic,c00f2b282d933e0a9780146a20792f9e31fc8e6f,74,0,0.5339616313576667,2
 instabot,https://github.com/instagrambot/instabot,d68b55015322898c3842c92dcc5989581043252e,215,0,2.2404861450195237,14
 instabrade,https://github.com/levi-rs/instabrade,73d027ce2e3b0141c7f1c83567151b5638905355,23,0,2.5582171902060504,2
 intake-cesm,https://github.com/NCAR/intake-cesm,00fe97676b165bf41fb985a5e03b07a4a9772b71,147,98,2.499116741120808,1
@@ -329,7 +329,7 @@ pyconll,https://github.com/pyconll/pyconll,06481595c7816608facab72b5e7087cc01cb7
 pydash,https://github.com/dgilland/pydash,4bbadc967b51518e300a1368357bbe71959313ec,2109,1,3.2071307599544157,3
 pydbvolve,https://github.com/Teamworksapp/pydbvolve,e18bb8cf98997c52de0cf30a8e106c480ba0bb57,64,10,10.580515190958975,3
 pydeploy,https://github.com/yukinotenshi/pydeploy,e3ddf907b293c9da28503b3d72414a303c5dfbed,9,0,0.3777712956070896,4
-pydicom,https://github.com/pydicom/pydicom,9561c5d40ec96076c974b5987767dc7b78c500a6,1907,326,11.236772693693633,108
+pydicom,https://github.com/darcymason/pydicom,9561c5d40ec96076c974b5987767dc7b78c500a6,1907,326,11.236772693693633,108
 pydrobert-gpyopt,https://github.com/sdrobert/pydrobert-gpyopt,ce2699ca89687f848c2a86db44eed125d65886de,9,2,384.4511131197214,1
 pydu,https://github.com/Prodesire/pydu,4a1c2f15f7274d5079fb08b02ab1dbe08c0cefef,197,2,4.182720415294169,2
 pyeventdispatcher,https://github.com/whisller/pyeventdispatcher,5382e5e8578dea89a76481e15d410d516999055a,11,0,0.004883736371993499,4
@@ -398,12 +398,12 @@ sanic-envconfig,https://github.com/jamesstidard/sanic-envconfig,c68e09def2ce04c7
 schemaindex,https://github.com/qiyangduan/schemaindex,83bfb96c78d194370b068e11f89a9e4d6af48a46,5,2,0.9829947352409361,1
 schematics_to_swagger,https://github.com/Alexei-Kornienko/schematics_to_swagger,d9c1c9e43a25c5a4ff60701b3bf22fc039c815c2,7,0,0.0039415508508679,2
 scikit-fem,https://github.com/kinnala/scikit-fem,4aa87e15fd05dfbbad2367ef2303f398d5afddcc,148,11,792.1176191046834,2
-scikit-hep,https://github.com/scikit-hep/scikit-hep/,e78234da9e754e380a7d871afb56b20baa73b99b,56,3,4.038876369595528,2
+scikit-hep,https://github.com/scikit-hep/scikit-hep,e78234da9e754e380a7d871afb56b20baa73b99b,56,3,4.038876369595528,2
 scsm,https://github.com/bubylou/scsm,a67059c398b40e31296faea25ae20d3dc78070bd,58,45,0.7605936080217333,1
 sdklib,https://github.com/ivanprjcts/sdklib,5384b1c7f05abd6350151c08ad6a4a8b5855f8f0,203,7,83.71557604521512,1
 securenative-python,https://github.com/securenative/securenative-python,0eae99733b7565341487ad32f044be8dc51032cd,37,1,4.9607184529304496,6
 selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba4165375c009b90efdb3c2,235,0,38.61276676505804,34
-serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,14,0,1.3599456548690791,6
+serpextract,https://github.com/Parsely/serpextract,aec8f2bd79c66953938569a24b05c693ab70b4ce,14,0,1.3599456548690791,6
 sfpl-scraper,https://github.com/kajchang/sfpl-scraper,d97cc55f28fc75bf8de3fe5472ed0c2c55a09081,14,10,15.20816970616579,2
 six,https://github.com/benjaminp/six,c0be8815d13df45b6ae471c4c436cce8c192245d,200,15,0.29259973764418584,1
 skelpy,https://github.com/june3474/skelpy,0e64eccdc5211dbec664e7d3f9d07c6020651b63,48,2,0.445844523608682,4
@@ -431,7 +431,7 @@ tokendito,https://github.com/dowjones/tokendito,f5d8e5171ddcca0c62925263ddb80535
 torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,142,0,4.44216717034578,6
 tornado-swirl,https://github.com/rduldulao/tornado-swirl,b8df27efc3d7fd0dce0f0290767c94ac2e747311,43,0,0.2728052586317041,2
 trender,https://github.com/transceptor-technology/trender,ef2b7374ea2ecc83dceb139b358ec4ad8ce7033b,13,0,0.9134543016552921,1
-tukio,https://github.com/surycat/tukio,116b35dbceae899d7996b1788449a6e31e3f4512,30,0,0.22553311288356642,32
+tukio,https://github.com/optiflows/tukio,116b35dbceae899d7996b1788449a6e31e3f4512,30,0,0.22553311288356642,32
 tunacell,https://github.com/LeBarbouze/tunacell,837d57e1e6caeddf2e6bcdd2db2986fb456dd605,39,7,0.4533867835998517,12
 uberdict,https://github.com/eukaryote/uberdict,852b9d8b80ab032ce7eb5c439ea8084336b69d04,148,1,0.09828933328389373,4
 ucal,https://github.com/timkostka/ucal,df0ccbc5f8af54fc69df56191bd810481a17b0e3,43,0,0.027140513062474704,2
