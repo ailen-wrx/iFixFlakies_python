@@ -41,35 +41,36 @@ curl
 $ curl -o victims_brittles.csv https://zenodo.org/record/4450435/files/victims_brittles.csv?download=1`
 ```
 
-The dataset from Gruber et al. has various flaws, for which we introduced a process to amend it:  
+We modify the original dataset from Gruber et al. to make our tests more reliable:  
 ```
 python3 parser/dataset_patch.py
+bash clone.sh $(pwd)/dataset_amended.csv $(pwd)/Repo
+bash patch_install.sh
+bash pytest_suite.sh $(pwd)/projects_installed $(pwd)/Repo $(pwd)/pytest_output
+python3 parser/pytest_suite.py
 ```
-It is recommended to use `dataset_amended.csv` instead in the following operations.
+It is recommended to use `dataset_latest.csv` which is generated from `parser/pytest_suite.py` instead in the following operations.
 
 ### Cloning projects
 ```
-$ bash clone.sh $(pwd)/dataset_amended.csv $(pwd)/Repo
+$ bash clone.sh $(pwd)/dataset_latest.csv $(pwd)/Repo
 ```  
 608 projects will be cloned under direcroty `Repo`, as well as switching to current SHA.  
 
 ### Running pytest suites
+**on a single project**  
+`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/dataset_latest.csv $test_list $(pwd)/output/$task $task_type`  
+example:   
+```
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_latest.csv test_list $(pwd)/output/isolated 1
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_latest.csv test_list $(pwd)/output/polluter 2
+$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_latest.csv test_list $(pwd)/output/polluter_tsm 3
+```  
 | task     | task_type | task description |
 | -------- | --------- | ------------------------------------------------------------ |
 | isolated                  | 1         | To run each victim in isolation to decide it is a victim or brittle; |
 | polluter(Test Class Mode) | 2         | To run tests under the same test class with the victim before it to find polluters for each victim;      |
 | polluter(Test Suit Mode)  | 3         | To run all tests in the project before the victim to find polluters for each victim;      |
-| polluter(Random Mode)     | 4         | To run all tests randomly to find polluters for each victim;      |
-
-
-**on a single project**  
-`$ bash install.sh $(pwd)/Repo $project_name $(pwd)/dataset_amended.csv $test_list $(pwd)/output/$task $task_type`  
-example:   
-```
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/isolated 1
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/polluter 2
-$ bash install.sh $(pwd)/Repo abagen $(pwd)/dataset_amended.csv test_list $(pwd)/output/polluter_tsm 3
-```  
   
 While running `install.sh` on each project, the result data will be stored in a directory under `output`:  
 ```
@@ -103,7 +104,7 @@ Inside each MD5sum-named directory, the raw data varies depending on different t
  ```
  For each test detected in dataset from Gruber et al, run `pytest $test` individually for 10 times, exporting the test results to `csv` files. `timed_out.csv` records the tests which are run for over 1000 seconds without pass or fail. The test is grouped by the overall appearance of these 10 tests. If they all pass, the test is regarded as a victim, otherwise a brittle.  
 
- 2. polluter(_tsm, _random) 
+ 2. polluter(_tsm) 
  ```
  iFixFlakies_python / output / polluter
  ├── stat.csv
@@ -120,11 +121,11 @@ Inside each MD5sum-named directory, the raw data varies depending on different t
  
 
 **on a batch of projects**   
-`$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type 0 $(pwd)`  
+`$ bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/$task $test_list $task_type`  
 example: 
 ```
-$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)
-$ bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0 $(pwd)
+$ bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1
+$ bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2
 ```
   
 If a project does not exist, or the script fails to run `pytest` on the project, such information wil be recorded in `stat.csv`.  

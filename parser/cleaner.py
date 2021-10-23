@@ -1,9 +1,17 @@
+# python3 parser/cleaner.py dataset_latest.csv output/cleaner parsing_result/cleaner
 
 from parseMethods import *
 
-output_dir = "../output/cleaner"
-mapping = "../output/cleaner/polluter-victim-mapping.csv"
-result_dir = "../parsing_result/cleaner"
+# dataset_path = "../dataset_latest.csv"
+# output_dir = "../output/cleaner"
+# mapping = "../output/cleaner/polluter-victim-mapping.csv"
+# result_dir = "../parsing_result/cleaner"
+
+dataset_path = sys.argv[0]
+output_dir = sys.argv[1]
+result_dir = sys.argv[2]
+
+mapping = os.path.join(output_dir, "polluter-victim-mapping.csv")
 
 if not os.path.exists(result_dir):
     os.makedirs(result_dir)
@@ -15,7 +23,7 @@ with open(os.path.join(result_dir, 'cleaners_stat.csv'), 'w') as f:
         csv.writer(f).writerow(['Project', 'URL', 'SHA', 'Polluter', 'Victim', '#Cleaners'])
 
 Gruber = Gruber_init()
-        
+
 with open(mapping, 'rt') as f1:
     r1 = csv.reader(f1)
     for row1 in r1:

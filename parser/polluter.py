@@ -1,11 +1,19 @@
+# python3 parser/polluter.py dataset_latest.csv parsing_result/isolated output/polluter parsing_result/polluter
+
 from parseMethods import *
 import sys
 
-output_dir = "../output/polluter_tsm"
-victim_brittle="../parsing_result/isolated"
-result_dir = "../parsing_result/polluter_tsm"
-error_log = os.path.join(result_dir, 'Error.csv')
+# dataset_path = "../dataset_latest.csv"
+# victim_brittle = "../parsing_result/isolated"
+# output_dir = "../output/polluter_tsm"
+# result_dir = "../parsing_result/polluter_tsm"
 
+dataset_path = sys.argv[0]
+victim_brittle = sys.argv[1]
+output_dir = sys.argv[2]
+result_dir = sys.argv[3]
+
+error_log = os.path.join(result_dir, 'Error.csv')
 polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')
 
 Gruber = Gruber_init()
