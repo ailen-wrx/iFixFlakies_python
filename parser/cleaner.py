@@ -7,9 +7,9 @@ from parseMethods import *
 # mapping = "../output/cleaner/polluter-victim-mapping.csv"
 # result_dir = "../parsing_result/cleaner"
 
-dataset_path = sys.argv[0]
-output_dir = sys.argv[1]
-result_dir = sys.argv[2]
+dataset_path = sys.argv[1]
+output_dir = sys.argv[2]
+result_dir = sys.argv[3]
 
 mapping = os.path.join(output_dir, "polluter-victim-mapping.csv")
 
@@ -22,7 +22,8 @@ with open(os.path.join(result_dir, 'cleaners.csv'), 'w') as f:
 with open(os.path.join(result_dir, 'cleaners_stat.csv'), 'w') as f:
         csv.writer(f).writerow(['Project', 'URL', 'SHA', 'Polluter', 'Victim', '#Cleaners'])
 
-Gruber = Gruber_init()
+print(dataset_path)
+Gruber = Gruber_init(dataset_path)
 
 with open(mapping, 'rt') as f1:
     r1 = csv.reader(f1)
@@ -32,9 +33,12 @@ with open(mapping, 'rt') as f1:
         Polluter = row1[2]
         Victim = row1[3]
 
-        Gruber_key = Project+'$'+Victim
-        row = Gruber[Gruber_key]
-
+        try:
+            Gruber_key = Project+'$'+Victim
+            row = Gruber[Gruber_key]
+        except:
+            continue
+    
         Project_URL = row[1]
         Project_SHA = row[2]
         
@@ -46,11 +50,14 @@ with open(mapping, 'rt') as f1:
                 Test = row2[1]
                 if not os.path.exists(os.path.join(output_dir, md5_polluter_victim, md5_test+'.csv')):
                     continue
-                Triple_Test = pd.read_csv(os.path.join(output_dir, md5_polluter_victim, md5_test+'.csv'))
-                if Triple_Test['status'][0] == 'passed' and Triple_Test['status'][1] == 'passed' and Triple_Test['status'][2] == 'passed':
-                    with open(os.path.join(result_dir, 'cleaners.csv'), 'a') as f:
-                        csv.writer(f).writerow([Project, Project_URL, Project_SHA, Polluter, Test, Victim])
-                        polluter_count += 1
+                try:
+                    Triple_Test = pd.read_csv(os.path.join(output_dir, md5_polluter_victim, md5_test+'.csv'))
+                    if Triple_Test['status'][0] == 'passed' and Triple_Test['status'][1] == 'passed' and Triple_Test['status'][2] == 'passed':
+                        with open(os.path.join(result_dir, 'cleaners.csv'), 'a') as f:
+                            csv.writer(f).writerow([Project, Project_URL, Project_SHA, Polluter, Test, Victim])
+                            polluter_count += 1
+                except:
+                    continue
                         
             with open(os.path.join(result_dir, 'cleaners_stat.csv'), 'a') as f:
                 csv.writer(f).writerow([Project, Project_URL, Project_SHA, Polluter, Victim, polluter_count])

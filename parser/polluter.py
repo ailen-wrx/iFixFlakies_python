@@ -8,10 +8,10 @@ import sys
 # output_dir = "../output/polluter_tsm"
 # result_dir = "../parsing_result/polluter_tsm"
 
-dataset_path = sys.argv[0]
-victim_brittle = sys.argv[1]
-output_dir = sys.argv[2]
-result_dir = sys.argv[3]
+dataset_path = sys.argv[1]
+victim_brittle = sys.argv[2]
+output_dir = sys.argv[3]
+result_dir = sys.argv[4]
 
 error_log = os.path.join(result_dir, 'Error.csv')
 polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')

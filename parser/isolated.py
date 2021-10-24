@@ -7,9 +7,9 @@ from parseMethods import *
 # result_dir = "../parsing_result/isolated"
 # error_log = os.path.join(result_dir, 'Error.csv')
 
-dataset_path = sys.argv[0]
-output_dir = sys.argv[1]
-result_dir = sys.argv[2]
+dataset_path = sys.argv[1]
+output_dir = sys.argv[2]
+result_dir = sys.argv[3]
 
 error_log = os.path.join(result_dir, 'Error.csv')
 projects_not_run = os.path.join(result_dir, 'projects_not_run.csv')
