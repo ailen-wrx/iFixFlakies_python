@@ -1,14 +1,22 @@
+# python3 parser/isolated.py dataset_latest.csv output/isolated parsing_result/isolated
+
 from parseMethods import *
 
-output_dir = "../output/isolated"
-result_dir = "../parsing_result/isolated"
-error_log = os.path.join(result_dir, 'Error.csv')
+# dataset_path = "../dataset_latest.csv"
+# output_dir = "../output/isolated"
+# result_dir = "../parsing_result/isolated"
+# error_log = os.path.join(result_dir, 'Error.csv')
 
+dataset_path = sys.argv[0]
+output_dir = sys.argv[1]
+result_dir = sys.argv[2]
+
+error_log = os.path.join(result_dir, 'Error.csv')
 projects_not_run = os.path.join(result_dir, 'projects_not_run.csv')
 projects_not_found = os.path.join(result_dir, 'projects_not_found.csv')
 tests_not_run = os.path.join(result_dir, 'tests_not_run.csv')
 
-Gruber = Gruber_init()
+Gruber = Gruber_init(dataset_path)
 init(result_dir, error_log)
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Inconsistency.csv'))
 init_csv_for_isolated_tests(os.path.join(result_dir, 'Victim.csv'))

@@ -48,23 +48,18 @@ for i in $(grep $project, $dataset); do
     echo $victim,$md5 >> $output_dir/$project/victim_mapping.csv
 
     if [[ $task_type == 1 ]]; then
-        echo isolated test
-	bash verdict_isolated.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
+        echo "isolated test"
+	    bash verdict_isolated.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
     if [[ $task_type == 2 ]]; then
-        echo polluter_tcm
-	bash find_polluter_tcm.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
+        echo "polluter_tcm"
+	    bash find_polluter_tcm.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
     fi
 
     if [[ $task_type == 3 ]]; then
-        echo polluter_tsm
-	bash find_polluter_tsm.sh $victim $test_list $repo_dir/$project $output_dir/$project/$md5
-    fi
-
-    if [[ $task_type == 4 ]]; then
-	echo polluter_random
-	bash find_polluter_random.sh $victim $test_list "$Test_classname" $repo_dir/$project $output_dir/$project/$md5
+        echo "polluter_tsm"
+	    bash find_polluter_tsm.sh $victim $test_list $repo_dir/$project $output_dir/$project/$md5
     fi
 	
   	

@@ -1,9 +1,9 @@
 from parseMethods import *
 
-with open(dataset_amended, 'w') as f:
+with open("../dataset_amended.csv", 'w') as f:
     csv.writer(f).writerow(['Project_Name','Project_URL','Project_Hash','Test_filename','Test_classname','Test_funcname','Test_parametrization','Order-dependent','Verdict_Isolated','Verdict_OriginalOrder'])
 
-with open(dataset_dir, 'rt') as f:
+with open("../victims_brittles", 'rt') as f:
     r = csv.reader(f)
     for row in r:
         project = row[0]

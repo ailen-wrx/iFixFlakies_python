@@ -21,7 +21,7 @@ with open(dataset_latest, 'w') as f:
 
 Project_Info = dict()
 OD_count = dict()
-with open(dataset_amended, 'rt') as f:
+with open("../dataset_amended.csv", 'rt') as f:
     r = csv.reader(f)
     for row in r:
         Project_Name = row[0]

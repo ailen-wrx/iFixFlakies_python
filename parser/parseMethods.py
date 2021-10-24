@@ -2,9 +2,7 @@ import csv
 import shutil
 import pandas as pd
 import os
-
-dataset_dir = "../victims_brittles.csv"
-dataset_amended = "../dataset_amended.csv"
+import sys
 
 
 def init(resultDir, ErrorLog):
@@ -55,9 +53,9 @@ def update_triple_tests():
     a=1
 
 
-def Gruber_init():
+def Gruber_init(dataset_path):
     Gruber = dict()
-    with open(dataset_amended, 'rt') as f:
+    with open(dataset_path, 'rt') as f:
         r = csv.reader(f)
         for row in r:
             project = row[0]

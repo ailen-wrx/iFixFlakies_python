@@ -1,37 +1,34 @@
-# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0 $(pwd)
-# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0 $(pwd)
-# bash batch.sh $(pwd)/dataset_amended.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3 0 $(pwd)
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_random test_list 4
 
 dataset=$1
 global_repo_dir=$2
 global_output_dir=$3
 test_list=$4
 task_type=$5
-zip_valid=$6
-zip_dest=$7
 
 echo script version: $(git rev-parse HEAD)
 
 base_dir=$(pwd)
 mkdir -p $global_output_dir
 cd $global_repo_dir
-# rm $global_output_dir/stat.csv
+rm $global_output_dir/stat.csv
 for i in $(cut -d, -f1 $dataset | uniq); do
     if [[ ! -d "$i" ]]; then
         echo $i,fail_to_clone >> $global_output_dir/stat.csv
         continue
     fi
     cd $base_dir
+
+    if [[ $task_type == 4 ]]; then
+        bash find_polluter_random.sh $global_repo_dir/$i $global_output_dir/$i
+        continue
+    fi
+
     bash install.sh $global_repo_dir $i $dataset $test_list $global_output_dir $task_type
     echo $i,install>> $global_output_dir/stat.csv
-
-    # when running on Azure Machine:
-    if [[ $zip_valid == 1 ]]; then
-        zip -rq $i.zip $global_output_dir/$i
-        sudo mkdir -p $zip_dest
-        sudo rm $zip_dest/$i.zip
-        sudo mv $i.zip $zip_dest/
-    fi
 
     cd $global_repo_dir
 done
