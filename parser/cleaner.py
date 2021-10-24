@@ -36,7 +36,8 @@ with open(mapping, 'rt') as f1:
             for row2 in r2:
                 md5_test = row2[0]
                 Test = row2[1]
-
+                if not os.path.exists(os.path.join(output_dir, md5_polluter_victim, md5_test+'.csv')):
+                    continue
                 Triple_Test = pd.read_csv(os.path.join(output_dir, md5_polluter_victim, md5_test+'.csv'))
                 if Triple_Test['status'][0] == 'passed' and Triple_Test['status'][1] == 'passed' and Triple_Test['status'][2] == 'passed':
                     with open(os.path.join(result_dir, 'cleaners.csv'), 'a') as f:
