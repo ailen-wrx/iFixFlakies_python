@@ -1,2 +1,0 @@
-Project,URL,SHA,Polluter,Victim,#Cleaners
-EZconfig,https://github.com/shalev67/EZconfig,2cedba67fbfe0ca448ccf7134b51e4e9329a6d16,tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env_without_env_var,tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env,6

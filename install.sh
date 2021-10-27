@@ -1,4 +1,4 @@
-# bash install.sh $(pwd)/Repo Butter.MAS.PythonAPI $(pwd)/dataset_trial.csv test_list $(pwd)/output/polluter_tsm 3
+# bash install.sh $(pwd)/Repo Butter.MAS.PythonAPI $(pwd)/dataset_trial.csv test_list $(pwd)/output/polluter_tsm 3 0
 
 repo_dir=$1
 project=$2
@@ -6,13 +6,16 @@ dataset=$3
 test_list=$4
 output_dir=$5
 task_type=$6
+clear_output=$7
 
 cd $repo_dir/$project
 
 source venv/bin/activate
 
 cd -
-rm -rf $output_dir/$project
+if [[ $clear_output == 1 ]]; then
+    rm -rf $output_dir/$project
+fi
 mkdir -p $output_dir/$project
 
 echo Running $project...
@@ -42,6 +45,11 @@ for i in $(grep $project, $dataset); do
 
 
     echo Found $victim.
+
+    if [[ -n $(fgrep "$victim" $output_dir/$project/victim_mapping.csv) ]]; then
+	echo Skipped.
+	continue
+    fi
     
     md5=$(echo $i | md5sum | cut -d' ' -f1)
     echo $victim,$(date) >> $output_dir/$project/log_pytest.csv

@@ -1,13 +1,14 @@
-# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1
-# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2
-# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3
-# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_random test_list 4
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3 0
+# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_random test_list 4 0
 
 dataset=$1
 global_repo_dir=$2
 global_output_dir=$3
 test_list=$4
 task_type=$5
+clear_output=$6
 
 echo script version: $(git rev-parse HEAD)
 
@@ -27,7 +28,7 @@ for i in $(cut -d, -f1 $dataset | uniq); do
         continue
     fi
 
-    bash install.sh $global_repo_dir $i $dataset $test_list $global_output_dir $task_type
+    bash install.sh $global_repo_dir $i $dataset $test_list $global_output_dir $task_type $clear_output
     echo $i,install>> $global_output_dir/stat.csv
 
     cd $global_repo_dir

@@ -1,0 +1,8 @@
+id,module,name,file,doc,markers,status,message,duration
+tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env_without_env_var,tests.unit.test_load_config_from_env,test_load_config_from_env_without_env_var,tests/unit/test_load_config_from_env.py,,,passed,,0.001519918441772461
+tests/unit/test_basic_config.py::TestBasicConfig::test_register_config_bad_config_type,tests.unit.test_basic_config,test_register_config_bad_config_type,tests/unit/test_basic_config.py,,,passed,,0.0017683729529380798
+tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env,tests.unit.test_load_config_from_env,test_load_config_from_env,tests/unit/test_load_config_from_env.py,,,failed,"AssertionError: assert 'test2' == 'test1'
+  - test1
+  ?     ^
+  + test2
+  ?     ^",0.008996821939945221

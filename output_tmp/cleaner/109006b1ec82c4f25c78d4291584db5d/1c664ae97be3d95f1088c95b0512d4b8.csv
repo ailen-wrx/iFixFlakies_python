@@ -1,0 +1,4 @@
+id,module,name,file,doc,markers,status,message,duration
+tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env_without_env_var,tests.unit.test_load_config_from_env,test_load_config_from_env_without_env_var,tests/unit/test_load_config_from_env.py,,,passed,,0.0014539137482643127
+tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env_float,tests.unit.test_load_config_from_env,test_load_config_from_env_float,tests/unit/test_load_config_from_env.py,,,passed,,0.0023110657930374146
+tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env,tests.unit.test_load_config_from_env,test_load_config_from_env,tests/unit/test_load_config_from_env.py,,,passed,,0.0015141963958740234
