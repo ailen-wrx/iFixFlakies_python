@@ -1,8 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env_without_env_var,tests.unit.test_load_config_from_env,test_load_config_from_env_without_env_var,tests/unit/test_load_config_from_env.py,,,passed,,0.0013039633631706238
-tests/unit/test_load_config_from_ini.py::TestLoadConfigFromJson::test_load_config_from_json,tests.unit.test_load_config_from_ini,test_load_config_from_json,tests/unit/test_load_config_from_ini.py,,,passed,,0.011756807565689087
-tests/unit/test_load_config_from_env.py::TestLoadConfigFromEnv::test_load_config_from_env,tests.unit.test_load_config_from_env,test_load_config_from_env,tests/unit/test_load_config_from_env.py,,,failed,"AssertionError: assert 'test2' == 'test1'
-  - test1
-  ?     ^
-  + test2
-  ?     ^",0.007344469428062439
