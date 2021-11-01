@@ -71,7 +71,24 @@ def update(victim_or_brittle):
                     csv.writer(f).writerow(['TestNotRun', Project[0], Project[3], Test_id])
                 continue
 
+            valid=0
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
+                if (Test_md5 == "test_mapping.csv"):
+                    continue
+                if (Test_md5[-3:] == "log"):
+                    continue
+                valid=1
+            
+            if not valid:
+                with open(polluter_to_detect, 'a') as f:
+                    csv.writer(f).writerow(Gruber_row)
+                continue
+
+            for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
+                if (Test_md5 == "test_mapping.csv"):
+                    continue
+                if (Test_md5[-3:] == "log"):
+                    continue
                 try:
                     Paired_Test = pd.read_csv(os.path.join(output_dir, Project[0], Victim_md5, Test_md5))
                     if victim_or_brittle == "Brittle" and Paired_Test['status'][0] == 'passed' and Paired_Test['status'][1] == 'passed':
