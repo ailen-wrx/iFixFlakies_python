@@ -15,7 +15,7 @@ result_dir = sys.argv[4]
 
 error_log = os.path.join(result_dir, 'Error.csv')
 polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')
-no_polluter_detected = os.path.join(result_dir, 'no_polluter_detected.csv')
+
 
 Gruber = Gruber_init(dataset_path)
 init(result_dir, error_log)
@@ -27,12 +27,15 @@ def update(victim_or_brittle):
     test_list = os.path.join(victim_brittle, 'Brittle.csv') if victim_or_brittle == "Brittle" else os.path.join(victim_brittle, 'Victim.csv')
     result_csv = os.path.join(result_dir, 'state-setter-potential.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'polluter-potential.csv')
     stat_csv = os.path.join(result_dir, 'state-setter-stat-potential.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'polluter-stat-potential.csv')
-    zero =os.path.join(result_dir, 'no-state-setter.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'no-polluter.csv')
-    
+    zero =os.path.join(result_dir, 'Brittle.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'Victim.csv')
+    not_run = os.path.join(result_dir, 'brittle_not_tested.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'victim_not_tested.csv')
+
     Info = "Detecting state-setters for brittles: " if victim_or_brittle == "Brittle" else "Detecting polluters for victims: "
     init_csv_for_paired_tests(result_csv)
     init_stat_csv_for_paired_tests(stat_csv)
     f = open(zero, 'w')
+    f.close()
+    f = open(not_run, 'w')
     f.close()
     total = sum(1 for line in open(test_list)) - 1
     with open(test_list, 'rt') as f:
@@ -50,7 +53,7 @@ def update(victim_or_brittle):
             num_row += 1
             Victim_Hash = {}
             if not os.path.exists(os.path.join(output_dir, Project[0], 'victim_mapping.csv')):
-                with open(polluter_to_detect, 'a') as f:
+                with open(not_run, 'a') as f:
                     csv.writer(f).writerow(Gruber_row)
                 continue
             with open(os.path.join(output_dir, Project[0], 'victim_mapping.csv'), 'rt') as f1:
@@ -67,8 +70,8 @@ def update(victim_or_brittle):
             num_valid += 1
             count = 0
             if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
-                with open(error_log, 'a') as f:
-                    csv.writer(f).writerow(['TestNotRun', Project[0], Project[3], Test_id])
+                with open(not_run, 'a') as f:
+                    csv.writer(f).writerow(Gruber_row)
                 continue
 
             valid=0
@@ -80,7 +83,7 @@ def update(victim_or_brittle):
                 valid=1
             
             if not valid:
-                with open(polluter_to_detect, 'a') as f:
+                with open(not_run, 'a') as f:
                     csv.writer(f).writerow(Gruber_row)
                 continue
 
