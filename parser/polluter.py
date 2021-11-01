@@ -1,4 +1,4 @@
-# python3 parser/polluter.py dataset_latest.csv parsing_result/isolated output/polluter parsing_result/polluter
+# python3 parser/polluter.py dataset_amended.csv parsing_result/isolated output/polluter_tcm parsing_result/polluter_tcm
 
 from parseMethods import *
 import sys
@@ -15,8 +15,9 @@ result_dir = sys.argv[4]
 
 error_log = os.path.join(result_dir, 'Error.csv')
 polluter_to_detect = os.path.join(result_dir, 'polluter_to_detect.csv')
+no_polluter_detected = os.path.join(result_dir, 'no_polluter_detected.csv')
 
-Gruber = Gruber_init()
+Gruber = Gruber_init(dataset_path)
 init(result_dir, error_log)
 
 f = open(polluter_to_detect, 'w')
@@ -26,9 +27,13 @@ def update(victim_or_brittle):
     test_list = os.path.join(victim_brittle, 'Brittle.csv') if victim_or_brittle == "Brittle" else os.path.join(victim_brittle, 'Victim.csv')
     result_csv = os.path.join(result_dir, 'state-setter-potential.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'polluter-potential.csv')
     stat_csv = os.path.join(result_dir, 'state-setter-stat-potential.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'polluter-stat-potential.csv')
+    zero =os.path.join(result_dir, 'no-state-setter.csv') if victim_or_brittle == "Brittle" else os.path.join(result_dir, 'no-polluter.csv')
+    
     Info = "Detecting state-setters for brittles: " if victim_or_brittle == "Brittle" else "Detecting polluters for victims: "
     init_csv_for_paired_tests(result_csv)
     init_stat_csv_for_paired_tests(stat_csv)
+    f = open(zero, 'w')
+    f.close()
     total = sum(1 for line in open(test_list)) - 1
     with open(test_list, 'rt') as f:
         num_row, num_valid, num_not_none = 0, 0, 0
@@ -82,6 +87,9 @@ def update(victim_or_brittle):
             update_stat_for_paired_tests(stat_csv, Project, Test_id, count, Conflict)
             if count != 0:
                 num_not_none += 1
+            else:
+                with open(zero, 'a') as f:
+                    csv.writer(f).writerow(row)
             print("\r%s %d / %d" % (Info, num_row, total), end="")
         print("\r%s %d / %d" % (Info, num_row, total))
 
