@@ -1,0 +1,416 @@
+Project,URL,SHA,polluter,cleaner,victim,copy_can_work,md5_record,patch1,patch2,patch3,patch4
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,55b9477fcb34ff731d9044115c5e7b1f,True,"
+container.initialize()
+container.register_class(Example, Example2)
+","
+container.initialize()
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,e4dd39ffa2664138f7454dcc732f62b2,True,"
+container.initialize(class_mapping={Example: Example2})
+instance = container.get(Example)
+","
+container.initialize(class_mapping={Example: Example2})
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,662ddb0f7fa266762e3288c603e8219c,False,,,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_sanity.py::test_class_with_default_arguments,cynergy/tests/test_register_multiple.py::test_register_multiple,8122d451e1df35c4a2775b5b22de5525,False,,,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,5d5dd7765df7cc111eaff0fbc3033476,True,"
+container.initialize()
+container.register_class(Example, Example2)
+","
+container.initialize()
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,7bfc8fde19430c49f93931a1e4811701,True,"
+container.initialize(class_mapping={Example: Example2})
+instance = container.get(Example)
+","
+container.initialize(class_mapping={Example: Example2})
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,e394ab3a2692e268ddad57b43c07ab7f,False,,,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_sanity.py::test_class_with_default_arguments,cynergy/tests/test_register_multiple.py::test_register_multiple,347594c304e9b16054cbc5ad93161304,False,,,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,a5deef3ef7fa2e2342d6ff8b14025b0c,True,"
+container.initialize()
+container.register_class(Example, Example2)
+","
+container.initialize()
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,10d7864795d1789f4dc4d460342a95da,True,"
+container.initialize(class_mapping={Example: Example2})
+instance = container.get(Example)
+","
+container.initialize(class_mapping={Example: Example2})
+",,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,75aa8005b2eed80fc63b64bff049a55c,False,,,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_sanity.py::test_class_with_default_arguments,cynergy/tests/test_register_multiple.py::test_register_multiple,8bafef366502d1facee80b0abba311bd,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_fort1.py::test_read_fort1_file_contents,test/test_occam_data.py::test_occam_data_not_save_to_npy,9603c4a5bf96f5d9cb3e9e2dc9510add,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_fort7.py::test_read_fort7_array_length,test/test_occam_data.py::test_occam_data_not_save_to_npy,a358dfd493b3f385689484d32654dcdc,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_fort7.py::test_read_fort7_values,test/test_occam_data.py::test_occam_data_not_save_to_npy,88e51cfdb11558bd4e411e8df7948da8,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_read_xyz_types,test/test_occam_data.py::test_occam_data_not_save_to_npy,a367e5039896a1b454edf22910bd1787,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_read_xyz_positions,test/test_occam_data.py::test_occam_data_not_save_to_npy,a0feb290c1d91381e30f8ebf2a602298,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_read_xyz_time_array,test/test_occam_data.py::test_occam_data_not_save_to_npy,addabb24cb02d20ce152779e3204c4f9,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_read_xyz_parse_comment_line,test/test_occam_data.py::test_occam_data_not_save_to_npy,7c3aad932f68e32ead88fc40913ad2d9,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_are_floats,test/test_occam_data.py::test_occam_data_not_save_to_npy,235795f534e7e3fc101b4375b8010592,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_read_xyz.py::test_read_xyz_velocities,test/test_occam_data.py::test_occam_data_not_save_to_npy,f94b3242872515f9ba0de5787ca2aefc,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort1.py::test_replace_in_fort1_file,test/test_occam_data.py::test_occam_data_not_save_to_npy,9324c725256065062526cb8a2f8333ff,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_file,test/test_occam_data.py::test_occam_data_not_save_to_npy,acf7aa2ee95abc17bdec2ed2c008ec4d,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_count_property,test/test_occam_data.py::test_occam_data_not_save_to_npy,668f25ca68cc7b989fc2a23c435c11d1,True,"
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+counts = _count_property_instances(*all_replacements)
+assert (counts[0] == 3)
+assert (counts[3] == 2)
+assert (counts[4] == 2)
+return all_replacements
+","
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+counts = _count_property_instances(*all_replacements)
+assert (counts[3] == 2)
+assert (counts[4] == 2)
+return all_replacements
+","
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+counts = _count_property_instances(*all_replacements)
+assert (counts[4] == 2)
+return all_replacements
+","
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+counts = _count_property_instances(*all_replacements)
+return all_replacements
+","
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+return all_replacements
+",
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_is_int,test/test_occam_data.py::test_occam_data_not_save_to_npy,30fd90baa184fe7045a48f74bb24f425,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3__count_existing_instances,test/test_occam_data.py::test_occam_data_not_save_to_npy,05fa0554b331ff2bb8ba543abfde9c53,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_fort3_replacement_repr,test/test_occam_data.py::test_occam_data_not_save_to_npy,68f4e00a6ecf19ff89849ac44994c3fe,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_construct_new_chi,test/test_occam_data.py::test_occam_data_not_save_to_npy,c5a4b6f8a71f5ba99ba182ea4a45d8a1,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_write_fort3_from_replace_objects,test/test_occam_data.py::test_occam_data_not_save_to_npy,a22d601381e4eb388c85704b263fe754,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_replace_in_fort3.py::test_replace_in_fort3_check_new_kappa,test/test_occam_data.py::test_occam_data_not_save_to_npy,69e455b3113ed3d9fdfcc55c7846e1e9,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_xyz_to_fort5.py::test_xyz_to_fort5_file,test/test_occam_data.py::test_occam_data_not_save_to_npy,239df63887ae4fe1063309e41f428d73,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_wrong_input,test/test_xyz_to_fort5.py::test_xyz_to_fort5_default_file,test/test_occam_data.py::test_occam_data_not_save_to_npy,7fc9fa876ae3c9ddc781f357f42488b9,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_fort5_to_xyz.py::test_fort5_to_xyz_file,test/test_occam_data.py::test_occam_data_progress_bars,c5574483b1f2edd7edf8a8bcc982d2a9,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_fort5_to_xyz.py::test_convert_file_name,test/test_occam_data.py::test_occam_data_progress_bars,90774ae8105aa77e489b503b2cf73d7e,True,"
+file_name = os.path.join(os.path.dirname(__file__), 'fort.5')
+converted_file = _convert_file_name(file_name)
+converted_file = converted_file.split('.')
+assert (converted_file[(- 1)] == 'xyz')
+assert (converted_file[(- 1)] == 'xyz')
+","
+file_name = os.path.join(os.path.dirname(__file__), 'fort.5')
+converted_file = _convert_file_name(file_name)
+converted_file = converted_file.split('.')
+assert (converted_file[(- 1)] == 'xyz')
+","
+file_name = os.path.join(os.path.dirname(__file__), 'fort.5')
+converted_file = _convert_file_name(file_name)
+","
+file_name = os.path.join(os.path.dirname(__file__), 'fort.5')
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_generate_fort5.py::test_generate_random_uniform_path,test/test_occam_data.py::test_occam_data_progress_bars,52b5050c8c922450d66ae927b100883d,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_generate_fort5.py::test_generate_random_uniform_file,test/test_occam_data.py::test_occam_data_progress_bars,eba0d97a083f50fe4f60833a2f717b6e,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_histogram.py::test_histogram_values,test/test_occam_data.py::test_occam_data_progress_bars,e05e42c10d66bae90ad29deb7e8da50b,True,"
+x = np.array([[0, 1, 2, 3, 4], [2, 3, 3, 4, 4], [1, 1, 1, 4, 1]], dtype=np.float64)
+x = (x + 0.5)
+(hist, _) = occamhist(x, bins=5, time_steps=(0, 0), range=(0, 5))
+assert np.allclose(hist, np.array([1, 1, 1, 1, 1]))
+(hist, _) = occamhist(x, bins=5, time_steps=(1, 1), range=(0, 5))
+","
+x = np.array([[0, 1, 2, 3, 4], [2, 3, 3, 4, 4], [1, 1, 1, 4, 1]], dtype=np.float64)
+x = (x + 0.5)
+(hist, _) = occamhist(x, bins=5, time_steps=(1, 1), range=(0, 5))
+","
+x = np.array([[0, 1, 2, 3, 4], [2, 3, 3, 4, 4], [1, 1, 1, 4, 1]], dtype=np.float64)
+(hist, _) = occamhist(x, bins=5, time_steps=(1, 1), range=(0, 5))
+","
+x = np.array([[0, 1, 2, 3, 4], [2, 3, 3, 4, 4], [1, 1, 1, 4, 1]], dtype=np.float64)
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_occam_data.py::test_occam_data_check_internal_consistency_1_7,test/test_occam_data.py::test_occam_data_progress_bars,a4dfa6d6783015c16b5cca8b4f88c7fa,True,"
+(fort1, fort7, xyz) = _load_default_forts()
+c17 = _check_internal_consistency(fort1, fort7)
+assert c17
+c1x = _check_internal_consistency(fort1, xyz)
+assert c1x
+","
+(fort1, fort7, xyz) = _load_default_forts()
+c17 = _check_internal_consistency(fort1, fort7)
+assert c17
+c1x = _check_internal_consistency(fort1, xyz)
+","
+(fort1, fort7, xyz) = _load_default_forts()
+c17 = _check_internal_consistency(fort1, fort7)
+","
+(fort1, fort7, xyz) = _load_default_forts()
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_occam_data.py::test_occam_data_constructor_files,test/test_occam_data.py::test_occam_data_progress_bars,21b2928bcb56f333f3e9ded97f80dff3,True,"
+(fort1, fort7, xyz) = _load_default_forts()
+occam_data = OccamData(fort1.file_name, fort7.file_name, xyz.file_name, silent=True)
+_assert_all_attributes_present_and_equal(occam_data, fort1, fort7, xyz)
+occam_data = OccamData(fort1.file_name, None, None, silent=True)
+_assert_all_attributes_present_and_equal(occam_data, fort1, fort7, xyz)
+","
+(fort1, fort7, xyz) = _load_default_forts()
+occam_data = OccamData(fort1.file_name, fort7.file_name, xyz.file_name, silent=True)
+_assert_all_attributes_present_and_equal(occam_data, fort1, fort7, xyz)
+","
+(fort1, fort7, xyz) = _load_default_forts()
+occam_data = OccamData(fort1.file_name, fort7.file_name, xyz.file_name, silent=True)
+","
+(fort1, fort7, xyz) = _load_default_forts()
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_occam_data.py::test_occam_data_attributes,test/test_occam_data.py::test_occam_data_progress_bars,5b334b25c462b0f210d5bd9e8e9a8f4d,True,"
+(occam_data, fort1, fort7, xyz) = _create_default_occam_data_object()
+",,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_fort1.py::test_read_fort1_file_contents,test/test_occam_data.py::test_occam_data_progress_bars,7858e668f1b8b7c98c4fc3e666171f77,True,"
+file_name = os.path.join(os.path.dirname(__file__), os.pardir, 'data', 'example_fort.1')
+fort1 = Fort1(file_name)
+fort1.read_file(silent=True)
+assert (fort1.n_particles == 2500)
+assert (fort1.dt == pytest.approx(0.03, abs=1e-15))
+assert (fort1.velocity_traj is False)
+","
+file_name = os.path.join(os.path.dirname(__file__), os.pardir, 'data', 'example_fort.1')
+fort1 = Fort1(file_name)
+fort1.read_file(silent=True)
+","
+file_name = os.path.join(os.path.dirname(__file__), os.pardir, 'data', 'example_fort.1')
+fort1 = Fort1(file_name)
+","
+file_name = os.path.join(os.path.dirname(__file__), os.pardir, 'data', 'example_fort.1')
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_fort7.py::test_read_fort7_array_length,test/test_occam_data.py::test_occam_data_progress_bars,d84230b2647eebfe6d6617d764af13bd,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_fort7.py::test_read_fort7_values,test/test_occam_data.py::test_occam_data_progress_bars,9c8149bcb17ebac189b6aff4608eaa5e,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_read_xyz_types,test/test_occam_data.py::test_occam_data_progress_bars,d01c3adda7b35a36d579834e3c92c031,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_read_xyz_positions,test/test_occam_data.py::test_occam_data_progress_bars,bd4e431a9048720e67c8e3825dd9d153,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_read_xyz_time_array,test/test_occam_data.py::test_occam_data_progress_bars,095069763c5223fc30c5a60e601f1974,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_read_xyz_parse_comment_line,test/test_occam_data.py::test_occam_data_progress_bars,db0f0cd23b6376c2e48ece50cc5bb255,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_are_floats,test/test_occam_data.py::test_occam_data_progress_bars,6b6a8e6b5d9ba9432d5623968dadcb1b,True,"
+assert _are_floats('99', '2.1', '-75', '-9285.15', 23, 5.1245, (- 9), (- 0.12))
+assert (not _are_floats(1, 5.6, '52.1', '8', 'askgj'))
+assert (not _are_floats(2.1, 3.8, None))
+assert (not _are_floats('box:', '125.0', '25.0', '25.0'))
+","
+assert (not _are_floats(2.1, 3.8, None))
+assert (not _are_floats('box:', '125.0', '25.0', '25.0'))
+","
+assert (not _are_floats('box:', '125.0', '25.0', '25.0'))
+",,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_read_xyz.py::test_read_xyz_velocities,test/test_occam_data.py::test_occam_data_progress_bars,5abf2cc6ad0b6e0437808b37225b9e3c,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort1.py::test_replace_in_fort1_file,test/test_occam_data.py::test_occam_data_progress_bars,28690b18505c6d4a50c920993c6a8153,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_file,test/test_occam_data.py::test_occam_data_progress_bars,3de596d384292840366921692b085d2a,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_count_property,test/test_occam_data.py::test_occam_data_progress_bars,c1e7d1043d36f2e2aa68c27a44af8a30,True,"
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+replace_torsion_1 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'Ar', 'Be', 'Be', 10, 80])
+replace_non_bond11 = Fort3Replacement(property='non bond', replace=True, content=['Ar', 'Ar', 1.1, 9.298])
+replace_non_bond01 = Fort3Replacement(property='non bond', new=True, content=['H', 'Ar', 0.23, 2.443])
+replace_non_bond22 = Fort3Replacement(property='non bond', new=True, content=['Be', 'Ar', 2.23, 1.295])
+all_replacements = (replace_atom0, replace_atom1, replace_atom2, replace_atom3, replace_bond00, replace_bond01, replace_bond33, replace_angle000, replace_angle010, replace_angle112, replace_torsion_0, replace_torsion_1, replace_non_bond01, replace_non_bond11, replace_non_bond22)
+counts = _count_property_instances(*all_replacements)
+assert (counts[0] == 3)
+assert (counts[1] == 2)
+assert (counts[2] == 3)
+assert (counts[3] == 2)
+assert (counts[4] == 2)
+","
+replace_atom0 = Fort3Replacement(property='atom', new=True, content=['H', 1.298, 0.0])
+replace_atom1 = Fort3Replacement(property='atom', replace=True, content=['Ar', 3.001, 0.0])
+replace_atom2 = Fort3Replacement(property='atom', new=True, content=['O', 23.72, (- 1.0)])
+replace_atom3 = Fort3Replacement(property='atom', new=True, content=['Be', 11.1, 2.1])
+replace_bond00 = Fort3Replacement(property='bond type', replace=True, content=['Ar', 'Ar', 3.5, 118.1])
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+","
+replace_bond01 = Fort3Replacement(property='bond type', new=True, content=['Ar', 'H', 5.1, 59.242])
+replace_bond33 = Fort3Replacement(property='bond type', new=True, content=['Be', 'Be', 1.2, 291.285])
+replace_angle000 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'Ar', 'Ar', 90, 300])
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+","
+replace_angle010 = Fort3Replacement(property='bond angle', new=True, content=['Ar', 'H', 'Ar', 65, 250])
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+","
+replace_angle112 = Fort3Replacement(property='bond angle', new=True, content=['O', 'O', 'Be', 85, 190])
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+","
+replace_torsion_0 = Fort3Replacement(property='torsion', new=True, content=['Ar', 'O', 'Be', 'H', 25, 190])
+"
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_is_int,test/test_occam_data.py::test_occam_data_progress_bars,b3686f4927cebe3992b3a7710bc8046b,True,"
+assert (not _is_int(2.52958))
+assert _is_int((- 29859))
+assert _is_int('-29859')
+","
+assert _is_int((- 29859))
+assert _is_int('-29859')
+","
+assert _is_int('-29859')
+",,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3__count_existing_instances,test/test_occam_data.py::test_occam_data_progress_bars,f250fcd1f17e627747e227805fa8544a,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_fort3_replacement_repr,test/test_occam_data.py::test_occam_data_progress_bars,12b87b5e7fb392be640b8791556f954b,True,"
+r = Fort3Replacement(property='atom', new=True, content=['H', 1.008, 0.0])
+",,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_construct_new_chi,test/test_occam_data.py::test_occam_data_progress_bars,8f4bc345fc30eadfcbb6b43a938bd446,True,"
+old_atom_names = {1: 'A', 2: 'B'}
+new_atom_names = {1: 'A', 2: 'B'}
+(AA, AB) = (1, 2)
+(BA, BB) = (3, 4)
+chi = np.array([[AA, AB], [BA, BB]])
+expected = deepcopy(chi)
+chi = _construct_new_chi(new_atom_names, old_atom_names, chi)
+assert np.allclose(chi, expected)
+old_atom_names = {0: 'A', 1: 'B'}
+new_atom_names = {0: 'B', 1: 'A'}
+chi = _construct_new_chi(new_atom_names, old_atom_names, chi)
+expected = np.array([[BB, BA], [AB, AA]])
+assert np.allclose(chi, expected)
+old_atom_names = {1: 'A', 2: 'B', 3: 'C', 4: 'D'}
+new_atom_names = {1: 'C', 2: 'B', 3: 'A', 4: 'E', 5: 'D'}
+(AA, AB, AC, AD) = (1, 2, 3, 4)
+(BA, BB, BC, BD) = (5, 6, 7, 8)
+(CA, CB, CC, CD) = (9, 10, 11, 12)
+(DA, DB, DC, DD) = (13, 14, 15, 16)
+chi = np.array([[AA, AB, AC, AD], [BA, BB, BC, BD], [CA, CB, CC, CD], [DA, DB, DC, DD]])
+new_chi = _construct_new_chi(new_atom_names, old_atom_names, chi)
+(AE, BE, CE, DE, EE) = (5 * [(- 1)])
+(EA, EB, EC, ED, EE) = (5 * [(- 1)])
+expected = np.array([[CC, CB, CA, CE, CD], [BC, BB, BA, BE, BD], [AC, AB, AA, AE, AD], [EC, EB, EA, EE, ED], [DC, DB, DA, DE, DD]])
+","
+old_atom_names = {1: 'A', 2: 'B'}
+new_atom_names = {1: 'A', 2: 'B'}
+(AA, AB) = (1, 2)
+(BA, BB) = (3, 4)
+chi = np.array([[AA, AB], [BA, BB]])
+expected = deepcopy(chi)
+chi = _construct_new_chi(new_atom_names, old_atom_names, chi)
+assert np.allclose(chi, expected)
+old_atom_names = {0: 'A', 1: 'B'}
+new_atom_names = {0: 'B', 1: 'A'}
+chi = _construct_new_chi(new_atom_names, old_atom_names, chi)
+expected = np.array([[BB, BA], [AB, AA]])
+","
+old_atom_names = {1: 'A', 2: 'B'}
+new_atom_names = {1: 'A', 2: 'B'}
+(AA, AB) = (1, 2)
+(BA, BB) = (3, 4)
+chi = np.array([[AA, AB], [BA, BB]])
+expected = deepcopy(chi)
+","
+old_atom_names = {1: 'A', 2: 'B'}
+new_atom_names = {1: 'A', 2: 'B'}
+(AA, AB) = (1, 2)
+","
+new_atom_names = {1: 'A', 2: 'B'}
+(AA, AB) = (1, 2)
+","
+(AA, AB) = (1, 2)
+"
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_write_fort3_from_replace_objects,test/test_occam_data.py::test_occam_data_progress_bars,54665c8905db36b6112b193e3b51a482,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_replace_in_fort3.py::test_replace_in_fort3_check_new_kappa,test/test_occam_data.py::test_occam_data_progress_bars,43008976bb75d274de62ae3aaeb3f8f7,True,"
+tol = 1e-14
+current_kappa = 1.204
+repl = Fort3Replacement(property='kappa', replace=True, content=[9.124423])
+kappa = _check_new_kappa(current_kappa, repl)
+assert (kappa == pytest.approx(9.124423, abs=tol))
+kappa = None
+repl = Fort3Replacement(property='kappa', replace=True, content=0.159885)
+kappa = _check_new_kappa(current_kappa, repl)
+","
+tol = 1e-14
+current_kappa = 1.204
+repl = Fort3Replacement(property='kappa', replace=True, content=[9.124423])
+kappa = _check_new_kappa(current_kappa, repl)
+","
+tol = 1e-14
+current_kappa = 1.204
+","
+current_kappa = 1.204
+",,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_xyz_to_fort5.py::test_xyz_to_fort5_file,test/test_occam_data.py::test_occam_data_progress_bars,fdd10b062775df38cb8e04b31acc60f0,False,,,,,,
+OccamTools,26c47709f6b870c89403f03ade0950de9f301639,test/test_occam_data.py::test_occam_data_single_input,test/test_xyz_to_fort5.py::test_xyz_to_fort5_default_file,test/test_occam_data.py::test_occam_data_progress_bars,0bf7ba4aba9ea4ee9cbbb816d1925fab,False,,,,,,
