@@ -1,4 +1,4 @@
-Project,URL,SHA,polluter,cleaner,victim,copy_can_work,md5_record,patch1,patch2,patch3,patch4
+Project,URL,SHA,polluter,cleaner,victim
 Flask-JWT-Router,https://github.com/joegasewicz/Flask-JWT-Router,0fb1e256c81409be6f08d8be12f07e5f58b4f914,tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client0-None-200],tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client1-None-401],tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client3-None-401]
 Flask-JWT-Router,https://github.com/joegasewicz/Flask-JWT-Router,0fb1e256c81409be6f08d8be12f07e5f58b4f914,tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client0-None-200],tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client2-None-401],tests/test_routing.py::TestRouting::test_jwt_route[jwt_router_client3-None-401]
 IOCynergy,https://github.com/omersaraf/IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple
