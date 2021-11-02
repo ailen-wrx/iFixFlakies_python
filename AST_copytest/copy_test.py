@@ -1,5 +1,5 @@
 
-"Usage: python3 copy_test.py project sha cleaner_fullpath victim_fullpath combination_path"
+"Usage: python3 copy_test.py project sha polluter_fullpath cleaner_fullpath victim_fullpath combination_path"
 
 import ast
 import csv
