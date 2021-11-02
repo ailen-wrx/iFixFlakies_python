@@ -67,7 +67,7 @@ def update(victim_or_brittle):
                     csv.writer(f).writerow(Gruber_row)
                 continue
 
-            num_valid += 1
+#            num_valid += 1
             count = 0
             if len(os.listdir(os.path.join(output_dir, Project[0], Victim_md5))) == 0:
                 with open(not_run, 'a') as f:
@@ -87,6 +87,8 @@ def update(victim_or_brittle):
                     csv.writer(f).writerow(Gruber_row)
                 continue
 
+            num_valid += 1
+            
             for Test_md5 in os.listdir(os.path.join(output_dir, Project[0], Victim_md5)):
                 if (Test_md5 == "test_mapping.csv"):
                     continue
@@ -120,7 +122,7 @@ def update(victim_or_brittle):
     print("    %d are not %s (have no %s)" % (num_valid-num_not_none, "brittles" if victim_or_brittle == "Brittle" else "victims", \
                                               "state-setter" if victim_or_brittle == "Brittle" else "polluter"))
     print("    %d have at least 1 %s" % (num_not_none, "state-setters" if victim_or_brittle == "Brittle" else "polluters"))
-    print("    Check datailed stat in %s" % (stat_csv))
+    print("    Check detailed stat in %s" % (stat_csv))
 
 update("Brittle")
 update("Victim")
