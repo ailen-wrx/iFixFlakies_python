@@ -3020,7 +3020,7 @@ schematics_to_swagger,https://github.com/Alexei-Kornienko/schematics_to_swagger,
 schematics_to_swagger,https://github.com/Alexei-Kornienko/schematics_to_swagger,d9c1c9e43a25c5a4ff60701b3bf22fc039c815c2,tests/test_model.py,,test_read_models_from_module,,True,Passed,Passed
 scikit-fem,https://github.com/kinnala/scikit-fem,4aa87e15fd05dfbbad2367ef2303f398d5afddcc,tests/test_examples.py,TestEx23,runTest,,True,Passed,Passed
 scikit-fem,https://github.com/kinnala/scikit-fem,4aa87e15fd05dfbbad2367ef2303f398d5afddcc,tests/test_mesh.py,SaveLoadCycleHex,runTest,,True,Passed,Passed
-scikit-hep,https://github.com/scikit-hep/scikit-hep,e78234da9e754e380a7d871afb56b20baa73b99b,tests/dataset/test_numpydataset.py,,test_methods,,True,Passed,Passed
+scikit-hep,https://github.com/scikit-hep/scikit-hep/,e78234da9e754e380a7d871afb56b20baa73b99b,tests/dataset/test_numpydataset.py,,test_methods,,True,Passed,Passed
 scikit-hep,https://github.com/scikit-hep/scikit-hep/,e78234da9e754e380a7d871afb56b20baa73b99b,tests/dataset/test_numpydataset.py,,test_methods,,True,Passed,Passed
 scrapbook,https://github.com/nteract/scrapbook,f681427fcc721e303e3d21fb3974b3bfa43d5445,scrapbook/tests/test_api.py,,test_glue,[foobarbaz-scrap0-None-data0-metadata0],True,Passed,Passed
 scrapbook,https://github.com/nteract/scrapbook,f681427fcc721e303e3d21fb3974b3bfa43d5445,scrapbook/tests/test_api.py,,test_glue,[foobarbaz-scrap3-json-data3-metadata3],True,Passed,Passed
