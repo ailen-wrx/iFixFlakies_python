@@ -18,7 +18,10 @@ mkdir -p $global_output_dir
 if [[ ! -f "$global_output_dir/cleaner.csv" ]]; then
     echo "Project_Name,Project_URL,Project_Hash,Polluter,Cleaner,Victim" > $global_output_dir/cleaner.csv
 fi
-for i in $(cat $polluter_list); do
+for vict in $(cut -d, -f1,7 $polluter_list | sed '1d' | sort | uniq); do
+    echo $vict
+
+for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(echo $vict | cut -d, -f2)" | shuf -n 5 --random-source=<(cat $base_dir/victims_brittles.csv)); do
     project=$(echo $i | cut -d, -f1)
     url=$(echo $i | cut -d, -f2)
     sha=$(echo $i | cut -d, -f3)
@@ -30,7 +33,6 @@ for i in $(cat $polluter_list); do
     if [[ "$project" == "Project_Name" ]]; then
 	continue
     fi
-
     
     if [[ -n $(fgrep "$polluter,$victim" $global_output_dir/polluter-victim-mapping.csv) ]]; then
 	echo [project] $project
@@ -38,6 +40,13 @@ for i in $(cat $polluter_list); do
 	echo [victim] $victim
 	echo Pass.
 	continue
+    fi
+
+    cd $global_repo_dir
+    if [ ! -d "$project" ]; then
+	cp /home/user/data/Repo_zipped/$project.zip .
+	unzip $project.zip > /dev/null
+	rm $project.zip
     fi
 
     cd $global_repo_dir/$project
@@ -88,5 +97,7 @@ for i in $(cat $polluter_list); do
 
     deactivate
 
+
+done
 
 done
