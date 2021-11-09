@@ -34,9 +34,6 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     git fetch --depth 1 origin $sha
     git checkout $sha
 
-    pip freeze > requirements_freeze.txt
-    cat requirements_freeze.txt
-
     rm -rf venv
     python3 -m venv venv
 

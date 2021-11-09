@@ -3,14 +3,18 @@
 
 import ast
 import csv
+import io
 import re
 import os
 import sys
 import time
+import pytest
+import pandas as pd
 from unparse import Unparser
 from io import StringIO
 import hashlib, binascii
-#result_path='/home/yyy/patch_result3.csv'
+
+CACHE_DIR='./patchercache/'
 
 
 class get_origin_astInfo(ast.NodeVisitor):
@@ -37,30 +41,24 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
 
     with open(victim_path, "r") as victim:
         tree_victim = ast.parse(victim.read())
-        #victim_info = get_origin_astInfo(tree_victim)
-        #victim_import_num = victim_info.get_import_num()
-
+       
     print(cleaner_path,cleaner_testfunc)
     with open(cleaner_path, "r") as cleaner:
         tree_cleaner = ast.parse(cleaner.read())
         cleaner_info = get_origin_astInfo(tree_cleaner)
         cleaner_import_num = cleaner_info.get_import_num()
 
-    md5_path = setup_dir(polluter_fullpath, cleaner_fullpath, victim_fullpath)
-    pcv_result=run_tests_pcv(md5_path, polluter_fullpath, cleaner_fullpath, victim_fullpath)
-    pv_result=run_tests_pv(md5_path,polluter_fullpath,victim_fullpath)
-    if pv_result.strip()!='failed':
-        pv_10_times_result=[]
-        for i in range(0,10):
-            tmp_result=run_tests_pv(md5_path,polluter_fullpath,victim_fullpath)
-            pv_10_times_result.append(tmp_result)
-        if 'failed' in pv_10_times_result:
-            pv_result='ND'
+    md5 = get_md5(polluter_fullpath, cleaner_fullpath, victim_fullpath)
 
+    pcv_result=run_tests_pcv(md5, polluter_fullpath, cleaner_fullpath, victim_fullpath)
+    pv_result=run_tests_pv(md5,polluter_fullpath,victim_fullpath)
+
+              
     patch_time_1st = None
     patch_time_all = None
-    can_copy_work=None            
-    if pv_result.strip() == 'failed':
+    can_copy_work = None
+
+    if pv_result.strip() == 'failed' and pcv_result.strip() =='passed':
         # copy unique Import and ImportFrom modules
         for import_obj in [module for module in ast.walk(tree_cleaner) if
                            isinstance(module, ast.Import) or isinstance(module, ast.ImportFrom)]:
@@ -126,7 +124,7 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
 
         with open(combination_path, "w") as combination:
             combination.write(edited_content)
-        result = (run_tests_pv(md5_path, polluter_fullpath,
+        result = (run_tests_pv(md5, polluter_fullpath,
                                combination_path + '::' + '::'.join(victim_fullpath.split('::')[1:])))
 
         tmp_origin_victim.remove(tmp_insert_node)
@@ -170,14 +168,14 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
                 buf.seek(0)
                 edited_content = buf.read()
 
-                combination_path = combination_path.replace('com', 'com2')
+                combination_path = combination_path.replace('id', md5)
                 with open(combination_path, "w") as combination:
                     combination.write(edited_content)
 
                 tmp_origin_victim.remove(tmp_insert_node)
-
-                if (run_tests_pv(md5_path, polluter_fullpath, combination_path + '::' + '::'.join(
-                        victim_fullpath.split('::')[1:]))).strip() == 'passed':
+                can_patch_work=(run_tests_pv(md5, polluter_fullpath, combination_path + '::' + '::'.join(
+                        victim_fullpath.split('::')[1:])))
+                if can_patch_work.strip() == 'passed':
                     patch_time = time.perf_counter()
                     patch_num += 1
                     if patch_num == 1:
@@ -200,50 +198,45 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
     
     with open(result_path,'a+') as f:
         csv_write = csv.writer(f)
-        result=[project,sha,polluter_fullpath,cleaner_fullpath,victim_fullpath,md5_path,pv_result,pcv_result,can_copy_work,patch_time_1st,patch_time_all]
+        result=[project,sha,polluter_fullpath,cleaner_fullpath,victim_fullpath,md5,pv_result,pcv_result,can_copy_work,patch_time_1st,patch_time_all]
 
         for each in patch_list:
             result.append(each)
         
         csv_write.writerow(result)
        
-def setup_dir(polluter_fullpath, cleaner_fullpath, victim_fullpath):
+def get_md5(polluter_fullpath, cleaner_fullpath, victim_fullpath):
     md5=hashlib.md5()
     md5.update(polluter_fullpath.encode())
     md5.update(cleaner_fullpath.encode())
     md5.update(victim_fullpath.encode())
     md5_Digest = md5.hexdigest()
-    
-    os.system('rm -rf '+md5_Digest)
-    os.system('mkdir '+ md5_Digest)
-    print('done')
+
     return md5_Digest
     
         
-def run_tests_pv(dir_md5, polluter_fullpath, victim_fullpath):
-    run_cmd_pv="python3 -m pytest "+polluter_fullpath+' '+victim_fullpath +' --csv '+dir_md5+'/'+dir_md5+'_pv_result.csv' 
-    os.system(run_cmd_pv)
-   
-    get_pv_result='grep -n '+victim_fullpath +' '+ dir_md5+'/'+dir_md5+'_pv_result.csv' + ' | cut -d\',\' -f7 '
-   
-    pv_result = os.popen(get_pv_result)  
-    pv_res = pv_result.read()
-    save_cmd="echo "+polluter_fullpath + ',' +victim_fullpath+','+dir_md5+','+pv_res.strip()+ " >> /home/yyy/testresultcom.csv"
-   
-    os.system(save_cmd)
-    return pv_res  
+def run_tests_pv(md5, polluter_fullpath, victim_fullpath):
+    pv_arg=pytest.main([polluter_fullpath,victim_fullpath,'--csv',CACHE_DIR+'/{}.csv'.format(md5)])
+    capture = io.StdCapture()
+    pytest.main(pv_arg)
+    capture.reset()
+    csv_result=pd.read_csv(CACHE_DIR + '/{}.csv'.format(md5))
+    status=csv_result['status']
+    pv_result=status[len(status)-1]
 
-def run_tests_pcv(dir_md5, polluter_fullpath, cleaner_fullpath, victim_fullpath):
-    run_cmd_pcv="python3 -m pytest "+polluter_fullpath+' '+cleaner_fullpath+' '+victim_fullpath +' --csv '+dir_md5+'/'+dir_md5+'_pcv_result.csv'
-    os.system(run_cmd_pcv)
+    return pv_result
 
-    get_pcv_result='grep -n '+victim_fullpath +' '+ dir_md5+'/'+dir_md5+'_pcv_result.csv' + ' | cut -d\',\' -f7 '
-    pcv_result=os.popen(get_pcv_result)
-    pcv_res=pcv_result.read()
-    save_cmd="echo "+polluter_fullpath + ',' +cleaner_fullpath+','+victim_fullpath+','+dir_md5+','+pcv_res.strip()+ " >> /home/yyy/testresultcom.csv"
+def run_tests_pcv(md5, polluter_fullpath, cleaner_fullpath, victim_fullpath):
+    pcv_arg = pytest.main([polluter_fullpath,cleaner_fullpath,victim_fullpath, '--csv', CACHE_DIR + '/{}.csv'.format(md5)])
+    capture = io.StdCapture()
+    pytest.main(pcv_arg)
+    capture.reset()
+    csv_result = pd.read_csv(CACHE_DIR + '/{}.csv'.format(md5))
+    status = csv_result['status']
+    pcv_result = status[len(status)-1]
 
-    os.system(save_cmd)
-    return pcv_res
+    return pcv_result
+
 
 
 if __name__ == "__main__":
