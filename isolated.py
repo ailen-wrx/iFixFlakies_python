@@ -1,9 +1,10 @@
-# python3 isolated.py dataset_final.csv output
+# python3 isolated.py dataset_final_1.csv output
 
 import os
 import sys
 import csv
 import pandas as pd
+import traceback
 
 dataset = sys.argv[1]
 output_dir = sys.argv[2]

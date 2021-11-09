@@ -1,3 +1,5 @@
+# python3 polluter_or_state_setter.py 1 output
+
 import os
 import sys
 import csv
