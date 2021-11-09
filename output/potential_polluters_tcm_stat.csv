@@ -420,8 +420,8 @@ django-registration,https://github.com/macropin/django-registration,b66ddb4b0044
 docker-pretty-ps,https://github.com/politeauthority/docker-pretty-ps,2fcc9db4e391df2b96ccc2e967b41b6263fdcc2d,tests/test_dockerprettyps.py::TestDockerPrettyPs::test_container_display_name,1
 docker-pretty-ps,https://github.com/politeauthority/docker-pretty-ps,2fcc9db4e391df2b96ccc2e967b41b6263fdcc2d,tests/test_dockerprettyps.py::TestDockerPrettyPs::test_get_container_colors,1
 docker-pretty-ps,https://github.com/politeauthority/docker-pretty-ps,2fcc9db4e391df2b96ccc2e967b41b6263fdcc2d,tests/test_dockerprettyps.py::TestDockerPrettyPs::test_print_format,1
-domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_cli.py::TestCLI::test_domain,3
-domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_cli.py::TestCLI::test_file,3
+domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_cli.py::TestCLI::test_domain,0
+domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_cli.py::TestCLI::test_file,0
 domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_converter.py::TestConverter::test_commented_line,0
 domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_converter.py::TestConverter::test_hosts_file_format,0
 domain2idna,https://github.com/PyFunceble/domain2idna,39a1c4e1ebb877ed511e53b618fbe437a685c970,tests/test_converter.py::TestConverter::test_to_idna_multiple,0
@@ -1071,7 +1071,7 @@ phonon-enumeration,https://github.com/wsmorgan/phonon-enumeration,5d7a8d8e3403cc
 pika,https://github.com/pika/pika,a3ae3e5aae3fd546e9ae73bff0175f5d61a9d39a,tests/unit/io_services_test_stubs_test.py::TestStartCalledFromOtherThreadAndWithVaryingNativeLoops::test_with_asyncio_io_services,2
 pika,https://github.com/pika/pika,a3ae3e5aae3fd546e9ae73bff0175f5d61a9d39a,tests/unit/io_services_test_stubs_test.py::TestStartCalledFromOtherThreadAndWithVaryingNativeLoops::test_with_select_connection_io_services,2
 pika,https://github.com/pika/pika,a3ae3e5aae3fd546e9ae73bff0175f5d61a9d39a,tests/unit/io_services_test_stubs_test.py::TestStartCalledFromOtherThreadAndWithVaryingNativeLoops::test_with_tornado_io_services,2
-pingouin,https://github.com/raphaelvallat/pingouin,08560bb978949e97653b203f7374e90b022b88fb,pingouin/tests/test_regression.py::TestRegression::test_linear_regression,2
+pingouin,https://github.com/raphaelvallat/pingouin,08560bb978949e97653b203f7374e90b022b88fb,pingouin/tests/test_regression.py::TestRegression::test_linear_regression,0
 pingouin,https://github.com/raphaelvallat/pingouin,08560bb978949e97653b203f7374e90b022b88fb,pingouin/tests/test_regression.py::TestRegression::test_logistic_regression,0
 piripherals,https://github.com/quantenschaum/piripherals,74e4807a64363e3c95a03222fa250a1073387eaf,tests/test_led.py::test_neopixels_rainbow,0
 plai,https://github.com/matheusbsilva/plai,1d3bfb0438bb6bd2f8d8e42f17207f9449319763,tests/test_evaluation.py::TestPipeline::test_pipeline_raise_error_on_undeclared_dataframe,4

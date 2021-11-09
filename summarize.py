@@ -1,10 +1,13 @@
 import pandas as pd
 
+vb = pd.read_csv("victims_brittles.csv")
+print("{} OD tests in {} Projects are victims or brittles suggested in Gruber's dataset".format(len(vb), len(set(vb['Project_Name']))))
+
 vb = pd.read_csv("output/victim_or_brittles.csv")
-print("{} OD tests in {} Projects are victims or brittles".format(len(vb), len(set(vb['Project_Name']))))
+print("{} OD tests in {} Projects are run successfully in our environment".format(len(vb), len(set(vb['Project_Name']))))
 
 victims = pd.read_csv("output/victims.csv")
-print("\t{} OD tests in {} Projects are victims".format(len(victims), len(set(victims['Project_Name']))))
+print("\t{} OD tests in {} Projects are potential victims".format(len(victims), len(set(victims['Project_Name']))))
 
 
 
@@ -44,9 +47,8 @@ print("\t\t\t{} victims in {} Projects have cleaners in TSM (To be updated)".for
 
 
 
-
 brittles = pd.read_csv("output/brittles.csv")
-print("\t{} OD tests in {} Projects are brittles".format(len(brittles), len(set(brittles['Project_Name']))))
+print("\t{} OD tests in {} Projects are potential brittles".format(len(brittles), len(set(brittles['Project_Name']))))
 
 ss_tcm = pd.read_csv("output/potential_state_setters_tcm_stat.csv")
 projects = []

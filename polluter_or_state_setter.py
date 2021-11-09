@@ -1,21 +1,21 @@
 import os
 import sys
 import csv
-import pandas as pd
 import traceback
 
 tcm = sys.argv[1]
 output_dir = sys.argv[2]
-if tcm:
+if tcm == "1":
     flg = "tcm"
 else:
     flg = "tsm"
+
 output_polluter = os.path.join(output_dir, "potential_polluters_{}.csv".format(flg))
 output_polluter_stat = os.path.join(output_dir, "potential_polluters_{}_stat.csv".format(flg))
 output_ss = os.path.join(output_dir, "potential_state_setters_{}.csv".format(flg))
 output_ss_stat = os.path.join(output_dir, "potential_state_setters_{}_stat.csv".format(flg))
 
-TASK = "polluter_tcm"
+TASK = "polluter_{}".format(flg)
 VICTIM = "victims"
 BRITTLE = "brittles"
 
@@ -55,12 +55,22 @@ def process(victim_or_brittle):
                         victim_mapping[row1[0]] = row1[1]
                     for i in os.listdir(os.path.join(output_dir, TASK, Project, victim_mapping[Test_id])):
                         try: 
-                            res = pd.read_csv(os.path.join(output_dir, TASK, Project, victim_mapping[Test_id], i))
-                            if (res['status'][len(res)-1] != "passed" and victim_or_brittle == VICTIM) or \
-                            (res['status'][len(res)-1] == "passed" and victim_or_brittle == BRITTLE):
-                                time1 = sum(res['duration'][:len(res)-1])
-                                time2 = res['duration'][len(res)-1]
-                                csv.writer(output).writerow([Project, Project_URL, Project_Hash, Test_id, time1, res['id'][0], time2])
+                            csvdir = os.path.join(output_dir, TASK, Project, victim_mapping[Test_id], i)
+                            testid = []
+                            status = []
+                            duration = []
+                            with open(csvdir, 'rt') as fcsv:
+                                for row2 in csv.reader(fcsv):
+                                    testid.append(row2[0])
+                                    status.append(row2[6])
+                                    duration.append(row2[8])
+                                if len(testid) <=2:
+                                    continue
+                            if (status[-1] != "passed" and victim_or_brittle == VICTIM) or \
+                            (status[-1] == "passed" and victim_or_brittle == BRITTLE):
+                                time2 = sum([float(x) for x in duration[1:-1]])
+                                time1 = duration[-1]
+                                csv.writer(output).writerow([Project, Project_URL, Project_Hash, Test_id, time1, testid[1], time2])
                                 count += 1
                         except:
                             continue
@@ -72,6 +82,8 @@ def process(victim_or_brittle):
                 traceback.print_exc()
                 csv.writer(errorfile).writerow(row)
                 continue
-            
+
+
+print(flg)          
 process("victims")
 process("brittles")
