@@ -35,7 +35,7 @@ for i in range(len(polluters_tcm)):
     if polluters_tcm['Stat_Polluter'][i]:
         projects.append(polluters_tcm['Project_Name'][i])
         have_polluter.append(polluters_tcm['Test_id'][i])
-print("\t\t{} victims in {} Projects have polluters in TSM (To be updated)".format(len(have_polluter), len(list(set(projects)))))
+print("\t\t{} victims in {} Projects have polluters in TSM".format(len(have_polluter), len(list(set(projects)))))
 
 cleaners = pd.read_csv("output/cleaner/cleaner_tsm.csv")
 projects = []
@@ -66,7 +66,7 @@ for i in range(len(ss_tcm)):
     if ss_tcm['Stat_State-setter'][i]:
         projects.append(ss_tcm['Project_Name'][i])
         have_ss.append(ss_tcm['Test_id'][i])
-print("\t\t{} brittles in {} Projects have state-setters in TSM (To be updated)".format(len(have_ss), len(list(set(projects)))))
+print("\t\t{} brittles in {} Projects have state-setters in TSM".format(len(have_ss), len(list(set(projects)))))
 
 
 

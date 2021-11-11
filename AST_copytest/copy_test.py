@@ -107,31 +107,49 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
         # get helper code from cleaner, handle setup, body and teardown 'module, method, class, function'
         # setup_module,setup_class,setup_function,setup_method,test_body,teardown_method,teardown_function,teardown_class,teardown_module
 
-        name_node_dict = {'setup_module': None, 'setup_class': None, 'setup_function': None, 'setup_method': None,
+        name_node_dict = {'setup_module': None, 'setUpClass': None, 'setup_function': None, 'setup_method': None,
                           cleaner_testfunc: None,
-                          'teardown_method': None, 'teardown_function': None, 'teardown_class': None,
+                          'teardown_method': None, 'teardown_function': None, 'tearDownClass': None,
                           'teardown_module': None}
 
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        print([func.name for func in ast.walk(tree_cleaner) if isinstance(func, ast.FunctionDef)])
-        for eachfunc in [func for func in ast.walk(tree_cleaner) if isinstance(func, ast.FunctionDef)]:
-            if eachfunc.name in name_node_dict:
-                name_node_dict[eachfunc.name] = eachfunc.body
+        if cleaner_class:
+           for clean_class in [node for node in ast.walk(tree_cleaner) if isinstance(node, ast.ClassDef)]:
+               if clean_class.name == cleaner_class:
+                   for clean_obj in [func for func in ast.iter_child_nodes(clean_class) if isinstance(func, ast.FunctionDef)]:
+                     
+                        if clean_obj.name in name_node_dict:
+                            name_node_dict[clean_obj.name] = clean_obj.body
+                   break
 
-        insert_nodes_keys = [key for key in name_node_dict if name_node_dict[key] != None]
-        print(insert_nodes_keys)
-#        print(cleaner_testfunc)
-#        print(insert_nodes_keys)
-        pre_node_key = insert_nodes_keys[0]
-        pre_node = name_node_dict[pre_node_key]
 
-        if len(insert_nodes_keys) > 1:
-            for key in len(insert_nodes_keys)[1:]:
-                pre_node = name_node_dict[key].insert(0, pre_node)
-        insert_node = pre_node
+           insert_nodes_keys = [key for key in name_node_dict if name_node_dict[key] != None]
+           pre_node_key = insert_nodes_keys[0]
+           pre_node = name_node_dict[pre_node_key]
 
+           if len(insert_nodes_keys) > 1:
+               for key in insert_nodes_keys[1:]:
+                   name_node_dict[key].insert(0, pre_node)
+                   pre_node = name_node_dict[key]
+           insert_node = pre_node
+
+        else:
+            for eachfunc in [func for func in ast.walk(tree_cleaner) if isinstance(func, ast.FunctionDef)]:
+                if eachfunc.name in name_node_dict:
+                    name_node_dict[eachfunc.name] = eachfunc.body
+
+            insert_nodes_keys = [key for key in name_node_dict if name_node_dict[key] != None]
+
+            pre_node_key = insert_nodes_keys[0]
+            pre_node = name_node_dict[pre_node_key]
+
+            if len(insert_nodes_keys) > 1:
+                 for key in insert_nodes_keys[1:]:
+                    pre_node = name_node_dict[key].insert(0, pre_node)
+            insert_node = pre_node
+
+         
+            
         # get victim test body
-
         if victim_class:
             for vic_class in [node for node in ast.walk(tree_victim) if isinstance(node,ast.ClassDef)]:
                 if vic_class.name == victim_class:
@@ -159,10 +177,14 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
         tmp_tree_victim = origin_tree_victim
         tmp_insert_node = insert_node
 
+    #    for each in [func for func in ast.walk(tree_victim) if isinstance(func, ast.expr)]:
+     #       print(each.lineno)
+        print(ast.expr,'++++++++++++++++++++++++++++++++')
         tmp_origin_victim.insert(0, tmp_insert_node)
-     #   ast.fix_missing_locations(tmp_tree_victim)
+        ast.fix_missing_locations(tmp_tree_victim)
 
         insert_buf = StringIO()
+
         Unparser(tmp_insert_node, insert_buf)
         insert_buf.seek(0)
         insert_content = insert_buf.read()
@@ -210,19 +232,17 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
                 tmp_origin_victim = origin_victim_node
 
 
-                print('@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
-                print(this_round_insert_code)
-
                 try:
 
                     tmp_insert_node = ast.parse(this_round_insert_code)
 
 
                     tmp_origin_victim.insert(0, tmp_insert_node)
+                    print('&&&&&&&&&&&&&_',tmp_insert_node.lineno)
 
-                   # ast.fix_missing_locations(tmp_tree_victim)
+                    ast.fix_missing_locations(tmp_tree_victim)
                     can_be_inserted=True
-                except IndentationError:
+                except:# IndentationError:
                     can_be_inserted=False
                 tmp_buf = StringIO()
                 Unparser(tmp_insert_node, tmp_buf)
@@ -240,7 +260,6 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
 
                 combination_path = combination_path.replace('patch', 'patch'+str(roundnum))
                 roundnum+=1
-                print('~~~~~~~~~~~@@@@@@@@@@@@@@@@@@@@',roundnum)
                 with open(combination_path, "w") as combination:
                     combination.write(edited_content)
 
@@ -323,9 +342,9 @@ def run_tests_pv(project,md5, polluter_fullpath, victim_fullpath):
 
 def run_tests_pcv(project, md5, polluter_fullpath, cleaner_fullpath, victim_fullpath):
     pcv_arg = [polluter_fullpath,cleaner_fullpath,victim_fullpath, '--csv', CACHE_DIR +project+ '/{}.csv'.format(md5)]
-    # capture = io.StdCapture()
+    capture = io.StdCapture()
     pytest.main(pcv_arg)
-    # capture.reset()
+    capture.reset()
     csv_result = pd.read_csv(CACHE_DIR +project+ '/{}.csv'.format(md5))
     status = csv_result['status']
     pcv_result = status[len(status)-1]
