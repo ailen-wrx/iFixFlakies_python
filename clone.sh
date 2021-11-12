@@ -8,7 +8,7 @@ echo script version: $(git rev-parse HEAD)
 base_url=$(pwd)
 mkdir -p $repo_dir/$project
 rm $base_url/latest_repo_dirs.csv
-for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
+for i in $(cut -d, -f1,2 $dataset | uniq); do
     project=$(echo $i | cut -d, -f1)
     url=$(echo $i | cut -d, -f2)
 
@@ -34,9 +34,6 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
     git fetch --depth 1 origin $sha
     git checkout $sha
 
-    pip freeze > requirements_freeze.txt
-    cat requirements_freeze.txt
-
     rm -rf venv
     python3 -m venv venv
 
@@ -44,10 +41,9 @@ for i in $(cut -d, -f1,2 $dataset | uniq | sed '1d'); do
 
     pip3 install --upgrade pip
 
-    for i in $(find -maxdepth 1 -name "*requirement*"); do
+    for i in $(find -name "*requirement*"); do
         pip3 install -r $i
     done
-    pip3 install -r requirements_freeze.txt
 
     pip3 install pytest
     pip3 install pytest-csv
