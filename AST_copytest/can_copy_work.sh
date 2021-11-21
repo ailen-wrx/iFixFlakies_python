@@ -55,7 +55,7 @@ for project_name in $(cat $input_csv | sed '1d' | cut -d, -f1 | uniq); do
 #	    echo "unzipping $project"
 #	    unzip $project.zip > /dev/null
 #	    rm $project.zip
-#	    echo "呜呜呜呜"
+
 #	fi
 
 #	read a
