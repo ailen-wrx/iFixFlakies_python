@@ -244,10 +244,6 @@ bupper,https://github.com/michaelpb/bupper,d3751472b90132e781dfb32310b5b567658b7
 bupper,https://github.com/michaelpb/bupper,d3751472b90132e781dfb32310b5b567658b7f31,test/test_bupper.py::TestUtils::test_makedirs_to,victim,True
 python-caching,https://github.com/bofm/python-caching,16de50c119f8896e923e3f10488ecf6ffe535f45,tests/test_storage_sqlite.py::test_ttl_gt0,victim,True
 carbonize,https://github.com/eillarra/carbonize,efc89b8a9e44f9d64110406ce70929a9671517c7,tests/test_api.py::TestFootprint::test_flight,victim,True
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py::TestMovieReview::test_extract_polarity_v1,victim,True
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py::TestMovieReview::test_extract_rating,victim,True
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py::TestMovieReview::test_extract_subjectivity,victim,True
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py::TestMovieReview::test_prepare_polarity,victim,True
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_classify.py::ClassifyTest::test_init,victim,True
 ci-diff-helper,https://github.com/dhermes/ci-diff-helper,876affd3ba49d78c48708a12103d39ef3c7d5f1d,tests/test__utils.py::Test_check_output::test_bad_keywords,victim,False
 ci-diff-helper,https://github.com/dhermes/ci-diff-helper,876affd3ba49d78c48708a12103d39ef3c7d5f1d,tests/test__utils.py::Test_pr_from_commit::test_no_id,victim,False
@@ -1327,7 +1323,6 @@ schematics_to_swagger,https://github.com/Alexei-Kornienko/schematics_to_swagger,
 scikit-fem,https://github.com/kinnala/scikit-fem,4aa87e15fd05dfbbad2367ef2303f398d5afddcc,tests/test_examples.py::TestEx23::runTest,victim,True
 scikit-fem,https://github.com/kinnala/scikit-fem,4aa87e15fd05dfbbad2367ef2303f398d5afddcc,tests/test_mesh.py::SaveLoadCycleHex::runTest,victim,True
 scikit-hep,https://github.com/scikit-hep/scikit-hep/,e78234da9e754e380a7d871afb56b20baa73b99b,tests/dataset/test_numpydataset.py::test_methods,victim,True
-scikit-hep,https://github.com/scikit-hep/scikit-hep/,e78234da9e754e380a7d871afb56b20baa73b99b,tests/dataset/test_numpydataset.py::test_methods,victim,True
 scsm,https://github.com/bubylou/scsm,a67059c398b40e31296faea25ae20d3dc78070bd,tests/test_core.py::TestSteamCMD::test_cached_login,victim,False
 sdklib,https://github.com/ivanprjcts/sdklib,5384b1c7f05abd6350151c08ad6a4a8b5855f8f0,tests/test_http_context.py::TestHttpContext::test_http_context_singleton_clear,victim,True
 securenative-python,https://github.com/securenative/securenative-python,0eae99733b7565341487ad32f044be8dc51032cd,tests/configuration_manager_test.py::ConfigurationManagerTest::test_default_values_for_invalid_enum_config_props,victim,True
@@ -1368,8 +1363,6 @@ selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba41653
 selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba4165375c009b90efdb3c2,tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_set_querystring_overrides_filters,victim,True
 selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba4165375c009b90efdb3c2,tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_set_rewrite_rules,victim,True
 selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba4165375c009b90efdb3c2,tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_set_single_scopes,victim,True
-serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_explicit,victim,True
-serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_naive_detection,victim,True
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_explicit,victim,True
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_naive_detection,victim,True
 sfpl-scraper,https://github.com/kajchang/sfpl-scraper,d97cc55f28fc75bf8de3fe5472ed0c2c55a09081,tests/test_api.py::TestScraper::test_author_search,victim,True

@@ -43,7 +43,7 @@ have_cleaner = []
 for i in range(len(cleaners)):
     projects.append(cleaners['Project_Name'][i])
     have_cleaner.append(cleaners['Victim'][i])
-print("\t\t\t{} victims in {} Projects have cleaners in TSM (To be updated)".format(len(have_cleaner), len(list(set(projects)))))
+print("\t\t\t{} victims in {} Projects have cleaners in TSM".format(len(have_cleaner), len(list(set(projects)))))
 
 
 

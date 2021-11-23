@@ -1,7 +1,7 @@
 # bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/isolated test_list 1 0
 # bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter test_list 2 0
 # bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_tsm test_list 3 0
-# bash batch.sh $(pwd)/dataset_latest.csv $(pwd)/Repo $(pwd)/output/polluter_random test_list 4 0
+# bash batch.sh $(pwd)/output/no_polluters_tsm.csv $(pwd)/Repo $(pwd)/output/polluter_random test_list 4 0
 
 dataset=$1
 global_repo_dir=$2
