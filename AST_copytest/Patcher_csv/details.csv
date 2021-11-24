@@ -309,7 +309,7 @@ pythondi,913e6a60fc5d02c3db385ad322f970ecec36969b,tests/test_configure.py::test_
 runium,ba89015859976d3426d25a53af5fa4d8827c7483,tests/test_runium.py::TestLoopDrift::test_processing,victim,1.74396375,../SAVE/test_processing_patch_41499557f4fb41d0d3459c2a578dbc3a_.patch,1
 stowage,7c619be755b9b73fd202367bcf9014472f318834,test/test_stowage.py::TestPathGenerators::test_directory_walk,victim,0.936447931,../SAVE/test_directory_wa_patch_58776104e201fe9577811a1c592fa44a_.patch,1
 stowage,7c619be755b9b73fd202367bcf9014472f318834,test/test_stowage.py::TestPathGenerators::test_needed_symlink_walk,victim,0.875126021,../SAVE/test_needed_symli_patch_4da7a68dd273edecc7caf71f99543211_.patch,1
-yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_cached,victim,1.410143089,../SAVE/test_cached_patch_1952922f6ede0ff4adf3df7f143b67dd_.patch,7
+yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_cached,victim,1.410143089,../SAVE/test_cached_patch_331839d72e4fca1c391754d49fad115f_.patch,1
 yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_keyed_cached,victim,0.766038626,../SAVE/test_keyed_cache_patch_f4cc395bb2502ba3e860d7fb0a8ed715_.patch,1
 yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_utility,victim,0.781557064,../SAVE/test_utility_patch_aa8fa5dc1ab8f2a9e54a9a09231c4900_.patch,1
 riemann,0fda32e783487572c869aaabc6af7adba01cbd00,riemann/tests/encoding/test_addresses.py::TestAddresses::test_from_output_script,victim,0.108053435,../SAVE/test_from_output_script_patch_86658a6814cc0c30f4f8fe20c3cce867_.patch,1
