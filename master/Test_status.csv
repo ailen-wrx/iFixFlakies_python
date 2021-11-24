@@ -81,8 +81,8 @@ ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c84
 ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_analysis.py::TestChain::test_covariant_covariance_calc,Null,,,False
 ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_analysis.py::TestChain::test_summary_power,Non-deterministic,,,False
 ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_chain.py::TestChain::test_cache_invalidation,Null,,,False
-ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_chain.py::TestChain::test_pass_in_dataframe3,Non-deterministic,,,
-ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_diagnostic.py::test_geweke_default_failed,Non-deterministic,,,
+ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_chain.py::TestChain::test_pass_in_dataframe3,Non-deterministic,,,False
+ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_diagnostic.py::test_geweke_default_failed,Non-deterministic,,,False
 ChainConsumer,https://github.com/samreay/ChainConsumer,3206a98f5e121ff3e17c30c840710bd7fda59fca,tests/test_diagnostic.py::test_geweke_index,Non-deterministic,,,False
 Coinsta,https://github.com/PyDataBlog/Coinsta,7cdce24669e5ab40852f0b88329c68e5bb568f5b,tests/test_coinsta.py::TestCoinsta::test_get_current,Null,,,False
 ColonyScanalyser,https://github.com/Erik-White/ColonyScanalyser,38034b7d62a7c4f72a9f6981d0218c23f22cc7c8,tests/unit/test_base.py::TestUnique::test_init,Victim,tests/unit/test_base.py::TestUnique::test_id[1],,False
@@ -602,7 +602,7 @@ PySyncDroid,https://github.com/DusanMadar/PySyncDroid,9a217a54f4286af8e7505c184e
 QTAF,https://github.com/Tencent/QTAF,c9141e8fbdfd89f5f13dd59dfab17f9e8193dcf8,tests/test_testbase/test_assert.py::AssertionTest::test_assert_failure,Victim,tests/test_testbase/test_assert.py::AssertionTest::test_disable_assert_failed_continue,,False
 RandomFileTree,https://github.com/klieret/RandomFileTree,aaaa975ae61afa6f0f5b481ebafcfa0f0216e471,randomfiletree/test/test_core.py::TestTreeCreation::test_create_random_dirs,Non-deterministic,,,False
 RaspberryPiMovementDetector,https://github.com/KSanthanam/RaspberryPiMovementDetector,a415e5aca22fa41ce0eba0b61cf56d3035f92f64,tests/test_watch.py::TestWatch::test_observe[3-4-1-func_moved_in-func_moved_out],Non-deterministic,,,False
-RaspberryPiMovementDetector,https://github.com/KSanthanam/RaspberryPiMovementDetector,a415e5aca22fa41ce0eba0b61cf56d3035f92f64,tests/test_watch.py::TestWatch::test_ping[3-4-1-func_moved_in-func_moved_out],Non-deterministic,,,
+RaspberryPiMovementDetector,https://github.com/KSanthanam/RaspberryPiMovementDetector,a415e5aca22fa41ce0eba0b61cf56d3035f92f64,tests/test_watch.py::TestWatch::test_ping[3-4-1-func_moved_in-func_moved_out],Non-deterministic,,,False
 ReactOBus,https://github.com/ivoire/ReactOBus,841d5c0442ffe92fcaec278e07053afe5b93d925,tests/test_db.py::test_run,Non-deterministic,,,False
 SCout,https://github.com/holzkohlengrill/SCout,8fd1eca0607b27d6e0c537b2ea1211d23356edff,tests/test_header.py::TestHeaderLogger::testSingleArg,Victim,tests/test_Logger.py::TestLoggerVerbosity::testIntNormal4,tests/test_Logger.py::TestLoggerVerbosity::testIntNormal1,False
 SCout,https://github.com/holzkohlengrill/SCout,8fd1eca0607b27d6e0c537b2ea1211d23356edff,tests/test_header.py::TestHeaderLogger::testSingleArg,Victim,tests/test_Logger.py::TestLoggerVerbosity::testIntNormal4,tests/test_Logger.py::TestLoggerVerbosity::testIntNormal2,False
@@ -1127,8 +1127,8 @@ bluebees,https://github.com/matheuswhite/bluebees,ca18ee6dae60393480bac389303879
 boatd,https://github.com/boatd/boatd,bfd389f980d6c8cfd8e036dc1be1e746e891968b,boatd/tests/test_api.py::TestAPI::test_set_rudder,Deterministic,,,False
 boatd,https://github.com/boatd/boatd,bfd389f980d6c8cfd8e036dc1be1e746e891968b,boatd/tests/test_api.py::TestAPI::test_thread,Deterministic,,,False
 bomweather,https://github.com/aguinane/bomweather,cfe945a64900a9207a44c42551ec2c365916b7d2,tests/test_stations.py::test_closest_obs_station_uncached,Null,,,False
-bootstrap_env,https://github.com/jedie/bootstrap_env,ab68025d8f6b9a17d8feeed83e8aae26e3f28769,bootstrap_env/tests/test_boot.py::BootstrapEnvTestCase::test_setup,Non-deterministic,,,
-bootstrap_env,https://github.com/jedie/bootstrap_env,ab68025d8f6b9a17d8feeed83e8aae26e3f28769,bootstrap_env/tests/test_test_utils.py::BootstrapEnvTestCase::test_setup,Non-deterministic,,,
+bootstrap_env,https://github.com/jedie/bootstrap_env,ab68025d8f6b9a17d8feeed83e8aae26e3f28769,bootstrap_env/tests/test_boot.py::BootstrapEnvTestCase::test_setup,Non-deterministic,,,False
+bootstrap_env,https://github.com/jedie/bootstrap_env,ab68025d8f6b9a17d8feeed83e8aae26e3f28769,bootstrap_env/tests/test_test_utils.py::BootstrapEnvTestCase::test_setup,Non-deterministic,,,False
 bottle-neck,https://github.com/agile4you/bottle-neck.git,ebc670a4b178255473d68e9b4122ba04e38f4810,test/test_handlers.py::test_handler_register_class_pass,Victim,,,True
 bruker2nifti,https://github.com/SebastianoF/bruker2nifti,4fbac970e9125f3e53dd5e31d63b971ad739a6d2,test/test_convert_banana.py::test_warning_banana_bad_n,Deterministic,,,False
 buildozer,https://github.com/kivy/buildozer,4a18fb321e8410c44c9a62bd65671f33df3a470b,tests/test_buildozer.py::TestBuildozer::test_p4a_recommended_android_ndk_found,Non-deterministic,,,False
@@ -1280,12 +1280,12 @@ clashogram,https://github.com/mehdisadeghi/clashogram,5b8cc18adfc92ad381040ee25b
 client_python,https://github.com/prometheus/client_python,5b0a476489fc6a26c177683b539142c91005de06,tests/test_exposition.py::TestPushGateway::test_push_with_basic_auth_handler,Deterministic,,,False
 cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/connector/test_snapshot_azure.py::test_get_node_happy,Null,,,False
 cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/connector/test_snapshot_azure.py::test_get_version_for_type,Null,,,False
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_framework_config,Non-deterministic,,,
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_framework_dir,Non-deterministic,,,
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_config_data,Non-deterministic,,,
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_solution_dir,Non-deterministic,,,
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_test_json_dir,Non-deterministic,,,
-cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_rundata_utils.py::test_init_config,Non-deterministic,,,
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_framework_config,Non-deterministic,,,False
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_framework_dir,Non-deterministic,,,False
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_config_data,Non-deterministic,,,False
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_solution_dir,Non-deterministic,,,False
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_config_utils.py::test_get_test_json_dir,Non-deterministic,,,False
+cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/config/test_rundata_utils.py::test_init_config,Non-deterministic,,,False
 cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/httpapi/test_http_utils.py::test_check_and_add_error,Null,,,False
 cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/helper/httpapi/test_restapi_azure.py::test_web_client_data,Null,,,False
 cloud-validation-framework,https://github.com/prancer-io/cloud-validation-framework,94522590d9881a5125d81da701a65f7f63383c0d,tests/processor/template_processor/base/test_base_template_processor.py::test_populate_template_snapshot_false,Null,,,False
@@ -1967,9 +1967,9 @@ cw-sdk-python,https://github.com/cryptowatch/cw-sdk-python,92bd90db16dfc116c0708
 cw-sdk-python,https://github.com/cryptowatch/cw-sdk-python,92bd90db16dfc116c0708d19d27208d9bfc990c1,tests/test_api.py::test_markets_endpoints,Null,,,False
 dame,https://github.com/malpunek/dame,d6568d3088dd0a8b87eb5d278e04ab857a622418,tests/test_versionable.py::test_basic,Deterministic,,,False
 dame,https://github.com/malpunek/dame,d6568d3088dd0a8b87eb5d278e04ab857a622418,tests/test_versionable.py::test_params,Deterministic,,,False
-danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_embeddings_with_gensim,Non-deterministic,,,
-danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_embeddings_with_spacy,Non-deterministic,,,
-danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_fasttext_embeddings,Non-deterministic,,,
+danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_embeddings_with_gensim,Non-deterministic,,,False
+danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_embeddings_with_spacy,Non-deterministic,,,False
+danlp,https://github.com/alexandrainst/danlp,0c7169e4c8b0595205fbb7bdf64ce4f2ca79edcc,tests/test_embeddings.py::TestEmbeddings::test_fasttext_embeddings,Non-deterministic,,,False
 data-pypes,https://github.com/isnok/data-pypes,dcfe6feac2b617f9f8624cff81c44f72c0313ee6,pypes/logsetup.py::pypes.logsetup.get_logconfig,Victim,pypes/logsetup.py::pypes.logsetup.setup_logger,,False
 datapungibea,https://github.com/jjotterson/datapungibea,fe3b262b7e2ceffd12621693c94af9b6cc43e408,datapungibea/tests/test_driversCI.py::test_NIPAVintage,Non-deterministic,,,False
 daymetpy,https://github.com/khufkens/daymetpy,539f8d47315f0f68f86875d7805541dadcb76604,tests/test_timeseries.py::TimeseriesTest::test_ornl_df,Deterministic,,,False
@@ -3345,7 +3345,7 @@ git-profiles,https://github.com/popadi/git-profiles,ca20173f63f57c21868c4c49c1e5
 gitlab_stats,https://github.com/Sylhare/gitlab_stats,23fbc53f30e09c122ebe8259ef6850756e454d7e,tests/test_cli.py::CLITest::test_102_cli_proxy,Victim,tests/test_utils.py::UtilsTest::test_220_create_a_csv,tests/test_cli.py::CLITest::test_101_print_report,False
 gitlab_stats,https://github.com/Sylhare/gitlab_stats,23fbc53f30e09c122ebe8259ef6850756e454d7e,tests/test_cli.py::CLITest::test_102_cli_proxy,Victim,tests/test_utils.py::UtilsTest::test_220_create_a_csv,tests/test_cli.py::CLITest::test_103_cli_other_gitlab,False
 gitlab_stats,https://github.com/Sylhare/gitlab_stats,23fbc53f30e09c122ebe8259ef6850756e454d7e,tests/test_cli.py::CLITest::test_102_cli_proxy,Victim,tests/test_utils.py::UtilsTest::test_221_write_into_a_created_report_do_not_had_headers,tests/test_utils.py::UtilsTest::test_222_report_regenerated,False
-gitlab_stats,https://github.com/Sylhare/gitlab_stats,23fbc53f30e09c122ebe8259ef6850756e454d7e,tests/test_utils.py::UtilsTest::test_222_report_regenerated,Non-deterministic,,,
+gitlab_stats,https://github.com/Sylhare/gitlab_stats,23fbc53f30e09c122ebe8259ef6850756e454d7e,tests/test_utils.py::UtilsTest::test_222_report_regenerated,Non-deterministic,,,False
 googkit,https://github.com/googkit/googkit,cacb37bf65e5ac19379b329beb02af907240aa60,test/commands/test_candidates.py::TestCandidatesCommand::test_run_internal,Victim,test/lib/test_command_tree.py::TestCommandTree::test_available_commands_with_cmd_has_sub_one,,False
 googkit,https://github.com/googkit/googkit,cacb37bf65e5ac19379b329beb02af907240aa60,test/commands/test_candidates.py::TestCandidatesCommand::test_run_internal,Victim,test/lib/test_command_tree.py::TestCommandTree::test_available_commands_with_main_cmd,,False
 googkit,https://github.com/googkit/googkit,cacb37bf65e5ac19379b329beb02af907240aa60,test/commands/test_candidates.py::TestCandidatesCommand::test_run_internal,Victim,test/lib/test_command_tree.py::TestCommandTree::test_available_commands_with_no_cmd,,False
@@ -4210,7 +4210,7 @@ mackinac,https://github.com/mmundy42/mackinac,eccd95394e48f508576af76e6863c9f51f
 marlin,https://github.com/wilfredinni/marlin,85f4ae0080ee9a25c1b8d2e481725ac9c42ca99f,tests/test_marlin.py::test_add_bookmark,Deterministic,,,False
 marlin,https://github.com/wilfredinni/marlin,85f4ae0080ee9a25c1b8d2e481725ac9c42ca99f,tests/test_marlin.py::test_list_bookmark,Deterministic,,,False
 marlin,https://github.com/wilfredinni/marlin,85f4ae0080ee9a25c1b8d2e481725ac9c42ca99f,tests/test_marlin.py::test_read_bookmark,Non-deterministic,,,False
-marlin,https://github.com/wilfredinni/marlin,85f4ae0080ee9a25c1b8d2e481725ac9c42ca99f,tests/test_marlin.py::test_remove_bookmark,Non-deterministic,,,
+marlin,https://github.com/wilfredinni/marlin,85f4ae0080ee9a25c1b8d2e481725ac9c42ca99f,tests/test_marlin.py::test_remove_bookmark,Non-deterministic,,,False
 mccabe,https://github.com/pycqa/mccabe,e92e9e79799c5796f76f3da821dbb5aa56e41028,test_mccabe.py::RegressionTests::test_max_complexity_is_always_an_int,Brittle,test_mccabe.py::McCabeTestCase::test_annotated_assignment,,False
 mccabe,https://github.com/pycqa/mccabe,e92e9e79799c5796f76f3da821dbb5aa56e41028,test_mccabe.py::RegressionTests::test_max_complexity_is_always_an_int,Brittle,test_mccabe.py::McCabeTestCase::test_async_keywords,,False
 mccabe,https://github.com/pycqa/mccabe,e92e9e79799c5796f76f3da821dbb5aa56e41028,test_mccabe.py::RegressionTests::test_max_complexity_is_always_an_int,Brittle,test_mccabe.py::McCabeTestCase::test_expr_as_statement,,False
@@ -4295,7 +4295,7 @@ model-sdk,https://github.com/runwayml/model-sdk,3132b2ab424f1020e8d30e4897057103
 model-sdk,https://github.com/runwayml/model-sdk,3132b2ab424f1020e8d30e4897057103ab3e6623,tests/test_model.py::test_model_setup_and_command,Victim,tests/test_model.py::test_gpu_in_manifest_gpu_env_true,,False
 mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_http_service.py::test_service_start_timeout_and_cleanup,Deterministic,,,False
 mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mb_mgmt.py::test_check_mb_install_false,Deterministic,,,False
-mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mountebank.py::test_existing_mountebank_simple_imposter,Non-deterministic,,,
+mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mountebank.py::test_existing_mountebank_simple_imposter,Non-deterministic,,,False
 mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mountebank.py::test_impostor_destroy,Deterministic,,,False
 mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mountebank.py::test_impostor_get_matches_timeout,Deterministic,,,False
 mountepy,https://github.com/butla/mountepy,796595f0011cc4a62cd7796dd71c3681008a4731,tests/test_mountebank.py::test_mountebank_multiple_simple_impostors,Deterministic,,,False
@@ -4344,7 +4344,7 @@ napalm,https://github.com/napalm-automation/napalm,0e23a55f52221e528be66c1f06a14
 neon,https://github.com/mrmechko/neon,42ad78e3d79583a93abce6d06b81dafc29017514,tests/basic_tests.py::test_dont_memoize,Brittle,tests/basic_tests.py::test_memoize,,False
 netutils-linux,https://github.com/strizhechenko/netutils-linux,dfcb0900ffffa3020656338bbab123f6da00a168,netutils_linux_tuning/test_rx_buffers.py::RxBuffersTuneTest::test_all,Null,,,False
 neurodsp,https://github.com/neurodsp-tools/neurodsp,19aa50c71deaa19e4ed85efa192afa8ab63d0bf1,neurodsp/tests/utils/test_download.py::test_check_data_file,Brittle,neurodsp/tests/utils/test_download.py::test_check_data_folder,,False
-nnweaver,https://github.com/gvinciguerra/nnweaver,e7a94d743f6eb118592524e30f54cda22cdc5e81,test/optimizers_test.py::test_bundle_linear,Non-deterministic,,,
+nnweaver,https://github.com/gvinciguerra/nnweaver,e7a94d743f6eb118592524e30f54cda22cdc5e81,test/optimizers_test.py::test_bundle_linear,Non-deterministic,,,False
 nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,tests/nodal/nodes/test_noop.py::TestNoOp::test_name,Victim,tests/nodal/core/test_callbacks.py::TestCallbacks::test__trigger,tests/nodal/core/test_callbacks.py::TestCallbacks::test__get_callback_dict,False
 nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,tests/nodal/nodes/test_noop.py::TestNoOp::test_name,Victim,tests/nodal/core/test_callbacks.py::TestCallbacks::test__trigger,tests/nodal/core/test_callbacks.py::TestCallbacks::test__remove_callback,False
 nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,tests/nodal/test_graph.py::TestGraph::test__on_node_create,Victim,tests/nodal/core/test_callbacks.py::TestCallbacks::test__trigger,tests/nodal/core/test_callbacks.py::TestCallbacks::test__get_callback_dict,False
@@ -4352,7 +4352,7 @@ nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,t
 nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,tests/nodal/test_graph.py::TestGraph::test__on_node_destroy,Victim,tests/nodal/core/test_callbacks.py::TestCallbacks::test__trigger,tests/nodal/core/test_callbacks.py::TestCallbacks::test__get_callback_dict,False
 nodal,https://github.com/thimic/nodal,261eeefd50298765c5722c5f7da72e6f2927bd3e,tests/nodal/test_graph.py::TestGraph::test__on_node_destroy,Victim,tests/nodal/core/test_callbacks.py::TestCallbacks::test__trigger,tests/nodal/core/test_callbacks.py::TestCallbacks::test__remove_callback,False
 noipy,https://github.com/povieira/noipy,c35add5386b57547c5a72650145a267dc88fa77e,test/test_noipy.py::PluginsTest::test_dyndns_plugin,Deterministic,,,False
-nxviz,https://github.com/ericmjl/nxviz,d2a2a622e834148a9f4337dbe1021a05c5f18548,tests/test_geometry.py::test_correct_negative_angle,Non-deterministic,,,
+nxviz,https://github.com/ericmjl/nxviz,d2a2a622e834148a9f4337dbe1021a05c5f18548,tests/test_geometry.py::test_correct_negative_angle,Non-deterministic,,,False
 nxviz,https://github.com/ericmjl/nxviz,d2a2a622e834148a9f4337dbe1021a05c5f18548,tests/test_plots.py::test_matrix_plot,Brittle,tests/test_io.py::test_basic_import,,False
 nxviz,https://github.com/ericmjl/nxviz,d2a2a622e834148a9f4337dbe1021a05c5f18548,tests/test_plots.py::test_matrix_plot,Brittle,tests/test_io.py::test_percent_threshold,,False
 nxviz,https://github.com/ericmjl/nxviz,d2a2a622e834148a9f4337dbe1021a05c5f18548,tests/test_plots.py::test_matrix_plot,Brittle,tests/test_io.py::test_count_threshold,,False
@@ -4690,7 +4690,7 @@ plcx,https://github.com/Cognexa/plcx,2756c0ba78c4c9e572d95ba002708957bc55d4fa,pl
 plcx,https://github.com/Cognexa/plcx,2756c0ba78c4c9e572d95ba002708957bc55d4fa,plcx/tests/comm/test_client.py::test_clientx_error,Victim,plcx/tests/utils/test_coroutine.py::test_await_if_coroutine[is_coroutine-a-args3],,False
 poio-lib,https://github.com/Poio-NLP/poio-lib,2af55c863593511dbcf4c611c9265072022d8cdb,tests/test_wikipedia.py::TestWikipedia::test_extract_to,Deterministic,,,False
 poio-lib,https://github.com/Poio-NLP/poio-lib,2af55c863593511dbcf4c611c9265072022d8cdb,tests/test_wikipedia.py::TestWikipedia::test_extract_to_txt,Deterministic,,,False
-policyd-rate-limit,https://github.com/nitmir/policyd-rate-limit,79eb4e1760fb9c0ea6e205cb6a0953be8105e0d4,policyd_rate_limit/tests/test_daemon.py::DaemonTestCase::test_main_afinet_socket,Non-deterministic,,,
+policyd-rate-limit,https://github.com/nitmir/policyd-rate-limit,79eb4e1760fb9c0ea6e205cb6a0953be8105e0d4,policyd_rate_limit/tests/test_daemon.py::DaemonTestCase::test_main_afinet_socket,Non-deterministic,,,False
 policyuniverse,https://github.com/Netflix-Skunkworks/policyuniverse,b633e572ecdba45d70398ac034fb44e0e4e7dbf8,policyuniverse/tests/test_expander_minimizer.py::TestMethods::test_expand_1,Victim,policyuniverse/tests/test_expander_minimizer.py::TestMethods::test_expand_minimize_over_policies_1,,False
 policyuniverse,https://github.com/Netflix-Skunkworks/policyuniverse,b633e572ecdba45d70398ac034fb44e0e4e7dbf8,policyuniverse/tests/test_expander_minimizer.py::TestMethods::test_expand_minimize_over_policies,Victim,policyuniverse/tests/test_expander_minimizer.py::TestMethods::test_expand_minimize_over_policies_1,,False
 poly_decomp.py,https://github.com/wsilva32/poly_decomp.py,cb1a47f218e076772b9df137c1928023882df5e5,tests/test_poly_decomp.py::TestPoly_Decomp::test_not_polygonCanSee,Victim,tests/test_poly_decomp.py::TestPoly_Decomp::test_polygonClear,,False
@@ -4881,7 +4881,7 @@ pyatlasclient,https://github.com/verdan/pyatlasclient,6c3ef3926eef059f00730b6bcc
 pyatlasclient,https://github.com/verdan/pyatlasclient,6c3ef3926eef059f00730b6bcc1a1787f6bbcd9c,tests/test_models.py::TestDiscoveryREST::test_search_attribute_get,Victim,tests/test_models.py::TestDiscoveryREST::test_search_fulltext_get,tests/test_client.py::TestClient::test_atlas_client,False
 pyatlasclient,https://github.com/verdan/pyatlasclient,6c3ef3926eef059f00730b6bcc1a1787f6bbcd9c,tests/test_models.py::TestDiscoveryREST::test_search_attribute_get,Victim,tests/test_models.py::TestDiscoveryREST::test_search_fulltext_get,tests/test_base.py::TestBase::test_model,False
 pyatlasclient,https://github.com/verdan/pyatlasclient,6c3ef3926eef059f00730b6bcc1a1787f6bbcd9c,tests/test_models.py::TestDiscoveryREST::test_search_attribute_get,Victim,tests/test_models.py::TestDiscoveryREST::test_search_fulltext_get,tests/test_client.py::TestClient::test_atlas_client,False
-pybl3p,https://github.com/gijzelaerr/pybl3p,98c102c02cb93803ee47941a48a8aa8d62fa4d6c,tests/test_public.py::PublicTest::test_tradehistory,Non-deterministic,,,
+pybl3p,https://github.com/gijzelaerr/pybl3p,98c102c02cb93803ee47941a48a8aa8d62fa4d6c,tests/test_public.py::PublicTest::test_tradehistory,Non-deterministic,,,False
 pybl3p,https://github.com/gijzelaerr/pybl3p,98c102c02cb93803ee47941a48a8aa8d62fa4d6c,tests/test_public.py::PublicTest::test_trades,Victim,tests/test_private.py::PrivateTest::test_info,,False
 pybrake,https://github.com/airbrake/pybrake,9bf82941d8bf521055b258cea91596a11e4eb81f,pybrake/test_notifier.py::test_unauthorized,Deterministic,,,False
 pyconll,https://github.com/pyconll/pyconll,06481595c7816608facab72b5e7087cc01cb7482,tests/test_load.py::test_load_from_file_and_string_equivalence,Deterministic,,,False
@@ -4910,7 +4910,7 @@ pydeploy,https://github.com/yukinotenshi/pydeploy,e3ddf907b293c9da28503b3d72414a
 pydeploy,https://github.com/yukinotenshi/pydeploy,e3ddf907b293c9da28503b3d72414a303c5dfbed,pydeploy/tests/test_command_chain.py::TestCommandChain::test_notifier_loaded,Victim,pydeploy/tests/test_webhook.py::TestWebhook::test_webhook,pydeploy/tests/test_command_chain.py::TestCommandChain::test_empty,False
 pydeploy,https://github.com/yukinotenshi/pydeploy,e3ddf907b293c9da28503b3d72414a303c5dfbed,pydeploy/tests/test_command_chain.py::TestCommandChain::test_postscript_only,Victim,pydeploy/tests/test_webhook.py::TestWebhook::test_webhook,pydeploy/tests/test_command_chain.py::TestCommandChain::test_empty,False
 pydeploy,https://github.com/yukinotenshi/pydeploy,e3ddf907b293c9da28503b3d72414a303c5dfbed,pydeploy/tests/test_command_chain.py::TestCommandChain::test_prescript_only,Victim,pydeploy/tests/test_webhook.py::TestWebhook::test_webhook,pydeploy/tests/test_command_chain.py::TestCommandChain::test_empty,False
-pydrobert-gpyopt,https://github.com/sdrobert/pydrobert-gpyopt,ce2699ca89687f848c2a86db44eed125d65886de,test_gpyopt.py::test_strings_are_provided,Non-deterministic,,,
+pydrobert-gpyopt,https://github.com/sdrobert/pydrobert-gpyopt,ce2699ca89687f848c2a86db44eed125d65886de,test_gpyopt.py::test_strings_are_provided,Non-deterministic,,,False
 pydu,https://github.com/Prodesire/pydu,4a1c2f15f7274d5079fb08b02ab1dbe08c0cefef,tests/test_misc.py::TestSuperLen::test_file[rb-0],Deterministic,,,False
 pydu,https://github.com/Prodesire/pydu,4a1c2f15f7274d5079fb08b02ab1dbe08c0cefef,tests/test_network.py::test_get_free_port,Victim,tests/test_request.py::test_check_connect,,False
 pyeventdispatcher,https://github.com/whisller/pyeventdispatcher,5382e5e8578dea89a76481e15d410d516999055a,test/test_pyeventdispatcher.py::TestRegister::test_it_allows_to_register[<lambda>],Victim,test/test_pyeventdispatcher.py::TestRegisterGlobal::test_it_allows_to_register_listener_globally,test/test_pyeventdispatcher.py::TestStopPropagation::test_it_stops_propagation,False
@@ -5495,8 +5495,8 @@ pykicad,https://github.com/dvc94ch/pykicad,cdebcaeb4ab6c8903ebecfd0748f826ea4069
 pykicad,https://github.com/dvc94ch/pykicad,cdebcaeb4ab6c8903ebecfd0748f826ea406923f,tests/test_pcb.py::ZoneTests::test_parse,Victim,tests/test_sexpr.py::ASTTests::test_tag_with_named_positional,,False
 pykicad,https://github.com/dvc94ch/pykicad,cdebcaeb4ab6c8903ebecfd0748f826ea406923f,tests/test_pcb.py::ZoneTests::test_parse,Victim,tests/test_sexpr.py::ASTTests::test_unicode,,False
 pyliftover,https://github.com/konstantint/pyliftover,c95c70ab74686a6b5ac56e7601ccdbeab3178e52,tests/liftover_test.py::test_issue_2_3_4,Deterministic,,,False
-pylocus,https://github.com/LCAV/pylocus,78db89636cab345cab8d61adc3accd95899e2738,test/test_alternating.py::TestAlternating::test_zero_noise,Non-deterministic,,,
-pylocus,https://github.com/LCAV/pylocus,78db89636cab345cab8d61adc3accd95899e2738,test/test_emds.py::TestEMDS::test_zero_noise,Non-deterministic,,,
+pylocus,https://github.com/LCAV/pylocus,78db89636cab345cab8d61adc3accd95899e2738,test/test_alternating.py::TestAlternating::test_zero_noise,Non-deterministic,,,False
+pylocus,https://github.com/LCAV/pylocus,78db89636cab345cab8d61adc3accd95899e2738,test/test_emds.py::TestEMDS::test_zero_noise,Non-deterministic,,,False
 pymdb,https://github.com/zembrodt/pymdb,bca5a414fdcdbbc1f86ed5b284945665c1edf43f,tests/test_scraper.py::TestGetCompany::test_get_company_multiple_pages,Null,,,False
 pymerkle,https://github.com/FoteinosMerg/pymerkle,5318009e04b2ae44e194b8435ef181aa67ab8b9a,tests/nodes/test_internals.py::test_is_right_parent[node1],Victim,nodes/test_internals.py::test_hash_recalculation,,False
 pymerkle,https://github.com/FoteinosMerg/pymerkle,5318009e04b2ae44e194b8435ef181aa67ab8b9a,tests/nodes/test_internals.py::test_right_parent[node1-right1],Victim,nodes/test_internals.py::test_hash_recalculation,,False
@@ -5875,7 +5875,7 @@ python-n26,https://github.com/femueller/python-n26,22cb609efbf5125e36879441ea20d
 python-n26,https://github.com/femueller/python-n26,22cb609efbf5125e36879441ea20d5a1c2a51e98,tests/test_cards.py::CardsTests::test_unblock_card_cli_single,Brittle,tests/test_statistics.py::StatisticsTests::test_statistics_cli,,False
 python-n26,https://github.com/femueller/python-n26,22cb609efbf5125e36879441ea20d5a1c2a51e98,tests/test_cards.py::CardsTests::test_unblock_card_cli_single,Brittle,tests/test_transactions.py::TransactionsTests::test_transactions_cli,,False
 python-openflow,https://github.com/kytos/python-openflow,a3387a7b28d529a3605aa1506a028e03394e4526,tests/unit/v0x04/test_controller2switch/test_flow_mod.py::TestFlowMod::test_minimum_size,Brittle,tests/unit/v0x04/test_controller2switch/test_flow_mod.py::TestFlowMod::test_min_size,,False
-python-protobix,https://github.com/jbfavre/python-protobix,96b7095a9c2485c9e1bdba098b7d82b93f91acb1,tests/test_memory_leak.py::test_long_run_for_memory_leak[items-2],Non-deterministic,,,
+python-protobix,https://github.com/jbfavre/python-protobix,96b7095a9c2485c9e1bdba098b7d82b93f91acb1,tests/test_memory_leak.py::test_long_run_for_memory_leak[items-2],Non-deterministic,,,False
 python-resource-container,https://github.com/unfoldingWord-dev/python-resource-container,64d87f900af969f47b20b798cf00c2861435b0d8,tests/container_test.py::TestResourceContainer::test_should_fail_to_load_missing_rc,Brittle,tests/container_test.py::TestResourceContainer::test_create_resource_container,,False
 python-resource-container,https://github.com/unfoldingWord-dev/python-resource-container,64d87f900af969f47b20b798cf00c2861435b0d8,tests/container_test.py::TestResourceContainer::test_should_fail_to_load_missing_rc,Brittle,tests/container_test.py::TestResourceContainer::test_creating_a_rc,,False
 python-resource-container,https://github.com/unfoldingWord-dev/python-resource-container,64d87f900af969f47b20b798cf00c2861435b0d8,tests/container_test.py::TestResourceContainer::test_should_fail_to_load_missing_rc,Brittle,tests/container_test.py::TestResourceContainer::test_load_a_multi_book_rc,,False
@@ -15982,7 +15982,7 @@ webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30ba
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_pubkey_cannot_be_decoded_by_multipart_form,Victim,tests/test_app.py::TestAppWithTooManyConnections::test_app_with_too_many_connections,tests/test_app.py::TestAppInDebugMode::test_server_error_for_post_method,False
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_pubkey_exceeds_key_max_size,Victim,tests/test_app.py::TestAppWithTooManyConnections::test_app_with_too_many_connections,tests/test_app.py::TestAppInDebugMode::test_html,False
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_pubkey_exceeds_key_max_size,Victim,tests/test_app.py::TestAppWithTooManyConnections::test_app_with_too_many_connections,tests/test_app.py::TestAppInDebugMode::test_server_error_for_post_method,False
-webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_valid_pubkey_by_multipart_form,Non-deterministic,,,
+webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_valid_pubkey_by_multipart_form,Non-deterministic,,,False
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_valid_pubkey_by_urlencoded_form,Victim,tests/test_app.py::TestAppWithTooManyConnections::test_app_with_too_many_connections,tests/test_app.py::TestAppInDebugMode::test_html,False
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_auth_with_valid_pubkey_by_urlencoded_form,Victim,tests/test_app.py::TestAppWithTooManyConnections::test_app_with_too_many_connections,tests/test_app.py::TestAppInDebugMode::test_server_error_for_post_method,False
 webssh,https://github.com/huashengdun/webssh,51d527fe75a62aed239126a6697749a30baecb30,tests/test_app.py::TestAppBasic::test_app_post_form_with_large_body_size_by_multipart_form,Non-deterministic,,,False
@@ -16038,9 +16038,9 @@ wellpathpy,https://github.com/Zabamund/wellpathpy,f29b14a9a1c46e77ea98b141e3cdc4
 wkr.py,https://github.com/wroberts/wkr.py,dbb3c1742c10bfaf697fa276d2cc8885e144ab43,tests/test_pd.py::test_memoize_pandas_parse_dates,Null,,,False
 wkr.py,https://github.com/wroberts/wkr.py,dbb3c1742c10bfaf697fa276d2cc8885e144ab43,tests/test_pd.py::test_memoize_pandas_save,Deterministic,,,False
 wopmars,https://github.com/aitgon/wopmars,33680f94163d82ce43557cf7f87a5f9ead496fdc,wopmars/tests/test_wopmars.py::TestWopmars::test_dry_run,Non-deterministic,,,False
-wopmars,https://github.com/aitgon/wopmars,33680f94163d82ce43557cf7f87a5f9ead496fdc,wopmars/tests/test_wopmars.py::TestWopmars::test_run_rerun_runtime,Non-deterministic,,,
+wopmars,https://github.com/aitgon/wopmars,33680f94163d82ce43557cf7f87a5f9ead496fdc,wopmars/tests/test_wopmars.py::TestWopmars::test_run_rerun_runtime,Non-deterministic,,,False
 wopmars,https://github.com/aitgon/wopmars,33680f94163d82ce43557cf7f87a5f9ead496fdc,wopmars/tests/test_wopmars.py::TestWopmars::test_run_sourcerule_fail,Non-deterministic,,,False
-wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[False-median_conf_interval],Non-deterministic,,,
+wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[False-median_conf_interval],Non-deterministic,,,False
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-geomean_conf_interval],Brittle,wqio/tests/test_features.py::test_location_stats_scalars[True-std],,False
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-geomean_conf_interval],Brittle,wqio/tests/test_features.py::test_location_stats_scalars[False-pctl10],,False
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-geomean_conf_interval],Brittle,wqio/tests/test_features.py::test_location_stats_scalars[False-pctl25],,False
@@ -16070,7 +16070,7 @@ wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-geomean_conf_interval],Brittle,wqio/tests/test_features.py::test_location_stats_scalars[False-skew],,False
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-geomean_conf_interval],Brittle,wqio/tests/test_features.py::test_location_stats_scalars[True-logmean],,False
 wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-logmean_conf_interval],Null,,,False
-wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-median_conf_interval],Non-deterministic,,,
+wqio,https://github.com/Geosyntec/wqio,8fcd57cc8b8365208eeee0162438307db0ca0dbb,wqio/tests/test_features.py::test_location_stats_arrays[True-median_conf_interval],Non-deterministic,,,False
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_cached,Victim,tests/test_class.py::test_timeout,tests/test_class.py::test_keyed_cached,False
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_cached,Victim,tests/test_class.py::test_timeout,tests/test_class.py::test_utility,False
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_cached,Victim,tests/test_class.py::test_prefix,tests/test_class.py::test_counters,False
@@ -16083,7 +16083,7 @@ yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_noclass.py::test_main,Victim,tests/test_noclass.py::test_lists,,False
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_noclass.py::test_main,Victim,tests/test_noclass.py::test_object_list,,False
 yaml-resume,https://github.com/notsag/yaml-resume,25ad6695993a7dab540730e8743d88b28e52df0e,tests/test_cli.py::test_validate,Non-deterministic,,,False
-yapconf,https://github.com/loganasherjones/yapconf,f685ed6a6f532a8f836deb205fc2509e9422329b,tests/spec_test.py::test_watchers[label1],Non-deterministic,,,
+yapconf,https://github.com/loganasherjones/yapconf,f685ed6a6f532a8f836deb205fc2509e9422329b,tests/spec_test.py::test_watchers[label1],Non-deterministic,,,False
 yapconf,https://github.com/loganasherjones/yapconf,f685ed6a6f532a8f836deb205fc2509e9422329b,tests/spec_test.py::test_watchers[label2],Non-deterministic,,,False
 yunomi,https://github.com/dreid/yunomi,1aa3f166843613331b38e231264ffc3ac40e8094,yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_count_calls_decorator,Victim,yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_count_calls_decorator_propagates_errors,,False
 yunomi,https://github.com/dreid/yunomi,1aa3f166843613331b38e231264ffc3ac40e8094,yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_count_calls_decorator,Victim,yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_count_calls_decorator_returns_original_return_value,,False

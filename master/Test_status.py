@@ -73,7 +73,7 @@ with open("master/Test_status.csv", 'a') as output:
                    csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Brittle", statesetter, None, False])                  
 
         if tests['Test_Type'][i] == "Non-deterministic":
-            csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, None])
+            csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, False])
 
 
                     
