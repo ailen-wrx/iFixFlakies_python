@@ -27,7 +27,8 @@ with open("master/Test_status.csv", 'a') as output:
         Test_id = tests['Test_id'][i]
 
         patch_index = np.where(patches['OD_test_id'] == Test_id)[0]
-        if len(patch_index) and patches['fix_status'][patch_index[0]] == "nondeterministic":
+        if len(patch_index) and patches['fix_status'][patch_index[0]] in \
+            ["nondeterministic", "statesetter not works", "cleaner not works"] :
             csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, False])
             continue
        
