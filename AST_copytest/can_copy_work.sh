@@ -67,7 +67,7 @@ for project_name in $(cat $input_csv | sed '1d' | cut -d, -f1 | uniq); do
 
 	echo $project $sha $polluter_full_path $cleaner_full_path $victim_full_path $combination_path $save_path
 
-	python3 $base_dir/new_patcher.py $project $sha $polluter_full_path $cleaner_full_path $victim_full_path $combination_path $save_path 
+	python3 $base_dir/patcher_update.py $project $sha $polluter_full_path $cleaner_full_path $victim_full_path $combination_path $save_path 
 
 	deactivate
         cd $base_dir

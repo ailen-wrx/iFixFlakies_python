@@ -134,8 +134,6 @@ centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f2
 centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f207d5458afc3304e24f16988069467b19eab81,tests/test_resourcecfg.py::TestResourceCFG::test_resourcecfg_not_exist,brittle,True
 centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f207d5458afc3304e24f16988069467b19eab81,tests/test_resourcecfg.py::TestResourceCFG::test_resourcecfg_setparam,brittle,True
 cfgsaver,https://github.com/prahladyeri/cfgsaver,9654076b418c96bcddbf2fddc5fdb0f6f4117278,test/test_cfgsaver.py::test_get,brittle,True
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_dataset.py::TestDataset::test_extract_file_zip,brittle,False
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_resource.py::TestResource::test_read_resource,brittle,False
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py::BaseTest::test_load_data_found,brittle,True
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py::BaseTest::test_load_local_data_from_local_with_cache,brittle,True
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py::BaseTest::test_load_local_data_from_local_with_cache_failed,brittle,True

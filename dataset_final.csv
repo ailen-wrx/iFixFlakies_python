@@ -385,12 +385,6 @@ centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f2
 centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f207d5458afc3304e24f16988069467b19eab81,tests/test_resourcecfg.py,TestResourceCFG,test_resourcecfg_not_exist,,True,Failed,Passed
 centreon-sdk-python,https://github.com/guillaumewatteeux/centreon-sdk-python,9f207d5458afc3304e24f16988069467b19eab81,tests/test_resourcecfg.py,TestResourceCFG,test_resourcecfg_setparam,,True,Failed,Passed
 cfgsaver,https://github.com/prahladyeri/cfgsaver,9654076b418c96bcddbf2fddc5fdb0f6f4117278,test/test_cfgsaver.py,,test_get,,True,Failed,Passed
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_dataset.py,TestDataset,test_extract_file_zip,,True,Passed,Failed
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py,TestMovieReview,test_extract_polarity_v1,,True,Passed,Flaky
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py,TestMovieReview,test_extract_rating,,True,Passed,Flaky
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py,TestMovieReview,test_extract_subjectivity,,True,Passed,Flaky
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_movie_review.py,TestMovieReview,test_prepare_polarity,,True,Passed,Flaky
-chazutsu,https://github.com/chakki-works/chazutsu,734828f2f05799a1d59d9280a032bf5996fe3261,tests/test_resource.py,TestResource,test_read_resource,,True,Passed,Flaky
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py,BaseTest,test_load_data_found,,True,Failed,Failed
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py,BaseTest,test_load_local_data_from_local_with_cache,,True,Failed,Failed
 cherry,https://github.com/Windsooon/cherry,bc6ae1f0284d837fb95279098538530312313534,tests/test_base.py,BaseTest,test_load_local_data_from_local_with_cache_failed,,True,Failed,Failed

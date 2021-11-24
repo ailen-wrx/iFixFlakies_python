@@ -101,7 +101,7 @@ def fix_victim(project,sha,polluter_fullpath, cleaner_fullpath, victim_fullpath,
     can_copy_work = None
     import_obj_list=[]
     
-    if pv_result.strip() == 'failed' and pcv_result.strip() =='passed':
+    if pv_result.strip() != 'passed' and pcv_result.strip() =='passed':
         # copy unique Import and ImportFrom modules
         
         for import_obj in [module for module in ast.walk(tree_cleaner) if
