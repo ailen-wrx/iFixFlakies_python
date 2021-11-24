@@ -39,6 +39,8 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
 
     final_patch_content=''
 
+    patch_name = None
+    
     diff=None
 
     diff_right=None
