@@ -1,3 +1,5 @@
+#  python3 master/Test_status.py 
+
 import csv
 from functools import reduce
 import numpy as np
@@ -9,6 +11,7 @@ polluters_stat = pd.read_csv("master/src/polluters_stat.csv")
 cleaners = pd.read_csv("master/src/cleaners.csv")
 statesetters = pd.read_csv("master/src/state_setters.csv")
 statesetters_stat = pd.read_csv("master/src/state_setters_stat.csv")
+patches = pd.read_csv("master/src/victim_brittle_fix_status.csv")
 
 rand_victim = pd.read_csv("master/src/random_victim.csv")
 
@@ -23,22 +26,23 @@ with open("master/Test_status.csv", 'a') as output:
         Project_Hash = tests['Project_Hash'][i]
         Test_id = tests['Test_id'][i]
 
-        # print(Project_Name, Test_id)
-
-        if tests['Test_Type'][i] == "Non-deterministic":
-            csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, None])
-        
+        patch_index = np.where(patches['OD_test_id'] == Test_id)[0]
+        if len(patch_index) and patches['fix_status'][patch_index[0]] == "nondeterministic":
+            csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, False])
+            continue
+       
         if tests['Test_Type'][i] == "victim":
             polluters_index = np.where(polluters['Test_id'] == Test_id)[0]
             if not len(polluters_index):
                 rand_index = np.where(rand_victim['Test_id'] == Test_id)[0][0]
-                if rand_victim['Test_type'][rand_index] == "Null": continue
                 if rand_victim['Test_type'][rand_index] == "DETERMINISTIC":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Deterministic", None, None, False])
                 elif rand_victim['Test_type'][rand_index] == "NOD":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, False])
                 elif rand_victim['Test_type'][rand_index] == "victim":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Victim", None, None, True])
+                else:
+                    csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Null", None, None, False])
 
             else:
                 for polluter in polluters['Polluter'][polluters_index]:
@@ -54,18 +58,21 @@ with open("master/Test_status.csv", 'a') as output:
             statesetterss_index = np.where(statesetters['Test_id'] == Test_id)[0]
             if not len(statesetterss_index):
                 rand_index = np.where(rand_victim['Test_id'])[0][0]
-                if rand_victim['Test_type'][rand_index] == "Null": continue
                 if rand_victim['Test_type'][rand_index] == "DETERMINISTIC":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Deterministic", None, None, False])
                 elif rand_victim['Test_type'][rand_index] == "NOD":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, False])
                 elif rand_victim['Test_type'][rand_index] == "brittle":
                     csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Brittle", None, None, True])
+                else:
+                    csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Null", None, None, False])
 
             else:
                 for statesetter in statesetters['State-setter'][statesetterss_index]:
-                   csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Brittle", statesetter, None, False]) 
-                    
+                   csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Brittle", statesetter, None, False])                  
+
+        if tests['Test_Type'][i] == "Non-deterministic":
+            csv.writer(output).writerow([Project_Name, Project_URL, Project_Hash, Test_id, "Non-deterministic", None, None, None])
 
 
                     

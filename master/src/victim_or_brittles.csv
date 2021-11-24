@@ -2004,7 +2004,6 @@ selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba41653
 selenium-wire,https://github.com/wkeeling/selenium-wire,f80339bc2da0485fbba4165375c009b90efdb3c2,tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_set_single_scopes,victim
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_explicit,victim
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_implicit,brittle
-serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_implicit,brittle
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_naive_detection,victim
 sfpl-scraper,https://github.com/kajchang/sfpl-scraper,d97cc55f28fc75bf8de3fe5472ed0c2c55a09081,tests/test_api.py::TestScraper::test_author_search,victim
 sfpl-scraper,https://github.com/kajchang/sfpl-scraper,d97cc55f28fc75bf8de3fe5472ed0c2c55a09081,tests/test_api.py::TestScraper::test_list_search,victim

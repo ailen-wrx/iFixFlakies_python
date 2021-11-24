@@ -586,7 +586,6 @@ schemaindex,https://github.com/qiyangduan/schemaindex,83bfb96c78d194370b068e11f8
 securenative-python,https://github.com/securenative/securenative-python,0eae99733b7565341487ad32f044be8dc51032cd,tests/configuration_manager_test.py::ConfigurationManagerTest::test_get_config_from_env_variables,brittle,True
 securenative-python,https://github.com/securenative/securenative-python,0eae99733b7565341487ad32f044be8dc51032cd,tests/configuration_manager_test.py::ConfigurationManagerTest::test_load_default_config,brittle,True
 serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_implicit,brittle,True
-serpextract,https://github.com/Parsely/serpextract/,aec8f2bd79c66953938569a24b05c693ab70b4ce,tests/test_serps.py::TestSERPs::test_custom_parser_implicit,brittle,True
 sphinx-gallery,https://github.com/sphinx-gallery/sphinx-gallery,387900334ace5c0bf74e9e90aad1e8d2a54e6f17,sphinx_gallery/tests/test_full.py::test_embed_links_and_styles,brittle,False
 sphinx-gallery,https://github.com/sphinx-gallery/sphinx-gallery,387900334ace5c0bf74e9e90aad1e8d2a54e6f17,sphinx_gallery/tests/test_full.py::test_minigallery_directive,brittle,False
 sportsreference,https://github.com/roclark/sportsreference,0041953074d6c20f607049917f3b526c9af686a4,tests/integration/roster/test_ncaaf_roster.py::TestNCAAFPlayer::test_ncaaf_kicker_returns_expected_kicking_stats,brittle,False
