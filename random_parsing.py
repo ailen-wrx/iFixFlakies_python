@@ -51,7 +51,7 @@ with open("master/src/dataset_amended.csv", 'rt') as infile:
         else:
             Test_id = Test_filename + "::"  + Test_funcname + Test_parametrization
 
-        Gruber_flakies.append([Project+Test_id])
+        Gruber_flakies.append(Project+Test_id)
 
 
 with open("master/src/random.csv", 'w') as output:
