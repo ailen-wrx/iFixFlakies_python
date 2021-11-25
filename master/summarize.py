@@ -41,6 +41,6 @@ for i in range(len(ss_tcm)):
     if ss_tcm['Stat_State-setter'][i]:
         projects.append(ss_tcm['Project_Name'][i])
         have_ss.append(ss_tcm['Test_id'][i])
-print("\t\t{} brittles in {} Projects have state-setters".format(len(set(have_ss)), len(list(set(projects)))))
+print("\t\t{} brittles in {} Projects have state-setters".format(len(have_ss), len(list(set(projects)))))
 
 

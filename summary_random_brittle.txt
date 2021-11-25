@@ -1,5 +1,0 @@
-90/127 suspected brittles in 38/50 proj. have no state-setters
-	23 susp. brittles have 1+ failing and 1+ passing order in 100 random orders
-		22 susp. brittles can reliably fail and pass
-		1 susp. brittles cannot reliably fail/pass
-	67 susp. brittles have no failing or no passing order in 100 random orders
