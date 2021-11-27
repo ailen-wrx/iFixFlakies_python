@@ -10,7 +10,7 @@ ProjectsLib = []
 
 TestsInspected = []
 
-with open("repro/src/no_polluters.csv", 'rt') as infile:
+with open("repro/src/victims.csv", 'rt') as infile:
     for row in csv.reader(infile):
         if row[0] == "Project_Name":
             continue
@@ -23,7 +23,7 @@ with open("repro/src/no_polluters.csv", 'rt') as infile:
             projs.append([row[0], row[1], row[2]])
 
 
-with open("repro/src/no_state_setters.csv", 'rt') as infile:
+with open("repro/src/brittles.csv", 'rt') as infile:
     for row in csv.reader(infile):
         if row[0] == "Project_Name":
             continue
@@ -36,7 +36,7 @@ with open("repro/src/no_state_setters.csv", 'rt') as infile:
             projs.append([row[0], row[1], row[2]])
 
 
-with open("repro/src/dataset_amended.csv", 'rt') as infile:
+with open("dataset_amended.csv", 'rt') as infile:
     for row in csv.reader(infile):
         Project = row[0]
         Project_URL = row[1]

@@ -10,6 +10,11 @@ for i in $(cut -d, -f1 repro/src/dataset_final.csv | sort -u); do
     unzip $i.zip > /dev/null
     rm $i.zip
 
+    if [[ ! -d "$i" ]]; then
+	continue
+    fi
+
+    
     cd $i
 
     mkdir -p cache/ipflakies

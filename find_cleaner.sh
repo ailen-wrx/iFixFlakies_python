@@ -15,10 +15,10 @@ if [[ $clear_output == 1 ]]; then
     rm -rf $global_output_dir
 fi
 mkdir -p $global_output_dir
-if [[ ! -f "$global_output_dir/cleaner.csv" ]]; then
-    echo "Project_Name,Project_URL,Project_Hash,Polluter,Cleaner,Victim" > $global_output_dir/cleaner.csv
+if [[ ! -f "$global_output_dir/cleaners.csv" ]]; then
+    echo "Project_Name,Project_URL,Project_Hash,Polluter,Cleaner,Victim" > $global_output_dir/cleaners.csv
 fi
-for vict in $(cut -d, -f1,7 $polluter_list | sed '1d' | sort | uniq); do
+for vict in $(cut -d, -f1,4 $polluter_list | sed '1d' | sort | uniq); do
     echo $vict
 
 for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(echo $vict | cut -d, -f2)" | shuf -n 5 --random-source=<(cat $base_dir/victims_brittles.csv)); do
@@ -26,9 +26,9 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
     url=$(echo $i | cut -d, -f2)
     sha=$(echo $i | cut -d, -f3)
 
-    test_filename=$(echo $i | cut -d, -f4)
-    polluter=$(echo $i | cut -d, -f5)
-    victim=$(echo $i | cut -d, -f7)
+    #test_filename=$(echo $i | cut -d, -f4)
+    polluter=$(echo $i | cut -d, -f6)
+    victim=$(echo $i | cut -d, -f4)
 
     if [[ "$project" == "Project_Name" ]]; then
 	continue
@@ -47,17 +47,18 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
     
     polluter_victim=$(echo $i | md5sum | cut -d' ' -f1) 
     
-    mkdir -p $global_output_dir/$polluter_victim
+    mkdir -p $global_output_dir/cleaners/$polluter_victim
 
     echo $polluter_victim,$project,$polluter,$victim >> $global_output_dir/cleaners/polluter-victim-mapping.csv
 
     cleaner_cnt=0
-    if [[ "$tcm" == 1 ]]; then
-	tlist=$(fgrep "$test_filename" $test_list)
-	echo "[tcm]"
-    else
-	tlist=$(fgrep "::" $test_list)
-    fi
+
+    #if [[ "$tcm" == 1 ]]; then
+    #tlist=$(fgrep "$test_filename" $test_list)
+    #echo "[tcm]"
+    #else
+    tlist=$(fgrep "::" $test_list)
+    #fi
     for t in $tlist; do
 	if [[ "$t" == "polluter" || "$t" == "victim" ]]; then
 	    continue
@@ -74,10 +75,10 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
 	    echo $t >> $global_output_dir/cleaners/$polluter_victim/timed_out.csv
 	    continue
 	fi
-	cleaner_flag=$(grep "3 passed" $global_output_dir/$polluter_victim/$md5.log)
+	cleaner_flag=$(grep "3 passed" $global_output_dir/cleaners/$polluter_victim/$md5.log)
 	if [[ -n "$cleaner_flag" ]]; then
 	    echo "*Cleaner*" $t
-	    echo $project,$url,$sha,$polluter,$t,$victim >> $global_output_dir/cleaner.csv
+	    echo $project,$url,$sha,$polluter,$t,$victim >> $global_output_dir/cleaners.csv
 	    let cleaner_cnt++
 	fi
 	echo "---------------------------------------"

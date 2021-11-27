@@ -4,7 +4,7 @@ from bidict import bidict
 import csv
 import os
 
-OUTPUT_DIR = "output/ipflakies_output"
+OUTPUT_DIR = "repro/src/idflakies"
 
 def seq_encoding(test_dict, seq):
     encoded = []
@@ -40,7 +40,7 @@ for project in os.listdir(OUTPUT_DIR):
 # clean
     has_flaky_output = False
     try:
-        if os.path.exists(os.path.join(OUTPUT_DIR, project, 'ipflakies_result', 'flakies.json')):
+        if os.path.exists(os.path.join(OUTPUT_DIR, project, 'flakies.json')):
             with open (os.path.join(OUTPUT_DIR, project, 'ipflakies_result', 'flakies.json'), 'rt') as load_f:
                 load_dict = json.load(load_f)
                 has_flaky_output = True

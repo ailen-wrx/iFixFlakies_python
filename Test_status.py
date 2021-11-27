@@ -7,7 +7,7 @@ import pandas as pd
 
 Gruber_flakies = dict()
 
-with open("repro/src/dataset_amended.csv", 'rt') as infile:
+with open("dataset_amended.csv", 'rt') as infile:
     for row in csv.reader(infile):
         Project = row[0]
         Project_URL = row[1]
