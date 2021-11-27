@@ -1,14 +1,14 @@
-# bash find_cleaner.sh parsing_result/polluter_tsm/polluter-potential.csv $(pwd)/Repo test_list $(pwd)/output/cleaner 1 0 1
+# bash find_cleaner.sh parsing_result/polluter_tsm/polluter-potential.csv $(pwd)/Repo test_list $(pwd)/output/cleaner 3
 
 polluter_list=$1
 global_repo_dir=$2
 test_list=$3
 global_output_dir=$4
-clear_output=$5
-max_cleaner=$6
-tcm=$7
+max_cleaner=$5
 
 echo script version: $(git rev-parse HEAD)
+
+mkdir -p global_output_dir/cleaners
 
 base_dir=$(pwd)
 if [[ $clear_output == 1 ]]; then
@@ -33,14 +33,6 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
     if [[ "$project" == "Project_Name" ]]; then
 	continue
     fi
-    
-    if [[ -n $(fgrep "$polluter,$victim" $global_output_dir/polluter-victim-mapping.csv) ]]; then
-	echo [project] $project
-	echo [polluter] $polluter
-	echo [victim] $victim
-	echo Pass.
-	continue
-    fi
 
     cd $global_repo_dir
     if [ ! -d "$project" ]; then
@@ -57,7 +49,7 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
     
     mkdir -p $global_output_dir/$polluter_victim
 
-    echo $polluter_victim,$project,$polluter,$victim >> $global_output_dir/polluter-victim-mapping.csv
+    echo $polluter_victim,$project,$polluter,$victim >> $global_output_dir/cleaners/polluter-victim-mapping.csv
 
     cleaner_cnt=0
     if [[ "$tcm" == 1 ]]; then
@@ -76,10 +68,10 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
 	echo [victim] $victim
 	echo Testing: $t
 	md5=$(echo $t | md5sum | cut -d' ' -f1)
-	timeout 1000s python -m pytest $polluter $t  $victim --csv $global_output_dir/$polluter_victim/$md5.csv > $global_output_dir/$polluter_victim/$md5.log
+	timeout 1000s python -m pytest $polluter $t  $victim --csv $global_output_dir/cleaners/$polluter_victim/$md5.csv > $global_output_dir/cleaners/$polluter_victim/$md5.log
 	exit_status=${PIPESTATUS[0]}
 	if [[ ${exit_status} -eq 124 ]] || [[ ${exit_status} -eq 137 ]]; then
-	    echo $t >> $global_output_dir/$polluter_victim/timed_out.csv
+	    echo $t >> $global_output_dir/cleaners/$polluter_victim/timed_out.csv
 	    continue
 	fi
 	cleaner_flag=$(grep "3 passed" $global_output_dir/$polluter_victim/$md5.log)
@@ -89,7 +81,7 @@ for i in $(cat $polluter_list | fgrep "$(echo $vict | cut -d, -f1)" | fgrep "$(e
 	    let cleaner_cnt++
 	fi
 	echo "---------------------------------------"
-	echo $md5,$t >> $global_output_dir/$polluter_victim/test_mapping.csv
+	echo $md5,$t >> $global_output_dir/cleaners/$polluter_victim/test_mapping.csv
 	if (( $max_cleaner != 0 )) && (( $cleaner_cnt >= $max_cleaner )); then
 	    break
 	fi

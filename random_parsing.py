@@ -10,7 +10,7 @@ ProjectsLib = []
 
 TestsInspected = []
 
-with open("master/src/no_polluters.csv", 'rt') as infile:
+with open("repro/src/no_polluters.csv", 'rt') as infile:
     for row in csv.reader(infile):
         if row[0] == "Project_Name":
             continue
@@ -23,7 +23,7 @@ with open("master/src/no_polluters.csv", 'rt') as infile:
             projs.append([row[0], row[1], row[2]])
 
 
-with open("master/src/no_state_setters.csv", 'rt') as infile:
+with open("repro/src/no_state_setters.csv", 'rt') as infile:
     for row in csv.reader(infile):
         if row[0] == "Project_Name":
             continue
@@ -36,7 +36,7 @@ with open("master/src/no_state_setters.csv", 'rt') as infile:
             projs.append([row[0], row[1], row[2]])
 
 
-with open("master/src/dataset_amended.csv", 'rt') as infile:
+with open("repro/src/dataset_amended.csv", 'rt') as infile:
     for row in csv.reader(infile):
         Project = row[0]
         Project_URL = row[1]
@@ -54,7 +54,7 @@ with open("master/src/dataset_amended.csv", 'rt') as infile:
         Gruber_flakies.append(Project+Test_id)
 
 
-with open("master/src/random.csv", 'w') as output:
+with open("repro/src/random.csv", 'w') as output:
     output.write("Project_Name,Project_URL,Project_Hash,Test_id,Test_type\n")
 
 valid, deter, nod, od, deter_pass, deter_fail = 0, 0, 0, 0, 0, 0
@@ -65,7 +65,7 @@ for data in dataset:
     Project_Hash = data[2]
     test = data[3]
 
-    with open("master/src/random.csv", 'a') as output:
+    with open("repro/src/random.csv", 'a') as output:
         if os.path.exists("output/ipflakies_output/{}/all_flakies.json".format(Project)) and \
             os.path.exists("output/ipflakies_output/{}/non_flakies.json".format(Project)):
             valid += 1
@@ -107,14 +107,14 @@ with open("summary_random.txt", 'w') as summary_out:
 
 
 
-with open("master/src/MoreFlakies.csv", 'w') as output:
+with open("repro/src/MoreFlakies.csv", 'w') as output:
     output.write("Project_Name,Project_URL,Project_Hash,Test_id,Test_type\n")
 
 for row in projs:
     Project = row[0]
     Project_URL = row[1]
     Project_Hash = row[2]
-    with open("master/src/MoreFlakies.csv", 'a') as output:
+    with open("repro/src/MoreFlakies.csv", 'a') as output:
         if os.path.exists("output/ipflakies_output/{}/all_flakies.json".format(Project)):
             with open("output/ipflakies_output/{}/all_flakies.json".format(Project),'r') as load_f:
                 load_dict_f = json.load(load_f)

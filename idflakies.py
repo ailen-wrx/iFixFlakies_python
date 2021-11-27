@@ -38,31 +38,8 @@ for project in os.listdir(OUTPUT_DIR):
     all_flakies = dict()
     timeout_project = []
 # clean
-    if os.path.exists(os.path.join(OUTPUT_DIR, project, 'ipflakies_result_patch', 'flakies.json')):
-        with open (os.path.join(OUTPUT_DIR, project, 'ipflakies_result_patch', 'flakies.json'), 'rt') as load_f:
-            load_dict = json.load(load_f)
-            has_flaky_output = True
-            for key in load_dict:
-                if key not in all_flakies:
-                    all_flakies[key] = load_dict[key]
-    if os.path.exists(os.path.join(OUTPUT_DIR, project, 'random_suite', 'normal.csv')):
-        os.remove(os.path.join(OUTPUT_DIR, project, 'random_suite', 'normal.csv'))
     has_flaky_output = False
     try:
-        if os.path.exists(os.path.join(OUTPUT_DIR, project, 'ifixflakies_result', 'flakies.json')):
-            with open (os.path.join(OUTPUT_DIR, project, 'ifixflakies_result', 'flakies.json'), 'rt') as load_f:
-                load_dict = json.load(load_f)
-                has_flaky_output = True
-                for key in load_dict:
-                    if key not in all_flakies:
-                        all_flakies[key] = load_dict[key]
-        if os.path.exists(os.path.join(OUTPUT_DIR, project, 'flakies.json')):
-            with open (os.path.join(OUTPUT_DIR, project, 'flakies.json'), 'rt') as load_f:
-                load_dict = json.load(load_f)
-                has_flaky_output = True
-                for key in load_dict:
-                    if key not in all_flakies:
-                        all_flakies[key] = load_dict[key]
         if os.path.exists(os.path.join(OUTPUT_DIR, project, 'ipflakies_result', 'flakies.json')):
             with open (os.path.join(OUTPUT_DIR, project, 'ipflakies_result', 'flakies.json'), 'rt') as load_f:
                 load_dict = json.load(load_f)

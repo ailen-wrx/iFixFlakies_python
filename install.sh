@@ -61,13 +61,8 @@ for i in $(grep $project, $dataset); do
     fi
 
     if [[ $task_type == 2 ]]; then
-        echo "polluter_tcm"
-	    bash find_polluter_tcm.sh $victim $test_list $Test_filename $repo_dir/$project $output_dir/$project/$md5
-    fi
-
-    if [[ $task_type == 3 ]]; then
         echo "polluter_tsm"
-	    bash find_polluter_tsm.sh $victim $test_list $repo_dir/$project $output_dir/$project/$md5
+	    bash find_polluter.sh $victim $test_list $repo_dir/$project $output_dir/$project/$md5
     fi
 	
   	

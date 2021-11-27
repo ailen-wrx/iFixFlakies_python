@@ -1,28 +1,23 @@
-# python3 polluter_or_state_setter.py 1 output
+# python3 polluter_or_state_setter.py output
 
 import os
 import sys
 import csv
 import traceback
 
-tcm = sys.argv[1]
-output_dir = sys.argv[2]
-if tcm == "1":
-    flg = "tcm"
-else:
-    flg = "tsm"
+output_dir = sys.argv[1]
 
-output_polluter = os.path.join(output_dir, "potential_polluters_{}.csv".format(flg))
-output_polluter_stat = os.path.join(output_dir, "potential_polluters_{}_stat.csv".format(flg))
-output_ss = os.path.join(output_dir, "potential_state_setters_{}.csv".format(flg))
-output_ss_stat = os.path.join(output_dir, "potential_state_setters_{}_stat.csv".format(flg))
+output_polluter = os.path.join(output_dir, "polluters.csv")
+output_polluter_stat = os.path.join(output_dir, "polluters_stat.csv")
+output_ss = os.path.join(output_dir, "state_setters.csv")
+output_ss_stat = os.path.join(output_dir, "state_setters_stat.csv")
 
-TASK = "polluter_{}".format(flg)
+TASK = "polluter"
 VICTIM = "victims"
 BRITTLE = "brittles"
 
 def process(victim_or_brittle):
-    errors = os.path.join(output_dir, "errors_{}_{}.csv".format(victim_or_brittle, flg))
+    errors = os.path.join(output_dir, "errors_{}.csv".format(victim_or_brittle))
     dataset = os.path.join(output_dir, "{}.csv".format(victim_or_brittle))
 
     output_file = output_polluter if victim_or_brittle == VICTIM else output_ss
@@ -85,7 +80,6 @@ def process(victim_or_brittle):
                 csv.writer(errorfile).writerow(row)
                 continue
 
-
-print(flg)          
+          
 process("victims")
 process("brittles")
