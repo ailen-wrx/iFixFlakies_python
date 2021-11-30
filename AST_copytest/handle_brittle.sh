@@ -8,7 +8,7 @@ echo $linenum
 
 if [[ "$clear"  == 1  ]]; then
     echo clear_output
-    echo project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,1st_patch_time,minimal_patch_time > $save_path
+    echo project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,1st_patch_time,minimal_patch_time,patch_path,diff,verification_patch_result,inserted_node > $save_path
 fi
     
 base_dir=$(pwd)
@@ -18,7 +18,7 @@ for project_name in $(cat $input_csv | sed '1d' | cut -d, -f1 | uniq); do
     echo $project_name
     if [[ ! -d "$project_name" ]]; then
 	echo "copying $project_name"
-	cp /home/user/data/Repo_zipped/$project_name.zip .
+	cp /home/user/data/Installed_Repositories/$project_name.zip .
 	echo "unzipping $project_name"
 	unzip $project_name.zip > /dev/null
 	rm $project_name.zip
@@ -34,7 +34,7 @@ for project_name in $(cat $input_csv | sed '1d' | cut -d, -f1 | uniq); do
 	sha=$(echo $i | cut -d "," -f3)
        	statesetter_full_path=$(echo $i | cut -d "," -f6)
         brittle_full_path=$(echo $i | cut -d "," -f4)
-        combination_path=${victim_full_path%.*}_patch.py
+        combination_path=${brittle_full_path%.*}_patch.py
 	#save_path=/home/yyy/test_result_patcher.csv
         #echo $combination_path
 	#if [[ -n $(fgrep "$statesetter_full_path,$brittle_full_path" $save_path) ]]; then
