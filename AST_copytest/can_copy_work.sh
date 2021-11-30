@@ -17,7 +17,7 @@ for project_name in $(cat $input_csv | sed '1d' | cut -d, -f1 | uniq); do
     echo $project_name
     if [[ ! -d "$project_name" ]]; then
 	echo "copying $project_name"
-	cp /home/user/data/Repo_zipped/$project_name.zip .
+	cp /home/user/data/Installed_Repositories/$project_name.zip .
 	echo "unzipping $project_name"
 	unzip $project_name.zip > /dev/null
 	rm $project_name.zip
