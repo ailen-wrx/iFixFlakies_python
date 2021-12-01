@@ -17,7 +17,7 @@ from io import StringIO
 import hashlib, binascii
 from subprocess import Popen, PIPE
 CACHE_DIR='../patchercache/'
-SAVE_DIR='../SAVE/'
+SAVE_DIR='../../SAVE/'
 
 
 class get_origin_astInfo(ast.NodeVisitor):
@@ -89,7 +89,6 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
 
     try:
         brittle_result=run_brittle(project, md5,victim_fullpath)
-        #input("LALAYANG")
         cleaner_brittle_result=run_cleaner_brittle(project, md5, cleaner_fullpath, victim_fullpath)
 
         #brittle_result=run_brittle(project, md5,victim_fullpath)
@@ -103,8 +102,7 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
             exit(1)
             
     minimal_patch_file=None
-    patch_time_1st = None
-    patch_time_all = None
+    time_all = None
     can_copy_work = None
     minimal_patch_file= None
     import_obj_list=[]
@@ -229,19 +227,27 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
         result = (run_brittle(project, md5,
                                combination_path + '::' + '::'.join(victim_fullpath.split('::')[1:])))
 
+        print(combination_path + '::' + '::'.join(victim_fullpath.split('::')[1:]))
+#        input("pending")
 
 
         tmp_origin_victim.remove(tmp_insert_node)
-
+        start_time = time.perf_counter()   
         can_copy_work = False
         if result.strip() == 'passed':
             can_copy_work = True
             patch_list.append(insert_content)
             minimal_patch_file=combination_path
+#            processed_patch_file = minimal_patch_file.replace('patch','processedpatch')
+            patch_name="{}{}_patch_{}_.patch".format(SAVE_DIR, victim_testfunc[:(victim_fullpath.index('.'))],md5)
+            print(minimal_patch_file)
+#            input('wait')
+            os.popen('diff -up ' + victim_path+' '+minimal_patch_file+ ' > '+patch_name)
+
 
         # minimize code by delta debugging
         n = 2
-        start_time = time.perf_counter()
+        
         patch_num = 0
         patch_time_1st = None
         patch_time_all = None
@@ -296,9 +302,9 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
 
                 if can_patch_work.strip() == 'passed':
                     patch_time = time.perf_counter()
-                    patch_num += 1
-                    if patch_num == 1:
-                        patch_time_1st = patch_time - start_time
+             #       patch_num += 1
+             #       if patch_num == 1:
+             #           patch_time_1st = patch_time - start_time
                     print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~CAN BE A PATCH~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n',
                           tmp_content)
                     minimal_patch_file=combination_path
@@ -315,11 +321,11 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
                 if n == len(tmp_insert_node):
                     break
         end_time = time.perf_counter()
-        if patch_time_1st:
-            patch_time_all = end_time - start_time
+        #if patch_time_1st:
+        time_all = end_time - start_time
             #print(tmp_content)
             #print(tmp_insert_node)
-            offset = 0
+        offset = 0
 #            for each in tmp_insert_node:
                 #print(each.col_offset)
 #                offset+=each.col_offset
@@ -412,7 +418,7 @@ def fix_brittle(project,sha, cleaner_fullpath, victim_fullpath, combination_path
         
     with open(result_path,'a+') as f:
         csv_write = csv.writer(f)
-        result=[project,sha,cleaner_fullpath,victim_fullpath,md5,brittle_result,cleaner_brittle_result,can_copy_work,patch_time_1st,patch_time_all,patch_name]
+        result=[project,sha,cleaner_fullpath,victim_fullpath,md5,brittle_result,cleaner_brittle_result,can_copy_work,time_all,patch_name]
 
         #for each in patch_list:
         #    result.append(each)

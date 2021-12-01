@@ -5,7 +5,7 @@ pip install py
 
 mkdir -p repro/src
 
-cp input_dataset repro/src/dataset_final.csv
+cp $input_dataset repro/src/dataset_final.csv
 
 bash batch.sh $(pwd)/repro/src/dataset_final.csv $(pwd)/Repo $(pwd)/repro/src/isolated test_list 1 0
 
