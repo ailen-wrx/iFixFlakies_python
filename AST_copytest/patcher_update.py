@@ -16,7 +16,7 @@ from io import StringIO
 import hashlib, binascii
 
 CACHE_DIR='../patchercache/'
-SAVE_DIR='../SAVE/'
+SAVE_DIR='../../SAVE/'
 
 class get_origin_astInfo(ast.NodeVisitor):
     def __init__(self,node):
