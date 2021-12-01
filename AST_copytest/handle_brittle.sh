@@ -8,7 +8,7 @@ echo $linenum
 
 if [[ "$clear"  == 1  ]]; then
     echo clear_output
-    echo project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,1st_patch_time,minimal_patch_time,patch_path,diff,verification_patch_result,inserted_node > $save_path
+    echo project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,minimal_patch_time,patch_path,diff,verification_patch_result,inserted_node > $save_path
 fi
     
 base_dir=$(pwd)

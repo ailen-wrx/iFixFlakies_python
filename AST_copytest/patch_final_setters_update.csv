@@ -1,4 +1,4 @@
-project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,1st_patch_time,minimal_patch_time,patch_path,diff,verification_patch_result,inserted_node
+project,sha,statesetter_fullpath,brittle_fullpath,md5,pv_result,pcv_result,can_copy_work,minimal_patch_time,patch_path,diff,verification_patch_result,inserted_node
 BT-Tracker,558c15b399871c1ca11d0c4ae1eb598e3060931e,Tracker/tests/test_event.py::TestEvent::test_state_change,Tracker/tests/test_event.py::TestEvent::test_object,6f888d85712ae52d73dd5f7a09217888,failed,passed,True,0.8729412453249097,../../SAVE/test_object_patch_6f888d85712ae52d73dd5f7a09217888_.patch,"17a18
 >         status.state = False
 ",passed,"
