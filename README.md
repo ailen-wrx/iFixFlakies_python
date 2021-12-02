@@ -60,7 +60,9 @@ sys     0m19.354s
 ```
 
 Output of iDFlakies_python: `repro/Test_status.csv`
+
 Output of iFixFlakies_python: `repro/patch_brittles.csv`, `repro/patch_victims.csv`
+
 Patch files: `SAVE/`
 
 
