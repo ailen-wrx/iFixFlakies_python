@@ -4,13 +4,13 @@ Experimental scripts for running iPFlakies to detect polluters of victims as wel
 ## Setup
 To setup the environment,
 
- - download the docker image and pre-installed repositories for analysis to the current work folder:
-    https://zenodo.org/record/5747276/files/python_ipflakies.tar?download=1
+ - download the Docker image and pre-installed repositories for analysis to the current work folder:
+    https://zenodo.org/record/5747276/files/python_ipflakies.tar
 
-    https://zenodo.org/record/5748460/files/Installed_Repositories_part.zip?download=1
-    https://zenodo.org/record/5748511/files/Installed_Repositories_part.z01?download=1
+    https://zenodo.org/record/5748460/files/Installed_Repositories_part.zip
+    https://zenodo.org/record/5748511/files/Installed_Repositories_part.z01
 
- - unzip the files and create docker container:
+ - unzip the files and create Docker container:
     ```
     cat Installed_Repositories_part.* > Installed_Repositories.zip
 
