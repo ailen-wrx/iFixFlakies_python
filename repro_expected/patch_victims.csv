@@ -1,0 +1,52 @@
+project,sha,polluter_fullpath,cleaner_fullpath,victim_fullpath,md5,pv_result,pcv_result,can_copy_work,minimal_patch_time, save_path,diff, verification_patch,inserted_node
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,a5deef3ef7fa2e2342d6ff8b14025b0c,failed,passed,True,0.6719549130648375,../../SAVE/test_register_multiple_patch_a5deef3ef7fa2e2342d6ff8b14025b0c_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize()
+",passed,"
+container.initialize()
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,10d7864795d1789f4dc4d460342a95da,failed,passed,True,0.3189175482839346,../../SAVE/test_register_multiple_patch_10d7864795d1789f4dc4d460342a95da_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize(class_mapping={Example: Example2})
+",passed,"
+container.initialize(class_mapping={Example: Example2})
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,75aa8005b2eed80fc63b64bff049a55c,failed,passed,False,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,55b9477fcb34ff731d9044115c5e7b1f,failed,passed,True,0.6634594267234206,../../SAVE/test_register_multiple_patch_55b9477fcb34ff731d9044115c5e7b1f_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize()
+",passed,"
+container.initialize()
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,e4dd39ffa2664138f7454dcc732f62b2,failed,passed,True,0.31858786288648844,../../SAVE/test_register_multiple_patch_e4dd39ffa2664138f7454dcc732f62b2_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize(class_mapping={Example: Example2})
+",passed,"
+container.initialize(class_mapping={Example: Example2})
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,662ddb0f7fa266762e3288c603e8219c,failed,passed,False,,,,
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy/tests/test_register_multiple.py::test_register_multiple,5d5dd7765df7cc111eaff0fbc3033476,failed,passed,True,0.6879045069217682,../../SAVE/test_register_multiple_patch_5d5dd7765df7cc111eaff0fbc3033476_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize()
+",passed,"
+container.initialize()
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy/tests/test_register_multiple.py::test_register_multiple,7bfc8fde19430c49f93931a1e4811701,failed,passed,True,0.3185569141060114,../../SAVE/test_register_multiple_patch_7bfc8fde19430c49f93931a1e4811701_.patch,"0a1,2
+> 
+> import warnings
+37a40
+>     container.initialize(class_mapping={Example: Example2})
+",passed,"
+container.initialize(class_mapping={Example: Example2})
+"
+IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_config.py::test_argument_injection,cynergy/tests/test_register_multiple.py::test_register_multiple,e394ab3a2692e268ddad57b43c07ab7f,failed,passed,False,,,,

@@ -1,0 +1,3 @@
+id,module,name,file,doc,markers,status,message,duration
+cynergy/tests/test_config.py::test_argument_not_in_config_and_no_default,cynergy.tests.test_config,test_argument_not_in_config_and_no_default,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_config.py,,,passed,,0.0003962833434343338
+cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0066132377833127975

@@ -1,0 +1,10 @@
+--- Tracker/tests/test_event.py	2021-10-20 19:46:56.000000000 +0000
++++ Tracker/tests/test_event_processedpatch10.py	2021-12-01 07:28:11.958553878 +0000
+@@ -15,6 +15,7 @@ from ..event import status
+ 
+ class TestEvent(object):
+     def test_object(self):
++        status.state = False
+         assert id(status.state) == id(status.state)
+ 
+     def test_state_change(self):

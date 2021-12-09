@@ -1,0 +1,3 @@
+id,module,name,file,doc,markers,status,message,duration
+cynergy/tests/test_sanity.py::test_recursive_injection,cynergy.tests.test_sanity,test_recursive_injection,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_sanity.py,,,passed,,0.006594778038561344
+cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0006193537265062332

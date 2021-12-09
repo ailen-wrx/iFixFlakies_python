@@ -1,0 +1,4 @@
+id,module,name,file,doc,markers,status,message,duration
+cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy.tests.test_register_multiple,test_register_multiple_when_onc_instance_is_already_registered,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006477756425738335
+cynergy/tests/test_class_mapping.py::test_class_mapping_from_init,cynergy.tests.test_class_mapping,test_class_mapping_from_init,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_class_mapping.py,,,passed,,0.00044995546340942383
+cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0006142603233456612

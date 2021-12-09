@@ -1,0 +1,2 @@
+id,module,name,file,doc,markers,status,message,duration
+cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006920116022229195
