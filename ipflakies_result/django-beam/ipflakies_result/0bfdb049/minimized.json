@@ -1,0 +1,1 @@
+{"target": "tests/test_contrib_reversion.py::test_show_detail_from_previous_version", "type": "victim", "patch": false, "polluter": {}}

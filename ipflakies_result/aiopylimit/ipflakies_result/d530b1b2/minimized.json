@@ -1,0 +1,1 @@
+{"target": "aiopylimit/tests/test_aiopylimit.py::TestPyLimit::test_exception", "type": "victim", "patch": false, "polluter": {"aiopylimit/tests/test_aiopylimit.py::TestPyLimit::test_peek": [], "aiopylimit/tests/test_aiopylimit.py::TestPyLimit::test_throttle": []}, "time": 8.759456396102905}

@@ -1,0 +1,10 @@
+--- tests/test_autodoc.py	2022-02-02 09:06:35.920640719 +0000
++++ tests/test_autodoc_processedpatch_031b48205.py	2022-02-02 10:29:42.640673131 +0000
+@@ -40,6 +40,7 @@ class TestAutodoc(TestCase):
+         clear_generated_file(var_path)
+ 
+     def test_parse_response(self):
++        autodoc.clear()
+         """ Should parse WebTest response. """
+         res = self.client.post_json('/', params={'message': 'foo'})
+         autodoc.parse('POST /', res)

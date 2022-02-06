@@ -1,0 +1,1 @@
+{"target": "test/test_routing.py::test_router_register_handler_cbv_pass", "type": "brittle", "patch": false, "state-setter": {"test/test_routing.py::test_router_register_handler_fn_pass": [{"state-setter": "test/test_routing.py::test_router_register_handler_fn_pass", "patch": null}]}, "time": 14.05236530303955}

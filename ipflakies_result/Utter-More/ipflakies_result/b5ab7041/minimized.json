@@ -1,0 +1,1 @@
+{"target": "test/test_utter_more.py::test_saving_utterances[alexa_test-csv-None]", "type": "brittle", "patch": false, "state-setter": {"test/test_utter_more.py::test_ibu_aut": [{"state-setter": "test/test_utter_more.py::test_ibu_aut", "patch": null}]}, "time": 8.857512474060059}

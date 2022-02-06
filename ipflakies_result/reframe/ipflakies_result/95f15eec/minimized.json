@@ -1,0 +1,1 @@
+{"target": "unittests/test_cli.py::test_execution_modes", "type": "victim", "patch": false, "polluter": {}}

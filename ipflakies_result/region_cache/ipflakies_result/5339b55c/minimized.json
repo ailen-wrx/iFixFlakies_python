@@ -1,0 +1,1 @@
+{"target": "tests/test_region_cache.py::test_get_or_compute[app0]", "type": "brittle", "patch": false, "state-setter": {}}

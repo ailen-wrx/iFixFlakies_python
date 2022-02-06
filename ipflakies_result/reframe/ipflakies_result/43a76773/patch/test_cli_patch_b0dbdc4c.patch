@@ -1,0 +1,10 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_b0dbdc4c3.py	2022-02-04 11:58:40.773146004 +0000
+@@ -440,6 +440,7 @@ def test_list_empty_prgenvs_check_and_op
+ 
+ 
+ def test_list_check_with_empty_prgenvs(run_reframe):
++    (returncode, stdout, _) = run_reframe(checkpath=['unittests/resources/checks/frontend_checks.py'], more_options=['-t', 'BadSetupCheck'])
+     returncode, stdout, _ = run_reframe(
+         checkpath=['unittests/resources/checks/frontend_checks.py'],
+         action='list',

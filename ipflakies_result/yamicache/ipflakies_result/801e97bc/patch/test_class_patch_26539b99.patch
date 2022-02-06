@@ -1,0 +1,10 @@
+--- tests/test_class.py	2022-02-03 02:08:03.626296136 +0000
++++ tests/test_class_processedpatch_26539b994.py	2022-02-03 02:54:44.714874839 +0000
+@@ -62,6 +62,7 @@ def test_cached(cache_obj):
+ 
+ 
+ def test_keyed_cached(cache_obj):
++    c._debug = True
+     for _ in range(10):
+         cache_obj.test3(8, 0)
+ 

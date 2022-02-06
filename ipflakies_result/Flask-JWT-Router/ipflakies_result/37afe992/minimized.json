@@ -1,0 +1,1 @@
+{"target": "tests/test_routing.py::TestRouting::test_static_routes", "type": "victim", "patch": false, "polluter": {}}

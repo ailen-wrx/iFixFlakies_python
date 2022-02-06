@@ -1,0 +1,10 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_cc230da61.py	2022-02-03 22:17:39.703663376 +0000
+@@ -142,6 +142,7 @@ def test_EndTailImputer(dataframe_na):
+ def test_ArbitraryNumberImputer(dataframe_na):
+ 
+     # test case 1: automatically select variables
++    transformer = MathematicalCombinator(variables=['Name', 'Age', 'Marks'])
+     imputer = ArbitraryNumberImputer(arbitrary_number=99, variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

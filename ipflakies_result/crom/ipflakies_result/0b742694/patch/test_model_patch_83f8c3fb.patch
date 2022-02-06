@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_83f8c3fb2.py	2022-02-01 18:47:16.337393178 +0000
+@@ -407,6 +407,7 @@ class TestBaseResource(unittest.TestCase
+ 		self.assertTrue(self.artist._check_reference(model.Person))
+ 
+ 	def test_multiplicity(self):
++        model.factory.auto_id_type = 'uuid'
+ 		model.factory.process_multiplicity = True
+ 		who = model.Actor()
+ 		mmo = model.HumanMadeObject()

@@ -1,0 +1,10 @@
+--- riemann/tests/tx/test_tx_builder.py	2022-02-04 05:08:41.718792735 +0000
++++ riemann/tests/tx/test_tx_builder_processedpatch_cc4978334.py	2022-02-04 09:00:06.768414822 +0000
+@@ -107,6 +107,7 @@ class TestTxBuilder(unittest.TestCase):
+             helpers.PK['ser'][0]['pk_p2pkh_output'])
+ 
+     def test_make_p2wpkh_output(self):
++        riemann.select_network('bitcoin_main')
+         self.assertEqual(
+             tb.make_p2wpkh_output(
+                 value=helpers.P2PKH1['human']['outs'][0]['value'],

@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_4dd0b2ee8.py	2022-02-01 18:55:28.641204262 +0000
+@@ -176,6 +176,7 @@ class TestFactorySerialization(unittest.
+ 		self.assertTrue(1)
+ 
+ 	def test_pipe_scoped(self):
++        model.factory.auto_id_type = 'uuid'
+ 		x = model.Activity()
+ 		y = model.Activity()
+ 		x.part = y

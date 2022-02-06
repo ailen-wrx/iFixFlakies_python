@@ -1,0 +1,1 @@
+{"target": "tests/test_base.py::test_deserialize", "type": "victim", "patch": false, "polluter": {"tests/test_doc_example.py::test_doc_ex": []}, "time": 72.60962319374084}

@@ -1,0 +1,10 @@
+--- test/test_occam_data.py	2022-02-02 07:22:56.881380369 +0000
++++ test/test_occam_data_processedpatch_f5595f1a7.py	2022-02-02 07:41:14.020535903 +0000
+@@ -214,6 +214,7 @@ def test_occam_data_progress_bars():
+ 
+ 
+ def test_occam_data_not_save_to_npy():
++    shutil.rmtree(class_dir)
+     assert not os.path.exists(class_dir)
+     _ = OccamData(file_name_fort_1, save_to_npy=False, silent=True)
+     assert not os.path.exists(class_dir)

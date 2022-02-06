@@ -1,0 +1,1 @@
+{"target": "tests/test_http.py::TestCase::test_localhost", "type": "victim", "patch": false, "polluter": {}}

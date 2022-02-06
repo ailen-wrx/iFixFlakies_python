@@ -1,0 +1,14 @@
+--- FinDataBroker/tests/test_mongo.py	2022-02-02 02:43:48.435871675 +0000
++++ FinDataBroker/tests/test_mongo_processedpatch_21587db37.py	2022-02-02 02:47:21.226710869 +0000
+@@ -35,6 +35,11 @@ def test__save___ok():
+ def test__load___ok():
+     db = 'testdb'
+     col = 'testcol'
++    objs = [{'name': 'boe', 'year': 2019}]
++    index = [('name', ASCENDING), ('year', ASCENDING)]
++    broker.save(objs, db, col, index, unique=True)
++    db = 'testdb'
++    col = 'testcol'
+     objs = [
+         {
+             'name': 'boe',

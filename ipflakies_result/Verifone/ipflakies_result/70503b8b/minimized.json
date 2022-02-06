@@ -1,0 +1,1 @@
+{"target": "tests/test_verifone.py::TestVerifone::test_001_create_object_with_defaults", "type": "victim", "patch": false, "polluter": {"tests/test_verifone.py::TestVerifone::test_002_get_endpoint": []}, "time": 101.30705451965332}

@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_2bf9252e7.py	2022-02-01 18:35:22.814468272 +0000
+@@ -335,6 +335,7 @@ class TestAutoIdentifiers(unittest.TestC
+ 
+ 	def test_no_ident(self):
+ 
++        model.factory.auto_id_type = 'int-per-segment'
+ 		model.factory.auto_assign_id = True
+ 		p1 = model.Person()	# auto assigned	 
+ 		p2 = model.Person(ident=None) # auto assigned

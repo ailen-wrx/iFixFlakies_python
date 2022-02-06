@@ -1,0 +1,1 @@
+{"target": "tests/test_dockerprettyps.py::TestDockerPrettyPs::test_get_container_colors", "type": "victim", "patch": false, "polluter": {"tests/test_dockerprettyps.py::TestDockerPrettyPs::test_give_json": []}, "time": 14.441196918487549}

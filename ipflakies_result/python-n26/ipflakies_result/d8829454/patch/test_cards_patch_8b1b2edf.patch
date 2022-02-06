@@ -1,0 +1,13 @@
+--- tests/test_cards.py	2022-02-01 17:31:24.175043813 +0000
++++ tests/test_cards_processedpatch_8b1b2edf2.py	2022-02-01 17:37:57.687700042 +0000
+@@ -43,6 +43,10 @@ class CardsTests(N26TestBase):
+     @mock_requests(method=GET, response_file="cards.json")
+     @mock_requests(method=POST, response_file="card_unblock_single.json")
+     def test_unblock_card_cli_all(self):
++        from n26.cli import card_block
++        card_id_1 = '12345678-1234-abcd-abcd-1234567890ab'
++        card_id_2 = '22345678-1234-abcd-abcd-1234567890ab'
++        result = self._run_cli_cmd(card_block)
+         from n26.cli import card_unblock
+         card_id_1 = "12345678-1234-abcd-abcd-1234567890ab"
+         card_id_2 = "22345678-1234-abcd-abcd-1234567890ab"

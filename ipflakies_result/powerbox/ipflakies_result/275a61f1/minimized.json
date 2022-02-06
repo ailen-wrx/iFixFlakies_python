@@ -1,0 +1,1 @@
+{"target": "tests/test_power.py::test_power3d", "type": "victim", "patch": false, "polluter": {}}

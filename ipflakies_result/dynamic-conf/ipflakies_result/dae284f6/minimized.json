@@ -1,0 +1,1 @@
+{"target": "tests/test_conf.py::test_cofig_writing_with_filter_prefix[.env-ARG1=VAL1\\nARG2=VAL2]", "type": "victim", "patch": false, "polluter": {"tests/test_conf.py::test_singleton": []}, "time": 8.330925941467285}

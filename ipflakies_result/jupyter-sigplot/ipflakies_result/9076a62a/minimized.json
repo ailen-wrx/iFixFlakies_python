@@ -1,0 +1,1 @@
+{"target": "test/test_jupyter_sigplot.py::test_empty_object", "type": "victim", "patch": false, "polluter": {"test/test_jupyter_sigplot.py::test_class_level_resolver": []}, "time": 48.08400845527649}

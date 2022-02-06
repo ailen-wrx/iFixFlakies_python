@@ -1,7 +1,0 @@
-GDAX-Python,https://github.com/danpaquin/GDAX-Python,19cac25c51e592994cfa86ec487eef6a5c76718f,tests/test_public_client.py,TestPublicClient,test_get_product_order_book,[1],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_default_init_response,[7-3-MonoPointPWL],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_is_continous,[1-3-PointPWL],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_is_continous,[2-3-PointPWL],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_is_continous,[3-3-PointPWL],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_is_continous,[4-1-PointPWL],True,Passed,Passed
-torchpwl,https://github.com/PiotrDabkowski/torchpwl,73b09cfa9f4c173988d8f075485b887c694fc5a8,torchpwl/pwl_test.py,,test_pwl_is_continous,[4-3-SlopedPWL],True,Passed,Passed

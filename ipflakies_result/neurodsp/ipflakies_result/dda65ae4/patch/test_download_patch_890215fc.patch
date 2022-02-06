@@ -1,0 +1,10 @@
+--- neurodsp/tests/utils/test_download.py	2022-02-01 18:03:59.753935403 +0000
++++ neurodsp/tests/utils/test_download_processedpatch_890215fc0.py	2022-02-01 18:38:15.512020155 +0000
+@@ -26,6 +26,7 @@ def test_check_data_folder():
+ 
+ def test_check_data_file():
+ 
++    assert os.path.isdir(TEST_FOLDER)
+     filename = 'sample_data_1.npy'
+ 
+     check_data_file(filename, TEST_FOLDER)

@@ -1,0 +1,1 @@
+{"target": "test/test_s3_writer.py::test_init_ok", "type": "victim", "patch": false, "polluter": {}}

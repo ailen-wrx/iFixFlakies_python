@@ -1,0 +1,1 @@
+{"target": "tests/test_iterables.py::test_rate_limit_negative", "type": "victim", "patch": false, "polluter": {"tests/test_iterables.py::test_no_limit": []}, "time": 25.668880462646484}

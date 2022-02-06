@@ -1,0 +1,1 @@
+{"target": "test/test_korrupt.py::test_corrupt_quick_rar5", "type": "victim", "patch": false, "polluter": {}}

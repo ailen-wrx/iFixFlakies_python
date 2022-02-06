@@ -1,0 +1,13 @@
+--- tests/test_autodiscover.py	2022-02-01 17:14:44.622898426 +0000
++++ tests/test_autodiscover_processedpatch_b4e13c8210.py	2022-02-01 17:15:40.336690169 +0000
+@@ -21,6 +21,10 @@ class TestAutoDiscover(unittest.TestCase
+ 
+     def test_autodiscover_with_pattern(self):
+         path = pathlib.Path(PATH)
++        autodiscover = AutoDiscover(path=path)
++        module = 'tests.module_to_import'
++        autodiscover()
++        path = pathlib.Path(PATH)
+         autodiscover = AutoDiscover(path=path, pattern='pattern.py')
+         module = 'tests.module_to_import.pattern'
+         sys.modules.pop(module)

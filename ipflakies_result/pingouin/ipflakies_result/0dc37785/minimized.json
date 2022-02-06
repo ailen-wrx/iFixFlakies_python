@@ -1,0 +1,1 @@
+{"target": "pingouin/tests/test_regression.py::TestRegression::test_logistic_regression", "type": "victim", "patch": false, "polluter": {}}

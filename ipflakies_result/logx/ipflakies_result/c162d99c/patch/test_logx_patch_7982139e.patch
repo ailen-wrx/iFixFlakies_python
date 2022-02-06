@@ -1,0 +1,15 @@
+--- tests/test_logx.py	2022-02-02 04:43:45.591106778 +0000
++++ tests/test_logx_processedpatch_7982139e16.py	2022-02-02 04:46:31.164413435 +0000
+@@ -41,6 +41,12 @@ def test_formatted_output(caplog, capsys
+ 
+ 
+ def test_set_format(caplog, capsys):
++    log.set_null_handler()
++    log.clear_null_handler()
++    log.warn('warn')
++    log.debug('debug')
++    (out, err) = capsys.readouterr()
++    assert (('warn' in err) and ('warn' not in out))
+     formatstring = '{ "timestamp": "%(asctime)s", "severity": "%(levelname)s", "name": "%(name)s", "funcName": "%(funcName)s", "lineNo": "%(lineno)d", "message": "%(message)s"}'
+     datefmt = "%Y-%m-%dT%I:%M:%SZ"
+     log.set_format(formatstring, datefmt=datefmt)

@@ -1,0 +1,1 @@
+{"target": "tests/test_config.py::test_error_on_option_without_section", "type": "victim", "patch": false, "polluter": {}}

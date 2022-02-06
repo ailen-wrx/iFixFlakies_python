@@ -1,0 +1,10 @@
+--- tests/autoyaml_test.py	2022-02-01 17:28:30.957473155 +0000
++++ tests/autoyaml_test_processedpatch_13ab0dbb4.py	2022-02-01 17:31:09.122559709 +0000
+@@ -45,6 +45,7 @@ class TestAutoyamlMethods(unittest.TestC
+            self.assertNotIn(self.enc_app, filename.read())
+ 
+     def test_b_decrypt_config(self):
++        write_config(self.enc_config, self.enc_app, encrypted=True, password_function=self.password_function)
+         loaded_config = load_config(self.enc_app, password_function=self.password_function) 
+         self.assertEqual(loaded_config, self.enc_config)
+         loaded_config["extra_field"] = random_string()

@@ -1,0 +1,1 @@
+{"target": "tests/test_nginx.py::TestNginx::test_create_proxy", "type": "victim", "patch": false, "polluter": {}}

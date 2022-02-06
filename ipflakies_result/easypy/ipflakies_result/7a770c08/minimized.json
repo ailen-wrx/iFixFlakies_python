@@ -1,0 +1,1 @@
+{"target": "tests/test_sync.py::test_synchronization_coordinator_with_multiobject_exception", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,14 @@
+--- tests/test_main.py	2022-02-01 20:15:20.751200421 +0000
++++ tests/test_main_processedpatch_7b89bf493.py	2022-02-01 20:17:18.390979598 +0000
+@@ -75,6 +75,11 @@ def test_write_json(json_file):
+ 
+ 
+ def test_get_item(json_file):
++    with atomic.atomic_write(str(json_file)) as temp_file:
++        with open(str(json_file)) as products_file:
++            products_data = json.load(products_file)
++        products_data.append({'uuid': '2299d69e-deba-11e8-bded-680715cce955', 'price': 111.0, 'name': 'Test Product'})
++        json.dump(products_data, temp_file)
+     results = atomic.get_item(
+         str(json_file), "2299d69e-deba-11e8-bded-680715cce955")
+     assert results

@@ -1,0 +1,1 @@
+{"target": "tests/test_coinsta.py::TestCoinsta::test_get_current", "type": "brittle", "patch": false, "state-setter": {}}

@@ -1,0 +1,10 @@
+--- tests/optimizers/test_tolerance.py	2022-02-06 07:29:24.128004851 +0000
++++ tests/optimizers/test_tolerance_processedpatch_0b31c6fa4.py	2022-02-06 11:25:44.511995152 +0000
+@@ -91,6 +91,7 @@ class TestToleranceOptions:
+         assert len(opt.cost_history) == iterations
+ 
+     def test_ftol_effect(self, optimizer):
++        (optm, params) = optimizer
+         """Test early stopping with ftol"""
+         optm, params = optimizer
+         params["ftol"] = 0.01

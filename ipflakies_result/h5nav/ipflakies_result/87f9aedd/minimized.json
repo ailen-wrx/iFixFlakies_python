@@ -1,0 +1,1 @@
+{"target": "tests/test_cli.py::test_get_whitespace_name", "type": "victim", "patch": false, "polluter": {"tests/test_cli.py::test_rm_group": []}, "time": 20.81647038459778}

@@ -1,0 +1,1 @@
+{"target": "test/test_extract.py::test_symlink[test/files/rar3-symlink-unix.rar]", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_2bf9252e7.py	2022-02-01 18:49:12.465122796 +0000
+@@ -133,6 +133,7 @@ class TestFactorySerialization(unittest.
+ 		shutil.rmtree('tests/InformationObject')
+ 
+ 	def test_breadth(self):
++        model.factory.auto_id_type = 'int-per-segment'
+ 		x = model.TransferOfCustody()
+ 		e = model.Activity()
+ 		fr = model.Group()

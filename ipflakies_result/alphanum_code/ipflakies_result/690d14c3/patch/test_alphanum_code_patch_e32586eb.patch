@@ -1,0 +1,72 @@
+--- tests/test_alphanum_code.py	2022-02-01 18:24:22.933254403 +0000
++++ tests/test_alphanum_code_processedpatch_e32586eb1.py	2022-02-01 18:26:38.525613427 +0000
+@@ -1,34 +1,35 @@
+-#!/usr/bin/env python
+-# -*- coding: utf-8 -*-
+-
+-"""Test AlphanumCOde.
+-
+-Usage:
+-    python -m pytest tests/
+-
+-"""
+-
+-import datetime
+-import pytest
+-import os
+-from alphanum_code import AlphaNumCodeManager
+-
+-INIT_CODE = "52Z9Z"
+-
+-
+-@pytest.fixture(scope="module")
+-def coder():
+-    manager = AlphaNumCodeManager("sqlite:///tests/codes.sqlite", code_size=5, init_code=INIT_CODE)
+-    yield manager
+-    os.remove("tests/codes.sqlite")
+-
+-
+-def test_init_code(coder):
+-    code = coder.next_code("init code test")
+-    assert code == INIT_CODE
+-
+-
+-def test_next_code(coder):
+-    coder.next_code()
+-    code = coder.next_code("next code test")
+-    assert code == "52ZA1"
++#!/usr/bin/env python
++# -*- coding: utf-8 -*-
++
++"""Test AlphanumCOde.
++
++Usage:
++    python -m pytest tests/
++
++"""
++
++import datetime
++import pytest
++import os
++from alphanum_code import AlphaNumCodeManager
++
++INIT_CODE = "52Z9Z"
++
++
++@pytest.fixture(scope="module")
++def coder():
++    manager = AlphaNumCodeManager("sqlite:///tests/codes.sqlite", code_size=5, init_code=INIT_CODE)
++    yield manager
++    os.remove("tests/codes.sqlite")
++
++
++def test_init_code(coder):
++    code = coder.next_code("init code test")
++    assert code == INIT_CODE
++
++
++def test_next_code(coder):
++    code = coder.next_code('init code test')
++    coder.next_code()
++    code = coder.next_code("next code test")
++    assert code == "52ZA1"

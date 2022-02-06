@@ -1,0 +1,10 @@
+--- tests/test_cache.py	2022-02-02 01:35:15.563390350 +0000
++++ tests/test_cache_processedpatch_1cf60e2c22.py	2022-02-02 03:35:38.257569213 +0000
+@@ -65,6 +65,7 @@ class TestWordAccCache(unittest.TestCase
+     self.ref, self.out1, self.out2 = _get_example_data()
+  
+   def test_wordacc_cache(self):
++        reporters.sys_names = [f'sys{(i + 1)}' for i in range(2)]
+     cached_stats1 = compare_mt_main.generate_word_accuracy_report(self.ref, [self.out1], to_cache=True)
+     cached_stats2 = compare_mt_main.generate_word_accuracy_report(self.ref, [self.out2], to_cache=True)
+     self.assertTrue('statistics' in cached_stats1 and 'my_ref_total_list' in cached_stats1 and 'my_out_matches_list' in cached_stats1)

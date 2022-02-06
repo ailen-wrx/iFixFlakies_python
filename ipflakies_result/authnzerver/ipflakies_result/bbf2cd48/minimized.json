@@ -1,0 +1,1 @@
+{"target": "authnzerver/tests/test_email.py::test_email_works", "type": "brittle", "patch": false, "state-setter": {}}

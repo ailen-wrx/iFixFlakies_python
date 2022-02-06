@@ -1,0 +1,13 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_31cbf24a1.py	2022-02-05 05:32:06.355036572 +0000
+@@ -518,6 +518,10 @@ def test_verbosity(run_reframe):
+ 
+ 
+ def test_verbosity_with_check(run_reframe):
++    (_, stdout, _) = run_reframe(action='list', checkpath=[])
++    num_checks_default = re.search('Found (\\d+) check', stdout).group(1)
++    (_, stdout, _) = run_reframe(action='list', checkpath=['checks/'], more_options=['-R'])
++    num_checks_in_checkdir = re.search('Found (\\d+) check', stdout).group(1)
+     returncode, stdout, stderr = run_reframe(
+         more_options=['-vvvvv'],
+         system='testsys',

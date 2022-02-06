@@ -1,0 +1,1 @@
+{"target": "tests/test_instagram.py::test_app_store_center_popup_displayed", "type": "victim", "patch": false, "polluter": {"tests/test_instagram.py::test_close_popups": [], "tests/test_instagram.py::test_close_popups_exception": []}, "time": 117.58573865890503}

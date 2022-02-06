@@ -1,0 +1,13 @@
+--- tests/test_dataloader.py	2022-02-02 08:48:15.925342275 +0000
++++ tests/test_dataloader_processedpatch_7eb30c881.py	2022-02-02 08:53:43.287847852 +0000
+@@ -436,6 +436,10 @@ def test_dataloader_clear_with_missing_k
+ 
+ def test_wrong_loader_return_type_does_not_block_async_instance():
+     @Promise.safe
++
++    def call_fn(keys):
++        return Promise.resolve(keys)
++    identity_loader = DataLoader(call_fn)
+     def do():
+         def do_resolve(x):
+             return x

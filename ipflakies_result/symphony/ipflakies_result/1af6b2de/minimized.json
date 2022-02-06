@@ -1,0 +1,1 @@
+{"target": "test/test_tmux_topdown.py::TestTmuxCluster::test_describe_experiment", "type": "brittle", "patch": false, "state-setter": {}}

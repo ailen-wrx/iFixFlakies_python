@@ -1,0 +1,1 @@
+{"tests/test_utils.py::test_check_update": {"type": "NOD", "detected_sequence": [["tests/test_utils.py::test_main_pid_exit", "tests/test_utils.py::test_run_py", "tests/test_utils.py::test_check_update"], ["tests/test_utils.py::test_check_update"]]}, "time": 22869.145614147186}

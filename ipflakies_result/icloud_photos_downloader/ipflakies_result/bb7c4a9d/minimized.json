@@ -1,0 +1,1 @@
+{"target": "tests/test_email_notifications.py::EmailNotificationsTestCase::test_2sa_required_email_notification", "type": "victim", "patch": false, "polluter": {}}

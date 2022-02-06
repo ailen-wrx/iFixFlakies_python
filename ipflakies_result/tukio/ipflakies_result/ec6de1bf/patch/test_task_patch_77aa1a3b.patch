@@ -1,0 +1,11 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_77aa1a3b5.py	2022-02-03 09:05:38.255724269 +0000
+@@ -499,6 +499,8 @@ class TestTaskTemplate(unittest.TestCase
+         _restore_registry(cls._backup)
+ 
+     def test_new_template(self):
++        task_tmpl = TaskTemplate('my-task-holder')
++        task = task_tmpl.new_task('dummy-data', loop=self.loop)
+         """
+         Valid new task template operations
+         """

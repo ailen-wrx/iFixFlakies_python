@@ -1,0 +1,1 @@
+{"target": "tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_clear_querystring_overrides", "type": "brittle", "patch": false, "state-setter": {}}

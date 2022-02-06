@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_83f8c3fb2.py	2022-02-01 18:42:50.340850296 +0000
+@@ -419,6 +419,7 @@ class TestBaseResource(unittest.TestCase
+ 		self.assertEqual(mmo.produced_by, prod)
+ 
+ 	def test_init_params(self):
++        model.factory.auto_id_type = 'uuid'
+ 		p1 = model.Person(ident="urn:uuid:1234")
+ 		self.assertEqual(p1.id, "urn:uuid:1234")
+ 		p2 = model.Person(ident="http://schema.org/Foo")

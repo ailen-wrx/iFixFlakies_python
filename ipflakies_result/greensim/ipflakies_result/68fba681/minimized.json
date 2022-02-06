@@ -1,0 +1,1 @@
+{"target": "tests/test_logging.py::test_auto_log_process", "type": "victim", "patch": false, "polluter": {}}

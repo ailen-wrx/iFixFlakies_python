@@ -1,0 +1,1 @@
+{"target": "tests/test_l293d.py::L293DTestCase::test_create_motor_with_force_selection", "type": "victim", "patch": false, "polluter": {"tests/test_l293d.py::L293DTestCase::test_pins_are_valid_board_1": [], "tests/test_l293d.py::L293DTestCase::test_pins_are_valid_board_2": [], "tests/test_l293d.py::L293DTestCase::test_pins_string_list": []}, "time": 12.145650863647461}

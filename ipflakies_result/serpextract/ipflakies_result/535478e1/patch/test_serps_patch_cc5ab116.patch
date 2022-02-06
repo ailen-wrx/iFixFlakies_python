@@ -1,0 +1,10 @@
+--- tests/test_serps.py	2022-02-03 23:48:12.360829476 +0000
++++ tests/test_serps_processedpatch_cc5ab1161.py	2022-02-03 23:51:34.064173429 +0000
+@@ -103,6 +103,7 @@ class TestSERPs(unittest.TestCase):
+                              parser=self.custom_parser)
+ 
+     def test_custom_parser_implicit(self):
++        self.assertInvalidSERP(self.custom_serp_url)
+         from serpextract.serpextract import _get_search_engines, _engines
+         self.assertInvalidSERP(self.custom_serp_url)
+         add_custom_parser(u'search.piccshare.com', self.custom_parser)

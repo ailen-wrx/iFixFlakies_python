@@ -1,0 +1,1 @@
+{"target": "tests/intelligent_ingestion_test.py::test_upload_part_with_resize", "type": "victim", "patch": false, "polluter": {"tests/intelligent_ingestion_test.py::test_min_chunk_size_exception": []}, "time": 106.11083221435547}

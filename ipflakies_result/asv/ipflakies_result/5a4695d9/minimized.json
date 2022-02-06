@@ -1,0 +1,1 @@
+{"target": "test/test_console.py::test_write_with_fallback", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,14 @@
+--- tests/test_cli.py	2022-02-05 07:11:35.566632815 +0000
++++ tests/test_cli_processedpatch_b3de76042.py	2022-02-05 07:27:14.162543217 +0000
+@@ -57,6 +57,11 @@ class CliTestCase(TestCase):
+             assert result.exit_code == 0
+ 
+     def test_tqdm(self):
++        with vcr.use_cassette('tests/vcr_cassettes/listing_photos.yml'):
++            os.environ['CLIENT_ID'] = 'DE309E26-942E-11E8-92F5-14109FE0B321'
++            runner = CliRunner()
++            result = runner.invoke(main, ['--username', 'jdoe@gmail.com', '--password', 'password1', '--recent', '0', '--log-level', 'info', '-dtests/fixtures/Photos'])
++            assert (result.exit_code == 0)
+         if not os.path.exists("tests/fixtures/Photos"):
+             os.makedirs("tests/fixtures/Photos")
+         with vcr.use_cassette("tests/vcr_cassettes/listing_photos.yml"):

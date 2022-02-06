@@ -1,0 +1,1 @@
+{"target": "lithoxyl/tests/test_stats.py::test_momentacc_norm", "type": "victim", "patch": false, "polluter": {"lithoxyl/tests/test_stats.py::test_acc_random": []}, "time": 85.00471997261047}

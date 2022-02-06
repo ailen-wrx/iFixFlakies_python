@@ -1,0 +1,13 @@
+--- tests/container_test.py	2022-02-02 00:47:03.758803240 +0000
++++ tests/container_test_processedpatch_d088440911.py	2022-02-02 00:49:14.258995974 +0000
+@@ -124,6 +124,10 @@ class TestResourceContainer(TestCase):
+         assert rc.read_chunk('exo', '01', '03') == 'exo 1:3'
+ 
+     def test_should_fail_to_load_missing_rc(self):
++        directory = os.path.join(DATA_DIR, 'temp', 'old_rc')
++        manifest = {'dublin_core': {'type': 'book', 'conformsto': 'rc0.1', 'format': 'text/usfm', 'identifier': 'en-ulb', 'language': {'identifier': 'en', 'title': 'English', 'direction': 'ltr'}}, 'projects': []}
++        write_file(os.path.join(directory, 'manifest.yaml'), yaml.dump(manifest, default_flow_style=False))
++        rc = None
+         directory = os.path.join(DATA_DIR, 'temp', 'missing')
+         os.mkdir(directory)
+         rc = None

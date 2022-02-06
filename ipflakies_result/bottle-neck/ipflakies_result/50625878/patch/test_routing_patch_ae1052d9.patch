@@ -1,0 +1,10 @@
+--- test/test_routing.py	2022-02-01 18:48:29.247734803 +0000
++++ test/test_routing_processedpatch_ae1052d91.py	2022-02-01 18:52:01.014536013 +0000
+@@ -34,6 +34,7 @@ def mock_handler():
+ 
+ 
+ def test_router_register_handler_fn_pass(mock_router):
++    'Test `bottle_neck.handlers.BaseHandler` subclass for singleton pattern.\n    '
+     """Test `bottle_neck.routing.Router.register_handler` for function-based
+     handler pass.
+     """

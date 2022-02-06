@@ -1,0 +1,1 @@
+{"target": "mackinac/test/test_genome.py::TestGenomeBacteroidesThetaiotaomicron::test_get_features_bad_id", "type": "victim", "patch": false, "polluter": {}}

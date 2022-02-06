@@ -1,0 +1,1 @@
+{"target": "tests/test_output.py::TestOutputClass::test_extract_results", "type": "victim", "patch": false, "polluter": {}}

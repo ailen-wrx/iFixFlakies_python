@@ -1,0 +1,1 @@
+{"target": "tests/optimizers/test_local_best.py::TestLocalBestOptimizer::test_obj_with_kwargs", "type": "victim", "patch": false, "polluter": {}}

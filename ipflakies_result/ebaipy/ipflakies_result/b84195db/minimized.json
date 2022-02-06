@@ -1,0 +1,1 @@
+{"target": "tests/test_client.py::EbaiClientTestCase::test_sku_category_list", "type": "victim", "patch": false, "polluter": {}}

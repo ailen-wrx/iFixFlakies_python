@@ -1,0 +1,10 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_b0dbdc4c3.py	2022-02-04 06:14:25.416950717 +0000
+@@ -220,6 +220,7 @@ def test_check_kbd_interrupt(run_reframe
+ 
+ 
+ def test_check_sanity_failure(run_reframe, tmp_path):
++    (returncode, stdout, _) = run_reframe(checkpath=['unittests/resources/checks/frontend_checks.py'], more_options=['-t', 'BadSetupCheck'])
+     returncode, stdout, stderr = run_reframe(
+         checkpath=['unittests/resources/checks/frontend_checks.py'],
+         more_options=['-t', 'SanityFailureCheck']

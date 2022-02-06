@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_83f8c3fb2.py	2022-02-01 19:25:22.238838953 +0000
+@@ -442,6 +442,7 @@ class TestBaseResource(unittest.TestCase
+ class TestPropertyCache(unittest.TestCase):
+ 
+ 	def test_cache_hierarchy(self):
++        model.factory.auto_id_type = 'uuid'
+ 		o = model.HumanMadeObject()
+ 		self.assertEqual(o._all_properties, {})
+ 		model.factory.cache_hierarchy()

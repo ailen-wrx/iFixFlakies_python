@@ -1,0 +1,1 @@
+{"target": "test_weibo_scraper.py::TestWeiboScraper::test_weibo_tweets_with_comments", "type": "victim", "patch": false, "polluter": {}}

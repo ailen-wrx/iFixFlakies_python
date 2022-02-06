@@ -1,0 +1,1 @@
+{"target": "tests/test_cache.py::TestScoreCache::test_score_cache_bootstrap", "type": "victim", "patch": false, "polluter": {}}

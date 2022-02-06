@@ -1,0 +1,1 @@
+{"target": "policyd_rate_limit/tests/test_daemon.py::DaemonTestCase::test_main_afinet_socket", "type": "brittle", "patch": false, "state-setter": {}}

@@ -1,0 +1,1 @@
+{"target": "tests/test_tools.py::test_var_trivial_weights", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,1 @@
+{"target": "tests/test_output.py::TestOutputClass::test_write_dendrogram_no_stats", "type": "victim", "patch": false, "polluter": {"tests/test_output.py::TestOutputClass::test_write_cluster_stats": []}, "time": 116.7363657951355}

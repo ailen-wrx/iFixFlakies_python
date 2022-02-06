@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_acfa93ad5.py	2022-02-01 18:53:20.165078053 +0000
+@@ -217,6 +217,7 @@ class TestFactorySerialization(unittest.
+ 
+ 
+ 	def test_ordering(self):
++        model.factory.auto_id_type = 'int'
+ 		p = model.Person(label="Person")
+ 		p.classified_as = model.Type(ident="type-uri")
+ 		p.referred_to_by = model.LinguisticObject(content="text")

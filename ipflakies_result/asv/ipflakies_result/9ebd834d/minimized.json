@@ -1,0 +1,1 @@
+{"target": "test/test_machine.py::test_machine_defaults", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,1 @@
+{"target": "tests/test_pyJsonFriendly.py::TestPyJsonFriendly::test_01", "type": "victim", "patch": false, "polluter": {"tests/test_pyJsonFriendly.py::TestPyJsonFriendly::test_04": []}, "time": 6.518508672714233}

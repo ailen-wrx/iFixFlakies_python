@@ -1,0 +1,10 @@
+--- tests/test_ucal.py	2022-02-01 19:30:31.872792611 +0000
++++ tests/test_ucal_processedpatch_f6bda7ce0.py	2022-02-01 19:32:44.653060635 +0000
+@@ -252,6 +252,7 @@ class TestSyntax(unittest.TestCase):
+         self.assertRaises(ucal.QuantityError, ucal.evaluate, 'ln(1m)')
+ 
+     def test_function_log(self):
++        self.assertEqual(ucal.interpret('67 in bin'), '0b1000011')
+         """Test log function."""
+         self.assertEqual(ucal.evaluate('log(exp(1))'), '1')
+         self.assertEqual(ucal.evaluate('log(1)'), '0')

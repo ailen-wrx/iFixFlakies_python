@@ -1,0 +1,10 @@
+--- tests/test_fixtures.py	2022-02-02 06:37:02.496445986 +0000
++++ tests/test_fixtures_processedpatch_8f2b8b252.py	2022-02-02 06:56:53.111777545 +0000
+@@ -334,6 +334,7 @@ class TestLiveServer:
+         assert live_server.url == force_str(live_server)
+ 
+     def test_settings_restored(self):
++        TestLiveServer._test_settings_before_run = True
+         """Ensure that settings are restored after test_settings_before."""
+         import django
+         from django.conf import settings

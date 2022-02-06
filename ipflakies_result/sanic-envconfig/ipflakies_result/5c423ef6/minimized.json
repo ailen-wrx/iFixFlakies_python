@@ -1,0 +1,1 @@
+{"target": "tests/test_envconfig.py::test_cant_parse", "type": "brittle", "patch": false, "state-setter": {}}

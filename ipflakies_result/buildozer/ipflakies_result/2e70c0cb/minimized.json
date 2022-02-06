@@ -1,0 +1,1 @@
+{"target": "tests/test_buildozer.py::TestBuildozer::test_p4a_recommended_android_ndk_found", "type": "victim", "patch": false, "polluter": {}}

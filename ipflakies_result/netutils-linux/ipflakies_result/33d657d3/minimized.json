@@ -1,0 +1,1 @@
+{"target": "netutils_linux_tuning/test_rx_buffers.py::RxBuffersTuneTest::test_all", "type": "brittle", "patch": false, "state-setter": {"netutils_linux_tuning/test_rss_ladder.py::RSSLadderTests::test_queue_postfix_extract": [{"state-setter": "netutils_linux_tuning/test_rss_ladder.py::RSSLadderTests::test_queue_postfix_extract", "patch": null}]}, "time": 9.614407777786255}

@@ -1,0 +1,1 @@
+{"target": "fooof/tests/objs/test_fit.py::test_fooof_load", "type": "brittle", "patch": false, "state-setter": {"fooof/tests/core/test_io.py::test_save_fm_str": [{"state-setter": "fooof/tests/core/test_io.py::test_save_fm_str", "patch": null}]}, "time": 325.1075990200043}

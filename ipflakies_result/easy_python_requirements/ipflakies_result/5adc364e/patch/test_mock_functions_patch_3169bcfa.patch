@@ -1,0 +1,22 @@
+--- test/test_mock_functions.py	2022-02-02 00:44:41.138221098 +0000
++++ test/test_mock_functions_processedpatch_3169bcfa0.py	2022-02-02 00:46:19.225372462 +0000
+@@ -168,6 +168,19 @@ def test_mock_folder_update():
+ 
+ def test_mock_class_update():
+     with FileCleaner('./mock_functions/test_module_stuff.py'):
++        files_to_check = ['mock_functions/test_module_stuff.py']
++        for f in files_to_check:
++            update_file(f)
++        for f in files_to_check:
++            index = 0
++            with open(f, 'r') as reader:
++                for line in reader.readlines():
++                    if (index == 27):
++                        print(line)
++                        json_info = read_json_info(line)
++                        assert (json_info['test_id'] == 6)
++                    index += 1
++    with FileCleaner('./mock_functions/test_module_stuff.py'):
+         from mock_functions.test_module_stuff import SecondClass
+ 
+         update_class(SecondClass)

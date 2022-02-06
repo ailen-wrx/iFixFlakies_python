@@ -1,0 +1,10 @@
+--- tests/test_routing.py	2022-02-02 08:25:45.858034345 +0000
++++ tests/test_routing_processedpatch_8628f7b33.py	2022-02-02 08:29:51.401903454 +0000
+@@ -46,6 +46,7 @@ class TestRouting:
+     ext = Extensions().init_extensions(extensions)
+ 
+     def test_before_middleware(self, monkeypatch, TestMockEntity, mock_token):
++        entity = Entity(self.ext)
+         app = Flask(__name__)
+         @app.route("/test", methods=["GET"])
+         def test_one():

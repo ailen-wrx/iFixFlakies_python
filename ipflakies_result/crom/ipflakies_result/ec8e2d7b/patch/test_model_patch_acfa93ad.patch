@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_acfa93ad5.py	2022-02-01 19:17:42.420057372 +0000
+@@ -526,6 +526,7 @@ class TestMagicMethods(unittest.TestCase
+ 		self.assertEqual(who.born, [b1, b2])
+ 
+ 	def test_not_multiple_instance(self):
++        model.factory.auto_id_type = 'int'
+ 		who = model.Person()
+ 		n = model.Name(content="Test")
+ 		who.identified_by = n

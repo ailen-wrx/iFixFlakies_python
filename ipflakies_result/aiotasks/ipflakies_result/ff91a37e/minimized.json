@@ -1,0 +1,1 @@
+{"target": "tests/unittesting/tasks/memory/test_subscribers.py::test_memory_subscribers_empty_topics", "type": "victim", "patch": false, "polluter": {"tests/unittesting/actions/default/test_action_default_console.py::test_launch_aiotasks_worker_in_console_oks": []}, "time": 251.92586541175842}

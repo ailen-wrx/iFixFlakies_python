@@ -1,0 +1,9 @@
+--- tests/test_settings.py	2022-02-04 11:37:16.054478530 +0000
++++ tests/test_settings_processedpatch_cf46547f1.py	2022-02-04 20:12:28.412670671 +0000
+@@ -88,5 +88,6 @@ def test_values(test_setting, actual_val
+ 
+ 
+ def test_save_to_environ(test_setting, test_key, actual_value):
++    del test_setting[test_key]
+     test_setting.save_to_environ()
+     # breaks if not serializable, but that's ok

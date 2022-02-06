@@ -1,0 +1,1 @@
+{"target": "tests/test_apify.py::test_apify_init", "type": "victim", "patch": false, "polluter": {"tests/test_serializers.py::TestJSONPSerializer::test_use_previously_registered_serializer_to_dump_json": []}, "time": 81.17563509941101}

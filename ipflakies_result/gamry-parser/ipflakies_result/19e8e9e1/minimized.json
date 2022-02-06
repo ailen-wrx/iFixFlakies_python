@@ -1,0 +1,1 @@
+{"target": "tests/test_chronoamperometry.py::TestChronoAmperometry::test_getters", "type": "victim", "patch": false, "polluter": {}}

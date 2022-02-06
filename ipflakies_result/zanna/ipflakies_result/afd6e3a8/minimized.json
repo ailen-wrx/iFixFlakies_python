@@ -1,0 +1,1 @@
+{"target": "tests/test_decorators.py::TestDecorators::test_provider_decorated", "type": "victim", "patch": false, "polluter": {"tests/test_decorators.py::TestDecorators::test_provider_decorated_needs_type_or_name": []}, "time": 47.24207091331482}

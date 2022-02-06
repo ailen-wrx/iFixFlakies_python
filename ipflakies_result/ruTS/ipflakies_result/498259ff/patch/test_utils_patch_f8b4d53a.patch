@@ -1,0 +1,15 @@
+--- tests/test_utils.py	2022-02-02 11:44:45.557098512 +0000
++++ tests/test_utils_processedpatch_f8b4d53a2.py	2022-02-02 11:53:44.898393379 +0000
+@@ -33,6 +33,12 @@ def test_download_file_runtime_error():
+         download_file(url, dirpath=dirpath, force=True)
+ 
+ def test_extract_archive():
++    url_zip = 'https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/stopwords.zip'
++    url_tar = 'https://bit.ly/30JYkQF'
++    filename = 'razdel.tar.gz'
++    dirpath = '/tmp/ruts_download'
++    assert (download_file(url_zip, dirpath=dirpath) == '/tmp/ruts_download/stopwords.zip')
++    assert (download_file(url_tar, filename=filename, dirpath=dirpath) == '/tmp/ruts_download/razdel.tar.gz')
+     archive_file_zip = "/tmp/ruts_download/stopwords.zip"
+     archive_file_tar = "/tmp/ruts_download/razdel.tar.gz"
+     extract_dir = "/tmp/ruts_extract"

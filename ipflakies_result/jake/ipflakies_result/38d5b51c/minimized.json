@@ -1,0 +1,1 @@
+{"target": "jake/test/test_ossindex.py::TestOssIndex::test_get_purls_from_cache_with_non_valid_object", "type": "victim", "patch": false, "polluter": {}}

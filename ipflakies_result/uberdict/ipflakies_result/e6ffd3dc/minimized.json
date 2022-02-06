@@ -1,0 +1,1 @@
+{"target": "tests/test_uberdict.py::test_pickle_dumpsloads_nested_dotted", "type": "victim", "patch": false, "polluter": {"tests/test_uberdict.py::test_iteritems[version_info0]": [], "tests/test_uberdict.py::test_iteritems[version_info1]": []}, "time": 207.06486749649048}

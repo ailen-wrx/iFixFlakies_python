@@ -1,0 +1,10 @@
+--- tests/moyasar_test.py	2022-02-01 22:00:13.977387427 +0000
++++ tests/moyasar_test_processedpatch_18dd0d731.py	2022-02-01 22:02:18.661391171 +0000
+@@ -12,6 +12,7 @@ def test_should_accept_api_key():
+ 
+ 
+ def test_request_should_return_json_object():
++    moyasar.api_key = 'sk_test_BQokikJOvBiI2HlWgH4olfQ2'
+     ss.stub_server_request(method='GET', url=moyasar.api_url + '/payments',
+                            resource=f.payments, status=200)
+     response = moyasar.request('GET', moyasar.api_url + '/payments', None)

@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_d98643354.py	2022-02-03 07:06:15.989278844 +0000
+@@ -298,6 +298,7 @@ class TestNewTask(unittest.TestCase):
+         self.assertIsInstance(task, asyncio.Task)
+ 
+     def test_new_task_unknown(self):
++        task = new_task('my-task-holder')
+         """
+         Cannot create a new task from an unknown name. It must raise a KeyError
+         exception (just like `TaskRegistry.get`).

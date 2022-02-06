@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_4dd0b2ee7.py	2022-02-01 19:14:37.438111115 +0000
+@@ -105,6 +105,7 @@ class TestFactorySerialization(unittest.
+ 		model.factory.full_names = False
+ 
+ 	def test_toString(self):
++        model.factory.context_uri = 'https://linked.art/ns/v1/linked-art.json'
+ 		expect = u'{"@context":"'+model.factory.context_uri+'","id":"http://lod.example.org/museum/InformationObject/collection","type":"InformationObject","_label":"Test Object"}'
+ 		outs = model.factory.toString(self.collection)
+ 		self.assertEqual(expect, outs)

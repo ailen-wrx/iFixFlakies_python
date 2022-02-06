@@ -1,0 +1,15 @@
+--- tests/test_pubsub.py	2022-02-03 08:56:02.753302200 +0000
++++ tests/test_pubsub_processedpatch_3c47b5c631.py	2022-02-03 09:15:30.522740466 +0000
+@@ -138,6 +138,12 @@ class TestPubsub(unittest.TestCase):
+         self.assertEqual(0, len(result))
+ 
+     def test_unsubscribe_all(self):
++        plaza = Location('plaza')
++        road = Location('road')
++        wiretap_plaza = Wiretap(plaza)
++        plaza.message_nearby_locations('boing')
++        pubsub.sync()
++        self.assertEqual([], wiretap_plaza.msgs, 'the plaza doesnt receive tells')
+         s1 = topic("testA")
+         s2 = topic("testB")
+         s3 = topic("testC")

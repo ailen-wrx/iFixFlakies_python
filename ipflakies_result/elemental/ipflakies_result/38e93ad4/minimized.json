@@ -1,0 +1,1 @@
+{"target": "elemental/client_test.py::test_send_request_should_call_request_as_expected", "type": "victim", "patch": false, "polluter": {"elemental/client_test.py::test_get_preview_will_parse_response_json_as_expect": [], "elemental/client_test.py::test_get_preview_will_raise_ElementalException_if_preview_unavaliable": []}, "time": 30.506182432174683}

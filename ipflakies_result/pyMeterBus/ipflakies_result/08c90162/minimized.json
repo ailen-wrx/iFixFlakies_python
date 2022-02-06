@@ -1,0 +1,1 @@
+{"target": "tests/test_globals.py::TestSequenceFunctions::test_debug_default_value", "type": "victim", "patch": false, "polluter": {"tests/test_globals.py::TestSequenceFunctions::test_debug_set_true": []}, "time": 151.89919233322144}

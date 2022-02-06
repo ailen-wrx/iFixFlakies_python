@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_83f8c3fb2.py	2022-02-01 18:45:03.441125014 +0000
+@@ -383,6 +383,7 @@ class TestBaseResource(unittest.TestCase
+ 		self.assertTrue('identified_by' in props)
+ 
+ 	def test_list_my_props(self):
++        model.factory.auto_id_type = 'uuid'
+ 		p1 = model.Person()
+ 		p1.classified_as = model.Type()
+ 		props = p1.list_my_props()

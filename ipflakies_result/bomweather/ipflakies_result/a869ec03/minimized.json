@@ -1,0 +1,1 @@
+{"target": "tests/test_stations.py::test_closest_obs_station_uncached", "type": "brittle", "patch": false, "state-setter": {}}

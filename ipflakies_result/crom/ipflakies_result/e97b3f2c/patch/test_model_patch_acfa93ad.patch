@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_acfa93ad5.py	2022-02-01 19:22:04.104469620 +0000
+@@ -489,6 +489,7 @@ class TestMagicMethods(unittest.TestCase
+ 		model.factory.materialize_inverses = False
+ 
+ 	def test_validate_profile_off(self):
++        model.factory.auto_id_type = 'int'
+ 		model.factory.validate_profile = False
+ 		ia = model.IdentifierAssignment()
+ 		# If it's not turned off this should raise

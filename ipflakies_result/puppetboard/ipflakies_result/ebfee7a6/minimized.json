@@ -1,0 +1,1 @@
+{"target": "test/test_app.py::test_index_all_puppetdb_v4", "type": "victim", "patch": false, "polluter": {"test/test_app.py::test_custom_title": []}, "time": 387.99691438674927}

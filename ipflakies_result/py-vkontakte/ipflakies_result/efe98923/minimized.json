@@ -1,0 +1,1 @@
+{"target": "tests/test_message.py::test_message", "type": "victim", "patch": false, "polluter": {"tests/test_message.py::test_is_updated[100500-100500]": [{"cleaner": "tests/test_message.py::test_is_updated[None-None]", "patch": null}]}, "time": 51.754058599472046}

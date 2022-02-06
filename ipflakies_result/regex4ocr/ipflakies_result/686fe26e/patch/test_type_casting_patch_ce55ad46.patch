@@ -1,0 +1,10 @@
+--- tests/integration/test_type_casting.py	2022-02-01 21:01:44.796657407 +0000
++++ tests/integration/test_type_casting_processedpatch_ce55ad463.py	2022-02-01 21:03:35.444213134 +0000
+@@ -296,6 +296,7 @@ def test_validate_types_removal(
+     expected_extracted_data_dict_with_removal,
+     drm_model_tax_coupon_with_inline_groups,
+ ):
++    validate_types(extracted_data_dict_1, drm_model_tax_coupon_with_inline_groups)
+     """
+     Unit: tests validate_types when there are type conflicts and
+           some fields are removed.

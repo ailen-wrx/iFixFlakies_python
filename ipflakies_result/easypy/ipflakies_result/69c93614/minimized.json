@@ -1,0 +1,1 @@
+{"target": "tests/test_signals.py::test_signal_weakref_with_identifier", "type": "victim", "patch": false, "polluter": {}}

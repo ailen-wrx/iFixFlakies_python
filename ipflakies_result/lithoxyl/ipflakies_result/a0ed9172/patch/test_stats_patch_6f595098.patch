@@ -1,0 +1,12 @@
+--- lithoxyl/tests/test_stats.py	2022-02-02 19:23:21.722894926 +0000
++++ lithoxyl/tests/test_stats_processedpatch_6f5950984.py	2022-02-02 19:35:20.953936440 +0000
+@@ -95,6 +95,9 @@ def test_p2quantacc():
+ 
+ 
+ def test_acc_random():
++    ma = MomentAccumulator()
++    for v in [random.gauss(10, 4) for i in range(5000)]:
++        ma.add(v)
+     data = test_sets['random.random 0.0-1.0']
+ 
+     qa = ReservoirAccumulator(data)

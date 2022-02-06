@@ -1,0 +1,13 @@
+--- tests/test_basic.py	2022-02-01 20:57:17.395652517 +0000
++++ tests/test_basic_processedpatch_5db98ba31.py	2022-02-01 21:04:44.444967718 +0000
+@@ -109,6 +109,10 @@ def test_read_config():
+ 
+ 
+ def test_verify_config():
++    'Test writing config to files'
++    data = {}
++    data[KEY] = VALUE
++    assert (AUTH.write_config(data, 'test.json') is True)
+     """Verify written config"""
+     # Verify config written earlier
+     assert AUTH.verify_config("test.json", KEY, VALUE) is True

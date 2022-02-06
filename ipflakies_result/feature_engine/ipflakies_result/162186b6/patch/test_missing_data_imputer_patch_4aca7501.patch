@@ -1,0 +1,11 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_4aca75010.py	2022-02-03 23:18:36.482259805 +0000
+@@ -27,6 +27,8 @@ def test_define_seed(dataframe_vartypes)
+ def test_MeanMedianImputer(dataframe_na):
+ 
+     # test case 1: automatically finds numerical variables
++    with pytest.raises(TypeError):
++        assert _is_dataframe([1, 2, 4])
+     imputer = MeanMedianImputer(imputation_method='mean', variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

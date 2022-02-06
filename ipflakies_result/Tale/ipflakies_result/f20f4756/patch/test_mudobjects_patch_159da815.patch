@@ -1,0 +1,10 @@
+--- tests/test_mudobjects.py	2022-02-03 08:56:02.753302200 +0000
++++ tests/test_mudobjects_processedpatch_159da8155.py	2022-02-03 09:07:43.287760146 +0000
+@@ -748,6 +748,7 @@ class TestLiving(unittest.TestCase):
+         self.assertEqual(1, rat.inventory_size)
+ 
+     def test_move_notify(self):
++        d = tale.driver.Driver()
+         class LocationNotify(Location):
+             def notify_npc_left(self, npc: Living, target_location: Location) -> None:
+                 self.npc_left = npc

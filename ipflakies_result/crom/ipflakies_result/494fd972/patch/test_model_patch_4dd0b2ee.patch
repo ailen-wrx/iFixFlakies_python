@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_4dd0b2ee7.py	2022-02-01 19:10:55.178970437 +0000
+@@ -75,6 +75,7 @@ class TestFactorySerialization(unittest.
+ 
+ 	def test_toJSON(self):
+ 		# model.factory.context_uri = 'http://lod.getty.edu/context.json'
++        model.factory.context_uri = 'https://linked.art/ns/v1/linked-art.json'
+ 		expect = OrderedDict([
+ 			('@context', model.factory.context_uri),
+ 			('id', u'http://lod.example.org/museum/InformationObject/collection'), 

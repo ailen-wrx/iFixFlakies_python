@@ -1,0 +1,10 @@
+--- tests/unittests/test_00_initialization.py	2022-02-05 18:45:54.338294718 +0000
++++ tests/unittests/test_00_initialization_processedpatch_117f2f205.py	2022-02-05 18:55:09.140018324 +0000
+@@ -152,6 +152,7 @@ def test_12_get_filename_regex():
+ 
+ 
+ def test_13_pre_config():
++    importlib.reload(pydbvolve)
+     res = None
+     
+     try:

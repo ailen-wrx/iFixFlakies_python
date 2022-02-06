@@ -1,0 +1,10 @@
+--- tests/unit/test_classify.py	2022-02-04 09:48:11.871479617 +0000
++++ tests/unit/test_classify_processedpatch_35398da24.py	2022-02-04 12:54:17.331755467 +0000
+@@ -48,6 +48,7 @@ class TestFindRain:
+         assert_array_equal(classify._find_rain(self.z, self.time), result)
+ 
+     def test_3(self):
++        self.z[:, 3] = 0.1
+         self.z[5, 3] = 0.1
+         result = np.ones(len(self.time))
+         result[3:7] = 1

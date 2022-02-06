@@ -1,0 +1,1 @@
+{"tests/test_autodiscover.py::TestAutoDiscover::test_autodiscover_with_pattern": {"type": "brittle", "detected_sequence": [["tests/test_autodiscover.py::TestAutoDiscover::test_autodiscover", "tests/test_autodiscover.py::TestAutoDiscover::test_autodiscover_with_pattern"]]}, "time": 34.05513024330139}

@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_status.py::test_status_previous_file", "type": "victim", "patch": false, "polluter": {}}

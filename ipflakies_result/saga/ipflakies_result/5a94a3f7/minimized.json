@@ -1,0 +1,1 @@
+{"target": "tests/cli/test_state_hash.py::test_state_hash_branch", "type": "victim", "patch": false, "polluter": {}}

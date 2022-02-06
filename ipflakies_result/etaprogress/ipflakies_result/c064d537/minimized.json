@@ -1,0 +1,1 @@
+{"target": "tests/test_progress_progressbar.py::test_terminal_width", "type": "brittle", "patch": false, "state-setter": {}}

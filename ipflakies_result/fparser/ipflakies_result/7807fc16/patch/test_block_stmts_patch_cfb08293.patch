@@ -1,0 +1,17 @@
+--- src/fparser/one/tests/test_block_stmts.py	2022-02-03 04:49:40.652003055 +0000
++++ src/fparser/one/tests/test_block_stmts_processedpatch_cfb0829316.py	2022-02-03 05:26:52.901909274 +0000
+@@ -106,6 +106,14 @@ end module some_block
+ 
+ 
+ def test_implicit_topyf(monkeypatch):
++    string = 'module some_block\n  implicit real (a-e)\n  implicit integer (f-z)\nend module some_block\n'
++    reader = FortranStringReader(string)
++    reader.set_format(FortranFormat(True, False))
++    parser = FortranParser(reader)
++    parser.parse()
++    mod = parser.block.content[0]
++    mod.content[0].analyze()
++    mod.content[1].analyze()
+     ''' Tests for the topyf() method of HasImplicitStmt. '''
+     # We can't just create a HasImplicitStmt object so we get the parser
+     # to create a module object as that sub-classes HasImplicitStmt (amongst

@@ -1,0 +1,1 @@
+{"target": "tests/test_io.py::test_count_lines", "type": "victim", "patch": false, "polluter": {}}

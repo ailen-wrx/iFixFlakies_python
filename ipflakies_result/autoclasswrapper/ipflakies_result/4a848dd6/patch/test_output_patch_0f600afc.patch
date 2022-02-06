@@ -1,0 +1,12 @@
+--- tests/test_output.py	2022-02-06 08:07:58.125818798 +0000
++++ tests/test_output_processedpatch_0f600afc14.py	2022-02-06 08:21:14.750195323 +0000
+@@ -102,5 +102,9 @@ class TestOutputClass(object):
+         res = wrapper.Output(target_root_name)
+         res.extract_results()
+         res.aggregate_input_data()
++        res.write_class_stats()
++        res = wrapper.Output(target_root_name)
++        res.extract_results()
++        res.aggregate_input_data()
+         res.write_dendrogram()
+         assert os.path.isfile(res.root_out_name + "_dendrogram.png")

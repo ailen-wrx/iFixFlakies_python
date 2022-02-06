@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_83f8c3fb2.py	2022-02-01 18:38:10.391855552 +0000
+@@ -391,6 +391,7 @@ class TestBaseResource(unittest.TestCase
+ 		self.assertEqual(props, ['classified_as'])
+ 
+ 	def test_allows_multiple(self):
++        model.factory.auto_id_type = 'uuid'
+ 		p = model.Person()
+ 		self.assertTrue(p.allows_multiple('classified_as'))
+ 		self.assertFalse(p.allows_multiple('born'))

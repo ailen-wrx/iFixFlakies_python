@@ -1,0 +1,13 @@
+--- tests/unittests/test_01_migration_table.py	2022-02-05 18:45:54.338294718 +0000
++++ tests/unittests/test_01_migration_table_processedpatch_61fd71292.py	2022-02-05 18:56:34.300264496 +0000
+@@ -127,6 +127,10 @@ def test_01_check_migration_table_init()
+ 
+ 
+ def test_02_check_migration_table_bad_structure():
++    'Verify that the migration table can be detected'
++    config = pydbvolve.initialize(TEST_CONFIG_FILE, 'info', 'r1.1.10', True, False)
++    _drop_migration_table(config)
++    res = pydbvolve.check_migration_table(config)
+     """Verify that an aberrant table structure can be detected"""
+     config = pydbvolve.initialize(TEST_CONFIG_FILE, 'info', 'r1.1.10', True, False)
+     _create_bad_migration_table(config)

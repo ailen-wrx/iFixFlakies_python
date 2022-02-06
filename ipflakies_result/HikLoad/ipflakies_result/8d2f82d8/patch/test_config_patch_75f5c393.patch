@@ -1,0 +1,10 @@
+--- tests/test_config.py	2022-02-01 17:08:12.570291702 +0000
++++ tests/test_config_processedpatch_75f5c3931.py	2022-02-01 17:08:57.767745032 +0000
+@@ -7,6 +7,7 @@ def test_defaultvar():
+ 
+ 
+ def test_envvar():
++    config.CONFIG['server'] = '1'
+     import os
+     os.environ["server"] = "1"
+     assert config.CONFIG["server"] == "1"

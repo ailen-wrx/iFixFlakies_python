@@ -1,0 +1,1 @@
+{"target": "ct/test_library.py::TestLibrary::test_build_and_link_static_library", "type": "victim", "patch": false, "polluter": {}}

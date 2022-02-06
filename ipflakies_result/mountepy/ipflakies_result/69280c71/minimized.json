@@ -1,0 +1,1 @@
+{"target": "tests/test_mountebank.py::test_mountebank_set_impostor_and_cleanup", "type": "victim", "patch": false, "polluter": {}}

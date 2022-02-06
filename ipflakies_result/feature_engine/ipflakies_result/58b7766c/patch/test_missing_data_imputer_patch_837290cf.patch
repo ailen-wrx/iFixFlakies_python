@@ -1,0 +1,10 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_837290cf10.py	2022-02-03 22:15:59.870092573 +0000
+@@ -142,6 +142,7 @@ def test_EndTailImputer(dataframe_na):
+ def test_ArbitraryNumberImputer(dataframe_na):
+ 
+     # test case 1: automatically select variables
++    boston_dataset = load_boston()
+     imputer = ArbitraryNumberImputer(arbitrary_number=99, variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

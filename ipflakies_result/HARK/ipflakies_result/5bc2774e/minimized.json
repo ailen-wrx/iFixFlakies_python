@@ -1,0 +1,1 @@
+{"target": "HARK/ConsumptionSaving/tests/test_ConsAggShockModel.py::testKrusellSmith::test_agent", "type": "victim", "patch": false, "polluter": {"HARK/ConsumptionSaving/tests/test_ConsAggShockModel.py::testKrusellSmith::test_economy": []}, "time": 1738.5091361999512}

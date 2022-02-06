@@ -1,0 +1,1 @@
+{"target": "test/test_abstract_pipeline.py::test_execute_pipeline", "type": "brittle", "patch": false, "state-setter": {}}

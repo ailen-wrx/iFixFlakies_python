@@ -1,0 +1,1 @@
+{"target": "pyflightdata/test_pyflightdata.py::TestGetByTailNumber::test_aircraft_info", "type": "victim", "patch": false, "polluter": {}}

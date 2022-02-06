@@ -1,0 +1,1 @@
+{"target": "eppy/tests/test_fanpower.py::test_fan_maxcfm", "type": "victim", "patch": false, "polluter": {}}

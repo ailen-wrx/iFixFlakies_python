@@ -1,0 +1,1 @@
+{"target": "fanstatic/test_core.py::test_inclusion_renderers", "type": "victim", "patch": false, "polluter": {"fanstatic/test_core.py::test_register_inclusion_renderer": [], "fanstatic/test_core.py::test_registered_inclusion_renderers_in_order": []}, "time": 80.76124572753906}

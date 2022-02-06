@@ -1,0 +1,13 @@
+--- tests/test_db.py	2022-02-01 21:51:45.053045292 +0000
++++ tests/test_db_processedpatch_ab67d6b96.py	2022-02-01 21:54:58.623261050 +0000
+@@ -80,6 +80,10 @@ class TestDb(object):
+                              })
+ 
+     def test_update_db(self, mock_sp, client: DbsModule, shared):
++        mock_sp.return_value = DbMock('get_db')
++        db_data = DbMock.create_db()['data']
++        response = client.create_db(**db_data)
++        shared['db'] = response
+         db = shared['db']
+ 
+         with pytest.raises(ValidationError):

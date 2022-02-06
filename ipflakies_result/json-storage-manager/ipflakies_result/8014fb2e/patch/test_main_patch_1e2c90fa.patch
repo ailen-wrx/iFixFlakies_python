@@ -1,0 +1,11 @@
+--- tests/test_main.py	2022-02-01 20:15:20.751200421 +0000
++++ tests/test_main_processedpatch_1e2c90fa4.py	2022-02-01 20:17:44.311812303 +0000
+@@ -112,6 +112,8 @@ def test_update_item(json_file):
+ 
+ 
+ def test_set_item_fail(json_file):
++    new_item = {'uuid': '1144d69e-joya-33e8-bdfd-680688cce955', 'price': 333.0, 'name': 'Test Product via set_item'}
++    results = atomic.set_item(str(json_file), new_item)
+     new_item = {'uuid': "1144d69e-joya-33e8-bdfd-680688cce955",
+                 'price': 333.0,
+                 'name': "Test Product via set_item"

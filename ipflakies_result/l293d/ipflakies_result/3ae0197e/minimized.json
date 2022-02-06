@@ -1,0 +1,1 @@
+{"target": "tests/test_l293d.py::L293DTestCase::test_motor_can_be_removed", "type": "victim", "patch": false, "polluter": {"tests/test_l293d.py::L293DTestCase::test_pins_string_list": []}, "time": 5.982958793640137}

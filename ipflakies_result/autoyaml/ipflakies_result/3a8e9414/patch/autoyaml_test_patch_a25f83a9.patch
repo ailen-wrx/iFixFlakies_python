@@ -1,0 +1,12 @@
+--- tests/autoyaml_test.py	2022-02-01 17:28:30.957473155 +0000
++++ tests/autoyaml_test_processedpatch_a25f83a92.py	2022-02-01 17:31:23.483021557 +0000
+@@ -77,6 +77,9 @@ class TestEncryptorMethods(unittest.Test
+           self.assertNotEqual(self.contents, test_file.read())
+ 
+     def test_b_decrypt(self):
++        with open(self.file_name, 'w') as test_file:
++            test_file.write(self.contents)
++        encrypt_file(self.file_name, self.password, self.salt)
+        decrypt_file(self.file_name, self.password, self.salt)
+        with open(self.file_name) as test_file:
+           self.assertEqual(self.contents, test_file.read())

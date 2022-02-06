@@ -1,0 +1,1 @@
+{"target": "brian2modelfitting/tests/test_modelfitting_tracefitter.py::test_fitter_generate_traces_standalone", "type": "victim", "patch": false, "polluter": {}}

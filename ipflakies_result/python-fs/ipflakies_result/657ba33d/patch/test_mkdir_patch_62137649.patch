@@ -1,0 +1,10 @@
+--- fs/tests/test_mkdir.py	2022-02-01 18:33:40.279171966 +0000
++++ fs/tests/test_mkdir_processedpatch_621376493.py	2022-02-01 18:37:21.846294910 +0000
+@@ -6,6 +6,7 @@ from .setup import *
+ 
+ def test_mkdir():
+ 
++    _expected = 'pre_test.csv'
+     dir_name = "foo"
+     path = os.path.join(TEST_DIR, dir_name)
+ 

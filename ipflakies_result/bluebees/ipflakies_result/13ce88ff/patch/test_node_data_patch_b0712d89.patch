@@ -1,0 +1,20 @@
+--- tests/test_node_data.py	2022-02-04 00:17:57.799288025 +0000
++++ tests/test_node_data_processedpatch_b0712d896.py	2022-02-04 00:23:49.266563224 +0000
+@@ -34,4 +34,17 @@ def test_application_data():
+ 
+ 
+ def test_cleanup():
++    name = 'test_node'
++    addr = get_random_bytes(2)
++    devkey = get_random_bytes(16)
++    device_uuid = get_random_bytes(16)
++    network = f'test_net'
++    num_apps = 10
++    apps = []
++    for x in range(num_apps):
++        apps.append(f'test_app{x}')
++    data = NodeData(name=name, addr=addr, network=network, device_uuid=device_uuid, devkey=devkey, apps=apps)
++    assert (file_helper.file_exist((((base_dir + node_dir) + name) + '.yml')) is False)
++    data.save()
++    assert (file_helper.file_exist((((base_dir + node_dir) + name) + '.yml')) is True)
+     pathlib.Path(base_dir + node_dir + 'test_node.yml').unlink()

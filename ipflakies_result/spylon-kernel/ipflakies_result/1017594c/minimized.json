@@ -1,0 +1,1 @@
+{"target": "test/test_scala_kernel.py::test_iscomplete", "type": "brittle", "patch": false, "state-setter": {}}

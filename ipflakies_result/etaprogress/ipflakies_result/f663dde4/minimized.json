@@ -1,0 +1,1 @@
+{"target": "tests/test_progress_progressbarbytes.py::test_defined", "type": "brittle", "patch": false, "state-setter": {}}

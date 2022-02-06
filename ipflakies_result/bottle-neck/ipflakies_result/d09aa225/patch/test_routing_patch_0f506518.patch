@@ -1,0 +1,10 @@
+--- test/test_routing.py	2022-02-01 18:48:29.247734803 +0000
++++ test/test_routing_processedpatch_0f5065183.py	2022-02-01 18:50:43.568048703 +0000
+@@ -65,6 +65,7 @@ def test_router_register_handler_cbv_pas
+ 
+ 
+ def test_router_mount_pass(mock_router, mock_app):
++    mock_router.register_handler(mock_handler, entrypoint='/api')
+     """Test `bottle_neck.routing.Router.mount` method.
+     """
+     init_mounts = len(mock_app.routes)

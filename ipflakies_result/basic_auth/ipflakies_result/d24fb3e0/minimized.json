@@ -1,0 +1,1 @@
+{"target": "tests/test_wso.py::test_main_results", "type": "victim", "patch": false, "polluter": {}}

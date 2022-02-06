@@ -1,0 +1,1 @@
+{"target": "test/test_mock_functions.py::test_mock_module_with_two_updates", "type": "victim", "patch": false, "polluter": {"test/test_parse_doc.py::TestParseDoc::test_parse_doc_correct": [], "test/test_parse_doc.py::TestParseDoc::test_parse_double_begin": [], "test/test_parse_doc.py::TestParseDoc::test_parse_double_end": []}, "time": 43.401310443878174}

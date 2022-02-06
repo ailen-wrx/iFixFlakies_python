@@ -1,0 +1,15 @@
+--- tests/test_application_data.py	2022-02-04 00:17:57.799288025 +0000
++++ tests/test_application_data_processedpatch_8f1d21a435.py	2022-02-04 00:22:47.096568324 +0000
+@@ -33,4 +33,12 @@ def test_application_data():
+ 
+ 
+ def test_cleanup():
++    name = 'test_app'
++    key = get_random_bytes(16)
++    key_index = get_random_bytes(2)
++    network = f'test_net'
++    nodes = []
++    data = ApplicationData(name=name, key=key, key_index=key_index, network=network, nodes=nodes)
++    data.save()
++    r_data = ApplicationData.load((((base_dir + app_dir) + name) + '.yml'))
+     pathlib.Path(base_dir + app_dir + 'test_app.yml').unlink()

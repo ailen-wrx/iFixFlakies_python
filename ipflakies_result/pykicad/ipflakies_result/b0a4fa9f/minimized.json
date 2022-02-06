@@ -1,0 +1,1 @@
+{"target": "tests/test_module.py::NetTests::test_net_auto_numbering", "type": "victim", "patch": false, "polluter": {"tests/test_pcb.py::PcbTests::test_num_nets": []}, "time": 42.6518759727478}

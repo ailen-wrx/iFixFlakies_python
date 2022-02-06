@@ -1,0 +1,10 @@
+--- tests/wrappers/test_python_function.py	2022-02-02 16:10:58.369045346 +0000
++++ tests/wrappers/test_python_function_processedpatch_0f49652b4.py	2022-02-02 16:35:29.636190153 +0000
+@@ -50,6 +50,7 @@ def test_function_wrapper_function_excep
+ )
+ def test_python_wrapper_python_runner_factory_failed(_):
+     @epsagon.python_wrapper
++    reload(epsagon)
+     def wrapped_function(event, context):
+         return 'success'
+ 

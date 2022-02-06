@@ -1,0 +1,1 @@
+{"target": "tests/test_base.py::BaseTest::test_load_local_data_from_local_with_cache_failed", "type": "victim", "patch": false, "polluter": {}}

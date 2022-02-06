@@ -1,0 +1,1 @@
+{"target": "test/test_stowage.py::TestPathGenerators::test_partially_needed_symlink_walk", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,1 @@
+{"target": "tests/test_class_import.py::test_can_ignore_email_module", "type": "victim", "patch": false, "polluter": {}}

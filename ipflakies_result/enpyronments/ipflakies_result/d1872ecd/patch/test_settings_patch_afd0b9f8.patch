@@ -1,0 +1,10 @@
+--- tests/test_settings.py	2022-02-04 11:37:16.054478530 +0000
++++ tests/test_settings_processedpatch_afd0b9f81.py	2022-02-04 18:06:17.480115236 +0000
+@@ -77,6 +77,7 @@ def test_len(test_setting):
+ 
+ 
+ def test_items(test_setting, test_key, actual_value):
++    del test_setting[test_key]
+     for key, val in test_setting.items():
+         assert key == test_key
+         assert val == actual_value

@@ -1,0 +1,18 @@
+--- authnzerver/tests/test_auth_creation.py	2022-02-02 14:39:05.977568648 +0000
++++ authnzerver/tests/test_auth_creation_processedpatch_7b06a26671.py	2022-02-03 06:08:55.162063716 +0000
+@@ -22,6 +22,15 @@ def get_test_authdb():
+ 
+ 
+ def test_create_user():
++    currproc = mp.current_process()
++    if getattr(currproc, 'authdb_meta', None):
++        del currproc.authdb_meta
++    if getattr(currproc, 'connection', None):
++        currproc.authdb_conn.close()
++        del currproc.authdb_conn
++    if getattr(currproc, 'authdb_engine', None):
++        currproc.authdb_engine.dispose()
++        del currproc.authdb_engine
+     '''
+     This runs through various iterations of creating a user.
+ 

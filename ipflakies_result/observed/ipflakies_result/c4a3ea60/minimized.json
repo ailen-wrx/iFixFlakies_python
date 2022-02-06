@@ -1,0 +1,1 @@
+{"target": "observed_test.py::TestBasics::test_callbacks", "type": "victim", "patch": false, "polluter": {"observed_test.py::TestBasics::test_discard": []}, "time": 4.670255899429321}

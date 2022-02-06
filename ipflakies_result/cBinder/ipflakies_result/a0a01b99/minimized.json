@@ -1,0 +1,1 @@
+{"target": "tests/simplecases/externaldeps/test_StaticDependences.py::StaticDependencesOnLinux64::test_generate_bindings_to_gsl_sf_bessel_J", "type": "brittle", "patch": false, "state-setter": {}}

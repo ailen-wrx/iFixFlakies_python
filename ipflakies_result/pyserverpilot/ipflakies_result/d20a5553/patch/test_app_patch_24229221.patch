@@ -1,0 +1,13 @@
+--- tests/test_app.py	2022-02-01 21:51:45.053045292 +0000
++++ tests/test_app_processedpatch_242292216.py	2022-02-01 21:54:29.854337248 +0000
+@@ -80,6 +80,10 @@ class TestApp(object):
+                           })
+ 
+     def test_update_app_validation(self, mock_sp, client: AppsModule, shared):
++        mock_sp.return_value = AppMock('get_app')
++        app_data = AppMock.create_app()['data']
++        response = client.create_app(**app_data)
++        shared['app'] = response
+         app = shared['app']  # type: AppModel
+ 
+         with pytest.raises(ValidationError):

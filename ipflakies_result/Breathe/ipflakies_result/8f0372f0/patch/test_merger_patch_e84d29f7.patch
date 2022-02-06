@@ -1,0 +1,10 @@
+--- tests/test_merger.py	2022-02-04 00:01:41.479970403 +0000
++++ tests/test_merger_processedpatch_e84d29f75.py	2022-02-04 00:09:38.535272252 +0000
+@@ -25,6 +25,7 @@ def test_global_extras():
+ 
+ 
+ def test_core_commands():
++    engine.mimic(['disable', 'test'])
+     Breathe.add_commands(
+         None,
+         {

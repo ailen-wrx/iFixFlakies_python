@@ -1,0 +1,13 @@
+--- tests/functional_test.py	2022-02-04 14:48:56.348634814 +0000
++++ tests/functional_test_processedpatch_f45ac3e82.py	2022-02-04 15:08:23.231410495 +0000
+@@ -101,6 +101,10 @@ def test_package_install():
+ 
+ 
+ def test_package_exists():
++    'Install tokendito as a python package.'
++    repo_root = path.dirname(path.dirname(path.abspath(__file__)))
++    proc = run_process([sys.executable, '-m', 'pip', 'install', '-e', repo_root])
++    assert (not proc['stderr'])
+     """Check whether the package is installed."""
+     proc = run_process([sys.executable, '-m', 'pip', 'show', 'tokendito'])
+     assert not proc['stderr']

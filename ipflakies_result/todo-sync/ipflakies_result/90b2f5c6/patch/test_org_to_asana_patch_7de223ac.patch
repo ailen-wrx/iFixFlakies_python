@@ -1,0 +1,10 @@
+--- tests/test_org_to_asana.py	2022-02-04 03:46:35.396852106 +0000
++++ tests/test_org_to_asana_processedpatch_7de223ac2.py	2022-02-04 04:34:51.589708302 +0000
+@@ -125,6 +125,7 @@ def test_o2a_ahead_get_tree(ahead_source
+      mapped_mock_headline_node({'asana_id': str(MOCK_TASK_ID),
+                                 'paragraph': ''}))])
+ def test_o2a_behind_make_fn(a_node, expected_node, behind_source):
++    behind_source.get_tree()
+     "Does the Org Source have a special make_fn method?"
+     o_node = behind_source.make_fn(a_node)
+     assert_trees_equal_p(o_node, expected_node, ['id'])

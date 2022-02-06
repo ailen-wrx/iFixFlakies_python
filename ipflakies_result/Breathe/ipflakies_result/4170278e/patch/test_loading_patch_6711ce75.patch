@@ -1,0 +1,10 @@
+--- tests/test_loading.py	2022-02-04 00:01:42.175992726 +0000
++++ tests/test_loading_processedpatch_6711ce751.py	2022-02-04 00:08:00.004111494 +0000
+@@ -9,6 +9,7 @@ script_dir = os.path.dirname(__file__)
+ file_path = os.path.join(script_dir, "my_grammar/fruit.py")
+ 
+ def test_loading_failure():
++    Breathe.clear()
+     with open(file_path, "w") as f:
+         f.write("""
+ from breathe import Breathe

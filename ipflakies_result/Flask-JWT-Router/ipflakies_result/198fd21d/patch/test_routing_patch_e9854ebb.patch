@@ -1,0 +1,10 @@
+--- tests/test_routing.py	2022-02-02 08:25:45.858034345 +0000
++++ tests/test_routing_processedpatch_e9854ebb1.py	2022-02-02 08:32:57.775883090 +0000
+@@ -85,6 +85,7 @@ class TestRouting:
+         ], indirect=["jwt_router_client"]
+     )
+     def test_jwt_route(self, jwt_router_client, entity_model, expected):
++        rv = jwt_router_client.get('/test')
+         rv = jwt_router_client.get("/test")
+         assert expected in str(rv.status)
+ 

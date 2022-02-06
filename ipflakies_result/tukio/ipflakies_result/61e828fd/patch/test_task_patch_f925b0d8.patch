@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_f925b0d87.py	2022-02-03 11:48:19.226442740 +0000
+@@ -499,6 +499,7 @@ class TestTaskTemplate(unittest.TestCase
+         _restore_registry(cls._backup)
+ 
+     def test_new_template(self):
++        task = asyncio.ensure_future(my_coro_task(None))
+         """
+         Valid new task template operations
+         """

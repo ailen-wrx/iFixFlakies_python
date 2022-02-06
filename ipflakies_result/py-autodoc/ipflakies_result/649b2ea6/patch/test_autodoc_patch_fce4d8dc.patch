@@ -1,0 +1,10 @@
+--- tests/test_autodoc.py	2022-02-02 09:06:35.920640719 +0000
++++ tests/test_autodoc_processedpatch_fce4d8dc7.py	2022-02-02 10:49:20.166451621 +0000
+@@ -109,6 +109,7 @@ class TestAutodoc(TestCase):
+         autodoc.clear()
+ 
+     def test_should_change_separators(self):
++        autodoc.clear()
+         """ Should change separators. """
+         res = self.client.get('/')
+         autodoc.separators = '*'

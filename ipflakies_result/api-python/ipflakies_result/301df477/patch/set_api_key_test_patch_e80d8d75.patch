@@ -1,0 +1,10 @@
+--- datacommons/test/set_api_key_test.py	2022-02-01 21:15:40.243505008 +0000
++++ datacommons/test/set_api_key_test_processedpatch_e80d8d752.py	2022-02-01 21:17:34.955190876 +0000
+@@ -80,6 +80,7 @@ class TestApiKey(unittest.TestCase):
+ 
+   @mock.patch('six.moves.urllib.request.urlopen', side_effect=request_mock)
+   def test_send_request_no_api_key(self, urlopen):
++        dc.set_api_key(_TEST_API_KEY)
+     del os.environ[utils._ENV_VAR_API_KEY]
+     # Issue a dummy url that tells the mock to not expect a key
+     self.assertEqual(utils._send_request(_SEND_REQ_NO_KEY, {'foo': ['bar']}), {})

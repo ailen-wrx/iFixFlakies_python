@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_c587a7c47.py	2022-02-01 19:03:39.052958706 +0000
+@@ -153,6 +153,7 @@ class TestFactorySerialization(unittest.
+ 		self.assertTrue(isinstance(js['transferred_custody_from'][0], OrderedDict))
+ 
+ 	def test_string_list(self):
++        model.factory.auto_id_type = 'int-per-type'
+ 		x = model.Activity()
+ 		x._label = ["Label 1", "Label 2"]
+ 		js = model.factory.toJSON(x)

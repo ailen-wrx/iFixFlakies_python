@@ -1,0 +1,1 @@
+{"target": "test/test_app.py::test_radiator_view_division_by_zero", "type": "victim", "patch": false, "polluter": {"test/test_app.py::test_custom_title": []}, "time": 382.71415877342224}

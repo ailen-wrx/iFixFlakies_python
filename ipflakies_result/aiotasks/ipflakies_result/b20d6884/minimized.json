@@ -1,0 +1,1 @@
+{"target": "tests/unittesting/tasks/redis/test_delay.py::test_redis_delay_add_task_non_coroutine_as_input", "type": "brittle", "patch": false, "state-setter": {}}

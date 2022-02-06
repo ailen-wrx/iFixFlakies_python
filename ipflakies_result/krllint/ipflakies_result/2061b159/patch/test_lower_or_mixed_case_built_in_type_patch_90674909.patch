@@ -1,0 +1,13 @@
+--- tests/test_lower_or_mixed_case_built_in_type.py	2022-02-02 00:51:16.210914067 +0000
++++ tests/test_lower_or_mixed_case_built_in_type_processedpatch_906749095.py	2022-02-02 00:55:46.831608620 +0000
+@@ -12,6 +12,10 @@ class LowerOrMixedCaseBuiltInTestCase(Te
+     FIXED_INPUT = ["INT\n"]
+ 
+     def test_rule_without_fix(self):
++        cli_args = _create_arg_parser().parse_args(['--fix', 'test_rule_with_fix'])
++        linter = Linter(cli_args, config)
++        (lines, _) = linter.lint_lines('test_rule_with_fix', self.TEST_INPUT)
++        self.assertEqual(lines, self.FIXED_INPUT)
+         cli_args = _create_arg_parser().parse_args(["test_rule_without_fix"])
+         reload(config)
+         config.REPORTER = MemoryReporter

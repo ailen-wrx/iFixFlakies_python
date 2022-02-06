@@ -1,0 +1,1 @@
+{"target": "tests/test_profile.py::TestProfile::test_scale", "type": "victim", "patch": false, "polluter": {}}

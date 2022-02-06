@@ -1,0 +1,1 @@
+{"target": "tests/test_vocab.py::TestClassBuilder::test_metatype", "type": "victim", "patch": false, "polluter": {}}

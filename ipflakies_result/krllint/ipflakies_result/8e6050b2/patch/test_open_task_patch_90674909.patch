@@ -1,0 +1,13 @@
+--- tests/test_open_task.py	2022-02-02 00:51:16.210914067 +0000
++++ tests/test_open_task_processedpatch_906749099.py	2022-02-02 00:56:58.273903931 +0000
+@@ -11,6 +11,10 @@ class OpenTaskTestCase(TestCase):
+     TEST_INPUT = [";TODO This is a open task\n"]
+ 
+     def test_rule_without_fix(self):
++        cli_args = _create_arg_parser().parse_args(['--fix', 'test_rule_with_fix'])
++        config.REPORTER = MemoryReporter
++        linter = Linter(cli_args, config)
++        (lines, _) = linter.lint_lines('test_rule_with_fix', self.TEST_INPUT)
+         cli_args = _create_arg_parser().parse_args(["test_rule_without_fix"])
+         reload(config)
+         config.REPORTER = MemoryReporter

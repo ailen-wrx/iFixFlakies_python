@@ -1,0 +1,1 @@
+{"tests/test_config.py::test_envvar": {"type": "brittle", "detected_sequence": [["tests/test_config.py::test_defaultvar", "tests/test_config.py::test_envvar"]]}, "time": 27.65403962135315}

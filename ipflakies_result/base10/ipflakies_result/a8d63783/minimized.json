@@ -1,0 +1,1 @@
+{"target": "base10/test/test_helpers.py::TestMetricHelper::test_metric_helper_fields_exception", "type": "victim", "patch": false, "polluter": {"base10/test/test_helpers.py::TestMetricHelper::test_metric_helper_kwargs": []}, "time": 19.481070041656494}

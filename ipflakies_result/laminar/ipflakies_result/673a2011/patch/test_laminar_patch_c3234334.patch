@@ -1,0 +1,10 @@
+--- test/test_laminar.py	2022-02-02 11:04:48.936243020 +0000
++++ test/test_laminar_processedpatch_c32343346.py	2022-02-02 11:07:30.629429131 +0000
+@@ -101,6 +101,7 @@ def test_list_flow():
+ 
+ 
+ def test_init_my_lam(my_lam):
++    result = laminar.iter_flow(le.single_total, le.laminar_df['Col1'])
+     assert my_lam.cores == 2
+     assert my_lam.results == {}
+ 

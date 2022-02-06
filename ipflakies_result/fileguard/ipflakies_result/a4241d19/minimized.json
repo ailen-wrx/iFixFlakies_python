@@ -1,0 +1,1 @@
+{"target": "tests/test_fileguard.py::TestFileGuardDecorator::test_guard_if_function_not_changes_text_file", "type": "victim", "patch": false, "polluter": {}}

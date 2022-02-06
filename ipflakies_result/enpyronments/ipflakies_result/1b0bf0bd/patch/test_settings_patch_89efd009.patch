@@ -1,0 +1,10 @@
+--- tests/test_settings.py	2022-02-04 11:37:16.054478530 +0000
++++ tests/test_settings_processedpatch_89efd0093.py	2022-02-04 14:11:50.288656531 +0000
+@@ -50,6 +50,7 @@ def test_setitem(test_setting, test_key,
+ 
+ 
+ def test_getattr(test_setting, test_key, bad_key, actual_value):
++    masked_settings = test_setting.masked()
+     with pytest.raises(KeyError):
+         getattr(test_setting, bad_key)
+     assert getattr(test_setting, test_key) == actual_value

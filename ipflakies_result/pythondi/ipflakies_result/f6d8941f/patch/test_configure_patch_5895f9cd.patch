@@ -1,0 +1,10 @@
+--- tests/test_configure.py	2022-02-01 17:15:44.472823186 +0000
++++ tests/test_configure_processedpatch_5895f9cd2.py	2022-02-01 17:16:50.094933580 +0000
+@@ -10,6 +10,7 @@ from pythondi import (
+ 
+ 
+ def test_configure():
++    Container.clear()
+     provider = Provider()
+     provider.bind(int, str)
+     configure(provider=provider)

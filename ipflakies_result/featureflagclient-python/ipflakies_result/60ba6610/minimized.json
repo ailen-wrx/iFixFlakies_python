@@ -1,0 +1,1 @@
+{"target": "tests/integration_tests.py::test_actual_http_request", "type": "brittle", "patch": false, "state-setter": {}}

@@ -1,0 +1,1 @@
+{"target": "web_dict/tests/test_ub.py::VocabularyTest::test_basic", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,17 @@
+--- tests/test_add_profile.py	2022-02-01 19:54:14.830522720 +0000
++++ tests/test_add_profile_processedpatch_0fae09f620.py	2022-02-01 19:58:59.535672643 +0000
+@@ -20,6 +20,14 @@ def prepare():
+ class TestAddProfile:
+     def test_add_profile_ok(self, capsys, monkeypatch):
+         arg_parser = parser.get_arguments_parser()
++        arguments = arg_parser.parse_args(['add', 'test_add_profile_ok'])
++        executor.execute_command(arguments)
++        (out, err) = capsys.readouterr()
++        assert (not err)
++        arguments = arg_parser.parse_args(['del', 'test_add_profile_ok'])
++        executor.execute_command(arguments)
++        (out, err) = capsys.readouterr()
++        arg_parser = parser.get_arguments_parser()
+         arguments = arg_parser.parse_args(["add", "test_add_profile_ok"])
+ 
+         fake_input = io.StringIO("\n".join(["test_add_profile_ok"] * 3))

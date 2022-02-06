@@ -1,0 +1,10 @@
+--- tests/test_api_client.py	2022-02-02 11:31:50.056231946 +0000
++++ tests/test_api_client_processedpatch_ce2fd9565.py	2022-02-02 11:41:40.191154447 +0000
+@@ -96,6 +96,7 @@ class TestApiClient(BaseTestCase):
+ 
+     @mock.patch('requests.session', side_effect=mock.MagicMock)
+     def test_authentication_error(self, session_mock):
++        mock.MagicMock.content = PropertyMock(return_value='{"error": {}}')
+         mock.MagicMock.ok = PropertyMock(return_value=False)
+         mock.MagicMock.status_code = PropertyMock(return_value=401)
+         client = TestApiClient.mock_client()

@@ -1,0 +1,1 @@
+{"target": "tests/test_containers.py::TestApiInterfaceBase::test_dispatch__http_response", "type": "victim", "patch": false, "polluter": {"tests/test_swagger.py::TestSwaggerSpec::test_get_swagger": []}, "time": 402.85930466651917}

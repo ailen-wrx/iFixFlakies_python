@@ -1,0 +1,11 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_9b42c0b20.py	2022-02-03 23:01:11.718082996 +0000
+@@ -78,6 +78,8 @@ def test_MeanMedianImputer(dataframe_na)
+ def test_EndTailImputer(dataframe_na):
+ 
+     # test case 1: automatically find variables + gaussian limits + right tail
++    with pytest.raises(KeyError):
++        transformer = MathematicalCombinator(math_operations=['sum', 'mean'], new_variables_names=['sum_of_two_vars'])
+     imputer = EndTailImputer(distribution='gaussian', tail='right', fold=3, variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

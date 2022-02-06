@@ -1,0 +1,1 @@
+{"target": "__tests__/test_simple_graph.py::TestSimpleGraph::test_vertices_adjacency", "type": "brittle", "patch": false, "state-setter": {}}

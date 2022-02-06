@@ -1,0 +1,1 @@
+{"target": "HARK/ConsumptionSaving/tests/test_IndShockConsumerType.py::testIndShockConsumerType::test_getShocks", "type": "brittle", "patch": false, "state-setter": {}}

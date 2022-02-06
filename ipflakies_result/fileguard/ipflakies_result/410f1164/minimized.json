@@ -1,0 +1,1 @@
+{"target": "tests/test_fileguard.py::TestFileGuardDecoratorMultipleFiles::test_guard_change_two_text_files_multiple_arguments", "type": "victim", "patch": false, "polluter": {}}

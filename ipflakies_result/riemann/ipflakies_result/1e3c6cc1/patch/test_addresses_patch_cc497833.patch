@@ -1,0 +1,10 @@
+--- riemann/tests/encoding/test_addresses.py	2022-02-04 05:08:41.714792606 +0000
++++ riemann/tests/encoding/test_addresses_processedpatch_cc4978334.py	2022-02-04 05:34:08.191744928 +0000
+@@ -38,6 +38,7 @@ class TestAddresses(unittest.TestCase):
+         self.assertEqual(a, helpers.P2WSH['human']['ins'][0]['addr'])
+ 
+     def test_make_p2pkh_address(self):
++        riemann.select_network('bitcoin_main')
+         a = addr.make_p2pkh_address(b'\x00' * 65)
+         self.assertEqual(a, helpers.ADDR[0]['p2pkh'])
+         b = addr.make_p2pkh_address(b'\x11' * 65)

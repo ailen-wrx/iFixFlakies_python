@@ -1,0 +1,1 @@
+{"target": "tests/test_mb_mgmt.py::test_check_mb_install_false", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_1f914fdb10.py	2022-02-03 22:19:49.936148450 +0000
+@@ -142,6 +142,7 @@ def test_EndTailImputer(dataframe_na):
+ def test_ArbitraryNumberImputer(dataframe_na):
+ 
+     # test case 1: automatically select variables
++    ref = {'Name': ['tom', 'nick', 'krish', 'peter', 'peter', 'sam', 'fred', 'sam'], 'City': ['London', 'Manchester', 'London', 'Manchester', 'London', 'London', 'Bristol', 'Manchester'], 'Studies': ['Bachelor', 'Bachelor', 'PhD', 'Masters', 'Bachelor', 'PhD', 'None', 'Masters'], 'Age': [20, 21, 19, 23, 23, 40, 41, 37], 'Marks': [0.9, 0.8, 0.7, 0.3, 0.3, 0.6, 0.8, 0.6], 'dob': pd.date_range('2020-02-24', periods=8, freq='T')}
+     imputer = ArbitraryNumberImputer(arbitrary_number=99, variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

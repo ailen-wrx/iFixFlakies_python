@@ -1,0 +1,1 @@
+{"target": "unittests/test_cli.py::test_failure_stats", "type": "victim", "patch": false, "polluter": {}}

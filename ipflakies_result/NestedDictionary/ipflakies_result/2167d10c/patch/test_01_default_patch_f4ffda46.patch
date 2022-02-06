@@ -1,0 +1,10 @@
+--- easy_dict/tests/test_01_default.py	2022-02-01 17:58:25.319180737 +0000
++++ easy_dict/tests/test_01_default_processedpatch_f4ffda463.py	2022-02-01 17:59:52.713991156 +0000
+@@ -45,6 +45,7 @@ def test_length(c):
+ 
+ 
+ def test_del(x):
++    x[123] = 'abc'
+     del x[123]
+ 
+     # assert x == {'foo': 'bar', 'baz': 'qux', 'def': 456}

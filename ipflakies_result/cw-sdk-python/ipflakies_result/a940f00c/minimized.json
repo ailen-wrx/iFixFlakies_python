@@ -1,0 +1,1 @@
+{"target": "tests/test_api.py::test_markets_endpoints", "type": "brittle", "patch": false, "state-setter": {}}

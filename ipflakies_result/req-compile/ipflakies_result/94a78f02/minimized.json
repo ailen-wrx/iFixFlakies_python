@@ -1,0 +1,1 @@
+{"target": "tests/repos/test_pypi.py::test_successful_numpy", "type": "victim", "patch": false, "polluter": {}}

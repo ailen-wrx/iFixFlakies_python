@@ -1,0 +1,13 @@
+--- tunacell/tests/test_observable.py	2022-02-03 07:20:37.545746190 +0000
++++ tunacell/tests/test_observable_processedpatch_8ef40b9d0.py	2022-02-03 07:52:15.398584057 +0000
+@@ -65,6 +65,10 @@ def test_observable_init(all_params):
+ 
+ 
+ def test_observable_str(all_params):
++    for kwargs in all_params:
++        obs = Observable(**kwargs)
++        for attr in obs._attr_names:
++            assert (getattr(obs, attr) == kwargs[attr])
+     """This test checks codestring obtained using __str__
+ 
+     Randomly instantiate a given observable <obs>

@@ -1,0 +1,17 @@
+--- tests/test_pubsub.py	2022-02-03 08:56:02.753302200 +0000
++++ tests/test_pubsub_processedpatch_448292751.py	2022-02-03 09:20:02.031445954 +0000
+@@ -138,6 +138,14 @@ class TestPubsub(unittest.TestCase):
+         self.assertEqual(0, len(result))
+ 
+     def test_unsubscribe_all(self):
++        sync()
++        s1 = topic('testA')
++        s2 = topic('testB')
++        s1.send('123')
++        p = pending()
++        self.assertIn('testA', p)
++        self.assertIn('testB', p)
++        s1.destroy()
+         s1 = topic("testA")
+         s2 = topic("testB")
+         s3 = topic("testC")

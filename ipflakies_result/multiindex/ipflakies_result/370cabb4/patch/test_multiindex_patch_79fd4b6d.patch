@@ -1,0 +1,10 @@
+--- multiindex/tests/test_multiindex.py	2022-02-01 17:42:14.759968050 +0000
++++ multiindex/tests/test_multiindex_processedpatch_79fd4b6d5.py	2022-02-01 17:43:56.739247927 +0000
+@@ -66,6 +66,7 @@ def test_modify(mi):
+ 
+ 
+ def test_remove(mi):
++    mi.modify('emp_id', 786, 666)
+     mi.remove('emp_id', 666)
+     assert mi.get('emp_id', 666) is None
+ 

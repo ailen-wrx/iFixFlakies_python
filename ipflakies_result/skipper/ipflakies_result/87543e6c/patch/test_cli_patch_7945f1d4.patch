@@ -1,0 +1,10 @@
+--- tests/test_cli.py	2022-02-01 17:42:59.525407805 +0000
++++ tests/test_cli_processedpatch_7945f1d45.py	2022-02-01 18:08:47.035171130 +0000
+@@ -1262,6 +1262,7 @@ class TestCLI(unittest.TestCase):
+     @mock.patch('subprocess.check_output', mock.MagicMock(autospec=True, return_value=''))
+     @mock.patch('skipper.runner.run', autospec=True, return_value=0)
+     def test_run_without_build_container_tag(self, skipper_runner_run_mock):
++        os.environ['SKIPPER_INTERACTIVE'] = 'False'
+         global_params = self.global_params[:-2]
+         command = ['ls', '-l']
+         run_params = command

@@ -1,0 +1,10 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_b0dbdc4c3.py	2022-02-05 00:25:32.101786985 +0000
+@@ -317,6 +317,7 @@ def test_skip_system_check_option(run_re
+ 
+ 
+ def test_skip_prgenv_check_option(run_reframe):
++    (returncode, stdout, _) = run_reframe(checkpath=['unittests/resources/checks/frontend_checks.py'], more_options=['-t', 'BadSetupCheck'])
+     returncode, stdout, _ = run_reframe(
+         checkpath=['unittests/resources/checks/frontend_checks.py'],
+         more_options=['--skip-prgenv-check', '-t', 'NoPrgEnvCheck']

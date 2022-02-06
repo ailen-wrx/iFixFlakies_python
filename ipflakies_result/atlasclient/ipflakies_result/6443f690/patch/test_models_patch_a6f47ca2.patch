@@ -1,0 +1,10 @@
+--- tests/test_models.py	2022-02-01 21:03:36.104234344 +0000
++++ tests/test_models_processedpatch_a6f47ca23.py	2022-02-01 21:08:22.169427226 +0000
+@@ -452,6 +452,7 @@ class TestRelationshipREST():
+ 
+ class TestDiscoveryREST():
+     def test_search_attribute_get(self, mocker, atlas_client, search_attribute_response):
++        mocker.patch.object(atlas_client.entity_post.client, 'post')
+         mocker.patch.object(atlas_client.search_attribute.client, 'get')
+         atlas_client.search_attribute.client.get.return_value =  search_attribute_response 
+         params = {'attrName': 'attrName', 'attrValue': 'attrVal', 'offset': '1'}

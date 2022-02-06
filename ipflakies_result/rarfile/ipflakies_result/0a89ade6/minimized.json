@@ -1,0 +1,1 @@
+{"target": "test/test_extract.py::test_readonly[test/files/rar5-readonly-win.rar]", "type": "brittle", "patch": false, "state-setter": {}}

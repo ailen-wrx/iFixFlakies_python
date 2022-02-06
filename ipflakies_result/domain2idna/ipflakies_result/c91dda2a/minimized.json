@@ -1,0 +1,1 @@
+{"target": "tests/test_helpers.py::TestFile::test_write_delete", "type": "victim", "patch": false, "polluter": {"tests/test_cli.py::TestCLI::test_domain_output": [], "tests/test_cli.py::TestCLI::test_empty_domain": [], "tests/test_cli.py::TestCLI::test_file_output": []}, "time": 28.05705976486206}

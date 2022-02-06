@@ -1,0 +1,1 @@
+{"target": "tests/test_fuelwatch.py::test_xml_returns_data", "type": "victim", "patch": false, "polluter": {}}

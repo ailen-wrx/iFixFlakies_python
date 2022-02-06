@@ -1,0 +1,1 @@
+{"target": "tests/test_metadata.py::test_source_dist[file-iter-7.2.0-file-iter-7.2.0-None-mock_zip]", "type": "victim", "patch": false, "polluter": {}}

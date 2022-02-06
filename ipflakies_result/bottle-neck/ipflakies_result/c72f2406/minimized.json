@@ -1,0 +1,1 @@
+{"target": "test/test_handlers.py::test_handler_register_class_pass", "type": "victim", "patch": false, "polluter": {}}

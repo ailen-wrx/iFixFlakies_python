@@ -1,0 +1,13 @@
+--- tests/test_pubsub.py	2022-02-03 08:56:02.753302200 +0000
++++ tests/test_pubsub_processedpatch_54b60f2434.py	2022-02-03 09:17:43.190994260 +0000
+@@ -138,6 +138,10 @@ class TestPubsub(unittest.TestCase):
+         self.assertEqual(0, len(result))
+ 
+     def test_unsubscribe_all(self):
++        attic = Location('attic')
++        rat3 = Living('rat3', 'n', race='rodent')
++        rat3.move(attic, direction_names=['somewhere'])
++        pubsub.sync()
+         s1 = topic("testA")
+         s2 = topic("testB")
+         s3 = topic("testC")

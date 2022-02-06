@@ -1,0 +1,1 @@
+{"target": "tests/test_sync.py::test_logged_condition_exception", "type": "victim", "patch": false, "polluter": {}}

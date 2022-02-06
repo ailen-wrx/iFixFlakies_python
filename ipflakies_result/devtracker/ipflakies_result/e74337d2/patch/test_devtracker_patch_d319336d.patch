@@ -1,0 +1,21 @@
+--- devtracker/test_devtracker.py	2022-02-01 20:29:34.342117350 +0000
++++ devtracker/test_devtracker_processedpatch_d319336d1.py	2022-02-01 20:46:35.720537419 +0000
+@@ -94,6 +94,18 @@ def test_end_time_total():
+     assert full_entry == [new_start_date, new_start_time, new_end_date, new_end_time, new_total]
+ 
+ def test_current_status(capsys):
++    next_line = ['1999-01-01', '00:00:00', '1999-01-01', '00:00:00', '00:00:00']
++    following_line = ['1999-01-02', '00:00:01', '1999-01-02', '00:00:02', '00:00:01']
++    with open(path, 'r', newline='') as myFile:
++        reader = list(csv.reader(myFile))
++        reader.pop()
++        reader.pop()
++        with open(path, 'w', newline='') as myfile:
++            wr = csv.writer(myfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
++            for i in reader:
++                wr.writerow(i)
++            wr.writerow(next_line)
++            wr.writerow(following_line)
+     current_status("test")
+     captured = capsys.readouterr()
+     assert captured.out == "[+] Status report for 'test':  You have not started work on this project yet.\n"

@@ -1,0 +1,10 @@
+--- __tests__/test_simple_graph.py	2022-02-01 17:28:22.805210980 +0000
++++ __tests__/test_simple_graph_processedpatch_e18b45d11.py	2022-02-01 17:38:36.084934982 +0000
+@@ -31,6 +31,7 @@ class TestSimpleGraph:
+             self.graph.is_terminal(edge, 'b')
+ 
+     def test_vertex_exists(self):
++        self.graph.add_vertex('a')
+         assert self.graph.vertex_exists("a")
+ 
+     def test_edge_exists(self):

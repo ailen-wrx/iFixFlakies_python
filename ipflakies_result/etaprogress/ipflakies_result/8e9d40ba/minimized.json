@@ -1,0 +1,1 @@
+{"target": "tests/test_progress_progressbar.py::test_defined_hour", "type": "brittle", "patch": false, "state-setter": {}}

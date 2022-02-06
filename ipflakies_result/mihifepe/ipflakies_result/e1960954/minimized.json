@@ -1,0 +1,1 @@
+{"target": "tests/test_mihifepe.py::test_simulation_noisy_interactions", "type": "brittle", "patch": false, "state-setter": {}}

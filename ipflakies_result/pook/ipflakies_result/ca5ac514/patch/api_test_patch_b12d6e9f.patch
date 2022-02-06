@@ -1,0 +1,13 @@
+--- tests/unit/api_test.py	2022-02-04 05:21:11.819587593 +0000
++++ tests/unit/api_test_processedpatch_b12d6e9f2.py	2022-02-04 05:26:56.608684504 +0000
+@@ -38,6 +38,10 @@ def test_use(engine):
+ 
+ 
+ def test_mock_contructors(engine):
++    assert (engine.active is False)
++    api.on()
++    assert (engine.active is True)
++    api.off()
+     assert engine.active is False
+     assert engine.isdone() is True
+ 

@@ -1,0 +1,1 @@
+{"target": "tests/test_views.py::test_delete_protected_not_allowed", "type": "victim", "patch": false, "polluter": {}}

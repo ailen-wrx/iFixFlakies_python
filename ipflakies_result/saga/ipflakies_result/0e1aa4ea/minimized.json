@@ -1,0 +1,1 @@
+{"target": "tests/cli/test_add.py::test_add_adds_to_index", "type": "victim", "patch": false, "polluter": {}}

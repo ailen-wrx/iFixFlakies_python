@@ -1,0 +1,1 @@
+{"target": "ptemcee/tests.py::Tests::test_inf_logprob", "type": "victim", "patch": false, "polluter": {"ptemcee/tests.py::Tests::test_prior_support": [{"cleaner": "ptemcee/tests.py::Tests::test_likelihood_support", "patch": null}], "ptemcee/tests.py::Tests::test_inf_nan_params": [{"cleaner": "ptemcee/tests.py::Tests::test_nan_logprob", "patch": null}]}, "time": 969.5394070148468}

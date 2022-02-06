@@ -1,0 +1,1 @@
+{"target": "tests/test_noclass.py::test_main", "type": "victim", "patch": false, "polluter": {"tests/test_noclass.py::test_lists": [], "tests/test_noclass.py::test_object_list": []}, "time": 125.03592944145203}

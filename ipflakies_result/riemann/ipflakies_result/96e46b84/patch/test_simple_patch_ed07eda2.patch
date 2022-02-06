@@ -1,0 +1,10 @@
+--- riemann/tests/test_simple.py	2022-02-04 05:08:41.714792606 +0000
++++ riemann/tests/test_simple_processedpatch_ed07eda29.py	2022-02-04 08:48:12.449460778 +0000
+@@ -63,6 +63,7 @@ class TestSimple(unittest.TestCase):
+         self.assertEqual(tx, helpers.P2PKH['ser']['tx']['unsigned'])
+ 
+     def test_unsigned_witness_tx(self):
++        riemann.select_network('bitcoin_cash_main')
+         outpoint = simple.outpoint(
+             tx_id=helpers.P2WPKH['human']['ins'][0]['hash'],
+             index=helpers.P2WPKH['human']['ins'][0]['index'])

@@ -1,0 +1,13 @@
+--- fissa/tests/test_core.py	2022-02-01 21:46:58.228402220 +0000
++++ fissa/tests/test_core_processedpatch_407b32981.py	2022-02-01 22:20:54.228979345 +0000
+@@ -100,6 +100,10 @@ class TestExperimentA(BaseTestCase):
+         self.assert_allclose(actual[0][0], self.expected_00)
+ 
+     def test_imagelistloaded_roizip(self):
++        image_path = os.path.join(self.resources_dir, self.images_dir)
++        roi_path = os.path.join(self.resources_dir, self.roi_zip_path)
++        exp = core.Experiment(image_path, roi_path, self.output_dir, datahandler_custom=datahandler)
++        exp.separate()
+         image_paths = [
+             os.path.join(self.resources_dir, self.images_dir, img)
+             for img in self.image_names

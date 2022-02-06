@@ -1,0 +1,10 @@
+--- tests/test_redisqueue.py	2022-02-01 17:36:52.833614193 +0000
++++ tests/test_redisqueue_processedpatch_5d1cbb533.py	2022-02-01 17:38:21.932479808 +0000
+@@ -98,6 +98,7 @@ def test_mock_queue_unique():
+ 
+ 
+ def test_mock_queue_get_put_same_task():
++    mock_queue.connect()
+     mock_queue.clear()
+ 
+     task = MockTask()

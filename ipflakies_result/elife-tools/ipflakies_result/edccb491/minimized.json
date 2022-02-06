@@ -1,0 +1,1 @@
+{"target": "elifetools/tests/test_xmlio.py::TestXmlio::test_input_output_1_elife_02833_v2_xml", "type": "brittle", "patch": false, "state-setter": {}}

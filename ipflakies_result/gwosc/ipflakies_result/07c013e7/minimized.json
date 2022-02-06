@@ -1,0 +1,1 @@
+{"target": "gwosc/tests/test_locate.py::test_get_urls_deprecated_tag", "type": "victim", "patch": false, "polluter": {}}

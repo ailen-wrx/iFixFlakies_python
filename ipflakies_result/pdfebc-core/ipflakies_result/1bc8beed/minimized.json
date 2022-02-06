@@ -1,0 +1,1 @@
+{"target": "tests/test_compress.py::CoreTest::test_compress_too_small_pdf", "type": "victim", "patch": false, "polluter": {}}

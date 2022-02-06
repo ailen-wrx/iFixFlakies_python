@@ -1,0 +1,1 @@
+{"target": "tests/test_region_cache.py::test_invalidate_connections[app3]", "type": "brittle", "patch": false, "state-setter": {}}

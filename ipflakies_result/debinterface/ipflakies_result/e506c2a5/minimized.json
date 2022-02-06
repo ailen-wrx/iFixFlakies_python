@@ -1,0 +1,1 @@
+{"target": "test/test_hostapd.py::TestHostapd::test_read", "type": "victim", "patch": false, "polluter": {"test/test_hostapd.py::TestHostapd::test_validate_valid": [], "test/test_hostapd.py::TestHostapd::test_write": []}, "time": 42.67628240585327}

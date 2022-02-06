@@ -1,0 +1,1 @@
+{"target": "eppy/tests/test_case_insensitive.py::test_del[BUILDING]", "type": "victim", "patch": false, "polluter": {}}

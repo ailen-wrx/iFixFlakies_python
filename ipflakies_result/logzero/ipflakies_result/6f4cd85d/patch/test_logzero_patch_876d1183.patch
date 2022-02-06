@@ -1,0 +1,10 @@
+--- tests/test_logzero.py	2022-02-01 22:09:50.891913931 +0000
++++ tests/test_logzero_processedpatch_876d11832.py	2022-02-01 22:11:08.810416619 +0000
+@@ -281,6 +281,7 @@ def test_default_logger_logfile_only(cap
+ 
+ 
+ def test_default_logger_stderr_output(capsys):
++    test_default_logger(disableStdErrorLogger=True)
+     """
+     Run the ``test_default_logger`` and confirm that the proper data is written to stderr
+     """

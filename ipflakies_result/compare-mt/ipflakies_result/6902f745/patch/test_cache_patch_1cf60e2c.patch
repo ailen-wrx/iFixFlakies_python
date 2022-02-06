@@ -1,0 +1,10 @@
+--- tests/test_cache.py	2022-02-02 01:35:15.563390350 +0000
++++ tests/test_cache_processedpatch_1cf60e2c22.py	2022-02-02 03:27:41.003531975 +0000
+@@ -85,6 +85,7 @@ class TestSrcWordAccCache(unittest.TestC
+     self.ref_align_file = os.path.join(example_path, "ted.ref.align")
+  
+   def test_src_wordacc_cache(self):
++        reporters.sys_names = [f'sys{(i + 1)}' for i in range(2)]
+     cached_stats1 = compare_mt_main.generate_src_word_accuracy_report(self.ref, [self.out1], self.src, ref_align_file=self.ref_align_file, to_cache=True)
+     cached_stats2 = compare_mt_main.generate_src_word_accuracy_report(self.ref, [self.out2], self.src, ref_align_file=self.ref_align_file, to_cache=True)
+     self.assertTrue('statistics' in cached_stats1 and 'my_ref_total_list' in cached_stats1 and 'my_out_matches_list' in cached_stats1)

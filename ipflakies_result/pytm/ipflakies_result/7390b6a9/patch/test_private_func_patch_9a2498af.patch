@@ -1,0 +1,10 @@
+--- tests/test_private_func.py	2022-02-01 23:30:54.656082826 +0000
++++ tests/test_private_func_processedpatch_9a2498af6.py	2022-02-01 23:35:36.613126996 +0000
+@@ -8,6 +8,7 @@ from pytm.pytm import Actor, Boundary, D
+ 
+ class TestUniqueNames(unittest.TestCase):
+     def test_duplicate_boundary_names_have_different_unique_names(self):
++        TM.reset()
+         random.seed(0)
+         object_1 = Boundary("foo")
+         object_2 = Boundary("foo")

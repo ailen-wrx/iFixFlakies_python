@@ -1,0 +1,1 @@
+{"target": "knit/tests/test_env.py::test_miniconda_install", "type": "victim", "patch": false, "polluter": {}}

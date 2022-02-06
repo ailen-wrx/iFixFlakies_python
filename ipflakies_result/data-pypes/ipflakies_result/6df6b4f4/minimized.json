@@ -1,0 +1,1 @@
+{"target": "pypes/logsetup.py::pypes.logsetup.get_logconfig", "type": "victim", "patch": false, "polluter": {"pypes/logsetup.py::pypes.logsetup.setup_logger": []}, "time": 23.608877182006836}

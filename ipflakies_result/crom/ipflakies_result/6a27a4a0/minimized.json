@@ -1,0 +1,1 @@
+{"target": "tests/test_currency.py::TestCurrencyExtraction::test_extract_price_with_citation", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,15 @@
+--- test/test_routing.py	2022-02-01 18:48:29.247734803 +0000
++++ test/test_routing_processedpatch_a5fa7c760.py	2022-02-01 18:51:49.158155229 +0000
+@@ -34,6 +34,12 @@ def mock_handler():
+ 
+ 
+ def test_router_register_handler_fn_pass(mock_router):
++    with pytest.raises(handler.HandlerHTTPMethodError):
++
++        class TestCls(object):
++
++            @handler.route_method('PORT', extra_part=True)
++            def fn(self):
+     """Test `bottle_neck.routing.Router.register_handler` for function-based
+     handler pass.
+     """

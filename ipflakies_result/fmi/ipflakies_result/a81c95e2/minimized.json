@@ -1,0 +1,1 @@
+{"target": "tests/test_observation.py::TestObservations::test_lappeenranta", "type": "victim", "patch": false, "polluter": {}}

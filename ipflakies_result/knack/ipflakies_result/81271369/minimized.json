@@ -1,0 +1,1 @@
+{"target": "tests/test_deprecation.py::TestArgumentDeprecation::test_deprecate_arguments_execute_expired", "type": "victim", "patch": false, "polluter": {"tests/test_parser.py::TestParser::test_nargs_parameter": [], "tests/test_parser.py::TestParser::test_register_simple_commands": [], "tests/test_parser.py::TestParser::test_required_parameter": []}, "time": 313.00585198402405}

@@ -1,0 +1,1 @@
+{"target": "jake/test/test_iq_config.py::TestIQConfig::test_get_config_from_std_in", "type": "victim", "patch": false, "polluter": {}}

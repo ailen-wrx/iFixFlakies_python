@@ -1,0 +1,1 @@
+{"target": "flaskerizer/flaskerizer_src/tests/test_structure_directory.py::TestStructureDirectory::test_migrate_files", "type": "brittle", "patch": false, "state-setter": {}}

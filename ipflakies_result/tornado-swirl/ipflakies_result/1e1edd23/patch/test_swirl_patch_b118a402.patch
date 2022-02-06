@@ -1,0 +1,12 @@
+--- tests/test_swirl.py	2022-02-02 02:22:05.281988173 +0000
++++ tests/test_swirl_processedpatch_b118a40214.py	2022-02-02 02:24:39.238936649 +0000
+@@ -654,6 +654,9 @@ class TestSampleEndpoints(AsyncHTTPTestC
+ 
+     @gen_test
+     def test_security_scheme2(self):
++
++        @swirl.schema
++        class A(object):
+         self.reset_settings()
+         swirl.describe(title='My API', description='My description')
+         swirl.add_security_scheme("test_basic", security.HTTP("bearer", bearerFormat="JWT"))

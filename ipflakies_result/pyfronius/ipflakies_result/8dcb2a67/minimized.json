@@ -1,0 +1,1 @@
+{"target": "pyfronius/tests/test_web.py::FroniusWebTest::test_fronius_get_inverter_realtime_data_system", "type": "victim", "patch": false, "polluter": {}}

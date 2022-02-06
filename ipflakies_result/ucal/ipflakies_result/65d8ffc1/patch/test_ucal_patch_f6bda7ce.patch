@@ -1,0 +1,10 @@
+--- tests/test_ucal.py	2022-02-01 19:30:31.872792611 +0000
++++ tests/test_ucal_processedpatch_f6bda7ce0.py	2022-02-01 19:32:19.532253346 +0000
+@@ -246,6 +246,7 @@ class TestSyntax(unittest.TestCase):
+         self.assertEqual(ucal.evaluate('abs(1 m)'), '1 m')
+ 
+     def test_function_ln(self):
++        self.assertEqual(ucal.interpret('67 in bin'), '0b1000011')
+         """Test ln function."""
+         self.assertEqual(ucal.evaluate('ln(exp(1))'), '1')
+         self.assertEqual(ucal.evaluate('ln(1)'), '0')

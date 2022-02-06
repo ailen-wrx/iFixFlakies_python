@@ -1,0 +1,1 @@
+{"target": "tests/test_jackfruit.py::test_single_view", "type": "victim", "patch": false, "polluter": {"tests/test_jackfruit.py::test_register_view": []}, "time": 84.04398775100708}

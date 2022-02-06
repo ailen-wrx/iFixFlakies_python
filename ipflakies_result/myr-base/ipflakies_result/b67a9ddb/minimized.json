@@ -1,0 +1,1 @@
+{"target": "tests/test_base.py::TestApp::test_announcing_no_tasks", "type": "victim", "patch": false, "polluter": {"tests/test_base.py::TestApp::test_announcing_user_tasks": [], "tests/test_base.py::TestApp::test_custom_task_routing": []}, "time": 8.501466512680054}

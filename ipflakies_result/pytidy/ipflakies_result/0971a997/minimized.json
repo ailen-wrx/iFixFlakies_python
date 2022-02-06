@@ -1,0 +1,1 @@
+{"target": "tests/test_dataclass.py::test_class_is_inserted_to_dataclass", "type": "victim", "patch": false, "polluter": {"tests/test_registry.py::test_register_failure": [], "tests/test_registry.py::test_get_failure_not_registered": [], "tests/test_registry.py::test_get_failure_none_registered": []}, "time": 9.2068932056427}

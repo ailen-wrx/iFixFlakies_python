@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_stop.py::test_round_with_custom_duration", "type": "victim", "patch": false, "polluter": {}}

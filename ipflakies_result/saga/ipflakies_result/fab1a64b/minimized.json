@@ -1,0 +1,1 @@
+{"target": "tests/cli/test_log.py::test_log_empty", "type": "brittle", "patch": false, "state-setter": {}}

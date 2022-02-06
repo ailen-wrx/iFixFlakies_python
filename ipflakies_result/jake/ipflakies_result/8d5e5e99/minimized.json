@@ -1,0 +1,1 @@
+{"target": "jake/test/test_ossindex.py::TestOssIndex::test_get_headers", "type": "victim", "patch": false, "polluter": {}}

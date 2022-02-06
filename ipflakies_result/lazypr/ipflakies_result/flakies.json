@@ -1,0 +1,1 @@
+{"tests/test_config.py::TestConfig::test_get_default_config_file_path": {"type": "victim", "detected_sequence": [["tests/test_config.py::TestConfig::test_get_default_config_file_path_xdg", "tests/test_config.py::TestConfig::test_get_default_config_file_path"]]}, "time": 27.140747547149658}

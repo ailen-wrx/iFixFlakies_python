@@ -1,0 +1,1 @@
+{"target": "edk2toollib/acpi/ivrs_parser_test.py::IvrsParserTest::test_ivrs_parser_ivrs_full", "type": "brittle", "patch": false, "state-setter": {}}

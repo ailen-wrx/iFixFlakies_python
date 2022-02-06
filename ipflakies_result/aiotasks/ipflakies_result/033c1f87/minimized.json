@@ -1,0 +1,1 @@
+{"target": "tests/unittesting/tasks/redis/test_delay.py::test_redis_delay_task_decorator_invalid_function", "type": "brittle", "patch": false, "state-setter": {}}

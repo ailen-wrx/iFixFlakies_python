@@ -1,0 +1,10 @@
+--- tests/test_build.py	2022-02-01 22:21:01.085183341 +0000
++++ tests/test_build_processedpatch_042f46ba17.py	2022-02-01 22:50:14.133291342 +0000
+@@ -514,6 +514,7 @@ def tests_patch_get_outputs():
+ 
+ 
+ def tests_patch___new__():
++    from compilertools.build import get_build_compile_args
+     """Test _patch___new__"""
+     # Check if patched
+     assert BUILD_EXT_NEW is not build_ext.__new__

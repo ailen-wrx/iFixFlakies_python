@@ -1,0 +1,1 @@
+{"target": "tests/test_wso.py::test_file_data_arguments", "type": "brittle", "patch": false, "state-setter": {"tests/test_wso.py::test_main_arguments": [{"state-setter": "tests/test_wso.py::test_main_arguments", "patch": null}]}, "time": 17.094873666763306}

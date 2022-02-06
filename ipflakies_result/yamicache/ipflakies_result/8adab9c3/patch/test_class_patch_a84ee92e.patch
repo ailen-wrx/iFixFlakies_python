@@ -1,0 +1,16 @@
+--- tests/test_class.py	2022-02-03 02:08:03.626296136 +0000
++++ tests/test_class_processedpatch_a84ee92e5.py	2022-02-03 02:53:12.610037553 +0000
+@@ -43,6 +43,13 @@ def cache_obj():
+ 
+ def test_cached(cache_obj):
+     for _ in range(10):
++        cache_obj.test3(8, 0)
++    cache_obj.test4()
++    assert (len(c) == 1)
++    key = list(c.keys())[0]
++    assert (key == 'asdf')
++    c.clear()
++    for _ in range(10):
+         cache_obj.test1(8, 0)
+ 
+     assert len(c) == 1

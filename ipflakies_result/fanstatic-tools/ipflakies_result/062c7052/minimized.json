@@ -1,0 +1,1 @@
+{"target": "fanstatic/test_core.py::test_convenience_need_not_initialized", "type": "victim", "patch": false, "polluter": {"fanstatic/test_core.py::test_convenience_need": [], "fanstatic/test_core.py::test_convenience_group_resource_need": [], "fanstatic/test_core.py::test_convenience_clear": []}, "time": 113.52891087532043}

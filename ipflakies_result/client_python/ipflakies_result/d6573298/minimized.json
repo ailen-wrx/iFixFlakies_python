@@ -1,0 +1,1 @@
+{"target": "tests/test_exposition.py::TestPushGateway::test_push_with_basic_auth_handler", "type": "victim", "patch": false, "polluter": {}}

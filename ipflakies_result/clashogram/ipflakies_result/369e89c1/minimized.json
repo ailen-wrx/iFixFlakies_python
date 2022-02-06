@@ -1,0 +1,1 @@
+{"target": "test_everything.py::MessageFactoryTestCase::test_format_time_default", "type": "victim", "patch": false, "polluter": {"test_everything.py::MessageFactoryTestCase::test_format_time_fa": []}, "time": 49.6431028842926}

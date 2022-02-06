@@ -1,0 +1,15 @@
+--- tests/test_trailing_white_space_rule.py	2022-02-02 00:51:16.210914067 +0000
++++ tests/test_trailing_white_space_rule_processedpatch_916f7d1b16.py	2022-02-02 00:57:24.878758698 +0000
+@@ -32,6 +32,12 @@ class TrailingWhiteSpaceTestCase(TestCas
+         self.assertEqual(reporter.messages[0].code, "trailing-whitespace")
+ 
+     def test_rule_with_fix(self):
++        cli_args = _create_arg_parser().parse_args(['test_rule_without_fix'])
++        reload(config)
++        config.REPORTER = MemoryReporter
++        linter = Linter(cli_args, config)
++        (lines, reporter) = linter.lint_lines('test_rule_without_fix', self.TEST_INPUT)
++        self.assertEqual(reporter.found_issues[Category.CONVENTION], 1)
+         cli_args = _create_arg_parser().parse_args(["--fix", "test_rule_with_fix"])
+         reload(config)
+         config.REPORTER = MemoryReporter

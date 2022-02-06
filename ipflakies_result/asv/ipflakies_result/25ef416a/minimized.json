@@ -1,0 +1,1 @@
+{"target": "test/test_compare.py::test_compare_name_lookup[hg]", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- riemann/tests/encoding/test_addresses.py	2022-02-04 05:08:41.714792606 +0000
++++ riemann/tests/encoding/test_addresses_processedpatch_cc4978334.py	2022-02-04 06:41:49.418051339 +0000
+@@ -67,6 +67,7 @@ class TestAddresses(unittest.TestCase):
+                       str(context.exception))
+ 
+     def test_parse_hash(self):
++        riemann.select_network('bitcoin_main')
+         self.assertEqual(addr.parse_hash(helpers.OP_IF['p2sh']),
+                          helpers.OP_IF['script_hash'])
+         self.assertEqual(addr.parse_hash(helpers.MSIG_2_2['p2sh']),

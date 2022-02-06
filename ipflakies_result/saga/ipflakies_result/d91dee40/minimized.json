@@ -1,0 +1,1 @@
+{"target": "tests/test_text.py::test_get_operations_insert_multiple_middle", "type": "victim", "patch": false, "polluter": {}}

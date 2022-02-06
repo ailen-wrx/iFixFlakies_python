@@ -1,0 +1,15 @@
+--- fooof/tests/objs/test_fit.py	2022-02-03 07:55:55.110715268 +0000
++++ fooof/tests/objs/test_fit_processedpatch_68c7fad85.py	2022-02-03 09:25:09.099884132 +0000
+@@ -51,6 +51,12 @@ def test_fooof_n_peaks(tfm):
+     assert tfm.n_peaks_
+ 
+ def test_fooof_fit_nk():
++    'Test FOOOF fit on noisy data, to make sure nothing breaks.'
++    ap_params = [50, 2]
++    gauss_params = [10, 0.5, 2, 20, 0.3, 4]
++    nlv = 1.0
++    (xs, ys) = gen_power_spectrum([3, 50], ap_params, gauss_params, nlv)
++    tfm = FOOOF(max_n_peaks=8, verbose=False)
+     """Test FOOOF fit, no knee."""
+ 
+     ap_params = [50, 2]

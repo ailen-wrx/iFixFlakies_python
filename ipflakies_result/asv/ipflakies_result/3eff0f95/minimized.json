@@ -1,0 +1,1 @@
+{"target": "test/test_console.py::test_color_print_nofail", "type": "victim", "patch": false, "polluter": {}}

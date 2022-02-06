@@ -1,0 +1,1 @@
+{"target": "tests/test_model.py::TestBaseResource::test_check_prop", "type": "victim", "patch": false, "polluter": {}}

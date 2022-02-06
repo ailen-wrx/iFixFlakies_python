@@ -1,0 +1,10 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_f3e4ab311.py	2022-02-03 22:36:22.887344315 +0000
+@@ -205,6 +205,7 @@ def test_ArbitraryNumberImputer(datafram
+ def test_CategoricalVariableImputer(dataframe_na):
+ 
+     # test case 1: imputation with missing + automatically select variables
++    transformer = MathematicalCombinator(variables=['FeatOutsideDataset', 'Age'])
+     imputer = CategoricalVariableImputer(imputation_method='missing', variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

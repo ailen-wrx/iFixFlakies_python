@@ -1,0 +1,1 @@
+{"target": "tests/test_route.py::RouteTestCase::test_url_match", "type": "brittle", "patch": false, "state-setter": {"tests/test_route.py::RouteTestCase::test_expect_regex_rules": [{"state-setter": "tests/test_route.py::RouteTestCase::test_expect_regex_rules", "patch": null}]}, "time": 11.944077014923096}

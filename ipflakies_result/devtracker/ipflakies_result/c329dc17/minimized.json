@@ -1,0 +1,1 @@
+{"target": "devtracker/test_devtracker.py::test_full_report", "type": "brittle", "patch": false, "state-setter": {}}

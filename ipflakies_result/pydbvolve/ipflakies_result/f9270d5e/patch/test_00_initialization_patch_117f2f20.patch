@@ -1,0 +1,10 @@
+--- tests/unittests/test_00_initialization.py	2022-02-05 18:45:54.338294718 +0000
++++ tests/unittests/test_00_initialization_processedpatch_117f2f205.py	2022-02-05 18:53:09.668449747 +0000
+@@ -100,6 +100,7 @@ def test_08_get_migration_table_name():
+ 
+ 
+ def test_09_get_migration_table_schema():
++    importlib.reload(pydbvolve)
+     """Verify that we get a non-Falsey return from get_migration_table_schema."""
+     schema = pydbvolve.get_migration_table_schema()
+     assert(schema is not None)

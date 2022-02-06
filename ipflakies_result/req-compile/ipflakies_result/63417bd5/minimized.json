@@ -1,0 +1,1 @@
+{"target": "tests/test_extractor.py::test_extractor[mock_zip1]", "type": "victim", "patch": false, "polluter": {}}

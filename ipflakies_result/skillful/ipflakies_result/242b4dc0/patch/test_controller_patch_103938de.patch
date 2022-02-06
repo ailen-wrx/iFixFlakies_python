@@ -1,0 +1,10 @@
+--- skillful/tests/test_controller.py	2022-02-02 07:09:46.128025708 +0000
++++ skillful/tests/test_controller_processedpatch_103938de1.py	2022-02-02 07:18:22.428584707 +0000
+@@ -96,6 +96,7 @@ class TestSkill(unittest.TestCase):
+         self.assertRaises(KeyError, self.skill.dispatch)
+ 
+     def test_process(self):
++        'Test __len__ method.'
+         """Test process method."""
+         self.skill.logic = {}
+         @self.skill.launch

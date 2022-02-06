@@ -1,0 +1,10 @@
+--- riemann/tests/test_simple.py	2022-02-04 05:08:41.714792606 +0000
++++ riemann/tests/test_simple_processedpatch_cc4978334.py	2022-02-04 07:04:38.818060316 +0000
+@@ -14,6 +14,7 @@ class TestSimple(unittest.TestCase):
+         riemann.select_network('bitcoin_main')
+ 
+     def test_output(self):
++        riemann.select_network('bitcoin_main')
+         for i in range(len(helpers.P2WSH['human']['outs'])):
+             self.assertEqual(
+                 simple.output(

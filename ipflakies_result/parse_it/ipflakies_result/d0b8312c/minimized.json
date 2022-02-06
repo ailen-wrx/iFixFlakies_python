@@ -1,0 +1,1 @@
+{"target": "test/test_prase_it.py::BaseTests::test_envvar_defined_false", "type": "victim", "patch": false, "polluter": {"test/test_prase_it.py::BaseTests::test_envvar_defined_false_upper_case": [], "test/test_prase_it.py::BaseTests::test_envvar_defined_true": [], "test/test_prase_it.py::BaseTests::test_envvar_defined_true_upper_case": []}, "time": 182.67004013061523}

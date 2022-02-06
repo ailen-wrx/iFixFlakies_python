@@ -1,0 +1,1 @@
+{"target": "tests/test_fileguard.py::TestFileGuardClassDecorator::test_fileguarded_callables_calling_fileguarded_callables", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,11 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_77aa1a3b5.py	2022-02-03 10:39:23.882497992 +0000
+@@ -603,6 +603,8 @@ class TestTaskTemplate(unittest.TestCase
+         self.assertEqual(task_tmpl.config, {})
+ 
+     def test_build_from_dict_without_name(self):
++        task_tmpl = TaskTemplate('my-task-holder')
++        task = task_tmpl.new_task('dummy-data', loop=self.loop)
+         """
+         The only required argument to create a task template is the task
+         name.

@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_show.py::test_show_alias", "type": "victim", "patch": false, "polluter": {}}

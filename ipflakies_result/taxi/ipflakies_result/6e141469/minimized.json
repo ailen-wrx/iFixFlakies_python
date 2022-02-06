@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_current.py::test_current_fails_with_exit_code_1_when_no_current_entry", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- examples/test_unittest.py	2022-02-02 09:06:35.920640719 +0000
++++ examples/test_unittest_processedpatch_9d58db775.py	2022-02-02 10:03:34.994361359 +0000
+@@ -27,6 +27,7 @@ class TestUnittest(TestCase):
+ 
+     @autodoc.describe('GET /')
+     def test_get(self):
++        del os.environ['PYAUTODOC']
+         """ GET / """
+         res = self.client.get('/')
+         self.assertEqual(res.status_code, 200)

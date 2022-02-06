@@ -1,0 +1,10 @@
+--- wopmars/tests/test_wopmars.py	2022-02-02 10:31:04.993006755 +0000
++++ wopmars/tests/test_wopmars_processedpatch_1359ea4440.py	2022-02-02 13:33:58.381709934 +0000
+@@ -218,6 +218,7 @@ class TestWopmars(TestCase):
+         self.assertEqual(se.exception.code, 1)
+ 
+     def test_run_sourcerule_fail(self):
++        PathManager.unlink('outdir/output_file1.txt')
+         cmd_line = ["python", "-D", self.__db_url, "-w", self.__example_def_file1, "-v", "--since", "failure"]
+         with self.assertRaises(SystemExit) as se:
+             WopMars().run(cmd_line)

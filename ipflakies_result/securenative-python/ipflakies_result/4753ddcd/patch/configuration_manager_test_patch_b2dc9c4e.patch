@@ -1,0 +1,27 @@
+--- tests/configuration_manager_test.py	2022-02-04 13:45:55.875807822 +0000
++++ tests/configuration_manager_test_processedpatch_b2dc9c4e2.py	2022-02-04 20:10:14.601574427 +0000
+@@ -234,6 +234,24 @@ class ConfigurationManagerTest(unittest.
+     def test_default_values_for_invalid_enum_config_props(self):
+         try:
+             os.remove(self.config_file_path)
++            del os.environ['SECURENATIVE_API_KEY']
++            del os.environ['SECURENATIVE_API_URL']
++            del os.environ['SECURENATIVE_INTERVAL']
++            del os.environ['SECURENATIVE_MAX_EVENTS']
++            del os.environ['SECURENATIVE_TIMEOUT']
++            del os.environ['SECURENATIVE_AUTO_SEND']
++            del os.environ['SECURENATIVE_DISABLE']
++            del os.environ['SECURENATIVE_LOG_LEVEL']
++            del os.environ['SECURENATIVE_FAILOVER_STRATEGY']
++        except FileNotFoundError:
++            pass
++        except KeyError:
++            pass
++        config = {'bla': 'bla'}
++        self.create_ini_file(config)
++        options = ConfigurationManager.load_config(None)
++        try:
++            os.remove(self.config_file_path)
+             del os.environ["SECURENATIVE_API_KEY"]
+             del os.environ["SECURENATIVE_API_URL"]
+             del os.environ["SECURENATIVE_INTERVAL"]

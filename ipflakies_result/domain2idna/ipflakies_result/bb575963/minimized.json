@@ -1,0 +1,1 @@
+{"target": "tests/test_cli.py::TestCLI::test_file", "type": "victim", "patch": false, "polluter": {"tests/test_cli.py::TestCLI::test_domain_output": [], "tests/test_cli.py::TestCLI::test_empty_domain": [], "tests/test_cli.py::TestCLI::test_file_output": []}, "time": 22.527198553085327}

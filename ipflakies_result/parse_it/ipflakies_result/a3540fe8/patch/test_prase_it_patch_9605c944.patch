@@ -1,0 +1,10 @@
+--- test/test_prase_it.py	2022-02-02 04:12:27.266821738 +0000
++++ test/test_prase_it_processedpatch_9605c9443.py	2022-02-02 04:21:13.571731651 +0000
+@@ -1298,6 +1298,7 @@ class BaseTests(TestCase):
+             self.assertEqual(reply["test_env_type_estimate"], "123")
+ 
+     def test_parser_read_all_configuration_variables_raise_allowed_types_error(self):
++        os.environ['FILE_TYPE'] = 'envvar'
+         parser = ParseIt(config_location=test_files_location)
+         with self.assertRaises(TypeError):
+             parser.read_all_configuration_variables(allowed_types={"file_type": [bool, dict]})

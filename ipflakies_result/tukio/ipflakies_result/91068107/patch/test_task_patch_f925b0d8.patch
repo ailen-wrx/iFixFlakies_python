@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_f925b0d87.py	2022-02-03 11:14:56.998758066 +0000
+@@ -541,6 +541,7 @@ class TestTaskTemplate(unittest.TestCase
+             task_tmpl.new_task('junk-data')
+ 
+     def test_new_task_bad_args(self):
++        task = asyncio.ensure_future(my_coro_task(None))
+         """
+         Trying to create a new task with invalid arguments must raise a
+         `TypeError` exception.

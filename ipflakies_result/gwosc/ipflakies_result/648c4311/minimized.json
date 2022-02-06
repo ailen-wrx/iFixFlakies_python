@@ -1,0 +1,1 @@
+{"target": "gwosc/tests/test_datasets.py::test_find_datasets_type", "type": "brittle", "patch": false, "state-setter": {}}

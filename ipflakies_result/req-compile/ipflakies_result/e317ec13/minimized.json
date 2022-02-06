@@ -1,0 +1,1 @@
+{"target": "tests/repos/test_pypi.py::test_python_requires_wheel_tags[https://pypi.org/numpy-1.16.3-cp37-cp37m-win_amd64.whl#sha256=HASH]", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,11 @@
+--- tests/configuration_manager_test.py	2022-02-04 13:45:55.875807822 +0000
++++ tests/configuration_manager_test_processedpatch_acf197d52.py	2022-02-04 20:23:05.798356380 +0000
+@@ -30,6 +30,8 @@ class ConfigurationManagerTest(unittest.
+ 
+     @unittest.skipIf(platform.system() == "Windows" or platform.system() == "windows", "test not supported on windows")
+     def test_parse_config_file_correctly(self):
++        config = {'SECURENATIVE_FAILOVER_STRATEGY': 'fail-something'}
++        self.create_ini_file(config)
+         try:
+             os.remove(self.config_file_path)
+             del os.environ["SECURENATIVE_API_KEY"]

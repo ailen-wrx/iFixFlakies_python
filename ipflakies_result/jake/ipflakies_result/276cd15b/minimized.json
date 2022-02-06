@@ -1,0 +1,1 @@
+{"target": "jake/test/test_config.py::TestConfig::test_config_object_saves_config_file", "type": "victim", "patch": false, "polluter": {}}

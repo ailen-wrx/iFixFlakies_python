@@ -1,0 +1,10 @@
+--- tests/test_private_func.py	2022-02-01 23:30:54.656082826 +0000
++++ tests/test_private_func_processedpatch_9a2498af6.py	2022-02-01 23:33:52.053769337 +0000
+@@ -149,6 +149,7 @@ class TestAttributes(unittest.TestCase):
+ class TestMethod(unittest.TestCase):
+ 
+     def test_defaults(self):
++        TM.reset()
+         tm = TM("my test tm", description="aa", isOrdered=True)
+ 
+         internet = Boundary("Internet")

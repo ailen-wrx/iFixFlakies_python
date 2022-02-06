@@ -1,0 +1,1 @@
+{"target": "tests/test_sdss.py::Sako18Parsing::test_standard_column_names", "type": "victim", "patch": false, "polluter": {}}

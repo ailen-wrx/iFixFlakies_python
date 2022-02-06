@@ -1,0 +1,1 @@
+{"target": "tests/test_model.py::test_compound_type", "type": "victim", "patch": false, "polluter": {"tests/test_model.py::test_read_models_from_module_v3": [], "tests/test_model.py::test_model_type_with_metadata_v3": [], "tests/test_model.py::test_model_type_required_with_metadata_v3": []}, "time": 14.110462188720703}

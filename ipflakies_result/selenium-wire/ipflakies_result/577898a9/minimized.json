@@ -1,0 +1,1 @@
+{"target": "tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_set_single_scopes", "type": "brittle", "patch": false, "state-setter": {}}

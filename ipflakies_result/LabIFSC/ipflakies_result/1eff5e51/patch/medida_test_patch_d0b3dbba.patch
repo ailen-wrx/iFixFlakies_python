@@ -1,0 +1,10 @@
+--- tests/medida_test.py	2022-02-01 19:26:13.476486065 +0000
++++ tests/medida_test_processedpatch_d0b3dbba2.py	2022-02-01 19:28:15.172398167 +0000
+@@ -67,6 +67,7 @@ def test_medida_si_1():
+     assert unidades_em_texto(m.unidades_originais) == "m"
+ 
+ def test_medida_si_2():
++    m = Medida((31.5467, 0.052), 'ft^2')
+     m = Medida("1+-0.1", "ft²").SI()
+ 
+     assert m.nominal - 0.092903 < 1E-4

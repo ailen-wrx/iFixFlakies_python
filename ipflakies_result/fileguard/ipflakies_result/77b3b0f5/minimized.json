@@ -1,0 +1,1 @@
+{"target": "tests/test_fileguard.py::TestFileGuardDecorator::test_guard_deleted_file_restores_contents_test_file", "type": "victim", "patch": false, "polluter": {}}

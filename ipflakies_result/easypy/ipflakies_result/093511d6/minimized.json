@@ -1,0 +1,1 @@
+{"target": "tests/test_signals.py::test_simple_signal_object_identifier", "type": "victim", "patch": false, "polluter": {}}

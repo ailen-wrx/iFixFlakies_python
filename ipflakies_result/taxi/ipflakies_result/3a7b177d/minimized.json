@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_status.py::test_today_only_shows_todays_entries", "type": "victim", "patch": false, "polluter": {}}

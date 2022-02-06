@@ -1,0 +1,10 @@
+--- tests/test_marlin.py	2022-02-01 17:41:07.809814786 +0000
++++ tests/test_marlin_processedpatch_e366eb733.py	2022-02-01 17:42:14.183949524 +0000
+@@ -32,6 +32,7 @@ def test_list_bookmark():
+ 
+ 
+ def test_remove_bookmark():
++    mock_object.add_bookmark()
+     mock_object.remove_bookmark()
+     bookmark = Path((marlin_path) / 'mock')
+     exists = Path(bookmark).exists()

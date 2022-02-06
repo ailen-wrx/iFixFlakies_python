@@ -1,0 +1,1 @@
+{"target": "tests/test_progress_progressbaryum.py::test_defined_hour", "type": "brittle", "patch": false, "state-setter": {}}

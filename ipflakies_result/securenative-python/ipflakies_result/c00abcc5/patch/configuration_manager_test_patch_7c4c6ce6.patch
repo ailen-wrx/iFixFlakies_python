@@ -1,0 +1,13 @@
+--- tests/configuration_manager_test.py	2022-02-04 13:45:55.875807822 +0000
++++ tests/configuration_manager_test_processedpatch_7c4c6ce66.py	2022-02-04 20:21:13.486747473 +0000
+@@ -161,6 +161,10 @@ class ConfigurationManagerTest(unittest.
+ 
+     @unittest.skipIf(platform.system() == "Windows" or platform.system() == "windows", "test not supported on windows")
+     def test_load_default_config(self):
++        config = {'SECURENATIVE_TIMEOUT': '1500', 'SECURENATIVE_UNKNOWN_KEY': 'SOME_UNKNOWN_KEY'}
++        self.create_ini_file(config)
++        options = ConfigurationManager.load_config(None)
++        self.assertEqual(options.timeout, '1500')
+         try:
+             os.remove(self.config_file_path)
+             del os.environ["SECURENATIVE_API_KEY"]

@@ -1,0 +1,1 @@
+{"target": "test/integration/test_flask_multi_redis.py::test_aggregator_scan_iter_method", "type": "victim", "patch": false, "polluter": {"test/unit/test_flask_multi_redis.py::test_redis_import_error": [{"cleaner": "test/unit/test_flask_multi_redis.py::test_constructor_app", "patch": null}]}, "time": 43.662697553634644}

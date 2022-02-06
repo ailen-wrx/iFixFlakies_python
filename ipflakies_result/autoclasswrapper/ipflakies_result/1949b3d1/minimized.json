@@ -1,0 +1,1 @@
+{"target": "tests/test_output.py::TestOutputClass::test_aggregate_input_data", "type": "brittle", "patch": false, "state-setter": {}}

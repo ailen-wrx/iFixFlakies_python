@@ -1,0 +1,1 @@
+{"target": "jgutils/tests/test_persistentdict.py::TestPersistentDict::test_file_creation2", "type": "brittle", "patch": false, "state-setter": {"jgutils/tests/test_persistentdict.py::TestPersistentDict::test_file_creation": [{"state-setter": "jgutils/tests/test_persistentdict.py::TestPersistentDict::test_file_creation", "patch": null}]}, "time": 17.797724962234497}

@@ -1,0 +1,1 @@
+{"target": "tests/test_sdss.py::Sako18Parsing::test_cache_not_mutated", "type": "victim", "patch": false, "polluter": {}}

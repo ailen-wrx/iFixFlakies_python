@@ -1,0 +1,10 @@
+--- tests/nodal/test_graph.py	2022-02-01 20:26:55.857532520 +0000
++++ tests/nodal/test_graph_processedpatch_423234d54.py	2022-02-01 20:31:59.115277839 +0000
+@@ -101,6 +101,7 @@ class TestGraph(TestCase):
+ 
+     def test__on_node_destroy(self):
+ 
++        Callbacks.clear()
+         with self.graph:
+ 
+             # Create 3 NoOps

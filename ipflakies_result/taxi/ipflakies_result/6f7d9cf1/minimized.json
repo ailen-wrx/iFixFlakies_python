@@ -1,0 +1,1 @@
+{"target": "tests/commands/test_alias.py::test_alias_without_parameter_forwards_to_list", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- fooof/tests/utils/test_download.py	2022-02-03 07:55:54.262633872 +0000
++++ fooof/tests/utils/test_download_processedpatch_6afd6fc70.py	2022-02-03 09:41:27.661617427 +0000
+@@ -26,6 +26,7 @@ def test_check_data_folder():
+ 
+ def test_check_data_file():
+ 
++    assert os.path.isdir(TEST_FOLDER)
+     filename = 'freqs.npy'
+ 
+     check_data_file(filename, TEST_FOLDER)

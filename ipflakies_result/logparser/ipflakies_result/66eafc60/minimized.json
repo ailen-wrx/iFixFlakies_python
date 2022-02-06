@@ -1,0 +1,1 @@
+{"target": "tests/test_telnet.py::test_disable_telnet", "type": "brittle", "patch": false, "state-setter": {}}

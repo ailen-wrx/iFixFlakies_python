@@ -1,0 +1,1 @@
+{"target": "tests/test_views.py::test_list", "type": "victim", "patch": false, "polluter": {}}

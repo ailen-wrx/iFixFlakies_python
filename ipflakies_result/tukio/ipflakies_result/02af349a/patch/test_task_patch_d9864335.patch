@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_d98643354.py	2022-02-03 09:36:14.123587160 +0000
+@@ -306,6 +306,7 @@ class TestNewTask(unittest.TestCase):
+             new_task('dummy')
+ 
+     def test_new_task_bad_inputs(self):
++        task = new_task('my-task-holder')
+         """
+         Trying to create a new asyncio task with invalid inputs must raise
+         a `TypeError` exception.

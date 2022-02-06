@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_c587a7c47.py	2022-02-01 19:20:14.808956147 +0000
+@@ -515,6 +515,7 @@ class TestMagicMethods(unittest.TestCase
+ 		model.factory.validate_properties = True
+ 
+ 	def test_validate_multiplicity(self):
++        model.factory.auto_id_type = 'int-per-type'
+ 		model.factory.validate_multiplicity = True
+ 		who = model.Person()
+ 		b1 = model.Birth()

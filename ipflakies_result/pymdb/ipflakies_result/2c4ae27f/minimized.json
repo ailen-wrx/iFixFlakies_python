@@ -1,0 +1,1 @@
+{"target": "tests/test_scraper.py::TestGetCompany::test_get_company_multiple_pages", "type": "brittle", "patch": false, "state-setter": {}}

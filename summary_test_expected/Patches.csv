@@ -1,0 +1,4 @@
+Project_Name,Project_URL,Project_Hash,Test_id,OD_Type,Polluter_or_Setter,Cleaner,Diff,Path
+IOCynergy,https://github.com/omersaraf/IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py::test_register_multiple,victim,cynergy/tests/test_register_multiple.py::test_multiple_list_arguments,cynergy/tests/test_class_mapping.py::test_class_mapping,"37a38
+>     container.initialize()
+",IOCynergy/ipflakies_result/0e3e3632/patch/test_register_multiple_patch_06d164b9.patch

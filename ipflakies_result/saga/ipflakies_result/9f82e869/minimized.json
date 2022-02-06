@@ -1,0 +1,1 @@
+{"target": "tests/cli/test_diff.py::test_diff_empty", "type": "victim", "patch": false, "polluter": {}}

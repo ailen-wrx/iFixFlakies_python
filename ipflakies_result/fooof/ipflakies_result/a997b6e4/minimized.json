@@ -1,0 +1,1 @@
+{"target": "fooof/tests/core/test_io.py::test_load_json_str", "type": "brittle", "patch": false, "state-setter": {"fooof/tests/core/test_io.py::test_save_fm_str": [{"state-setter": "fooof/tests/core/test_io.py::test_save_fm_str", "patch": null}]}, "time": 323.2348976135254}

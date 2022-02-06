@@ -1,0 +1,11 @@
+--- __tests__/test_simple_graph.py	2022-02-01 17:28:22.805210980 +0000
++++ __tests__/test_simple_graph_processedpatch_ac7ee3a92.py	2022-02-01 17:34:10.568395388 +0000
+@@ -25,6 +25,8 @@ class TestSimpleGraph:
+         assert str(vertex_delete) == "Vértice a"
+ 
+     def test_is_terminal(self):
++        value = 'b'
++        vertex = self.graph.add_vertex(value)
+         self.graph.add_vertex("a")
+         edge = self.graph.add_edge("a", "b", "ab")
+         assert self.graph.is_terminal(edge, 'a') and \

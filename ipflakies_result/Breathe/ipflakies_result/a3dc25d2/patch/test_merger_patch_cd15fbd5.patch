@@ -1,0 +1,10 @@
+--- tests/test_merger.py	2022-02-04 00:01:41.479970403 +0000
++++ tests/test_merger_processedpatch_cd15fbd55.py	2022-02-04 00:11:03.521998521 +0000
+@@ -51,6 +51,7 @@ def test_context_commands():
+ 
+ 
+ def test_noccr_commands():
++    Breathe.add_global_extras(Dictation('text'))
+     Breathe.add_commands(
+         AppContext("firefox"),
+         {"dictation <text>": DoNothing(), "testing static": DoNothing()},

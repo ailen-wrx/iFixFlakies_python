@@ -1,0 +1,1 @@
+{"target": "tests/test_io.py::test_lines_read[latin-1]", "type": "victim", "patch": false, "polluter": {}}

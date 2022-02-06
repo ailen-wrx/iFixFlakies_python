@@ -1,0 +1,10 @@
+--- tests/test_model.py	2022-02-01 18:12:49.122952643 +0000
++++ tests/test_model_processedpatch_acfa93ad6.py	2022-02-01 18:51:04.688727026 +0000
+@@ -188,6 +188,7 @@ class TestFactorySerialization(unittest.
+ 		self.assertTrue('part' in js)
+ 
+ 	def test_collapse_json(self):
++        model.factory.auto_assign_id = True
+ 		model.factory.auto_id_type = "uuid"
+ 		model.factory.base_url = "http://lod.example.org/museum/"
+ 		model.factory.context_uri = "https://linked.art/ns/v1/linked-art.json"

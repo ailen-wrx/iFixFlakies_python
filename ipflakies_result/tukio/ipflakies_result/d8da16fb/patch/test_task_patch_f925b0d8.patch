@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_f925b0d87.py	2022-02-03 07:36:47.088686087 +0000
+@@ -556,6 +556,7 @@ class TestTaskTemplate(unittest.TestCase
+             task_tmpl.new_task('junk')
+ 
+     def test_build_from_dict(self):
++        task = asyncio.ensure_future(my_coro_task(None))
+         """
+         Create a new task template from a dictionary
+         """

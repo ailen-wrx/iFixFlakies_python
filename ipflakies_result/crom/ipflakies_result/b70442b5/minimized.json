@@ -1,0 +1,1 @@
+{"target": "tests/test_reader.py::TestReader::test_read", "type": "victim", "patch": false, "polluter": {}}

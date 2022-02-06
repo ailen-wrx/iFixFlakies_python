@@ -1,0 +1,1 @@
+{"target": "src/tests/test_vesync_login.py::test_login[sam@mail.com-pass-correct]", "type": "victim", "patch": false, "polluter": {}}

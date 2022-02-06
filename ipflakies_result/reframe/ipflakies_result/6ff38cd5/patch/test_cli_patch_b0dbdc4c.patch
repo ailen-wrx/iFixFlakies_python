@@ -1,0 +1,10 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_b0dbdc4c3.py	2022-02-04 08:51:59.506454798 +0000
+@@ -263,6 +263,7 @@ def test_dont_restage(run_reframe, tmp_p
+ 
+ def test_checkpath_symlink(run_reframe, tmp_path):
+     # FIXME: This should move to test_loader.py
++    (returncode, stdout, _) = run_reframe(checkpath=['unittests/resources/checks/frontend_checks.py'], more_options=['-t', 'BadSetupCheck'])
+     checks_symlink = tmp_path / 'checks_symlink'
+     os.symlink(os.path.abspath('unittests/resources/checks'),
+                checks_symlink)

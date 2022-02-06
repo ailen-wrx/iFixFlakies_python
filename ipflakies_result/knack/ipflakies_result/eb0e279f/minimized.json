@@ -1,0 +1,1 @@
+{"target": "tests/test_help.py::TestHelp::test_help_extra_params", "type": "victim", "patch": false, "polluter": {"tests/test_parser.py::TestParser::test_nargs_parameter": [], "tests/test_parser.py::TestParser::test_register_simple_commands": [], "tests/test_parser.py::TestParser::test_required_parameter": []}, "time": 309.56085753440857}

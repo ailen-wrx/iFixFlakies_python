@@ -1,0 +1,1 @@
+{"target": "unittests/test_loader.py::TestRegressionCheckLoader::test_special_test", "type": "victim", "patch": false, "polluter": {}}

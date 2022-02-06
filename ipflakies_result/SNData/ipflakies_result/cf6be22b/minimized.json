@@ -1,0 +1,1 @@
+{"target": "tests/test_sdss.py::Sako18Parsing::test_bad_table_id_err", "type": "victim", "patch": false, "polluter": {}}

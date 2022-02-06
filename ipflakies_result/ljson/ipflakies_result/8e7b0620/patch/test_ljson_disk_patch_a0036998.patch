@@ -1,0 +1,15 @@
+--- test/test_ljson_disk.py	2022-02-01 17:13:43.740940532 +0000
++++ test/test_ljson_disk_processedpatch_a00369985.py	2022-02-01 17:15:48.576955174 +0000
+@@ -252,6 +252,12 @@ def test_unique_check():
+ 				"lname": "griffin"})
+ 
+ def test_contains():
++    import copy
++    header_descriptor_ = copy.copy(header_descriptor)
++    header_descriptor_['name']['modifiers'] = ['unique']
++    header = ljson.base.generic.Header(header_descriptor_)
++    table = ljson.base.mem.Table(header, data)
++    table.additem(item_meg)
+ 	header = ljson.base.generic.Header(header_descriptor)
+ 	table = ljson.base.mem.Table(header, data)
+ 	

@@ -1,0 +1,13 @@
+--- test/test_factory.py	2022-02-03 04:11:19.879491282 +0000
++++ test/test_factory_processedpatch_6f19fc8921.py	2022-02-03 04:53:41.967143216 +0000
+@@ -32,6 +32,10 @@ def test_init():
+ 
+ def test_unregister():
+     f1 = NodeFactory()
++    f2 = NodeFactory()
++    n = len(set(f1.name_dict.keys()))
++    f1.unregister('TestWriter')
++    f1 = NodeFactory()
+     class TestWriter(AbstractFileWriter):
+         def __init__(self, configuration, instance_name):
+             pass

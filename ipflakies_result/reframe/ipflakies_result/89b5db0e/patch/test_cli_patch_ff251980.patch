@@ -1,0 +1,10 @@
+--- unittests/test_cli.py	2022-02-03 12:47:50.698631560 +0000
++++ unittests/test_cli_processedpatch_ff2519801.py	2022-02-04 09:27:30.813247813 +0000
+@@ -237,6 +237,7 @@ def test_check_sanity_failure(run_refram
+ 
+ 
+ def test_dont_restage(run_reframe, tmp_path):
++    (returncode, *_) = run_reframe(checkpath=['unittests/resources/checks'], more_options=['-R'], ignore_check_conflicts=False, action='list')
+     run_reframe(
+         checkpath=['unittests/resources/checks/frontend_checks.py'],
+         more_options=['-t', 'SanityFailureCheck']

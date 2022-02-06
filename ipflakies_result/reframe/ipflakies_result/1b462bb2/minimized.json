@@ -1,0 +1,1 @@
+{"target": "unittests/test_policies.py::test_retries_bad_check[SerialExecutionPolicy]", "type": "victim", "patch": false, "polluter": {}}

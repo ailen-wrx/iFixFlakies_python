@@ -1,0 +1,10 @@
+--- datacommons/test/set_api_key_test.py	2022-02-01 21:15:40.243505008 +0000
++++ datacommons/test/set_api_key_test_processedpatch_e80d8d752.py	2022-02-01 21:17:13.266493994 +0000
+@@ -74,6 +74,7 @@ class TestApiKey(unittest.TestCase):
+   """Unit test for setting or not setting the API Key."""
+   @mock.patch('six.moves.urllib.request.urlopen', side_effect=request_mock)
+   def test_query_no_api_key(self, urlopen):
++        dc.set_api_key(_TEST_API_KEY)
+     del os.environ[utils._ENV_VAR_API_KEY]
+     # Issue a dummy SPARQL query that tells the mock to not expect a key
+     self.assertEqual(dc.query(_SPARQL_NO_KEY), [])

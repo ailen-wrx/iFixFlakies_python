@@ -1,0 +1,1 @@
+{"target": "tests/test_problem.py::test_exception_to_http_response_with_traceback_param", "type": "victim", "patch": false, "polluter": {"tests/test_problem.py::test_set_serialize_function": []}, "time": 13.042813777923584}

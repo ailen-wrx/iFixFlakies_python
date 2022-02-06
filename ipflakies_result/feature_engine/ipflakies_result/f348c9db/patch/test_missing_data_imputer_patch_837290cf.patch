@@ -1,0 +1,10 @@
+--- tests/test_missing_data_imputer.py	2022-02-03 21:54:30.882366732 +0000
++++ tests/test_missing_data_imputer_processedpatch_837290cf10.py	2022-02-03 22:34:27.952324380 +0000
+@@ -205,6 +205,7 @@ def test_ArbitraryNumberImputer(datafram
+ def test_CategoricalVariableImputer(dataframe_na):
+ 
+     # test case 1: imputation with missing + automatically select variables
++    boston_dataset = load_boston()
+     imputer = CategoricalVariableImputer(imputation_method='missing', variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

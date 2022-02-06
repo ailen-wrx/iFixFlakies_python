@@ -1,0 +1,1 @@
+{"target": "tests/unittesting/tasks/memory/test_delay.py::test_memory_delay_task_decorator_invalid_function", "type": "victim", "patch": false, "polluter": {"tests/unittesting/actions/default/test_action_default_console.py::test_launch_aiotasks_worker_in_console_oks": []}, "time": 253.60742783546448}

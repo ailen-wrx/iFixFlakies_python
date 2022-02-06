@@ -1,0 +1,10 @@
+--- tests/test_forums.py	2022-02-01 17:52:15.407285204 +0000
++++ tests/test_forums_processedpatch_45dacb081.py	2022-02-01 17:59:51.029937000 +0000
+@@ -4,6 +4,7 @@ _forum_name = 'photography'
+ class TestForums:
+ 
+     def test_with_none_name_in_dcard_instance(self, dcard):
++        url = route.forums()
+         f = dcard.forums
+         assert f.name is None
+ 

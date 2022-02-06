@@ -1,0 +1,1 @@
+{"target": "tests/test_problem.py::test_problem_http_response[1000-test_title-test_detail-test_type-test_instance-headers0-kwargs0-expected_body0-expected_headers0]", "type": "victim", "patch": false, "polluter": {"tests/test_problem.py::test_set_serialize_function": []}, "time": 12.623518228530884}

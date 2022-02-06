@@ -1,0 +1,1 @@
+{"target": "metropolis/core/tests/test_utils.py::TestUtilsInterruptBumper::test_task_should_finished", "type": "victim", "patch": false, "polluter": {"metropolis/tests/test_gateway.py::TestWorker::test_worker_should_be_initialized": []}, "time": 146.46716976165771}

@@ -1,0 +1,1 @@
+{"target": "yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_hist_calls_decorator", "type": "victim", "patch": false, "polluter": {"yunomi/tests/test_metrics_registry.py::MetricsRegistryTests::test_hist_calls_decorator_returns_original_return_value": []}, "time": 35.4782395362854}

@@ -1,0 +1,1 @@
+{"target": "tests/test_wikipedia.py::TestWikipedia::test_extract_to_txt", "type": "victim", "patch": false, "polluter": {}}

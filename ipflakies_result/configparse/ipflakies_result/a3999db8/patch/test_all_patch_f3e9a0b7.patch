@@ -1,0 +1,10 @@
+--- test/test_all.py	2022-02-01 18:26:39.205635289 +0000
++++ test/test_all_processedpatch_f3e9a0b72.py	2022-02-01 18:30:18.064671173 +0000
+@@ -85,6 +85,7 @@ def test_default_ext():
+     cleanup()
+ 
+ def test_positional():
++    write_home(None, json.dumps({'grapefruit': 'big and juicy'}))
+     "make sure we didn't break existing functionality of argparse"
+     p = configparse.Parser(prog=NAME)
+     p.add_argument("positional")

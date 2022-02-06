@@ -1,2 +1,0 @@
-Project_Name,Project_URL,Project_Hash,Test_filename,Test_classname,Test_funcname,Test_parametrization,Order-dependent,Verdict_Isolated,Verdict_OriginalOrder
-IOCynergy,https://github.com/omersaraf/IOCynergy,1821423680f741d8ca06bcc6a02c8b21156f9ba0,cynergy/tests/test_register_multiple.py,,test_register_multiple,,True,Passed,Passed

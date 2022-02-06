@@ -1,8 +1,0 @@
-ErrorType,Project_Name,Test_filename,Test_id
-ERROR,ebaipy,tests/test_client.py,tests/test_client.py::EbaiClientTestCase::test_sku_brand_list
-ERROR,pydicom,pydicom/tests/test_filewriter.py,pydicom/tests/test_filewriter.py::TestScratchWriteDateTime::testCT
-ERROR,python-xrpc,xrpc_tests/test_popen.py,xrpc_tests/test_popen.py::TestPOpen::test_wait_all_2
-ERROR,python-xrpc,xrpc_tests/test_popen.py,xrpc_tests/test_popen.py::TestPOpen::test_wait_all_3
-ERROR,taxi,tests/commands/test_show.py,tests/commands/test_show.py::test_show_project_id
-ERROR,taxi,tests/commands/test_start.py,tests/commands/test_start.py::test_date_present_entry_present
-ERROR,taxi,tests/commands/test_status.py,tests/commands/test_status.py::test_regroup_entries_setting

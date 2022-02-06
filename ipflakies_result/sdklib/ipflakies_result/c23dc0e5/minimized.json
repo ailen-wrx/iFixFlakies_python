@@ -1,0 +1,1 @@
+{"target": "tests/test_http_context.py::TestHttpContext::test_http_context_singleton_clear", "type": "victim", "patch": false, "polluter": {"tests/test_http_context.py::TestHttpContext::test_http_context_singleton_fields_to_clear": []}, "time": 478.80776286125183}

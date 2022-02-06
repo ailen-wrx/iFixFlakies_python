@@ -1,0 +1,10 @@
+--- tests/test_prepareDeploymentServiceDefinitionStep.py	2022-02-02 08:15:54.763103570 +0000
++++ tests/test_prepareDeploymentServiceDefinitionStep_processedpatch_104644c27.py	2022-02-02 08:19:06.625248266 +0000
+@@ -317,6 +317,7 @@ def test_process_application_autoscaling
+     assert target['MinCapacity'] == source['min_capacity']  
+ 
+ def test_process_application_autoscaling_scalable_target_max_capacity_invalid():
++    step.infos.scale_infos = ScaleInfos()
+     source = {}
+     source['max_capacity'] = 'a'
+     target = {}

@@ -1,0 +1,1 @@
+{"target": "tests/test_command_context.py::test_manual_context_noccr", "type": "brittle", "patch": false, "state-setter": {"tests/test_command_context.py::test_manual_context": [{"state-setter": "tests/test_command_context.py::test_manual_context", "patch": null}]}, "time": 24.76971673965454}

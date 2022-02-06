@@ -1,0 +1,1 @@
+{"target": "tests/cli/test_status.py::test_status_empty", "type": "victim", "patch": false, "polluter": {}}

@@ -1,0 +1,10 @@
+--- tests/nodal/nodes/test_noop.py	2022-02-01 20:26:55.857532520 +0000
++++ tests/nodal/nodes/test_noop_processedpatch_423234d54.py	2022-02-01 20:29:25.190331394 +0000
+@@ -29,6 +29,7 @@ class TestNoOp(TestCase):
+         self.assertFalse(noop1.dependents)
+ 
+     def test_name(self):
++        Callbacks.clear()
+         noop = nodal.nodes.NoOp()
+         self.assertEqual('NoOp1', noop.name)
+         noop.name = 'FooOp'

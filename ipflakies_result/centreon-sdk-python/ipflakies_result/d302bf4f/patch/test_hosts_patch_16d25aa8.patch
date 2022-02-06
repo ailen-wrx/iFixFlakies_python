@@ -1,0 +1,11 @@
+--- tests/test_hosts.py	2022-02-04 00:31:17.396985286 +0000
++++ tests/test_hosts_processedpatch_16d25aa810.py	2022-02-04 01:18:50.335293413 +0000
+@@ -74,6 +74,8 @@ class TestHosts:
+ 
+     @responses.activate
+     def test_hosts_not_exist(self, centreon_con):
++        wsresponses = '{"authToken": "NTc1MDU3MGE3M2JiODIuMjA4OTA2OTc="}'
++        responses.add(responses.POST, 'http://api.domain.tld/centreon/api/index.php?action=authenticate', body=wsresponses, status=200, content_type='application/json')
+         with open(resource_dir / 'test_hosts_list.json') as data:
+             wsresponses = json.load(data)
+         responses.add(

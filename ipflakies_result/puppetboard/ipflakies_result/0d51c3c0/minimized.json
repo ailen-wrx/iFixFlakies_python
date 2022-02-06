@@ -1,0 +1,1 @@
+{"target": "test/test_app.py::test_offline_mode", "type": "victim", "patch": false, "polluter": {"test/test_app.py::test_custom_title": []}, "time": 414.2599105834961}

@@ -1,0 +1,1 @@
+{"target": "tests/test_conf.py::test_config_reading[.env]", "type": "victim", "patch": false, "polluter": {"tests/test_conf.py::test_singleton": []}, "time": 8.82646632194519}

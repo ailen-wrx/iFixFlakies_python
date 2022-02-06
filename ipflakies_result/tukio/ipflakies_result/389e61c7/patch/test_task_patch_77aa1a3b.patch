@@ -1,0 +1,11 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_77aa1a3b5.py	2022-02-03 08:48:14.179704369 +0000
+@@ -532,6 +532,8 @@ class TestTaskTemplate(unittest.TestCase
+         self.assertEqual(task.inputs, 'junk-data')
+ 
+     def test_new_task_unknown(self):
++        task_tmpl = TaskTemplate('my-task-holder')
++        task = task_tmpl.new_task('dummy-data', loop=self.loop)
+         """
+         Trying to create a new task with an unknown name must raise a
+         `UnknownTaskName` exception.

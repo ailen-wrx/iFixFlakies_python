@@ -1,0 +1,13 @@
+--- tests/parsing_test.py	2022-02-05 00:27:23.821672500 +0000
++++ tests/parsing_test_processedpatch_5e2b38588.py	2022-02-05 03:40:21.841729998 +0000
+@@ -37,6 +37,10 @@ def test_parse(input_, expected):
+         xml = f.read()
+         if IRON_PYTHON:
+             xml = bytes(xml)
++    with open(os.path.join(test_suite_dir, input_), 'rb') as f:
++        xml = f.read()
++        if IRON_PYTHON:
++            xml = bytes(xml)
+     parse = get_format(xml)
+     assert callable(parse)
+     uri_filename = input_.rstrip('.xml') + '.uri.txt'

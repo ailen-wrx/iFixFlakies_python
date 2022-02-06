@@ -1,0 +1,1 @@
+{"target": "tests/integration/pook_requests_test.py::test_requests_get", "type": "victim", "patch": false, "polluter": {}}

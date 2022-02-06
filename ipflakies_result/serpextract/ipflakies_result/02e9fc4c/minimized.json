@@ -1,0 +1,1 @@
+{"target": "tests/test_serps.py::TestSERPs::test_custom_parser_explicit", "type": "victim", "patch": false, "polluter": {"tests/test_serps.py::TestSERPs::test_custom_parser_implicit": []}, "time": 18.147215366363525}

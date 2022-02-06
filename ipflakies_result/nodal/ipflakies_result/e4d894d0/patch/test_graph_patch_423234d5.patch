@@ -1,0 +1,10 @@
+--- tests/nodal/test_graph.py	2022-02-01 20:26:55.857532520 +0000
++++ tests/nodal/test_graph_processedpatch_423234d54.py	2022-02-01 20:30:54.185191282 +0000
+@@ -83,6 +83,7 @@ class TestGraph(TestCase):
+             self.assertEqual({plus1.name: 5}, self.graph.execute(plus1))
+ 
+     def test__on_node_create(self):
++        Callbacks.clear()
+         with self.graph:
+             noop1 = self.graph.create_node('NoOp')
+             self.assertEqual(noop1.name, 'NoOp1')

@@ -1,0 +1,10 @@
+--- skillful/tests/test_controller.py	2022-02-02 07:09:46.128025708 +0000
++++ skillful/tests/test_controller_processedpatch_103938de1.py	2022-02-02 07:21:17.502196175 +0000
+@@ -121,6 +121,7 @@ class TestSkill(unittest.TestCase):
+         self.assertFalse(self.skill.process(data.SAMPLE_LAUNCH_REQUEST))
+ 
+     def test_process_end(self):
++        'Test __len__ method.'
+         """Test process method for invalid."""
+         self.skill.logic = {}
+         @self.skill.session_ended

@@ -1,0 +1,14 @@
+--- tests/test_model.py	2022-02-06 09:18:23.926922437 +0000
++++ tests/test_model_processedpatch_0d256c9c2.py	2022-02-06 09:45:02.364143602 +0000
+@@ -32,6 +32,11 @@ def test_model_setup_and_command():
+ 
+     # use a dict to share state across function scopes. This makes up for the
+     # fact that Python 2.x doesn't have support for the 'nonlocal' keyword.
++    rw = RunwayModel()
++    rw.run(debug=True)
++    client = get_test_client(rw)
++    if (os.environ.get('GPU') is not None):
++        del os.environ['GPU']
+     closure = dict(setup_ran = False, command_ran = False)
+ 
+     expected_manifest = {

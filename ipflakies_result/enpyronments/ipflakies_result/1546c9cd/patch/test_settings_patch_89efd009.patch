@@ -1,0 +1,10 @@
+--- tests/test_settings.py	2022-02-04 11:37:16.054478530 +0000
++++ tests/test_settings_processedpatch_89efd0092.py	2022-02-04 19:44:52.346141934 +0000
+@@ -15,6 +15,7 @@ def test_empty():
+ 
+ 
+ def test_masked(test_key, test_setting, is_sensitive, actual_value):
++    masked_settings = test_setting.masked()
+     """ Ensure accessing Settings.masked() elements via __getitem__ returns the underlying value when the test_key points
+     to a Sensitive object"""
+ 

@@ -1,0 +1,10 @@
+--- tests/optimizers/test_tolerance.py	2022-02-06 07:29:24.128004851 +0000
++++ tests/optimizers/test_tolerance_processedpatch_0b31c6fa4.py	2022-02-06 13:48:53.691237119 +0000
+@@ -84,6 +84,7 @@ class TestToleranceOptions:
+         return request.param, parameters
+ 
+     def test_no_ftol(self, optimizer):
++        (optm, params) = optimizer
+         """Test complete run"""
+         optm, params = optimizer
+         opt = optm(**params)

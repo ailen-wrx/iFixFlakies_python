@@ -1,0 +1,11 @@
+--- tests/test_command.py	2022-02-04 00:31:17.396985286 +0000
++++ tests/test_command_processedpatch_16d25aa810.py	2022-02-04 00:47:45.467909135 +0000
+@@ -59,6 +59,8 @@ class TestCommands:
+ 
+     @responses.activate
+     def test_command_list(self, centreon_con):
++        wsresponses = '{"authToken": "NTc1MDU3MGE3M2JiODIuMjA4OTA2OTc="}'
++        responses.add(responses.POST, 'http://api.domain.tld/centreon/api/index.php?action=authenticate', body=wsresponses, status=200, content_type='application/json')
+         with open(resource_dir / 'test_commands_list.json') as data:
+             wsresponses = json.load(data)
+         responses.add(responses.POST,

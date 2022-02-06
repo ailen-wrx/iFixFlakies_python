@@ -1,0 +1,1 @@
+{"target": "tests/unit/commands/test_wait_until_vanished.py::test_wait_until_vanished_passes_correct_function_to_wait_until", "type": "victim", "patch": false, "polluter": {}}

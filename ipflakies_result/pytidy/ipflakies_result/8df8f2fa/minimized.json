@@ -1,0 +1,1 @@
+{"target": "tests/test_function.py::test_object_insertion", "type": "victim", "patch": false, "polluter": {"tests/test_registry.py::test_register_failure": [], "tests/test_registry.py::test_get_failure_not_registered": [], "tests/test_registry.py::test_get_failure_none_registered": []}, "time": 10.060808420181274}

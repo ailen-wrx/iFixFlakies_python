@@ -1,0 +1,1 @@
+{"target": "tests/test_app.py::TestApp::test_enable_force_ssl", "type": "brittle", "patch": false, "state-setter": {}}

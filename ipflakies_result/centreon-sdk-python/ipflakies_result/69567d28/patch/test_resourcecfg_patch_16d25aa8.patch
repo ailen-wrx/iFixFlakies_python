@@ -1,0 +1,17 @@
+--- tests/test_resourcecfg.py	2022-02-04 00:31:17.396985286 +0000
++++ tests/test_resourcecfg_processedpatch_16d25aa82.py	2022-02-04 01:23:36.682769259 +0000
+@@ -132,6 +132,14 @@ class TestResourceCFG:
+ 
+     @responses.activate
+     def test_resourcecfg_setparam(self):
++        url = 'http://api.domain.tld/centreon'
++        username = 'mytest'
++        password = 'mypass'
++        mytoken = 'NTc1MDU3MGE3M2JiODIuMjA4OTA2OTc='
++        wsresponses = '{"authToken": "NTc1MDU3MGE3M2JiODIuMjA4OTA2OTc="}'
++        responses.add(responses.POST, 'http://api.domain.tld/centreon/api/index.php?action=authenticate', body=wsresponses, status=200, content_type='application/json')
++        myconn = Webservice.getInstance(url, username, password)
++        myconn.auth()
+         with open(resource_dir / 'test_resourcecfg_1.json') as data:
+             res = ResourceCFG(json.load(data))
+         values = [

@@ -1,0 +1,10 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_d98643354.py	2022-02-03 09:21:19.469887453 +0000
+@@ -316,6 +316,7 @@ class TestNewTask(unittest.TestCase):
+             new_task('task-bad-coro')
+ 
+     def test_new_task_bad_holder(self):
++        task = new_task('my-task-holder')
+         """
+         Trying to create a new task from an invalid task holder may raise
+         various exceptions. Ensure those exceptions are raised by `new_task`.

@@ -1,0 +1,13 @@
+--- tests/functional_test.py	2022-02-04 14:48:56.348634814 +0000
++++ tests/functional_test_processedpatch_f45ac3e82.py	2022-02-04 15:13:15.056127644 +0000
+@@ -112,6 +112,10 @@ def test_package_exists():
+                                        '--version'],
+                                       ['tokendito', '--version']])
+ def test_version(package_version, package_regex, runnable):
++    'Install tokendito as a python package.'
++    repo_root = path.dirname(path.dirname(path.abspath(__file__)))
++    proc = run_process([sys.executable, '-m', 'pip', 'install', '-e', repo_root])
++    assert (not proc['stderr'])
+     """Check if the package version is the same when running in different ways."""
+     proc = run_process(runnable)
+     assert not proc['stderr']

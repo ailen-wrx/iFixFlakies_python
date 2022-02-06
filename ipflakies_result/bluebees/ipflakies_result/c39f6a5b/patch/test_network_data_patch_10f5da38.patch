@@ -1,0 +1,23 @@
+--- tests/test_network_data.py	2022-02-04 00:17:57.799288025 +0000
++++ tests/test_network_data_processedpatch_10f5da3813.py	2022-02-04 00:23:25.665805702 +0000
+@@ -38,4 +38,20 @@ def test_network_data():
+ 
+ 
+ def test_cleanup():
++    name = 'test_net'
++    key = get_random_bytes(16)
++    key_index = get_random_bytes(2)
++    iv_index = get_random_bytes(4)
++    num_apps = 10
++    num_nodes = 15
++    apps = []
++    for x in range(num_apps):
++        apps.append(f'test_app{x}')
++    nodes = []
++    for x in range(num_nodes):
++        nodes.append(f'test_node{x}')
++    data = NetworkData(name=name, key=key, key_index=key_index, iv_index=iv_index, apps=apps, nodes=nodes)
++    assert (file_helper.file_exist((((base_dir + net_dir) + name) + '.yml')) is False)
++    data.save()
++    assert (file_helper.file_exist((((base_dir + net_dir) + name) + '.yml')) is True)
+     pathlib.Path(base_dir + net_dir + 'test_net.yml').unlink()

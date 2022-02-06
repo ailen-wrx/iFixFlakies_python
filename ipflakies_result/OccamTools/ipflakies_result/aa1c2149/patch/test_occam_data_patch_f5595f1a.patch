@@ -1,0 +1,10 @@
+--- test/test_occam_data.py	2022-02-02 07:22:56.881380369 +0000
++++ test/test_occam_data_processedpatch_f5595f1a7.py	2022-02-02 08:03:03.334439207 +0000
+@@ -195,6 +195,7 @@ def test_occam_data_save_load():
+ 
+ 
+ def test_occam_data_progress_bars():
++    shutil.rmtree(class_dir)
+     fort1, fort7, fort8 = _load_default_forts()
+     occam_data_silent = OccamData(fort1, fort7, fort8)
+     fort1, fort7, fort8 = _load_default_forts(silent=False)

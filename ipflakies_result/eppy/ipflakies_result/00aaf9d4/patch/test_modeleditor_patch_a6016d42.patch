@@ -1,0 +1,13 @@
+--- eppy/tests/test_modeleditor.py	2022-02-02 11:23:19.093664569 +0000
++++ eppy/tests/test_modeleditor_processedpatch_a6016d4212.py	2022-02-02 22:45:41.242046382 +0000
+@@ -601,6 +601,10 @@ def test_idfinmsequence():
+ 
+ 
+ def test_idd_index():
++    idftxt = ''
++    idfhandle = StringIO(idftxt)
++    idf = IDF(idfhandle)
++    key = 'BUILDING'
+     """py.test to see if idd_index is returned"""
+     idftxt = """"""
+     idf = IDF(StringIO(idftxt))

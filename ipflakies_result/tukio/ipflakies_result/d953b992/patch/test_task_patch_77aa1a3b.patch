@@ -1,0 +1,11 @@
+--- tests/test_task.py	2022-02-03 06:17:48.518803886 +0000
++++ tests/test_task_processedpatch_77aa1a3b5.py	2022-02-03 08:10:36.827331147 +0000
+@@ -614,6 +614,8 @@ class TestTaskTemplate(unittest.TestCase
+             TaskTemplate.from_dict(task_dict)
+ 
+     def test_dump_as_dict(self):
++        task_tmpl = TaskTemplate('my-task-holder')
++        task = task_tmpl.new_task('dummy-data', loop=self.loop)
+         """
+         A TaskTemplate instance can be dumped as a dictionary
+         """

@@ -1,0 +1,1 @@
+{"target": "tests/test_tools.py::test_variance_2d", "type": "victim", "patch": false, "polluter": {}}

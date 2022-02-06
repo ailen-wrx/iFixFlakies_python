@@ -1,0 +1,13 @@
+--- tests/test_app.py	2022-02-01 21:51:45.053045292 +0000
++++ tests/test_app_processedpatch_242292216.py	2022-02-01 21:54:15.121864170 +0000
+@@ -34,6 +34,10 @@ class TestApp(object):
+ 
+     def test_get_app(self, mock_sp, client: AppsModule, shared):
+         mock_sp.return_value = AppMock('get_app')
++        app_data = AppMock.create_app()['data']
++        response = client.create_app(**app_data)
++        shared['app'] = response
++        mock_sp.return_value = AppMock('get_app')
+         app = shared['app']
+ 
+         response = client.get_app(app.id)

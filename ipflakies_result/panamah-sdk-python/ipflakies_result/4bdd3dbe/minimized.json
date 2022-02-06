@@ -1,0 +1,1 @@
+{"target": "tests/test_processor.py::TestStream::test_get_pending_resources", "type": "victim", "patch": false, "polluter": {}}

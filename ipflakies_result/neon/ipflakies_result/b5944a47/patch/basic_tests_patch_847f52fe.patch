@@ -1,0 +1,10 @@
+--- tests/basic_tests.py	2022-02-01 17:11:02.663761078 +0000
++++ tests/basic_tests_processedpatch_847f52fe2.py	2022-02-01 17:11:47.937216851 +0000
+@@ -30,6 +30,7 @@ def foo(bar):
+     return bar
+ 
+ def test_dont_memoize():
++    assert (fib(29) == (((((2 ** 3) * 5) * 11) * 31) * 61))
+     assert foo({}) == {}
+     assert foo not in MEMO
+     assert any([m.__name__ == "fib" for m in MEMO])
