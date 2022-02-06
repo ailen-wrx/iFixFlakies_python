@@ -1,0 +1,16 @@
+--- cynergy/tests/test_register_multiple.py	2021-10-20 20:48:22.000000000 +0000
++++ cynergy/tests/test_register_multiple_processedpatch543210.py	2021-12-09 12:02:24.529080681 +0000
+@@ -1,3 +1,5 @@
++
++import warnings
+ from typing import List
+ 
+ from cynergy import container
+@@ -35,6 +37,7 @@ class Main2(object):
+ 
+ 
+ def test_register_multiple():
++    container.initialize()
+     container.register_many(Example, [Example1, Example2])
+     instance = container.get(List[Example])
+ 

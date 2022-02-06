@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform linux -- Python 3.8.3, pytest-6.2.5, py-1.10.0, pluggy-1.0.0
+rootdir: /home/user/iFixFlakies_python/Repo/IOCynergy
+plugins: csv-3.0.0
+collected 3 items
+
+cynergy/tests/test_register_multiple.py .                                [ 33%]
+cynergy/tests/test_config.py .                                           [ 66%]
+cynergy/tests/test_register_multiple.py .                                [100%]
+
+=============================== warnings summary ===============================
+cynergy/tests/test_config.py::test_argument_injection
+  /home/user/iFixFlakies_python/Repo/IOCynergy/cynergy/container.py:177: UserWarning: Container already initialized. If you need multiple instances consider not use the container statically
+    warn("Container already initialized. If you need multiple instances consider not use the container statically",
+
+-- Docs: https://docs.pytest.org/en/stable/warnings.html
+- CSV report: /home/user/iFixFlakies_python/repro/src/cleaners/b949ebb88da103c7f355de6cb7367889/b908082e22d6ddcc40ef5b67162025b9.csv -
+========================= 3 passed, 1 warning in 0.04s =========================

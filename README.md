@@ -1,5 +1,5 @@
 # iFixFlakies_python
-A shell script running iPFlakies to detect polluters of victims as well as state-setters for brittles in the dataset from Gruber et al.  
+Experimental scripts for running iPFlakies to detect polluters of victims as well as state-setters for brittles in the dataset from [Gruber et al.](https://www.computer.org/csdl/proceedings-article/icst/2021/683600a148/1tRP8lWaACc).
 
 ## What's inside
 `./victims_brittles.csv`    The dataset provided by Gruber et al, including 4,312 claimed order-dependent flaky tests.

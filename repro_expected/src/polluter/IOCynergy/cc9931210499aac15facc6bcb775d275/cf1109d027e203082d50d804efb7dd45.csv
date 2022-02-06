@@ -1,0 +1,3 @@
+id,module,name,file,doc,markers,status,message,duration
+cynergy/tests/test_sanity.py::test_class_with_default_arguments,cynergy.tests.test_sanity,test_class_with_default_arguments,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_sanity.py,,,passed,,0.00035062432289123535
+cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006572684273123741
