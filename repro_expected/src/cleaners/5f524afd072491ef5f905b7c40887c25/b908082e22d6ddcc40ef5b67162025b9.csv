@@ -1,4 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy.tests.test_register_multiple,test_register_multiple_when_onc_instance_is_already_registered,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006490943022072315
-cynergy/tests/test_config.py::test_argument_injection,cynergy.tests.test_config,test_argument_injection,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_config.py,,,passed,,0.0003704223781824112
-cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0006222445517778397

@@ -1,4 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-cynergy/tests/test_register_multiple.py::test_register_multiple_when_onc_instance_is_already_registered,cynergy.tests.test_register_multiple,test_register_multiple_when_onc_instance_is_already_registered,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0065119387581944466
-cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,failed,"AssertionError: assert <class 'cynergy.tests.test_register_multiple.Example2'> is Example1
- +  where <class 'cynergy.tests.test_register_multiple.Example2'> = type(<cynergy.tests.test_register_multiple.Example2 object at 0x7f71b2f2dca0>)",0.00036908499896526337

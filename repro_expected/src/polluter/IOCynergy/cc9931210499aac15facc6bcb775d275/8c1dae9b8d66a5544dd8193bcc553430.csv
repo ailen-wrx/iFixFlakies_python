@@ -1,3 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-cynergy/tests/test_life_cycle.py::test_multi,cynergy.tests.test_life_cycle,test_multi,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_life_cycle.py,,,passed,,0.00038721226155757904
-cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006529742851853371

@@ -1,4 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy.tests.test_register_multiple,test_multiple_list_arguments_with_wrap,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006981012411415577
-cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,failed,"AssertionError: assert <class 'cynergy.tests.test_register_multiple.Example2'> is Example1
- +  where <class 'cynergy.tests.test_register_multiple.Example2'> = type(<cynergy.tests.test_register_multiple.Example2 object at 0x7f888eb14940>)",0.00037513766437768936

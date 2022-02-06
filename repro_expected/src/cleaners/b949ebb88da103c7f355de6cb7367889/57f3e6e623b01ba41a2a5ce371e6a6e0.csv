@@ -1,4 +1,0 @@
-id,module,name,file,doc,markers,status,message,duration
-cynergy/tests/test_register_multiple.py::test_multiple_list_arguments_with_wrap,cynergy.tests.test_register_multiple,test_multiple_list_arguments_with_wrap,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.006866518408060074
-cynergy/tests/test_class_mapping.py::test_class_mapping,cynergy.tests.test_class_mapping,test_class_mapping,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_class_mapping.py,,,passed,,0.0004169438034296036
-cynergy/tests/test_register_multiple.py::test_register_multiple,cynergy.tests.test_register_multiple,test_register_multiple,../../../../ifix/datavol/Repo/IOCynergy/cynergy/tests/test_register_multiple.py,,,passed,,0.0006191246211528778
