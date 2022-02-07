@@ -93,7 +93,7 @@ with open(dataset_file, 'rt') as dataset_f:
         if idflakies[Project_name] == None:
             with open(excluded, 'a', newline="") as output:
                 csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
-                                             Verdict_Isolated, Verdict_OriginalOrder, "Fail_to_Run"])
+                                             Verdict_Isolated, Verdict_OriginalOrder, "Fail_to_Install"])
             continue
 
         if Project_name not in dataset: 
