@@ -1,1 +1,0 @@
-{"target": "tests/test_handlers.py::DescribeRequestHandler::it_validates_ssl", "type": "victim", "patch": false, "polluter": {"tests/test_init.py::it_imports_call_modules": []}, "time": 269.7779440879822}

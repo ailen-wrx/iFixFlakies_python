@@ -1,1 +1,0 @@
-{"target": "tests/seleniumwire/proxy/test_client.py::AdminClientIntegrationTest::test_clear_param_overrides", "type": "brittle", "patch": false, "state-setter": {}}

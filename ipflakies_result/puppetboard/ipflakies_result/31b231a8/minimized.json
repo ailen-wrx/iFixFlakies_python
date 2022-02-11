@@ -1,1 +1,0 @@
-{"target": "test/test_app.py::test_catalogs_json", "type": "brittle", "patch": false, "state-setter": {"test/test_app.py::test_json_report_ok": [{"state-setter": "test/test_app.py::test_json_report_ok", "patch": null}]}, "time": 235.1598403453827}

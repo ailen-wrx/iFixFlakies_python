@@ -1,1 +1,0 @@
-{"target": "tests/test_settings.py::test_values[0-test_value16]", "type": "brittle", "patch": false, "state-setter": {"tests/test_settings.py::test_delitem[0-test_value16]": [{"state-setter": "tests/test_settings.py::test_delitem[0-test_value16]", "patch": null}]}, "time": 231.4704818725586}

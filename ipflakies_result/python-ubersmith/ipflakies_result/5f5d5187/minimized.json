@@ -1,1 +1,0 @@
-{"target": "tests/test_handlers.py::DescribeRequestHandler::it_can_disable_ssl_validation", "type": "victim", "patch": false, "polluter": {"tests/test_init.py::it_imports_call_modules": []}, "time": 270.14687180519104}

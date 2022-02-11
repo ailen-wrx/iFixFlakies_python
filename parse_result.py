@@ -93,7 +93,7 @@ with open(dataset_file, 'rt') as dataset_f:
         if Project_name not in idflakies:
             with open(excluded, 'a', newline="") as output:
                 csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
-                                             Verdict_Isolated, Verdict_OriginalOrder, "Not_Run"])
+                                             Verdict_Isolated, Verdict_OriginalOrder, "Timed_Out"])
             continue
 
         if idflakies[Project_name] == None:
@@ -141,7 +141,7 @@ with open(dataset_file, 'rt') as dataset_f:
         else:
             with open(excluded, 'a', newline="") as output:
                 csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
-                                             Verdict_Isolated, Verdict_OriginalOrder, "Error"])
+                                             Verdict_Isolated, Verdict_OriginalOrder, "Error_When_Testing"])
             continue
 
         if flaky_type == VIC:

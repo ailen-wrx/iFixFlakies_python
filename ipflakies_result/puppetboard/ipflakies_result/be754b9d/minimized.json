@@ -1,1 +1,0 @@
-{"target": "test/test_app.py::test_fact_view_without_graph", "type": "victim", "patch": false, "polluter": {"test/test_app.py::test_custom_title": []}, "time": 380.67496061325073}

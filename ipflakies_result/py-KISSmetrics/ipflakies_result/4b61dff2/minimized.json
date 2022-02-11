@@ -1,1 +1,0 @@
-{"target": "KISSmetrics/tests/test_integration.py::KISSmetricsClientCompatIntegrationTestCase::test_set_person", "type": "victim", "patch": false, "polluter": {}}
