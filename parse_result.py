@@ -78,6 +78,12 @@ with open(dataset_file, 'rt') as dataset_f:
         else:
             Test_id = Test_filename + "::"  + Test_funcname + Test_parametrization
 
+        if Project_name == "chazutsu":
+            with open(excluded, 'a', newline="") as output:
+                csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
+                                             Verdict_Isolated, Verdict_OriginalOrder, "Destroy_Filesystem"])
+            continue
+        
         if Project_name not in installed_projects:
             with open(excluded, 'a', newline="") as output:
                 csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
