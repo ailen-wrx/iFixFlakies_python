@@ -1,0 +1,10 @@
+--- plcx/tests/comm/test_server.py	2022-02-11 18:23:08.319716454 +0000
++++ plcx/tests/comm/test_server_processedpatch_f288091d1.py	2022-02-11 18:33:47.441560942 +0000
+@@ -143,6 +143,7 @@ def not_arg_handler():
+     [(raise_timeout, TimeoutError), (raise_handler, AttributeError), (not_arg_handler, TypeError)],
+ )
+ def test_serverx_error(tcp_client, caplog, handler, exp_error):
++    '\n    Test unpacking bytes to list of values.\n\n    :param msg: bytes message\n    :param format_: message format\n    :param exp_value: expected value\n    '
+     """
+     Test raising error of serverx.
+ 

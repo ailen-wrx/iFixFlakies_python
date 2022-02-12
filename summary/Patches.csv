@@ -2280,3 +2280,41 @@ yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f
 yamicache,https://github.com/mtik00/yamicache,1109d08b18be94bdee55e113309f7be29f25d840,tests/test_class.py::test_utility,victim,tests/test_class.py::test_prefix,tests/test_class.py::test_counters,"82a83
 >     c._debug = True
 ",yamicache/ipflakies_result/68343008/patch/test_class_patch_26539b99.patch
+dcard-spider,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_posts.py::TestPosts::test_with_ids_through__call__,brittle,tests/test_posts.py::TestPosts::test_get_post_bundle,,"22a23
+>         posts = dcard.posts(_post_id).get()
+",dcard-spider/ipflakies_result/09048f50/patch/test_posts_patch_c13774ab.patch
+dcard-spider,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_posts.py::TestPosts::test_get_post_bundles,victim,tests/test_posts.py::TestPosts::test_get_post_bundle,tests/test_forums.py::TestForums::test_with_none_name_in_dcard_instance,"56a57
+>         f = dcard.forums
+",dcard-spider/ipflakies_result/841fbbdb/patch/test_posts_patch_38aab832.patch
+plcx,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,plcx/tests/comm/test_server.py::test_serverx_error[raise_handler-AttributeError],victim,plcx/tests/comm/test_server.py::test_serverx_error[raise_timeout-TimeoutError],plcx/tests/bag/test_unpack.py::test_bytes_to_list[d\x00\x00\x00-i-exp_value0],"145a146
+>     '\n    Test unpacking bytes to list of values.\n\n    :param msg: bytes message\n    :param format_: message format\n    :param exp_value: expected value\n    '
+",plcx/ipflakies_result/e524c40a/patch/test_server_patch_f288091d.patch
+plcx,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,plcx/tests/comm/test_server.py::test_serverx_error[not_arg_handler-TypeError],victim,plcx/tests/comm/test_server.py::test_serverx_error[raise_timeout-TimeoutError],plcx/tests/bag/test_unpack.py::test_bytes_to_list[d\x00\x00\x00-i-exp_value0],"145a146
+>     '\n    Test unpacking bytes to list of values.\n\n    :param msg: bytes message\n    :param format_: message format\n    :param exp_value: expected value\n    '
+",plcx/ipflakies_result/c39bd0ed/patch/test_server_patch_f288091d.patch
+torchpwl,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,torchpwl/pwl_test.py::test_pwl_is_continous[3-1-PointPWL],victim,torchpwl/pwl_test.py::test_pwl_init[11-5-SlopedPWL],torchpwl/pwl_test.py::test_pwl_init[1-1-PointPWL],"105a106
+>     x = get_x(num_channels)
+",torchpwl/ipflakies_result/1343774d/patch/pwl_test_patch_10293034.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_dataframe_checks.py::test_is_dataframe,"309a310,311
+>     with pytest.raises(TypeError):
+>         assert _is_dataframe([1, 2, 4])
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_4aca7501.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_discretisers.py::test_UserInputDiscretise,"309a310
+>     boston_dataset = load_boston()
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_837290cf.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_mathematical_combination.py::test_MathematicalCombinator_error_when_selected__variable_not_numeric,"309a310
+>     transformer = MathematicalCombinator(variables=['Name', 'Age', 'Marks'])
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_cc230da6.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_mathematical_combination.py::test_MathematicalCombinator_Serror_when_selected__variable_not_in_df,"309a310
+>     transformer = MathematicalCombinator(variables=['FeatOutsideDataset', 'Age'])
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_f3e4ab31.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_mathematical_combination.py::test_MathematicalCombinator_error_when_variable_names_and_operations_LengthNotEqual,"309a310,311
+>     with pytest.raises(KeyError):
+>         transformer = MathematicalCombinator(math_operations=['sum', 'mean'], new_variables_names=['sum_of_two_vars'])
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_9b42c0b2.patch
+feature_engine,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_missing_data_imputer.py::test_AddMissingIndicator,victim,tests/test_missing_data_imputer.py::test_RandomSampleImputer,tests/test_variable_manipulation.py::test_define_variables,"309a310
+>     vars_str = 'var1'
+",feature_engine/ipflakies_result/b01568ae/patch/test_missing_data_imputer_patch_48416cbe.patch
+Tale,https://github.com/efe/zula,6328eb9c0e18debaaa769b7ac0d05a4a472f4746,tests/test_mudobjects.py::TestMudObject::test_basics,brittle,tests/test_driver.py::TestDriverCreation::testBase,,"1208a1209
+>         d = tale.driver.Driver()
+",Tale/ipflakies_result/b0c8ca23/patch/test_mudobjects_patch_159da815.patch

@@ -1,0 +1,10 @@
+--- tests/test_posts.py	2022-02-11 20:51:13.352320741 +0000
++++ tests/test_posts_processedpatch_38aab8321.py	2022-02-11 20:53:28.869456582 +0000
+@@ -54,6 +54,7 @@ class TestPosts:
+         assert comment_count == len(first_post['comments'])
+ 
+     def test_get_post_bundles(self, dcard, metas):
++        f = dcard.forums
+         ids = [m['id'] for m in metas]
+         posts1 = dcard.posts(metas).get(comments=False, links=False).result()
+         posts2 = dcard.posts(ids).get(comments=False, links=False).result()

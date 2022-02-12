@@ -1,0 +1,1 @@
+{"target": "test/pyiosxr/test_iosxr.py::TestIOSXRDevice::test_iosxr_bug_0x44318c06", "type": "victim", "patch": false, "polluter": {}}

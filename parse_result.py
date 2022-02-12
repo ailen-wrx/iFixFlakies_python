@@ -199,7 +199,95 @@ for Project in idflakies:
         if flaky not in dataset[Project]:
             flaky_info = idflakies[Project][flaky]
             with open(newfound, 'a', newline="") as output:
-                csv.writer(output).writerow([Project, Project_URL, Project_Hash, Test_id, flaky_info["type"], os.path.join(Project, result_dir, "flakies.json")])               
+                csv.writer(output).writerow([Project, Project_URL, Project_Hash, flaky, flaky_info["type"], os.path.join(Project, result_dir, "flakies.json")])               
+
+            Project_name = Project
+            Test_id = flaky
+
+            detected_by_ipflakies = False
+            suggested_type = BRI if Verdict_Isolated == "Failed" else VIC
+            flaky_type = ""
+            polluters = {}
+            setters = {}
+            have_patch = False
+
+            if Test_id in idflakies[Project_name]:
+                detected_by_ipflakies = True
+                flaky_type = idflakies[Project_name][Test_id]["type"]
+
+            if Test_id in ipflakies[Project_name]:
+                info = ipflakies[Project_name][Test_id]
+                Deter_Type = "passed" if info["type"] == VIC else "failed"
+                if not detected_by_ipflakies:
+                    with open(minimized, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, Deter_Type, "", ""])
+                    with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, Deter_Type, False, False])
+                    continue
+                if flaky_type == "": flaky_type = info["type"]
+                if flaky_type == VIC:
+                    polluters = info["polluter"]
+                if flaky_type == BRI:
+                    setters = info["state-setter"]
+                have_patch = info["patch"]
+            elif detected_by_ipflakies:
+                with open(minimized, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, "", ""])
+                with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, False, False])
+                continue
+            else:
+                with open(excluded, 'a', newline="") as output:
+                    csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, Order_dependent, 
+                                                Verdict_Isolated, Verdict_OriginalOrder, "Error_When_Testing"])
+                continue
+
+            if flaky_type == VIC:
+                if not polluters: 
+                    with open(minimized, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, "", ""])
+                    with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, False, False])
+                    continue
+                has_cleaner = False
+                for polluter in polluters:
+                    cleaners = polluters[polluter]
+                    if not cleaners:
+                        with open(minimized, 'a', newline="") as output:
+                            csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, polluter, ""])
+                        continue
+                    has_cleaner = True
+                    for cleaner in cleaners:
+                        with open(minimized, 'a', newline="") as output:
+                            csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, polluter, cleaner["cleaner"]])
+                        if cleaner["patch"]:
+                            patch = cleaner["patch"]
+                            with open(patches, 'a', newline="") as output:
+                                csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, flaky_type, polluter, cleaner["cleaner"], patch["diff"], "{}/{}".format(Project_name, patch["patch_file"])])
+                if has_cleaner:
+                    with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, True, True])
+                else:
+                    with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, True, False])
+                continue
+
+            else:
+                if not setters:
+                    with open(minimized, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, "", ""])
+                    with open(teststatus, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, False, ""])
+                    continue
+                with open(teststatus, 'a', newline="") as output:
+                    csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, True, ""])
+                for setter in setters:
+                    with open(minimized, 'a', newline="") as output:
+                        csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, detected_by_ipflakies, have_patch, flaky_type, setter, ""])
+                    if setters[setter] and setters[setter][0]["patch"]:
+                        patch = setters[setter][0]["patch"]
+                        with open(patches, 'a', newline="") as output:
+                            csv.writer(output).writerow([Project_name, Project_URL, Project_Hash, Test_id, flaky_type, setter, "", patch["diff"], "{}/{}".format(Project_name, patch["patch_file"])])               
 
 
 

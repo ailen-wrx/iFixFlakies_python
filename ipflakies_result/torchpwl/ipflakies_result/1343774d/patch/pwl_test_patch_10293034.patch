@@ -1,0 +1,10 @@
+--- torchpwl/pwl_test.py	2022-02-11 20:12:27.886975306 +0000
++++ torchpwl/pwl_test_processedpatch_102930343.py	2022-02-11 20:26:18.071423530 +0000
+@@ -103,6 +103,7 @@ def test_pwl_sloped_correct_num_breakpoi
+ @pytest.mark.parametrize("num_channels", [1, 3])
+ @pytest.mark.parametrize("num_breakpoints", [1, 2, 3, 4])
+ def test_pwl_is_continous(pwl_module, num_channels, num_breakpoints):
++    x = get_x(num_channels)
+     module = pwl_module(
+         num_channels=num_channels, num_breakpoints=num_breakpoints)
+     with torch.no_grad():

@@ -1,0 +1,10 @@
+--- tests/test_mudobjects.py	2022-02-11 21:09:44.596000171 +0000
++++ tests/test_mudobjects_processedpatch_159da8155.py	2022-02-11 21:15:02.186791647 +0000
+@@ -1206,6 +1206,7 @@ class TestItem(unittest.TestCase):
+ 
+ class TestMudObject(unittest.TestCase):
+     def test_basics(self):
++        d = tale.driver.Driver()
+         with self.assertRaises(TaleError) as ex:
+             Item("name", "the title", descr="description")
+         self.assertTrue(str(ex.exception).startswith("title cannot"))

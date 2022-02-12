@@ -1,0 +1,1 @@
+{"target": "tests/test_xml.py::TestTrnsysModel::test_trnsysmodel_repr", "type": "brittle", "patch": false, "state-setter": {}}

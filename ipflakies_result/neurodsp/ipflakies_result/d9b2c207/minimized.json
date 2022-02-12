@@ -1,0 +1,1 @@
+{"target": "neurodsp/tests/aperiodic/test_irasa.py::test_fit_irasa", "type": "victim", "patch": false, "polluter": {}}

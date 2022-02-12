@@ -1,0 +1,1 @@
+{"target": "tests/test_real_conditions.py::tests_build_setuptools", "type": "victim", "patch": false, "polluter": {"tests/test_processors_x86_32.py::tests_cpuid_nocpu": []}, "time": 141.4029450416565}

@@ -1,0 +1,11 @@
+--- tests/test_missing_data_imputer.py	2022-02-11 20:28:41.569325231 +0000
++++ tests/test_missing_data_imputer_processedpatch_9b42c0b20.py	2022-02-11 20:44:56.631804761 +0000
+@@ -307,6 +307,8 @@ def test_CategoricalVariableImputer(data
+ def test_AddMissingIndicator(dataframe_na):
+ 
+     # test case 1: automatically detect variables with missing data
++    with pytest.raises(KeyError):
++        transformer = MathematicalCombinator(math_operations=['sum', 'mean'], new_variables_names=['sum_of_two_vars'])
+     imputer = AddMissingIndicator(how='missing_only', variables=None)
+     X_transformed = imputer.fit_transform(dataframe_na)
+ 

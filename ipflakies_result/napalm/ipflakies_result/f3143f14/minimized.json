@@ -1,0 +1,1 @@
+{"target": "test/pyiosxr/test_iosxr.py::TestIOSXRDevice::test_channel_acquired_enter_xml_mode", "type": "victim", "patch": false, "polluter": {}}

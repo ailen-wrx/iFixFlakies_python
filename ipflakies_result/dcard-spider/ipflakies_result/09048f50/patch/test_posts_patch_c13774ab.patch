@@ -1,0 +1,10 @@
+--- tests/test_posts.py	2022-02-11 20:51:13.352320741 +0000
++++ tests/test_posts_processedpatch_c13774ab3.py	2022-02-11 20:54:03.508814217 +0000
+@@ -20,6 +20,7 @@ class TestPosts:
+         assert not posts.only_id
+ 
+     def test_with_ids_through__call__(self, dcard, metas):
++        posts = dcard.posts(_post_id).get()
+         ids = [m['id'] for m in metas]
+         posts = dcard.posts(ids)
+         assert posts.ids
