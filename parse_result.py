@@ -198,6 +198,7 @@ for Project in idflakies:
             continue
         if flaky not in dataset[Project]:
             flaky_info = idflakies[Project][flaky]
+            if flaky_info["type"] == "NOD": continue
             with open(newfound, 'a', newline="") as output:
                 csv.writer(output).writerow([Project, Project_URL, Project_Hash, flaky, flaky_info["type"], os.path.join(Project, result_dir, "flakies.json")])               
 
