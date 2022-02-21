@@ -12,7 +12,7 @@ Experimental scripts for running iPFlakies to detect polluters of victims as wel
 
 
 ## How to run
-To start up, download and export the docker image: https://zenodo.org/record/5949906/files/ipflakies_docker_container.tar
+To start up, download and export the docker image: https://zenodo.org/record/6178311/files/ipflakies_docker_image.tar
 ```bash
 $ docker import ipflakies_docker_container.tar ipflakies
 
